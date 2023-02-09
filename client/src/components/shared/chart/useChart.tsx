@@ -33,9 +33,9 @@ export default function useChart(options: any) {
       theme.palette.error.main,
       theme.palette.success.main,
       theme.palette.warning.dark,
-      theme.palette.success.darker,
+      theme.palette.success.dark,
       theme.palette.info.dark,
-      theme.palette.info.darker,
+      theme.palette.info.dark,
     ],
 
     // Chart

@@ -1,7 +1,7 @@
 import { ShoppingBag } from "@mui/icons-material";
 import { Pagination } from "@mui/material";
 import React from "react";
-import { TEXT_COLOR_GRAY } from "../../../../src/styles/color";
+import { TEXT_COLOR_GRAY } from "@/styles/color";
 import ListOrderItems from "./ListOrderItems";
 
 const ListOrdersTemplate = () => {

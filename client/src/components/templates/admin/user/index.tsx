@@ -27,16 +27,18 @@ import Scrollbar from "@/components/shared/scrollbar";
 import Label from "@/components/shared/label";
 import { UserListHead, UserListToolbar } from "./section/user";
 import USERLIST from "@/_mock/user";
+import IUser from "interfaces/User";
 
 const TABLE_HEAD = [
   { id: "name", label: "Name", alignRight: false },
   { id: "role", label: "Role", alignRight: false },
-  { id: "isVerified", label: "Verified", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
   { id: "" },
 ];
 
-function descendingComparator(a, b, orderBy) {
+type OrderByType = "name" | "role";
+
+function descendingComparator(a: IUser, b: IUser, orderBy: OrderByType) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
   }
@@ -46,18 +48,18 @@ function descendingComparator(a, b, orderBy) {
   return 0;
 }
 
-function getComparator(order: any, orderBy: any) {
+function getComparator(order: "asc" | "desc", orderBy: OrderByType) {
   return order === "desc"
-    ? (a: number, b: number) => descendingComparator(a, b, orderBy)
-    : (a: number, b: number) => -descendingComparator(a, b, orderBy);
+    ? (a: IUser, b: IUser) => descendingComparator(a, b, orderBy)
+    : (a: IUser, b: IUser) => -descendingComparator(a, b, orderBy);
 }
 
-function applySortFilter(array, comparator, query) {
-  const stabilizedThis = array.map((el, index) => [el, index]);
+function applySortFilter(array: IUser[] = [], comparator: any, query: string) {
+  const stabilizedThis = array.map((el, index) => ({ el, index }));
   stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
+    const order = comparator(a.el, b.el);
     if (order !== 0) return order;
-    return a[1] - b[1];
+    return a.index - b.index;
   });
   if (query) {
     return filter(
@@ -65,7 +67,7 @@ function applySortFilter(array, comparator, query) {
       (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
     );
   }
-  return stabilizedThis.map((el) => el[0]);
+  return stabilizedThis.map((el) => el.el);
 }
 
 const UserTemplate = () => {
@@ -77,7 +79,7 @@ const UserTemplate = () => {
 
   const [selected, setSelected] = useState<string[]>([]);
 
-  const [orderBy, setOrderBy] = useState("name");
+  const [orderBy, setOrderBy] = useState<OrderByType>("name");
 
   const [filterName, setFilterName] = useState("");
 
@@ -91,7 +93,7 @@ const UserTemplate = () => {
     setOpen(null);
   };
 
-  const handleRequestSort = (event: any, property: "asc" | "desc") => {
+  const handleRequestSort = (event: any, property: OrderByType) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
@@ -147,7 +149,7 @@ const UserTemplate = () => {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
   const filteredUsers = applySortFilter(
-    USERLIST,
+    [],
     getComparator(order, orderBy),
     filterName
   );
@@ -197,15 +199,7 @@ const UserTemplate = () => {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const {
-                        id,
-                        name,
-                        role,
-                        status,
-                        company,
-                        avatarUrl,
-                        isVerified,
-                      } = row;
+                      const { id, name, role } = row;
                       const selectedUser = selected.indexOf(name) !== -1;
 
                       return (
@@ -229,30 +223,13 @@ const UserTemplate = () => {
                               alignItems="center"
                               spacing={2}
                             >
-                              <Avatar alt={name} src={avatarUrl} />
                               <Typography variant="subtitle2" noWrap>
                                 {name}
                               </Typography>
                             </Stack>
                           </TableCell>
 
-                          <TableCell align="left">{company}</TableCell>
-
                           <TableCell align="left">{role}</TableCell>
-
-                          <TableCell align="left">
-                            {isVerified ? "Yes" : "No"}
-                          </TableCell>
-
-                          <TableCell align="left">
-                            <Label
-                              color={
-                                (status === "banned" && "error") || "success"
-                              }
-                            >
-                              {sentenceCase(status)}
-                            </Label>
-                          </TableCell>
 
                           <TableCell align="right">
                             <IconButton

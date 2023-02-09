@@ -8,23 +8,15 @@ import { ReactElement, ReactNode, useEffect, useMemo, useState } from "react";
 import type { AppProps } from "next/app";
 import { NextPage } from "next";
 import { Router } from "next/router";
-import Head from "next/head";
-import Script from "next/script";
 //mui
-import { createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 //component
-import typography from "@/themes/typography";
 import NProgress from "nprogress";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { wrapper } from "@/contexts/store";
-import palette from "@/themes/palette";
-import shadows from "@/themes/shadows";
 import GlobalStyles from "@/themes/globalStyles";
-import customShadows from "@/themes/customShadows";
-import componentsOverride from "@/themes/overrides";
 import { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../src/utils/createEmotionCache";
@@ -62,35 +54,8 @@ function MyApp(props: MyAppProps) {
     });
   }, [Router]);
 
-  const themeOptions = useMemo(
-    () => ({
-      palette,
-      shape: { borderRadius: 6 },
-      typography,
-      shadows: shadows(),
-      customShadows: customShadows(),
-    }),
-    []
-  );
-
-  const theme = createTheme(themeOptions);
-  theme.components = componentsOverride(theme);
-
   return (
     <CacheProvider value={emotionCache}>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
-          referrerPolicy="no-referrer"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
-        />
-      </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <CssBaseline />
@@ -100,17 +65,6 @@ function MyApp(props: MyAppProps) {
           </LocalizationProvider>
         </ThemeProvider>
       </QueryClientProvider>
-      <Script
-        src="https://unpkg.com/react@16/umd/react.development.js"
-        crossOrigin="anonymous"
-      ></Script>
-      <Script
-        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-        crossOrigin="anonymous"
-      ></Script>
-      <Script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></Script>
-      <Script src="https://unpkg.com/babel-standalone@6/babel.min.js"></Script>
-      <Script type="text/babel" src="/my-scripts.js"></Script>
     </CacheProvider>
   );
 }
