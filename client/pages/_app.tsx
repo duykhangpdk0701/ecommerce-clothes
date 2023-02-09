@@ -27,7 +27,7 @@ import customShadows from "@/themes/customShadows";
 import componentsOverride from "@/themes/overrides";
 import { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
-import createEmotionCache from "@/utils/CreateEmotionCache";
+import createEmotionCache from "../src/utils/createEmotionCache";
 import ThemeProvider from "@/themes/index";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -100,19 +100,17 @@ function MyApp(props: MyAppProps) {
           </LocalizationProvider>
         </ThemeProvider>
       </QueryClientProvider>
-      <Script>
-        <script
-          src="https://unpkg.com/react@16/umd/react.development.js"
-          crossOrigin="anonymous"
-        ></script>
-        <script
-          src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-          crossOrigin="anonymous"
-        ></script>
-        <script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <script type="text/babel" src="/my-scripts.js"></script>
-      </Script>
+      <Script
+        src="https://unpkg.com/react@16/umd/react.development.js"
+        crossOrigin="anonymous"
+      ></Script>
+      <Script
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+        crossOrigin="anonymous"
+      ></Script>
+      <Script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></Script>
+      <Script src="https://unpkg.com/babel-standalone@6/babel.min.js"></Script>
+      <Script type="text/babel" src="/my-scripts.js"></Script>
     </CacheProvider>
   );
 }
