@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import Iconify from "@/components/shared/iconify";
 import Link from "next/link";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const CreateBrandTemplate = () => {
   return (
