@@ -1,0 +1,283 @@
+name: Item
+description: |-
+
+  APIs for managing item
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/item-color
+    metadata:
+      groupName: Item
+      groupDescription: |-
+
+        APIs for managing item
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of Colors'
+      description: 'This endpoint lets you get a list of Colors for the items'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      limit:
+        name: limit
+        description: 'The number of resource that will show and then paginate.'
+        required: false
+        example: 50
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      limit: 50
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color","per_page":50,"to":null,"total":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '53'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/item-price-ranges
+    metadata:
+      groupName: Item
+      groupDescription: |-
+
+        APIs for managing item
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the price ranges.'
+      description: 'This endpoint lets you get the min and max price for the price ranges'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/item
+    metadata:
+      groupName: Item
+      groupDescription: |-
+
+        APIs for managing item
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of items.'
+      description: 'This endpoint lets you get a list of items and filtering them'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      limit:
+        name: limit
+        description: 'The number of resource that will show and then paginate.'
+        required: false
+        example: 50
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'The number of page for pagination.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      search:
+        name: search
+        description: 'The keyword for the title of the items.'
+        required: false
+        example: null
+        type: string
+        custom: []
+      item_size_ids:
+        name: item_size_ids
+        description: 'Array of ids from size ids.'
+        required: false
+        example: null
+        type: 'integer[]'
+        custom: []
+      item_color_ids:
+        name: item_color_ids
+        description: 'Array of ids from color ids.'
+        required: false
+        example: null
+        type: 'integer[]'
+        custom: []
+      brand_id:
+        name: brand_id
+        description: 'The id of the brand to filter.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      item_category_id:
+        name: item_category_id
+        description: 'The id of the category to filter.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      item_person_type_id:
+        name: item_person_type_id
+        description: 'The id of the gender to filter.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      min_price:
+        name: min_price
+        description: 'The minimum price of the product to filter. 1000000'
+        required: false
+        example: 4
+        type: integer
+        custom: []
+      max_price:
+        name: max_price
+        description: 'The maximum price of the product to filter.'
+        required: false
+        example: null
+        type: integer
+        custom: []
+      is_sale:
+        name: is_sale
+        description: 'True or False to get the list of items with sales.'
+        required: false
+        example: null
+        type: boolean
+        custom: []
+      order_by:
+        name: order_by
+        description: |-
+          <p>integer 1 to 5 for ordering</p>
+          <p>For 1: trending</p>
+          <p>For 2: new products</p>
+          <p>For 3: old products</p>
+          <p>For 4: most popular</p>
+          <p>For 5: latest listing</p>
+          <p>For 6: featured items</p>
+          <p>For 7: price high to low</p>
+          <p>For 8: price low to high</p>.
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanQueryParameters:
+      limit: 50
+      page: 1
+      min_price: 4
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item","per_page":50,"to":null,"total":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '52'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/item/{slug}'
+    metadata:
+      groupName: Item
+      groupDescription: |-
+
+        APIs for managing item
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get the specific item by its slug.'
+      description: 'This endpoint lets you get the specific item by using its slug'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the item.'
+        required: true
+        example: neque
+        type: string
+        custom: []
+    cleanUrlParameters:
+      slug: neque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":null,"slug":null,"sku":null,"name":null,"description":null,"thumbnail_url":false,"brand_id":null,"views_count":null,"media":[],"created_at":"01\/01\/1970 00:00","updated_at":"01\/01\/1970 00:00"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

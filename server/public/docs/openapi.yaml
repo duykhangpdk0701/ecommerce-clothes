@@ -1,0 +1,4578 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/v1/address:
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Address
+      security: []
+  '/api/v1/address/{address_id}':
+    delete:
+      summary: 'Remove specific address from current customer.'
+      operationId: removeSpecificAddressFromCurrentCustomer
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Address
+      security: []
+    parameters:
+      -
+        in: path
+        name: address_id
+        description: 'The ID of the address.'
+        example: 19
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/brand:
+    get:
+      summary: 'Get a list of brands.'
+      operationId: getAListOfBrands
+      description: 'This endpoint lets you get a list of brands'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Brand'
+      security: []
+    post:
+      summary: 'Create a new Brand'
+      operationId: createANewBrand
+      description: 'This endpoint lets you create a brand'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Brand'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: null
+                slug:
+                  type: string
+                  description: ''
+                  example: null
+                order:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+  '/api/v1/admin/brand/{id}':
+    put:
+      summary: 'Update Brand'
+      operationId: updateBrand
+      description: 'This endpoint lets you update brands'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Brand'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: hic
+                slug:
+                  type: string
+                  description: ''
+                  example: null
+                order:
+                  type: string
+                  description: ''
+                  example: null
+      security: []
+    delete:
+      summary: 'Delete Brand'
+      operationId: deleteBrand
+      description: 'This endpoint lets you delete brands'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Brand'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the brand.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/auth/login:
+    post:
+      summary: Login.
+      operationId: login
+      description: 'This endpoint let the user login to the system and return them with a token for authenticate on authenticated endpoints'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                nullable: true
+      tags:
+        - 'Authentication Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: required.
+                  example: user@test.com
+                password:
+                  type: string
+                  description: required.
+                  example: password
+      security: []
+  /api/auth/register:
+    post:
+      summary: Register.
+      operationId: register
+      description: 'This endpoint let the user register to the account.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Authentication Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'The first name of the user.'
+                  example: null
+                last_name:
+                  type: string
+                  description: 'The last name of the user.'
+                  example: null
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: null
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: null
+                agree_ckb:
+                  type: boolean
+                  description: 'Agree to the terms.'
+                  example: true
+                password_confirmation:
+                  type: string
+                  description: 'The password confirmation of the user.'
+                  example: null
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - agree_ckb
+                - password_confirmation
+      security: []
+  '/api/auth/oauth/{driver}/callback':
+    post:
+      summary: 'Login social callback.'
+      operationId: loginSocialCallback
+      description: 'This endpoint let the user login to the system by the social media and return them with a token for authenticate on authenticated endpoints'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                nullable: true
+      tags:
+        - 'Authentication Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'The email of the user.'
+                  example: example@gmail.com
+                id:
+                  type: string
+                  description: 'The id of the user.'
+                  example: '12345678'
+                name:
+                  type: string
+                  description: 'The name of the user.'
+                  example: 'NT Mkey'
+                token:
+                  type: string
+                  description: 'The token of the user.'
+                  example: ABCDXYZ...
+                avatar:
+                  type: url
+                  description: 'The avatar of the user.'
+                  example: null
+              required:
+                - email
+                - id
+                - name
+                - token
+      security: []
+    parameters:
+      -
+        in: path
+        name: driver
+        description: 'Optional parameter. required.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: facebook
+  /api/auth/user:
+    get:
+      summary: 'Get the user detail'
+      operationId: getTheUserDetail
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                nullable: true
+      tags:
+        - 'Authentication Endpoints'
+  /api/auth/logout:
+    post:
+      summary: Logout.
+      operationId: logout
+      description: 'Log the user out of the system and provoke the Bearer Key'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: 'true'
+                  data: []
+                  error: ''
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+                  data:
+                    type: array
+                    example: []
+                  error:
+                    type: string
+                    example: ''
+      tags:
+        - 'Authentication Endpoints'
+  /api/v1/brand:
+    get:
+      summary: 'Get a list of brands.'
+      operationId: getAListOfBrands
+      description: 'This endpoint lets you get a list of brands'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                    last: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: null
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v1/brand'
+                    per_page: 50
+                    to: null
+                    total: 0
+                properties:
+                  data:
+                    type: array
+                    example: []
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: string
+                        example: null
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/brand?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/brand'
+                      per_page:
+                        type: integer
+                        example: 50
+                      to:
+                        type: string
+                        example: null
+                      total:
+                        type: integer
+                        example: 0
+      tags:
+        - Brand
+      security: []
+  /api/v1/cart/add-to-cart:
+    post:
+      summary: 'Create cart session and add to quote.'
+      operationId: createCartSessionAndAddToQuote
+      description: 'This endpoint lets you Add item to cart.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_variant:
+                  type: integer
+                  description: 'The id of the item stock.'
+                  example: 1
+                quote_id:
+                  type: integer
+                  description: "The id of the quote is optional because if add the first item to quote, you don't need quote id."
+                  example: 1
+                quantity:
+                  type: integer
+                  description: 'The quantity of the item stock.'
+                  example: 1
+              required:
+                - item_variant
+  /api/v1/cart/plus-cart:
+    put:
+      summary: 'Plus item quantity.'
+      operationId: plusItemQuantity
+      description: 'This endpoint lets you Plus item quantity if have item same variant and price.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quote_detail_id:
+                  type: integer
+                  description: 'The id of the quote item.'
+                  example: 1
+                quote_id:
+                  type: integer
+                  description: 'The id of the quote'
+                  example: 1
+              required:
+                - quote_detail_id
+                - quote_id
+  /api/v1/cart/minus-cart:
+    put:
+      summary: 'Minus item quantity.'
+      operationId: minusItemQuantity
+      description: 'This endpoint lets you Minus item quantity if have item same variant and price.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quote_detail_id:
+                  type: integer
+                  description: 'The id of the quote item.'
+                  example: 1
+                quote_id:
+                  type: integer
+                  description: 'The id of the quote'
+                  example: 1
+              required:
+                - quote_detail_id
+                - quote_id
+  /api/v1/cart/delete-item-cart:
+    put:
+      summary: 'Delete item quantity.'
+      operationId: deleteItemQuantity
+      description: 'This endpoint lets you Delete item if the item is final item the quote will delete .'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quote_detail_id:
+                  type: integer
+                  description: 'The id of the quote item.'
+                  example: 1
+                quote_id:
+                  type: integer
+                  description: 'The id of the quote'
+                  example: 1
+              required:
+                - quote_detail_id
+                - quote_id
+  /api/v1/cart/get-quote-by-user:
+    get:
+      summary: 'Get quote by user'
+      operationId: getQuoteByUser
+      description: 'This endpoint lets you Get data quote by user.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Cart
+  /api/v1/cart/payment-method:
+    get:
+      summary: 'Get a list payment method'
+      operationId: getAListPaymentMethod
+      description: 'This endpoint lets you Get a list payment method.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Cart
+  /api/v1/cart/confirm-checkout:
+    post:
+      summary: 'Confirm checkout.'
+      operationId: confirmCheckout
+      description: 'This endpoint lets you Confirm checkout your order.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quote_id:
+                  type: integer
+                  description: 'The id of quote.'
+                  example: 10
+                shipping_name:
+                  type: string
+                  description: 'Receiver name.'
+                  example: Woo.
+                shipping_city_id:
+                  type: integer
+                  description: "The id of receiver's city address."
+                  example: 15
+                shipping_district_id:
+                  type: integer
+                  description: "The id of receiver's district address."
+                  example: 16
+                shipping_ward_id:
+                  type: integer
+                  description: "The id of receiver's ward address."
+                  example: 17
+                shipping_address:
+                  type: string
+                  description: 'Receiver address.'
+                  example: '324 đường Hoà Hưng'
+                shipping_phone:
+                  type: numeric
+                  description: 'Receiver phone.'
+                  example: '0987654321'
+                comment:
+                  type: string
+                  description: 'If buyer want to note something.'
+                  example: 'Oke oke'
+                payment_method_id:
+                  type: integer
+                  description: 'The id of payment method.'
+                  example: 2
+              required:
+                - quote_id
+                - shipping_name
+                - shipping_city_id
+                - shipping_district_id
+                - shipping_address
+                - shipping_phone
+                - payment_method_id
+  /api/v1/destination/city:
+    get:
+      summary: 'Get list of city'
+      operationId: getListOfCity
+      description: 'This endpoint lets you get a list of cities.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      code: SG
+                      name: 'Hồ Chí Minh'
+                      slug: ho-chi-minh
+                      geometry: null
+                      center: '[10.757247,106.688083]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.376389,106.356438],\"br\":[11.159539,107.025276]}'
+                      status: 1
+                      pre: 'Thành Phố'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 2
+                      code: HN
+                      name: 'Hà Nội'
+                      slug: ha-noi
+                      geometry: null
+                      center: '[20.984664,105.694534]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.564646,105.286415],\"br\":[21.38542,106.019333]}'
+                      status: 1
+                      pre: 'Thành Phố'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 3
+                      code: BD
+                      name: 'Bình Dương'
+                      slug: binh-duong
+                      geometry: null
+                      center: '[11.216343,106.65744]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.863709,106.326019],\"br\":[11.50093,106.966377]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 4
+                      code: DDN
+                      name: 'Đà Nẵng'
+                      slug: da-nang
+                      geometry: null
+                      center: '[16.06868,108.06079]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[15.918026,107.818306],\"br\":[16.225834,108.338333]}'
+                      status: 1
+                      pre: 'Thành Phố'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 5
+                      code: HP
+                      name: 'Hải Phòng'
+                      slug: hai-phong
+                      geometry: null
+                      center: '[20.797081,106.680731]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.125416,106.399834],\"br\":[21.021355,107.741531]}'
+                      status: 1
+                      pre: 'Thành Phố'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 6
+                      code: LA
+                      name: 'Long An'
+                      slug: long-an
+                      geometry: null
+                      center: '[10.729866,106.170748]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.395407,105.498062],\"br\":[11.032491,106.748184]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 7
+                      code: VT
+                      name: 'Bà Rịa Vũng Tàu'
+                      slug: ba-ria-vung-tau
+                      geometry: null
+                      center: '[10.505614,107.257545]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[8.605942,106.141502],\"br\":[10.803907,107.582169]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 8
+                      code: AG
+                      name: 'An Giang'
+                      slug: an-giang
+                      geometry: null
+                      center: '[10.511902,105.182456]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.183516,104.777702],\"br\":[10.961942,105.575272]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 9
+                      code: BG
+                      name: 'Bắc Giang'
+                      slug: bac-giang
+                      geometry: null
+                      center: '[21.357592,106.480077]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.122089,105.879807],\"br\":[21.626417,107.033302]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 10
+                      code: BK
+                      name: 'Bắc Kạn'
+                      slug: bac-kan
+                      geometry: null
+                      center: '[22.261402,105.825962]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.80448,105.430305],\"br\":[22.739758,106.246216]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 11
+                      code: BL
+                      name: 'Bạc Liêu'
+                      slug: bac-lieu
+                      geometry: null
+                      center: '[9.312847,105.490629]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.018334,105.23217],\"br\":[9.637437,105.859848]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 12
+                      code: BN
+                      name: 'Bắc Ninh'
+                      slug: bac-ninh
+                      geometry: null
+                      center: '[21.109244,106.105552]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.969255,105.903397],\"br\":[21.264437,106.311195]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 13
+                      code: BTR
+                      name: 'Bến Tre'
+                      slug: ben-tre
+                      geometry: null
+                      center: '[10.123362,106.463537]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.8025,106.027908],\"br\":[10.340414,106.791946]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 14
+                      code: BDD
+                      name: 'Bình Định'
+                      slug: binh-dinh
+                      geometry: null
+                      center: '[14.123471,108.948353]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[13.515251,108.600868],\"br\":[14.703255,109.363579]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 15
+                      code: BP
+                      name: 'Bình Phước'
+                      slug: binh-phuoc
+                      geometry: null
+                      center: '[11.753991,106.908488]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[11.300597,106.411568],\"br\":[12.297761,107.428574]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 16
+                      code: BTH
+                      name: 'Bình Thuận  '
+                      slug: binh-thuan
+                      geometry: null
+                      center: '[11.117985,108.048481]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.970021,107.393898],\"br\":[11.555672,109.085228]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 17
+                      code: CM
+                      name: 'Cà Mau'
+                      slug: ca-mau
+                      geometry: null
+                      center: '[9.052314,105.041091]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[8.563332,104.71228],\"br\":[9.562001,105.418854]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 18
+                      code: CT
+                      name: 'Cần Thơ'
+                      slug: can-tho
+                      geometry: null
+                      center: '[10.114459,105.530314]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.919375,105.225952],\"br\":[10.325283,105.844528]}'
+                      status: 1
+                      pre: 'Thành Phố'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 19
+                      code: CB
+                      name: 'Cao Bằng'
+                      slug: cao-bang
+                      geometry: null
+                      center: '[22.744814,106.086098]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[22.357077,105.270691],\"br\":[23.118378,106.839462]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 20
+                      code: DDL
+                      name: 'Đắk Lắk'
+                      slug: dak-lak
+                      geometry: null
+                      center: '[12.822864,108.212195]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[12.160808,107.484589],\"br\":[13.416621,108.994995]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 21
+                      code: DNO
+                      name: 'Đắk Nông'
+                      slug: dak-nong
+                      geometry: null
+                      center: '[12.228169,107.688114]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[11.748837,107.205612],\"br\":[12.812443,108.116074]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 22
+                      code: DDB
+                      name: 'Điện Biên'
+                      slug: dien-bien
+                      geometry: null
+                      center: '[21.711865,103.024127]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.893721,102.144997],\"br\":[22.558617,103.598755]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 23
+                      code: DNA
+                      name: 'Đồng Nai'
+                      slug: dong-nai
+                      geometry: null
+                      center: '[11.05912,107.185551]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.5825,106.750854],\"br\":[11.582002,107.577003]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 24
+                      code: DDT
+                      name: 'Đồng Tháp'
+                      slug: dong-thap
+                      geometry: null
+                      center: '[10.564178,105.607849]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.13411,105.186996],\"br\":[10.974042,105.941788]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 25
+                      code: GL
+                      name: 'Gia Lai'
+                      slug: gia-lai
+                      geometry: null
+                      center: '[13.836168,108.176693]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[12.995756,107.332596],\"br\":[14.603214,108.872993]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 26
+                      code: HG
+                      name: 'Hà Giang'
+                      slug: ha-giang
+                      geometry: null
+                      center: '[22.768131,104.978648]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[22.165707,104.334457],\"br\":[23.392731,105.591957]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 27
+                      code: HNA
+                      name: 'Hà Nam'
+                      slug: ha-nam
+                      geometry: null
+                      center: '[20.540466,105.966171]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.363047,105.767967],\"br\":[20.704515,106.182594]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 28
+                      code: HT
+                      name: 'Hà Tĩnh'
+                      slug: ha-tinh
+                      geometry: null
+                      center: '[18.289829,105.735791]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[17.914446,105.102798],\"br\":[18.763668,106.510956]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 29
+                      code: HD
+                      name: 'Hải Dương'
+                      slug: hai-duong
+                      geometry: null
+                      center: '[20.930437,106.360545]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.684511,106.123634],\"br\":[21.237133,106.610718]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 30
+                      code: HGI
+                      name: 'Hậu Giang'
+                      slug: hau-giang
+                      geometry: null
+                      center: '[9.78422,105.624155]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.582134,105.328201],\"br\":[9.994104,105.896492]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 31
+                      code: HB
+                      name: 'Hòa Bình'
+                      slug: hoa-binh
+                      geometry: null
+                      center: '[20.68115,105.333461]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.305492,104.835709],\"br\":[21.112904,105.86142]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 32
+                      code: HY
+                      name: 'Hưng Yên'
+                      slug: hung-yen
+                      geometry: null
+                      center: '[20.814655,106.059667]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.603228,105.894585],\"br\":[21.007345,106.268806]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 33
+                      code: KH
+                      name: 'Khánh Hòa'
+                      slug: khanh-hoa
+                      geometry: null
+                      center: '[12.330741,109.037494]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[11.804438,108.670708],\"br\":[12.868547,109.469429]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 34
+                      code: KG
+                      name: 'Kiên Giang'
+                      slug: kien-giang
+                      geometry: null
+                      center: '[9.995757,104.942883]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.253889,103.458206],\"br\":[10.5395,105.538979]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 35
+                      code: KT
+                      name: 'Kon Tum'
+                      slug: kon-tum
+                      geometry: null
+                      center: '[14.729829,107.941858]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[14.202184,107.466225],\"br\":[15.417597,108.546501]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 36
+                      code: LCH
+                      name: 'Lai Châu'
+                      slug: lai-chau
+                      geometry: null
+                      center: '[22.317125,103.188826]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.684601,102.324944],\"br\":[22.81735,103.984665]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 37
+                      code: LDD
+                      name: 'Lâm Đồng'
+                      slug: lam-dong
+                      geometry: null
+                      center: '[11.750981,108.095559]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[11.215216,107.265427],\"br\":[12.317454,108.731659]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 38
+                      code: LS
+                      name: 'Lạng Sơn'
+                      slug: lang-son
+                      geometry: null
+                      center: '[21.839172,106.620767]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.325293,106.094604],\"br\":[22.46162,107.363777]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 39
+                      code: LCA
+                      name: 'Lào Cai'
+                      slug: lao-cai
+                      geometry: null
+                      center: '[22.364795,104.113051]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.875256,103.531601],\"br\":[22.84444,104.627815]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 40
+                      code: NDD
+                      name: 'Nam Định'
+                      slug: nam-dinh
+                      geometry: null
+                      center: '[20.261889,106.212518]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[19.909447,105.923332],\"br\":[20.499325,106.587219]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 41
+                      code: NA
+                      name: 'Nghệ An'
+                      slug: nghe-an
+                      geometry: null
+                      center: '[19.23701,104.944252]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[18.552223,103.871849],\"br\":[19.998468,105.806389]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 42
+                      code: NB
+                      name: 'Ninh Bình'
+                      slug: ninh-binh
+                      geometry: null
+                      center: '[20.220043,105.903042]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[19.911539,105.54203],\"br\":[20.454838,106.167496]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 43
+                      code: NT
+                      name: 'Ninh Thuận'
+                      slug: ninh-thuan
+                      geometry: null
+                      center: '[11.705857,108.869399]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[11.30691,108.551384],\"br\":[12.164548,109.233086]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 44
+                      code: PT
+                      name: 'Phú Thọ'
+                      slug: phu-tho
+                      geometry: null
+                      center: '[21.319065,105.115366]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.917162,104.814606],\"br\":[21.719788,105.456047]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 45
+                      code: PY
+                      name: 'Phú Yên'
+                      slug: phu-yen
+                      geometry: null
+                      center: '[13.169248,109.057957]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[12.7065,108.672783],\"br\":[13.695185,109.459076]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 46
+                      code: QB
+                      name: 'Quảng Bình'
+                      slug: quang-binh
+                      geometry: null
+                      center: '[17.531495,106.293709]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[16.921461,105.607048],\"br\":[18.089975,106.994858]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 47
+                      code: QNA
+                      name: 'Quảng Nam'
+                      slug: quang-nam
+                      geometry: null
+                      center: '[15.590249,107.955331]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[14.951411,107.210426],\"br\":[16.067146,108.738052]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 48
+                      code: QNG
+                      name: 'Quảng Ngãi'
+                      slug: quang-ngai
+                      geometry: null
+                      center: '[14.991953,108.649429]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[14.53278,108.235069],\"br\":[15.433891,109.144165]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 49
+                      code: QNI
+                      name: 'Quảng Ninh'
+                      slug: quang-ninh
+                      geometry: null
+                      center: '[21.241828,107.277517]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.715969,106.438423],\"br\":[21.664671,108.078751]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 50
+                      code: QT
+                      name: 'Quảng Trị'
+                      slug: quang-tri
+                      geometry: null
+                      center: '[16.745621,106.929312]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[16.301567,106.513741],\"br\":[17.168009,107.38707]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 51
+                      code: ST
+                      name: 'Sóc Trăng'
+                      slug: soc-trang
+                      geometry: null
+                      center: '[9.558321,105.924201]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.24361,105.543335],\"br\":[9.938053,106.29361]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 52
+                      code: SL
+                      name: 'Sơn La'
+                      slug: son-la
+                      geometry: null
+                      center: '[21.192572,104.070959]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.573133,103.213745],\"br\":[22.028542,105.024544]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 53
+                      code: TNI
+                      name: 'Tây Ninh'
+                      slug: tay-ninh
+                      geometry: null
+                      center: '[11.403808,106.161312]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.962522,105.809471],\"br\":[11.78229,106.492058]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 54
+                      code: TB
+                      name: 'Thái Bình'
+                      slug: thai-binh
+                      geometry: null
+                      center: '[20.505329,106.391967]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[20.25139,106.108948],\"br\":[20.729122,106.648888]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 55
+                      code: TN
+                      name: 'Thái Nguyên'
+                      slug: thai-nguyen
+                      geometry: null
+                      center: '[21.692793,105.823101]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.325483,105.476715],\"br\":[22.048016,106.237228]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 56
+                      code: TH
+                      name: 'Thanh Hóa'
+                      slug: thanh-hoa
+                      geometry: null
+                      center: '[20.04564,105.319113]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[19.286894,104.375175],\"br\":[20.670799,106.075165]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 57
+                      code: TTH
+                      name: 'Thừa Thiên Huế'
+                      slug: thua-thien-hue
+                      geometry: null
+                      center: '[16.327114,107.499866]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[15.994475,107.015701],\"br\":[16.742371,108.194328]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 58
+                      code: TG
+                      name: 'Tiền Giang'
+                      slug: tien-giang
+                      geometry: null
+                      center: '[10.397279,106.304772]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.198738,105.815399],\"br\":[10.587139,106.787163]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 59
+                      code: TV
+                      name: 'Trà Vinh'
+                      slug: tra-vinh
+                      geometry: null
+                      center: '[9.79611,106.30693]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.52889,105.954414],\"br\":[10.081751,106.579514]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 60
+                      code: TQ
+                      name: 'Tuyên Quang'
+                      slug: tuyen-quang
+                      geometry: null
+                      center: '[22.113017,105.26727]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.49773,104.847763],\"br\":[22.696123,105.597488]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 61
+                      code: VL
+                      name: 'Vĩnh Long'
+                      slug: vinh-long
+                      geometry: null
+                      center: '[10.101617,105.990724]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[9.882843,105.682487],\"br\":[10.330639,106.289337]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 62
+                      code: VP
+                      name: 'Vĩnh Phúc'
+                      slug: vinh-phuc
+                      geometry: null
+                      center: '[21.352881,105.564836]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.121784,105.321693],\"br\":[21.573984,105.785797]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 63
+                      code: YB
+                      name: 'Yên Bái'
+                      slug: yen-bai
+                      geometry: null
+                      center: '[21.776779,104.567928]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[21.326056,103.885384],\"br\":[22.292011,105.099525]}'
+                      status: 1
+                      pre: Tỉnh
+                      created_at: null
+                      updated_at: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        code: SG
+                        name: 'Hồ Chí Minh'
+                        slug: ho-chi-minh
+                        geometry: null
+                        center: '[10.757247,106.688083]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.376389,106.356438],\"br\":[11.159539,107.025276]}'
+                        status: 1
+                        pre: 'Thành Phố'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 2
+                        code: HN
+                        name: 'Hà Nội'
+                        slug: ha-noi
+                        geometry: null
+                        center: '[20.984664,105.694534]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.564646,105.286415],\"br\":[21.38542,106.019333]}'
+                        status: 1
+                        pre: 'Thành Phố'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 3
+                        code: BD
+                        name: 'Bình Dương'
+                        slug: binh-duong
+                        geometry: null
+                        center: '[11.216343,106.65744]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.863709,106.326019],\"br\":[11.50093,106.966377]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 4
+                        code: DDN
+                        name: 'Đà Nẵng'
+                        slug: da-nang
+                        geometry: null
+                        center: '[16.06868,108.06079]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[15.918026,107.818306],\"br\":[16.225834,108.338333]}'
+                        status: 1
+                        pre: 'Thành Phố'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 5
+                        code: HP
+                        name: 'Hải Phòng'
+                        slug: hai-phong
+                        geometry: null
+                        center: '[20.797081,106.680731]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.125416,106.399834],\"br\":[21.021355,107.741531]}'
+                        status: 1
+                        pre: 'Thành Phố'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 6
+                        code: LA
+                        name: 'Long An'
+                        slug: long-an
+                        geometry: null
+                        center: '[10.729866,106.170748]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.395407,105.498062],\"br\":[11.032491,106.748184]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 7
+                        code: VT
+                        name: 'Bà Rịa Vũng Tàu'
+                        slug: ba-ria-vung-tau
+                        geometry: null
+                        center: '[10.505614,107.257545]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[8.605942,106.141502],\"br\":[10.803907,107.582169]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 8
+                        code: AG
+                        name: 'An Giang'
+                        slug: an-giang
+                        geometry: null
+                        center: '[10.511902,105.182456]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.183516,104.777702],\"br\":[10.961942,105.575272]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 9
+                        code: BG
+                        name: 'Bắc Giang'
+                        slug: bac-giang
+                        geometry: null
+                        center: '[21.357592,106.480077]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.122089,105.879807],\"br\":[21.626417,107.033302]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 10
+                        code: BK
+                        name: 'Bắc Kạn'
+                        slug: bac-kan
+                        geometry: null
+                        center: '[22.261402,105.825962]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.80448,105.430305],\"br\":[22.739758,106.246216]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 11
+                        code: BL
+                        name: 'Bạc Liêu'
+                        slug: bac-lieu
+                        geometry: null
+                        center: '[9.312847,105.490629]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.018334,105.23217],\"br\":[9.637437,105.859848]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 12
+                        code: BN
+                        name: 'Bắc Ninh'
+                        slug: bac-ninh
+                        geometry: null
+                        center: '[21.109244,106.105552]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.969255,105.903397],\"br\":[21.264437,106.311195]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 13
+                        code: BTR
+                        name: 'Bến Tre'
+                        slug: ben-tre
+                        geometry: null
+                        center: '[10.123362,106.463537]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.8025,106.027908],\"br\":[10.340414,106.791946]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 14
+                        code: BDD
+                        name: 'Bình Định'
+                        slug: binh-dinh
+                        geometry: null
+                        center: '[14.123471,108.948353]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[13.515251,108.600868],\"br\":[14.703255,109.363579]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 15
+                        code: BP
+                        name: 'Bình Phước'
+                        slug: binh-phuoc
+                        geometry: null
+                        center: '[11.753991,106.908488]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[11.300597,106.411568],\"br\":[12.297761,107.428574]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 16
+                        code: BTH
+                        name: 'Bình Thuận  '
+                        slug: binh-thuan
+                        geometry: null
+                        center: '[11.117985,108.048481]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.970021,107.393898],\"br\":[11.555672,109.085228]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 17
+                        code: CM
+                        name: 'Cà Mau'
+                        slug: ca-mau
+                        geometry: null
+                        center: '[9.052314,105.041091]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[8.563332,104.71228],\"br\":[9.562001,105.418854]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 18
+                        code: CT
+                        name: 'Cần Thơ'
+                        slug: can-tho
+                        geometry: null
+                        center: '[10.114459,105.530314]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.919375,105.225952],\"br\":[10.325283,105.844528]}'
+                        status: 1
+                        pre: 'Thành Phố'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 19
+                        code: CB
+                        name: 'Cao Bằng'
+                        slug: cao-bang
+                        geometry: null
+                        center: '[22.744814,106.086098]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[22.357077,105.270691],\"br\":[23.118378,106.839462]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 20
+                        code: DDL
+                        name: 'Đắk Lắk'
+                        slug: dak-lak
+                        geometry: null
+                        center: '[12.822864,108.212195]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[12.160808,107.484589],\"br\":[13.416621,108.994995]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 21
+                        code: DNO
+                        name: 'Đắk Nông'
+                        slug: dak-nong
+                        geometry: null
+                        center: '[12.228169,107.688114]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[11.748837,107.205612],\"br\":[12.812443,108.116074]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 22
+                        code: DDB
+                        name: 'Điện Biên'
+                        slug: dien-bien
+                        geometry: null
+                        center: '[21.711865,103.024127]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.893721,102.144997],\"br\":[22.558617,103.598755]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 23
+                        code: DNA
+                        name: 'Đồng Nai'
+                        slug: dong-nai
+                        geometry: null
+                        center: '[11.05912,107.185551]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.5825,106.750854],\"br\":[11.582002,107.577003]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 24
+                        code: DDT
+                        name: 'Đồng Tháp'
+                        slug: dong-thap
+                        geometry: null
+                        center: '[10.564178,105.607849]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.13411,105.186996],\"br\":[10.974042,105.941788]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 25
+                        code: GL
+                        name: 'Gia Lai'
+                        slug: gia-lai
+                        geometry: null
+                        center: '[13.836168,108.176693]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[12.995756,107.332596],\"br\":[14.603214,108.872993]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 26
+                        code: HG
+                        name: 'Hà Giang'
+                        slug: ha-giang
+                        geometry: null
+                        center: '[22.768131,104.978648]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[22.165707,104.334457],\"br\":[23.392731,105.591957]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 27
+                        code: HNA
+                        name: 'Hà Nam'
+                        slug: ha-nam
+                        geometry: null
+                        center: '[20.540466,105.966171]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.363047,105.767967],\"br\":[20.704515,106.182594]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 28
+                        code: HT
+                        name: 'Hà Tĩnh'
+                        slug: ha-tinh
+                        geometry: null
+                        center: '[18.289829,105.735791]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[17.914446,105.102798],\"br\":[18.763668,106.510956]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 29
+                        code: HD
+                        name: 'Hải Dương'
+                        slug: hai-duong
+                        geometry: null
+                        center: '[20.930437,106.360545]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.684511,106.123634],\"br\":[21.237133,106.610718]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 30
+                        code: HGI
+                        name: 'Hậu Giang'
+                        slug: hau-giang
+                        geometry: null
+                        center: '[9.78422,105.624155]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.582134,105.328201],\"br\":[9.994104,105.896492]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 31
+                        code: HB
+                        name: 'Hòa Bình'
+                        slug: hoa-binh
+                        geometry: null
+                        center: '[20.68115,105.333461]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.305492,104.835709],\"br\":[21.112904,105.86142]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 32
+                        code: HY
+                        name: 'Hưng Yên'
+                        slug: hung-yen
+                        geometry: null
+                        center: '[20.814655,106.059667]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.603228,105.894585],\"br\":[21.007345,106.268806]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 33
+                        code: KH
+                        name: 'Khánh Hòa'
+                        slug: khanh-hoa
+                        geometry: null
+                        center: '[12.330741,109.037494]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[11.804438,108.670708],\"br\":[12.868547,109.469429]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 34
+                        code: KG
+                        name: 'Kiên Giang'
+                        slug: kien-giang
+                        geometry: null
+                        center: '[9.995757,104.942883]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.253889,103.458206],\"br\":[10.5395,105.538979]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 35
+                        code: KT
+                        name: 'Kon Tum'
+                        slug: kon-tum
+                        geometry: null
+                        center: '[14.729829,107.941858]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[14.202184,107.466225],\"br\":[15.417597,108.546501]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 36
+                        code: LCH
+                        name: 'Lai Châu'
+                        slug: lai-chau
+                        geometry: null
+                        center: '[22.317125,103.188826]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.684601,102.324944],\"br\":[22.81735,103.984665]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 37
+                        code: LDD
+                        name: 'Lâm Đồng'
+                        slug: lam-dong
+                        geometry: null
+                        center: '[11.750981,108.095559]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[11.215216,107.265427],\"br\":[12.317454,108.731659]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 38
+                        code: LS
+                        name: 'Lạng Sơn'
+                        slug: lang-son
+                        geometry: null
+                        center: '[21.839172,106.620767]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.325293,106.094604],\"br\":[22.46162,107.363777]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 39
+                        code: LCA
+                        name: 'Lào Cai'
+                        slug: lao-cai
+                        geometry: null
+                        center: '[22.364795,104.113051]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.875256,103.531601],\"br\":[22.84444,104.627815]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 40
+                        code: NDD
+                        name: 'Nam Định'
+                        slug: nam-dinh
+                        geometry: null
+                        center: '[20.261889,106.212518]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[19.909447,105.923332],\"br\":[20.499325,106.587219]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 41
+                        code: NA
+                        name: 'Nghệ An'
+                        slug: nghe-an
+                        geometry: null
+                        center: '[19.23701,104.944252]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[18.552223,103.871849],\"br\":[19.998468,105.806389]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 42
+                        code: NB
+                        name: 'Ninh Bình'
+                        slug: ninh-binh
+                        geometry: null
+                        center: '[20.220043,105.903042]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[19.911539,105.54203],\"br\":[20.454838,106.167496]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 43
+                        code: NT
+                        name: 'Ninh Thuận'
+                        slug: ninh-thuan
+                        geometry: null
+                        center: '[11.705857,108.869399]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[11.30691,108.551384],\"br\":[12.164548,109.233086]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 44
+                        code: PT
+                        name: 'Phú Thọ'
+                        slug: phu-tho
+                        geometry: null
+                        center: '[21.319065,105.115366]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.917162,104.814606],\"br\":[21.719788,105.456047]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 45
+                        code: PY
+                        name: 'Phú Yên'
+                        slug: phu-yen
+                        geometry: null
+                        center: '[13.169248,109.057957]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[12.7065,108.672783],\"br\":[13.695185,109.459076]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 46
+                        code: QB
+                        name: 'Quảng Bình'
+                        slug: quang-binh
+                        geometry: null
+                        center: '[17.531495,106.293709]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[16.921461,105.607048],\"br\":[18.089975,106.994858]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 47
+                        code: QNA
+                        name: 'Quảng Nam'
+                        slug: quang-nam
+                        geometry: null
+                        center: '[15.590249,107.955331]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[14.951411,107.210426],\"br\":[16.067146,108.738052]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 48
+                        code: QNG
+                        name: 'Quảng Ngãi'
+                        slug: quang-ngai
+                        geometry: null
+                        center: '[14.991953,108.649429]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[14.53278,108.235069],\"br\":[15.433891,109.144165]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 49
+                        code: QNI
+                        name: 'Quảng Ninh'
+                        slug: quang-ninh
+                        geometry: null
+                        center: '[21.241828,107.277517]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.715969,106.438423],\"br\":[21.664671,108.078751]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 50
+                        code: QT
+                        name: 'Quảng Trị'
+                        slug: quang-tri
+                        geometry: null
+                        center: '[16.745621,106.929312]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[16.301567,106.513741],\"br\":[17.168009,107.38707]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 51
+                        code: ST
+                        name: 'Sóc Trăng'
+                        slug: soc-trang
+                        geometry: null
+                        center: '[9.558321,105.924201]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.24361,105.543335],\"br\":[9.938053,106.29361]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 52
+                        code: SL
+                        name: 'Sơn La'
+                        slug: son-la
+                        geometry: null
+                        center: '[21.192572,104.070959]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.573133,103.213745],\"br\":[22.028542,105.024544]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 53
+                        code: TNI
+                        name: 'Tây Ninh'
+                        slug: tay-ninh
+                        geometry: null
+                        center: '[11.403808,106.161312]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.962522,105.809471],\"br\":[11.78229,106.492058]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 54
+                        code: TB
+                        name: 'Thái Bình'
+                        slug: thai-binh
+                        geometry: null
+                        center: '[20.505329,106.391967]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[20.25139,106.108948],\"br\":[20.729122,106.648888]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 55
+                        code: TN
+                        name: 'Thái Nguyên'
+                        slug: thai-nguyen
+                        geometry: null
+                        center: '[21.692793,105.823101]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.325483,105.476715],\"br\":[22.048016,106.237228]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 56
+                        code: TH
+                        name: 'Thanh Hóa'
+                        slug: thanh-hoa
+                        geometry: null
+                        center: '[20.04564,105.319113]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[19.286894,104.375175],\"br\":[20.670799,106.075165]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 57
+                        code: TTH
+                        name: 'Thừa Thiên Huế'
+                        slug: thua-thien-hue
+                        geometry: null
+                        center: '[16.327114,107.499866]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[15.994475,107.015701],\"br\":[16.742371,108.194328]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 58
+                        code: TG
+                        name: 'Tiền Giang'
+                        slug: tien-giang
+                        geometry: null
+                        center: '[10.397279,106.304772]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.198738,105.815399],\"br\":[10.587139,106.787163]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 59
+                        code: TV
+                        name: 'Trà Vinh'
+                        slug: tra-vinh
+                        geometry: null
+                        center: '[9.79611,106.30693]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.52889,105.954414],\"br\":[10.081751,106.579514]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 60
+                        code: TQ
+                        name: 'Tuyên Quang'
+                        slug: tuyen-quang
+                        geometry: null
+                        center: '[22.113017,105.26727]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.49773,104.847763],\"br\":[22.696123,105.597488]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 61
+                        code: VL
+                        name: 'Vĩnh Long'
+                        slug: vinh-long
+                        geometry: null
+                        center: '[10.101617,105.990724]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[9.882843,105.682487],\"br\":[10.330639,106.289337]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 62
+                        code: VP
+                        name: 'Vĩnh Phúc'
+                        slug: vinh-phuc
+                        geometry: null
+                        center: '[21.352881,105.564836]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.121784,105.321693],\"br\":[21.573984,105.785797]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 63
+                        code: YB
+                        name: 'Yên Bái'
+                        slug: yen-bai
+                        geometry: null
+                        center: '[21.776779,104.567928]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[21.326056,103.885384],\"br\":[22.292011,105.099525]}'
+                        status: 1
+                        pre: Tỉnh
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        code:
+                          type: string
+                          example: SG
+                        name:
+                          type: string
+                          example: 'Hồ Chí Minh'
+                        slug:
+                          type: string
+                          example: ho-chi-minh
+                        geometry:
+                          type: string
+                          example: null
+                        center:
+                          type: string
+                          example: '[10.757247,106.688083]'
+                        color:
+                          type: string
+                          example: '#FF0000'
+                        bounding_box:
+                          type: string
+                          example: '{\"tl\":[10.376389,106.356438],\"br\":[11.159539,107.025276]}'
+                        status:
+                          type: integer
+                          example: 1
+                        pre:
+                          type: string
+                          example: 'Thành Phố'
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - Destination
+      security: []
+  '/api/v1/destination/city/{city_id}':
+    get:
+      summary: 'Get a list of districts from city'
+      operationId: getAListOfDistrictsFromCity
+      description: 'This endpoint lets you get a list of districts from city.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 145
+                      city_id: 12
+                      name: 'Bắc Ninh'
+                      slug: bac-ninh-bac-ninh
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: 'Thành phố'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 146
+                      city_id: 12
+                      name: 'Gia Bình'
+                      slug: bac-ninh-gia-binh
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 147
+                      city_id: 12
+                      name: 'Lương Tài'
+                      slug: bac-ninh-luong-tai
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 148
+                      city_id: 12
+                      name: 'Quế Võ'
+                      slug: bac-ninh-que-vo
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 149
+                      city_id: 12
+                      name: 'Thuận Thành'
+                      slug: bac-ninh-thuan-thanh
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 150
+                      city_id: 12
+                      name: 'Tiên Du'
+                      slug: bac-ninh-tien-du
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 151
+                      city_id: 12
+                      name: 'Từ Sơn'
+                      slug: bac-ninh-tu-son
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: 'Thị xã'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 152
+                      city_id: 12
+                      name: 'Yên Phong'
+                      slug: bac-ninh-yen-phong
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 145
+                        city_id: 12
+                        name: 'Bắc Ninh'
+                        slug: bac-ninh-bac-ninh
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: 'Thành phố'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 146
+                        city_id: 12
+                        name: 'Gia Bình'
+                        slug: bac-ninh-gia-binh
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 147
+                        city_id: 12
+                        name: 'Lương Tài'
+                        slug: bac-ninh-luong-tai
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 148
+                        city_id: 12
+                        name: 'Quế Võ'
+                        slug: bac-ninh-que-vo
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 149
+                        city_id: 12
+                        name: 'Thuận Thành'
+                        slug: bac-ninh-thuan-thanh
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 150
+                        city_id: 12
+                        name: 'Tiên Du'
+                        slug: bac-ninh-tien-du
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 151
+                        city_id: 12
+                        name: 'Từ Sơn'
+                        slug: bac-ninh-tu-son
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: 'Thị xã'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 152
+                        city_id: 12
+                        name: 'Yên Phong'
+                        slug: bac-ninh-yen-phong
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 145
+                        city_id:
+                          type: integer
+                          example: 12
+                        name:
+                          type: string
+                          example: 'Bắc Ninh'
+                        slug:
+                          type: string
+                          example: bac-ninh-bac-ninh
+                        geometry:
+                          type: string
+                          example: null
+                        center:
+                          type: string
+                          example: null
+                        color:
+                          type: string
+                          example: null
+                        bounding_box:
+                          type: string
+                          example: null
+                        pre:
+                          type: string
+                          example: 'Thành phố'
+                        order:
+                          type: string
+                          example: null
+                        status:
+                          type: integer
+                          example: 1
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - Destination
+      security: []
+    parameters:
+      -
+        in: path
+        name: city_id
+        description: 'Get district after choose city.'
+        example: 12
+        required: true
+        schema:
+          type: integer
+  '/api/v1/destination/district/{district_id}':
+    get:
+      summary: 'Get a list of wards from district'
+      operationId: getAListOfWardsFromDistrict
+      description: 'This endpoint lets you get a list of districts from city.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 105
+                      city_id: 1
+                      district_id: 8
+                      name: 'Hiệp Phước'
+                      slug: ho-chi-minh-nha-be-hiep-phuoc
+                      geometry: null
+                      center: '[10.608508,106.751715]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 106
+                      city_id: 1
+                      district_id: 8
+                      name: 'Long Thới'
+                      slug: ho-chi-minh-nha-be-long-thoi
+                      geometry: null
+                      center: '[10.653873,106.724979]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.633926,106.700119],\"br\":[10.669222,106.748451]}'
+                      pre: Xã
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 107
+                      city_id: 1
+                      district_id: 8
+                      name: 'Nhà Bè'
+                      slug: ho-chi-minh-nha-be-nha-be
+                      geometry: null
+                      center: '[10.69367,106.741852]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.681742,106.722763],\"br\":[10.704349,106.759819]}'
+                      pre: 'Thị trấn'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 108
+                      city_id: 1
+                      district_id: 8
+                      name: 'Nhơn Đức'
+                      slug: ho-chi-minh-nha-be-nhon-duc
+                      geometry: null
+                      center: '[10.672555,106.699373]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.64864,106.678223],\"br\":[10.694305,106.727921]}'
+                      pre: Xã
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 109
+                      city_id: 1
+                      district_id: 8
+                      name: 'Phú Xuân'
+                      slug: ho-chi-minh-nha-be-phu-xuan
+                      geometry: null
+                      center: '[10.67656,106.749843]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.665042,106.725693],\"br\":[10.690324,106.775848]}'
+                      pre: Xã
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 110
+                      city_id: 1
+                      district_id: 8
+                      name: 'Phước Kiển'
+                      slug: ho-chi-minh-nha-be-phuoc-kien
+                      geometry: null
+                      center: '[10.704274,106.709206]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.6805,106.688087],\"br\":[10.725589,106.72847]}'
+                      pre: Xã
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 111
+                      city_id: 1
+                      district_id: 8
+                      name: 'Phước Lộc'
+                      slug: ho-chi-minh-nha-be-phuoc-loc
+                      geometry: null
+                      center: '[10.69858,106.683571]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.681792,106.672806],\"br\":[10.714979,106.698814]}'
+                      pre: Xã
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 105
+                        city_id: 1
+                        district_id: 8
+                        name: 'Hiệp Phước'
+                        slug: ho-chi-minh-nha-be-hiep-phuoc
+                        geometry: null
+                        center: '[10.608508,106.751715]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 106
+                        city_id: 1
+                        district_id: 8
+                        name: 'Long Thới'
+                        slug: ho-chi-minh-nha-be-long-thoi
+                        geometry: null
+                        center: '[10.653873,106.724979]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.633926,106.700119],\"br\":[10.669222,106.748451]}'
+                        pre: Xã
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 107
+                        city_id: 1
+                        district_id: 8
+                        name: 'Nhà Bè'
+                        slug: ho-chi-minh-nha-be-nha-be
+                        geometry: null
+                        center: '[10.69367,106.741852]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.681742,106.722763],\"br\":[10.704349,106.759819]}'
+                        pre: 'Thị trấn'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 108
+                        city_id: 1
+                        district_id: 8
+                        name: 'Nhơn Đức'
+                        slug: ho-chi-minh-nha-be-nhon-duc
+                        geometry: null
+                        center: '[10.672555,106.699373]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.64864,106.678223],\"br\":[10.694305,106.727921]}'
+                        pre: Xã
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 109
+                        city_id: 1
+                        district_id: 8
+                        name: 'Phú Xuân'
+                        slug: ho-chi-minh-nha-be-phu-xuan
+                        geometry: null
+                        center: '[10.67656,106.749843]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.665042,106.725693],\"br\":[10.690324,106.775848]}'
+                        pre: Xã
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 110
+                        city_id: 1
+                        district_id: 8
+                        name: 'Phước Kiển'
+                        slug: ho-chi-minh-nha-be-phuoc-kien
+                        geometry: null
+                        center: '[10.704274,106.709206]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.6805,106.688087],\"br\":[10.725589,106.72847]}'
+                        pre: Xã
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 111
+                        city_id: 1
+                        district_id: 8
+                        name: 'Phước Lộc'
+                        slug: ho-chi-minh-nha-be-phuoc-loc
+                        geometry: null
+                        center: '[10.69858,106.683571]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.681792,106.672806],\"br\":[10.714979,106.698814]}'
+                        pre: Xã
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 105
+                        city_id:
+                          type: integer
+                          example: 1
+                        district_id:
+                          type: integer
+                          example: 8
+                        name:
+                          type: string
+                          example: 'Hiệp Phước'
+                        slug:
+                          type: string
+                          example: ho-chi-minh-nha-be-hiep-phuoc
+                        geometry:
+                          type: string
+                          example: null
+                        center:
+                          type: string
+                          example: '[10.608508,106.751715]'
+                        color:
+                          type: string
+                          example: '#FF0000'
+                        bounding_box:
+                          type: string
+                          example: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                        pre:
+                          type: string
+                          example: Phường
+                        order:
+                          type: string
+                          example: null
+                        status:
+                          type: integer
+                          example: 1
+                        created_at:
+                          type: string
+                          example: null
+                        updated_at:
+                          type: string
+                          example: null
+      tags:
+        - Destination
+      security: []
+    parameters:
+      -
+        in: path
+        name: district_id
+        description: 'Get ward after choose district.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/v1/item-color:
+    get:
+      summary: 'Get a list of Colors'
+      operationId: getAListOfColors
+      description: 'This endpoint lets you get a list of Colors for the items'
+      parameters:
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                    last: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: null
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v1/item-color'
+                    per_page: 50
+                    to: null
+                    total: 0
+                properties:
+                  data:
+                    type: array
+                    example: []
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: string
+                        example: null
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-color'
+                      per_page:
+                        type: integer
+                        example: 50
+                      to:
+                        type: string
+                        example: null
+                      total:
+                        type: integer
+                        example: 0
+      tags:
+        - Item
+      security: []
+  /api/v1/item-price-ranges:
+    get:
+      summary: 'Get the price ranges.'
+      operationId: getThePriceRanges
+      description: 'This endpoint lets you get the min and max price for the price ranges'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - Item
+      security: []
+  /api/v1/item:
+    get:
+      summary: 'Get a list of items.'
+      operationId: getAListOfItems
+      description: 'This endpoint lets you get a list of items and filtering them'
+      parameters:
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: query
+          name: page
+          description: 'The number of page for pagination.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'The number of page for pagination.'
+            example: 1
+        -
+          in: query
+          name: search
+          description: 'The keyword for the title of the items.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'The keyword for the title of the items.'
+            example: null
+        -
+          in: query
+          name: item_size_ids
+          description: 'Array of ids from size ids.'
+          example: null
+          required: false
+          schema:
+            type: array
+            description: 'Array of ids from size ids.'
+            example: null
+            items:
+              type: integer
+        -
+          in: query
+          name: item_color_ids
+          description: 'Array of ids from color ids.'
+          example: null
+          required: false
+          schema:
+            type: array
+            description: 'Array of ids from color ids.'
+            example: null
+            items:
+              type: integer
+        -
+          in: query
+          name: brand_id
+          description: 'The id of the brand to filter.'
+          example: null
+          required: false
+          schema:
+            type: integer
+            description: 'The id of the brand to filter.'
+            example: null
+        -
+          in: query
+          name: item_category_id
+          description: 'The id of the category to filter.'
+          example: null
+          required: false
+          schema:
+            type: integer
+            description: 'The id of the category to filter.'
+            example: null
+        -
+          in: query
+          name: item_person_type_id
+          description: 'The id of the gender to filter.'
+          example: null
+          required: false
+          schema:
+            type: integer
+            description: 'The id of the gender to filter.'
+            example: null
+        -
+          in: query
+          name: min_price
+          description: 'The minimum price of the product to filter. 1000000'
+          example: 4
+          required: false
+          schema:
+            type: integer
+            description: 'The minimum price of the product to filter. 1000000'
+            example: 4
+        -
+          in: query
+          name: max_price
+          description: 'The maximum price of the product to filter.'
+          example: null
+          required: false
+          schema:
+            type: integer
+            description: 'The maximum price of the product to filter.'
+            example: null
+        -
+          in: query
+          name: is_sale
+          description: 'True or False to get the list of items with sales.'
+          example: null
+          required: false
+          schema:
+            type: boolean
+            description: 'True or False to get the list of items with sales.'
+            example: null
+        -
+          in: query
+          name: order_by
+          description: "<p>integer 1 to 5 for ordering</p>\n<p>For 1: trending</p>\n<p>For 2: new products</p>\n<p>For 3: old products</p>\n<p>For 4: most popular</p>\n<p>For 5: latest listing</p>\n<p>For 6: featured items</p>\n<p>For 7: price high to low</p>\n<p>For 8: price low to high</p>."
+          example: null
+          required: false
+          schema:
+            type: string
+            description: "<p>integer 1 to 5 for ordering</p>\n<p>For 1: trending</p>\n<p>For 2: new products</p>\n<p>For 3: old products</p>\n<p>For 4: most popular</p>\n<p>For 5: latest listing</p>\n<p>For 6: featured items</p>\n<p>For 7: price high to low</p>\n<p>For 8: price low to high</p>."
+            example: null
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                    last: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: null
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v1/item'
+                    per_page: 50
+                    to: null
+                    total: 0
+                properties:
+                  data:
+                    type: array
+                    example: []
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: string
+                        example: null
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/item?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item'
+                      per_page:
+                        type: integer
+                        example: 50
+                      to:
+                        type: string
+                        example: null
+                      total:
+                        type: integer
+                        example: 0
+      tags:
+        - Item
+      security: []
+  '/api/v1/item/{slug}':
+    get:
+      summary: 'Get the specific item by its slug.'
+      operationId: getTheSpecificItemByItsSlug
+      description: 'This endpoint lets you get the specific item by using its slug'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    slug: null
+                    sku: null
+                    name: null
+                    description: null
+                    thumbnail_url: false
+                    brand_id: null
+                    views_count: null
+                    media: []
+                    created_at: '01/01/1970 00:00'
+                    updated_at: '01/01/1970 00:00'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: null
+                      slug:
+                        type: string
+                        example: null
+                      sku:
+                        type: string
+                        example: null
+                      name:
+                        type: string
+                        example: null
+                      description:
+                        type: string
+                        example: null
+                      thumbnail_url:
+                        type: boolean
+                        example: false
+                      brand_id:
+                        type: string
+                        example: null
+                      views_count:
+                        type: string
+                        example: null
+                      media:
+                        type: array
+                        example: []
+                      created_at:
+                        type: string
+                        example: '01/01/1970 00:00'
+                      updated_at:
+                        type: string
+                        example: '01/01/1970 00:00'
+      tags:
+        - Item
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: 'The slug of the item.'
+        example: neque
+        required: true
+        schema:
+          type: string
+  /api/v1/item-category:
+    get:
+      summary: 'Get a list of categories of the items.'
+      operationId: getAListOfCategoriesOfTheItems
+      description: 'This endpoint lets you get a list of categories of the items'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: with_children
+          description: 'True categories with subcategories'
+          example: null
+          required: false
+          schema:
+            type: boolean
+            description: 'True categories with subcategories'
+            example: null
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      parent_id: null
+                      name:
+                        en: 'Mr. Hillard Mante IV'
+                      slug: mr-hillard-mante-iv
+                      description: 'Voluptas ab omnis a et rerum.'
+                      status: 1
+                      order: '0'
+                      created_at: '2023-02-08T16:24:34.000000Z'
+                      updated_at: '2023-02-08T16:24:34.000000Z'
+                    -
+                      id: 2
+                      parent_id: null
+                      name:
+                        en: 'Josh Schneider'
+                      slug: josh-schneider
+                      description: 'Fuga cupiditate sed aspernatur qui quam ea.'
+                      status: 1
+                      order: '0'
+                      created_at: '2023-02-08T16:24:34.000000Z'
+                      updated_at: '2023-02-08T16:24:34.000000Z'
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                    last: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v1/item-category'
+                    per_page: 50
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        parent_id: null
+                        name:
+                          en: 'Mr. Hillard Mante IV'
+                        slug: mr-hillard-mante-iv
+                        description: 'Voluptas ab omnis a et rerum.'
+                        status: 1
+                        order: '0'
+                        created_at: '2023-02-08T16:24:34.000000Z'
+                        updated_at: '2023-02-08T16:24:34.000000Z'
+                      -
+                        id: 2
+                        parent_id: null
+                        name:
+                          en: 'Josh Schneider'
+                        slug: josh-schneider
+                        description: 'Fuga cupiditate sed aspernatur qui quam ea.'
+                        status: 1
+                        order: '0'
+                        created_at: '2023-02-08T16:24:34.000000Z'
+                        updated_at: '2023-02-08T16:24:34.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        parent_id:
+                          type: string
+                          example: null
+                        name:
+                          type: object
+                          properties:
+                            en:
+                              type: string
+                              example: 'Mr. Hillard Mante IV'
+                        slug:
+                          type: string
+                          example: mr-hillard-mante-iv
+                        description:
+                          type: string
+                          example: 'Voluptas ab omnis a et rerum.'
+                        status:
+                          type: integer
+                          example: 1
+                        order:
+                          type: string
+                          example: '0'
+                        created_at:
+                          type: string
+                          example: '2023-02-08T16:24:34.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-02-08T16:24:34.000000Z'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/item-category?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/item-category'
+                      per_page:
+                        type: integer
+                        example: 50
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - 'Item Category'
+      security: []
+  /api/v1/order:
+    get:
+      summary: 'Get a list of orders.'
+      operationId: getAListOfOrders
+      description: 'This endpoint lets you get a list of orders'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active orders and False will return inactive orders.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active orders and False will return inactive orders.'
+            example: true
+        -
+          in: query
+          name: with_items
+          description: 'True order with items.'
+          example: null
+          required: false
+          schema:
+            type: boolean
+            description: 'True order with items.'
+            example: null
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: query
+          name: order_status
+          description: 'The value to get order by status.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'The value to get order by status.'
+            example: 1
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Order Endpoints'
+  '/api/v1/order/{order_code}':
+    get:
+      summary: 'Get the order detail.'
+      operationId: getTheOrderDetail
+      description: 'This endpoint lets you get the order detail of the user by its order code.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    order_code: ''
+                    shipping_name: null
+                    shipping_address: null
+                    shipping_country_id: null
+                    shipping_city_id: null
+                    shipping_district_id: null
+                    shipping_ward_id: null
+                    shipping_phone: null
+                    payment_method: ''
+                    payment_code: null
+                    total_price: '0'
+                    total_discount: '0'
+                    total_tax: '0'
+                    total_shipping: '0'
+                    total_payment_fee: '0'
+                    total: '0'
+                    order_status_id: null
+                    order_status_value: Draft
+                    number_order_items: null
+                    coupon: null
+                    created_at: 01/01/1970
+                    updated_at: 01/01/1970
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: null
+                      order_code:
+                        type: string
+                        example: ''
+                      shipping_name:
+                        type: string
+                        example: null
+                      shipping_address:
+                        type: string
+                        example: null
+                      shipping_country_id:
+                        type: string
+                        example: null
+                      shipping_city_id:
+                        type: string
+                        example: null
+                      shipping_district_id:
+                        type: string
+                        example: null
+                      shipping_ward_id:
+                        type: string
+                        example: null
+                      shipping_phone:
+                        type: string
+                        example: null
+                      payment_method:
+                        type: string
+                        example: ''
+                      payment_code:
+                        type: string
+                        example: null
+                      total_price:
+                        type: string
+                        example: '0'
+                      total_discount:
+                        type: string
+                        example: '0'
+                      total_tax:
+                        type: string
+                        example: '0'
+                      total_shipping:
+                        type: string
+                        example: '0'
+                      total_payment_fee:
+                        type: string
+                        example: '0'
+                      total:
+                        type: string
+                        example: '0'
+                      order_status_id:
+                        type: string
+                        example: null
+                      order_status_value:
+                        type: string
+                        example: Draft
+                      number_order_items:
+                        type: string
+                        example: null
+                      coupon:
+                        type: string
+                        example: null
+                      created_at:
+                        type: string
+                        example: 01/01/1970
+                      updated_at:
+                        type: string
+                        example: 01/01/1970
+      tags:
+        - 'Order Endpoints'
+    parameters:
+      -
+        in: path
+        name: order_code
+        description: 'The order_code of the order of the user.'
+        example: HKPM-20221125-0009
+        required: true
+        schema:
+          type: string
+  /api/v1/item-person-type:
+    get:
+      summary: 'Get a list of Person Types for the items.'
+      operationId: getAListOfPersonTypesForTheItems
+      description: 'This endpoint lets you get a list of person types for the items'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      code: men
+                      name: Men
+                      status: 1
+                      created_at: '2023-02-08T16:24:34.000000Z'
+                      updated_at: '2023-02-08T16:24:34.000000Z'
+                    -
+                      id: 2
+                      code: women
+                      name: Women
+                      status: 1
+                      created_at: '2023-02-08T16:24:34.000000Z'
+                      updated_at: '2023-02-08T16:24:34.000000Z'
+                    -
+                      id: 3
+                      code: kid
+                      name: Kid
+                      status: 1
+                      created_at: '2023-02-08T16:24:34.000000Z'
+                      updated_at: '2023-02-08T16:24:34.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        code: men
+                        name: Men
+                        status: 1
+                        created_at: '2023-02-08T16:24:34.000000Z'
+                        updated_at: '2023-02-08T16:24:34.000000Z'
+                      -
+                        id: 2
+                        code: women
+                        name: Women
+                        status: 1
+                        created_at: '2023-02-08T16:24:34.000000Z'
+                        updated_at: '2023-02-08T16:24:34.000000Z'
+                      -
+                        id: 3
+                        code: kid
+                        name: Kid
+                        status: 1
+                        created_at: '2023-02-08T16:24:34.000000Z'
+                        updated_at: '2023-02-08T16:24:34.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        code:
+                          type: string
+                          example: men
+                        name:
+                          type: string
+                          example: Men
+                        status:
+                          type: integer
+                          example: 1
+                        created_at:
+                          type: string
+                          example: '2023-02-08T16:24:34.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-02-08T16:24:34.000000Z'
+      tags:
+        - 'Person Type'
+      security: []
+tags:
+  -
+    name: Address
+    description: "\nAPIs for managing addresses"
+  -
+    name: 'Admin Brand'
+    description: "\nAPIs for managing Brand"
+  -
+    name: 'Authentication Endpoints'
+    description: "\nAPIs for authenticating user"
+  -
+    name: Brand
+    description: "\nAPIs for managing brands"
+  -
+    name: Cart
+    description: "\nAPI for managing Cart"
+  -
+    name: Destination
+    description: "\nAPIs for destination"
+  -
+    name: Item
+    description: "\nAPIs for managing item"
+  -
+    name: 'Item Category'
+    description: "\nAPIs for Item Category"
+  -
+    name: 'Order Endpoints'
+    description: "\nAPIs for managing orders"
+  -
+    name: 'Person Type'
+    description: "\nAPIs for Person Type"

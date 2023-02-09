@@ -1,0 +1,49 @@
+name: 'Person Type'
+description: |-
+
+  APIs for Person Type
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/item-person-type
+    metadata:
+      groupName: 'Person Type'
+      groupDescription: |-
+
+        APIs for Person Type
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of Person Types for the items.'
+      description: 'This endpoint lets you get a list of person types for the items'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"code":"men","name":"Men","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":2,"code":"women","name":"Women","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":3,"code":"kid","name":"Kid","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,153 @@
+name: Destination
+description: |-
+
+  APIs for destination
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/destination/city
+    metadata:
+      groupName: Destination
+      groupDescription: |-
+
+        APIs for destination
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get list of city'
+      description: 'This endpoint lets you get a list of cities.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"code":"SG","name":"H\u1ed3 Ch\u00ed Minh","slug":"ho-chi-minh","geometry":null,"center":"[10.757247,106.688083]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.376389,106.356438],\\\"br\\\":[11.159539,107.025276]}","status":1,"pre":"Th\u00e0nh Ph\u1ed1","created_at":null,"updated_at":null},{"id":2,"code":"HN","name":"H\u00e0 N\u1ed9i","slug":"ha-noi","geometry":null,"center":"[20.984664,105.694534]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.564646,105.286415],\\\"br\\\":[21.38542,106.019333]}","status":1,"pre":"Th\u00e0nh Ph\u1ed1","created_at":null,"updated_at":null},{"id":3,"code":"BD","name":"B\u00ecnh D\u01b0\u01a1ng","slug":"binh-duong","geometry":null,"center":"[11.216343,106.65744]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.863709,106.326019],\\\"br\\\":[11.50093,106.966377]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":4,"code":"DDN","name":"\u0110\u00e0 N\u1eb5ng","slug":"da-nang","geometry":null,"center":"[16.06868,108.06079]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[15.918026,107.818306],\\\"br\\\":[16.225834,108.338333]}","status":1,"pre":"Th\u00e0nh Ph\u1ed1","created_at":null,"updated_at":null},{"id":5,"code":"HP","name":"H\u1ea3i Ph\u00f2ng","slug":"hai-phong","geometry":null,"center":"[20.797081,106.680731]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.125416,106.399834],\\\"br\\\":[21.021355,107.741531]}","status":1,"pre":"Th\u00e0nh Ph\u1ed1","created_at":null,"updated_at":null},{"id":6,"code":"LA","name":"Long An","slug":"long-an","geometry":null,"center":"[10.729866,106.170748]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.395407,105.498062],\\\"br\\\":[11.032491,106.748184]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":7,"code":"VT","name":"B\u00e0 R\u1ecba V\u0169ng T\u00e0u","slug":"ba-ria-vung-tau","geometry":null,"center":"[10.505614,107.257545]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[8.605942,106.141502],\\\"br\\\":[10.803907,107.582169]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":8,"code":"AG","name":"An Giang","slug":"an-giang","geometry":null,"center":"[10.511902,105.182456]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.183516,104.777702],\\\"br\\\":[10.961942,105.575272]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":9,"code":"BG","name":"B\u1eafc Giang","slug":"bac-giang","geometry":null,"center":"[21.357592,106.480077]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.122089,105.879807],\\\"br\\\":[21.626417,107.033302]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":10,"code":"BK","name":"B\u1eafc K\u1ea1n","slug":"bac-kan","geometry":null,"center":"[22.261402,105.825962]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.80448,105.430305],\\\"br\\\":[22.739758,106.246216]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":11,"code":"BL","name":"B\u1ea1c Li\u00eau","slug":"bac-lieu","geometry":null,"center":"[9.312847,105.490629]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.018334,105.23217],\\\"br\\\":[9.637437,105.859848]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":12,"code":"BN","name":"B\u1eafc Ninh","slug":"bac-ninh","geometry":null,"center":"[21.109244,106.105552]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.969255,105.903397],\\\"br\\\":[21.264437,106.311195]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":13,"code":"BTR","name":"B\u1ebfn Tre","slug":"ben-tre","geometry":null,"center":"[10.123362,106.463537]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.8025,106.027908],\\\"br\\\":[10.340414,106.791946]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":14,"code":"BDD","name":"B\u00ecnh \u0110\u1ecbnh","slug":"binh-dinh","geometry":null,"center":"[14.123471,108.948353]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[13.515251,108.600868],\\\"br\\\":[14.703255,109.363579]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":15,"code":"BP","name":"B\u00ecnh Ph\u01b0\u1edbc","slug":"binh-phuoc","geometry":null,"center":"[11.753991,106.908488]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[11.300597,106.411568],\\\"br\\\":[12.297761,107.428574]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":16,"code":"BTH","name":"B\u00ecnh Thu\u1eadn  ","slug":"binh-thuan","geometry":null,"center":"[11.117985,108.048481]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.970021,107.393898],\\\"br\\\":[11.555672,109.085228]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":17,"code":"CM","name":"C\u00e0 Mau","slug":"ca-mau","geometry":null,"center":"[9.052314,105.041091]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[8.563332,104.71228],\\\"br\\\":[9.562001,105.418854]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":18,"code":"CT","name":"C\u1ea7n Th\u01a1","slug":"can-tho","geometry":null,"center":"[10.114459,105.530314]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.919375,105.225952],\\\"br\\\":[10.325283,105.844528]}","status":1,"pre":"Th\u00e0nh Ph\u1ed1","created_at":null,"updated_at":null},{"id":19,"code":"CB","name":"Cao B\u1eb1ng","slug":"cao-bang","geometry":null,"center":"[22.744814,106.086098]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[22.357077,105.270691],\\\"br\\\":[23.118378,106.839462]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":20,"code":"DDL","name":"\u0110\u1eafk L\u1eafk","slug":"dak-lak","geometry":null,"center":"[12.822864,108.212195]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[12.160808,107.484589],\\\"br\\\":[13.416621,108.994995]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":21,"code":"DNO","name":"\u0110\u1eafk N\u00f4ng","slug":"dak-nong","geometry":null,"center":"[12.228169,107.688114]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[11.748837,107.205612],\\\"br\\\":[12.812443,108.116074]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":22,"code":"DDB","name":"\u0110i\u1ec7n Bi\u00ean","slug":"dien-bien","geometry":null,"center":"[21.711865,103.024127]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.893721,102.144997],\\\"br\\\":[22.558617,103.598755]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":23,"code":"DNA","name":"\u0110\u1ed3ng Nai","slug":"dong-nai","geometry":null,"center":"[11.05912,107.185551]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.5825,106.750854],\\\"br\\\":[11.582002,107.577003]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":24,"code":"DDT","name":"\u0110\u1ed3ng Th\u00e1p","slug":"dong-thap","geometry":null,"center":"[10.564178,105.607849]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.13411,105.186996],\\\"br\\\":[10.974042,105.941788]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":25,"code":"GL","name":"Gia Lai","slug":"gia-lai","geometry":null,"center":"[13.836168,108.176693]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[12.995756,107.332596],\\\"br\\\":[14.603214,108.872993]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":26,"code":"HG","name":"H\u00e0 Giang","slug":"ha-giang","geometry":null,"center":"[22.768131,104.978648]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[22.165707,104.334457],\\\"br\\\":[23.392731,105.591957]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":27,"code":"HNA","name":"H\u00e0 Nam","slug":"ha-nam","geometry":null,"center":"[20.540466,105.966171]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.363047,105.767967],\\\"br\\\":[20.704515,106.182594]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":28,"code":"HT","name":"H\u00e0 T\u0129nh","slug":"ha-tinh","geometry":null,"center":"[18.289829,105.735791]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[17.914446,105.102798],\\\"br\\\":[18.763668,106.510956]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":29,"code":"HD","name":"H\u1ea3i D\u01b0\u01a1ng","slug":"hai-duong","geometry":null,"center":"[20.930437,106.360545]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.684511,106.123634],\\\"br\\\":[21.237133,106.610718]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":30,"code":"HGI","name":"H\u1eadu Giang","slug":"hau-giang","geometry":null,"center":"[9.78422,105.624155]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.582134,105.328201],\\\"br\\\":[9.994104,105.896492]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":31,"code":"HB","name":"H\u00f2a B\u00ecnh","slug":"hoa-binh","geometry":null,"center":"[20.68115,105.333461]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.305492,104.835709],\\\"br\\\":[21.112904,105.86142]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":32,"code":"HY","name":"H\u01b0ng Y\u00ean","slug":"hung-yen","geometry":null,"center":"[20.814655,106.059667]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.603228,105.894585],\\\"br\\\":[21.007345,106.268806]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":33,"code":"KH","name":"Kh\u00e1nh H\u00f2a","slug":"khanh-hoa","geometry":null,"center":"[12.330741,109.037494]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[11.804438,108.670708],\\\"br\\\":[12.868547,109.469429]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":34,"code":"KG","name":"Ki\u00ean Giang","slug":"kien-giang","geometry":null,"center":"[9.995757,104.942883]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.253889,103.458206],\\\"br\\\":[10.5395,105.538979]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":35,"code":"KT","name":"Kon Tum","slug":"kon-tum","geometry":null,"center":"[14.729829,107.941858]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[14.202184,107.466225],\\\"br\\\":[15.417597,108.546501]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":36,"code":"LCH","name":"Lai Ch\u00e2u","slug":"lai-chau","geometry":null,"center":"[22.317125,103.188826]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.684601,102.324944],\\\"br\\\":[22.81735,103.984665]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":37,"code":"LDD","name":"L\u00e2m \u0110\u1ed3ng","slug":"lam-dong","geometry":null,"center":"[11.750981,108.095559]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[11.215216,107.265427],\\\"br\\\":[12.317454,108.731659]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":38,"code":"LS","name":"L\u1ea1ng S\u01a1n","slug":"lang-son","geometry":null,"center":"[21.839172,106.620767]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.325293,106.094604],\\\"br\\\":[22.46162,107.363777]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":39,"code":"LCA","name":"L\u00e0o Cai","slug":"lao-cai","geometry":null,"center":"[22.364795,104.113051]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.875256,103.531601],\\\"br\\\":[22.84444,104.627815]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":40,"code":"NDD","name":"Nam \u0110\u1ecbnh","slug":"nam-dinh","geometry":null,"center":"[20.261889,106.212518]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[19.909447,105.923332],\\\"br\\\":[20.499325,106.587219]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":41,"code":"NA","name":"Ngh\u1ec7 An","slug":"nghe-an","geometry":null,"center":"[19.23701,104.944252]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[18.552223,103.871849],\\\"br\\\":[19.998468,105.806389]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":42,"code":"NB","name":"Ninh B\u00ecnh","slug":"ninh-binh","geometry":null,"center":"[20.220043,105.903042]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[19.911539,105.54203],\\\"br\\\":[20.454838,106.167496]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":43,"code":"NT","name":"Ninh Thu\u1eadn","slug":"ninh-thuan","geometry":null,"center":"[11.705857,108.869399]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[11.30691,108.551384],\\\"br\\\":[12.164548,109.233086]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":44,"code":"PT","name":"Ph\u00fa Th\u1ecd","slug":"phu-tho","geometry":null,"center":"[21.319065,105.115366]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.917162,104.814606],\\\"br\\\":[21.719788,105.456047]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":45,"code":"PY","name":"Ph\u00fa Y\u00ean","slug":"phu-yen","geometry":null,"center":"[13.169248,109.057957]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[12.7065,108.672783],\\\"br\\\":[13.695185,109.459076]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":46,"code":"QB","name":"Qu\u1ea3ng B\u00ecnh","slug":"quang-binh","geometry":null,"center":"[17.531495,106.293709]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[16.921461,105.607048],\\\"br\\\":[18.089975,106.994858]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":47,"code":"QNA","name":"Qu\u1ea3ng Nam","slug":"quang-nam","geometry":null,"center":"[15.590249,107.955331]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[14.951411,107.210426],\\\"br\\\":[16.067146,108.738052]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":48,"code":"QNG","name":"Qu\u1ea3ng Ng\u00e3i","slug":"quang-ngai","geometry":null,"center":"[14.991953,108.649429]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[14.53278,108.235069],\\\"br\\\":[15.433891,109.144165]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":49,"code":"QNI","name":"Qu\u1ea3ng Ninh","slug":"quang-ninh","geometry":null,"center":"[21.241828,107.277517]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.715969,106.438423],\\\"br\\\":[21.664671,108.078751]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":50,"code":"QT","name":"Qu\u1ea3ng Tr\u1ecb","slug":"quang-tri","geometry":null,"center":"[16.745621,106.929312]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[16.301567,106.513741],\\\"br\\\":[17.168009,107.38707]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":51,"code":"ST","name":"S\u00f3c Tr\u0103ng","slug":"soc-trang","geometry":null,"center":"[9.558321,105.924201]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.24361,105.543335],\\\"br\\\":[9.938053,106.29361]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":52,"code":"SL","name":"S\u01a1n La","slug":"son-la","geometry":null,"center":"[21.192572,104.070959]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.573133,103.213745],\\\"br\\\":[22.028542,105.024544]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":53,"code":"TNI","name":"T\u00e2y Ninh","slug":"tay-ninh","geometry":null,"center":"[11.403808,106.161312]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.962522,105.809471],\\\"br\\\":[11.78229,106.492058]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":54,"code":"TB","name":"Th\u00e1i B\u00ecnh","slug":"thai-binh","geometry":null,"center":"[20.505329,106.391967]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[20.25139,106.108948],\\\"br\\\":[20.729122,106.648888]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":55,"code":"TN","name":"Th\u00e1i Nguy\u00ean","slug":"thai-nguyen","geometry":null,"center":"[21.692793,105.823101]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.325483,105.476715],\\\"br\\\":[22.048016,106.237228]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":56,"code":"TH","name":"Thanh H\u00f3a","slug":"thanh-hoa","geometry":null,"center":"[20.04564,105.319113]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[19.286894,104.375175],\\\"br\\\":[20.670799,106.075165]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":57,"code":"TTH","name":"Th\u1eeba Thi\u00ean Hu\u1ebf","slug":"thua-thien-hue","geometry":null,"center":"[16.327114,107.499866]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[15.994475,107.015701],\\\"br\\\":[16.742371,108.194328]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":58,"code":"TG","name":"Ti\u1ec1n Giang","slug":"tien-giang","geometry":null,"center":"[10.397279,106.304772]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.198738,105.815399],\\\"br\\\":[10.587139,106.787163]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":59,"code":"TV","name":"Tr\u00e0 Vinh","slug":"tra-vinh","geometry":null,"center":"[9.79611,106.30693]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.52889,105.954414],\\\"br\\\":[10.081751,106.579514]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":60,"code":"TQ","name":"Tuy\u00ean Quang","slug":"tuyen-quang","geometry":null,"center":"[22.113017,105.26727]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.49773,104.847763],\\\"br\\\":[22.696123,105.597488]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":61,"code":"VL","name":"V\u0129nh Long","slug":"vinh-long","geometry":null,"center":"[10.101617,105.990724]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[9.882843,105.682487],\\\"br\\\":[10.330639,106.289337]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":62,"code":"VP","name":"V\u0129nh Ph\u00fac","slug":"vinh-phuc","geometry":null,"center":"[21.352881,105.564836]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.121784,105.321693],\\\"br\\\":[21.573984,105.785797]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null},{"id":63,"code":"YB","name":"Y\u00ean B\u00e1i","slug":"yen-bai","geometry":null,"center":"[21.776779,104.567928]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[21.326056,103.885384],\\\"br\\\":[22.292011,105.099525]}","status":1,"pre":"T\u1ec9nh","created_at":null,"updated_at":null}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/destination/city/{city_id}'
+    metadata:
+      groupName: Destination
+      groupDescription: |-
+
+        APIs for destination
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of districts from city'
+      description: 'This endpoint lets you get a list of districts from city.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      city_id:
+        name: city_id
+        description: 'Get district after choose city.'
+        required: true
+        example: 12
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      city_id: 12
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":145,"city_id":12,"name":"B\u1eafc Ninh","slug":"bac-ninh-bac-ninh","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Th\u00e0nh ph\u1ed1","order":null,"status":1,"created_at":null,"updated_at":null},{"id":146,"city_id":12,"name":"Gia B\u00ecnh","slug":"bac-ninh-gia-binh","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":147,"city_id":12,"name":"L\u01b0\u01a1ng T\u00e0i","slug":"bac-ninh-luong-tai","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":148,"city_id":12,"name":"Qu\u1ebf V\u00f5","slug":"bac-ninh-que-vo","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":149,"city_id":12,"name":"Thu\u1eadn Th\u00e0nh","slug":"bac-ninh-thuan-thanh","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":150,"city_id":12,"name":"Ti\u00ean Du","slug":"bac-ninh-tien-du","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":151,"city_id":12,"name":"T\u1eeb S\u01a1n","slug":"bac-ninh-tu-son","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Th\u1ecb x\u00e3","order":null,"status":1,"created_at":null,"updated_at":null},{"id":152,"city_id":12,"name":"Y\u00ean Phong","slug":"bac-ninh-yen-phong","geometry":null,"center":null,"color":null,"bounding_box":null,"pre":"Huy\u1ec7n","order":null,"status":1,"created_at":null,"updated_at":null}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/destination/district/{district_id}'
+    metadata:
+      groupName: Destination
+      groupDescription: |-
+
+        APIs for destination
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of wards from district'
+      description: 'This endpoint lets you get a list of districts from city.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      district_id:
+        name: district_id
+        description: 'Get ward after choose district.'
+        required: true
+        example: 8
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      district_id: 8
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":105,"city_id":1,"district_id":8,"name":"Hi\u1ec7p Ph\u01b0\u1edbc","slug":"ho-chi-minh-nha-be-hiep-phuoc","geometry":null,"center":"[10.608508,106.751715]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.576117,106.718628],\\\"br\\\":[10.649294,106.783058]}","pre":"Ph\u01b0\u1eddng","order":null,"status":1,"created_at":null,"updated_at":null},{"id":106,"city_id":1,"district_id":8,"name":"Long Th\u1edbi","slug":"ho-chi-minh-nha-be-long-thoi","geometry":null,"center":"[10.653873,106.724979]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.633926,106.700119],\\\"br\\\":[10.669222,106.748451]}","pre":"X\u00e3","order":null,"status":1,"created_at":null,"updated_at":null},{"id":107,"city_id":1,"district_id":8,"name":"Nh\u00e0 B\u00e8","slug":"ho-chi-minh-nha-be-nha-be","geometry":null,"center":"[10.69367,106.741852]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.681742,106.722763],\\\"br\\\":[10.704349,106.759819]}","pre":"Th\u1ecb tr\u1ea5n","order":null,"status":1,"created_at":null,"updated_at":null},{"id":108,"city_id":1,"district_id":8,"name":"Nh\u01a1n \u0110\u1ee9c","slug":"ho-chi-minh-nha-be-nhon-duc","geometry":null,"center":"[10.672555,106.699373]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.64864,106.678223],\\\"br\\\":[10.694305,106.727921]}","pre":"X\u00e3","order":null,"status":1,"created_at":null,"updated_at":null},{"id":109,"city_id":1,"district_id":8,"name":"Ph\u00fa Xu\u00e2n","slug":"ho-chi-minh-nha-be-phu-xuan","geometry":null,"center":"[10.67656,106.749843]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.665042,106.725693],\\\"br\\\":[10.690324,106.775848]}","pre":"X\u00e3","order":null,"status":1,"created_at":null,"updated_at":null},{"id":110,"city_id":1,"district_id":8,"name":"Ph\u01b0\u1edbc Ki\u1ec3n","slug":"ho-chi-minh-nha-be-phuoc-kien","geometry":null,"center":"[10.704274,106.709206]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.6805,106.688087],\\\"br\\\":[10.725589,106.72847]}","pre":"X\u00e3","order":null,"status":1,"created_at":null,"updated_at":null},{"id":111,"city_id":1,"district_id":8,"name":"Ph\u01b0\u1edbc L\u1ed9c","slug":"ho-chi-minh-nha-be-phuoc-loc","geometry":null,"center":"[10.69858,106.683571]","color":"#FF0000","bounding_box":"{\\\"tl\\\":[10.681792,106.672806],\\\"br\\\":[10.714979,106.698814]}","pre":"X\u00e3","order":null,"status":1,"created_at":null,"updated_at":null}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,72 @@
+name: 'Item Category'
+description: |-
+
+  APIs for Item Category
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/item-category
+    metadata:
+      groupName: 'Item Category'
+      groupDescription: |-
+
+        APIs for Item Category
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of categories of the items.'
+      description: 'This endpoint lets you get a list of categories of the items'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      is_show:
+        name: is_show
+        description: 'True will return active brands and False will return inactive brands.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      with_children:
+        name: with_children
+        description: 'True categories with subcategories'
+        required: false
+        example: null
+        type: boolean
+        custom: []
+      limit:
+        name: limit
+        description: 'The number of resource that will show and then paginate.'
+        required: false
+        example: 50
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      is_show: true
+      limit: 50
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"parent_id":null,"name":{"en":"Mr. Hillard Mante IV"},"slug":"mr-hillard-mante-iv","description":"Voluptas ab omnis a et rerum.","status":1,"order":"0","created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":2,"parent_id":null,"name":{"en":"Josh Schneider"},"slug":"josh-schneider","description":"Fuga cupiditate sed aspernatur qui quam ea.","status":1,"order":"0","created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category","per_page":50,"to":2,"total":2}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
