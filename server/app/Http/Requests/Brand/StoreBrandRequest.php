@@ -13,7 +13,7 @@ class StoreBrandRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,9 @@ class StoreBrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'require',
+            'name' => 'required|string',
             'slug' => 'present|unique:brands,slug',
+            'status' => 'required|boolean',
             'order' => 'present'
         ];
     }

@@ -7,7 +7,7 @@ import { useMutation } from "react-query";
 import { NextPageWithLayout } from "../_app";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 export interface ILoginParams {
   email: string;
@@ -46,6 +46,7 @@ const Login: NextPageWithLayout = () => {
       return authAPI.login(email, password);
     },
     onSuccess: async (data) => {
+      sessionStorage.setItem("token", data.token);
       await router.push("/");
       setLoading(false);
     },

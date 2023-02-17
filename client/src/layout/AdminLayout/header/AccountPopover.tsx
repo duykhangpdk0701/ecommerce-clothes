@@ -1,18 +1,17 @@
 import { useState } from "react";
 // @mui
 import { alpha } from "@mui/material/styles";
-import {
-  Box,
-  Divider,
-  Typography,
-  Stack,
-  MenuItem,
-  Avatar,
-  IconButton,
-  Popover,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import MenuItem from "@mui/material/MenuItem";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Popover from "@mui/material/Popover";
 // mocks_
 import account from "../../../_mock/account";
+import { useRouter } from "next/router";
 
 // ----------------------------------------------------------------------
 
@@ -35,12 +34,14 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
+  const router = useRouter();
 
   const handleOpen = (event: any) => {
     setOpen(event.currentTarget);
   };
 
   const handleClose = () => {
+    router.push("/auth/login");
     setOpen(null);
   };
 

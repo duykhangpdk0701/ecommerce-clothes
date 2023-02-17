@@ -4,12 +4,13 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 //next
-import { ReactElement, ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import type { AppProps } from "next/app";
 import { NextPage } from "next";
 import { Router } from "next/router";
 //mui
-import { CssBaseline } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 //component
@@ -55,17 +56,19 @@ function MyApp(props: MyAppProps) {
   }, [Router]);
 
   return (
-    <CacheProvider value={emotionCache}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
-          <CssBaseline />
-          <GlobalStyles />
-          <LocalizationProvider dateAdapter={AdapterMoment}>
-            {layout}
-          </LocalizationProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
-    </CacheProvider>
+    <StyledEngineProvider injectFirst>
+      <CacheProvider value={emotionCache}>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <CssBaseline />
+            <GlobalStyles />
+            <LocalizationProvider dateAdapter={AdapterMoment}>
+              {layout}
+            </LocalizationProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </CacheProvider>
+    </StyledEngineProvider>
   );
 }
 

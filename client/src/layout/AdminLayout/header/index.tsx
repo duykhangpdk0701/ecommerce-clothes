@@ -1,13 +1,10 @@
 // @mui
-import {
-  styled,
-  Box,
-  Stack,
-  AppBar,
-  Toolbar,
-  IconButton,
-  AppBarProps,
-} from "@mui/material";
+import { styled } from "@mui/material";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import AppBar, { AppBarProps } from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
 // utils
 import { bgBlur } from "@/utils/cssStyles";
 // components

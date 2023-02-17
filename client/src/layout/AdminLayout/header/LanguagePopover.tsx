@@ -1,7 +1,11 @@
 import { useState } from "react";
 // @mui
 import { alpha } from "@mui/material/styles";
-import { Box, MenuItem, Stack, IconButton, Popover } from "@mui/material";
+import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import Popover from "@mui/material/Popover";
 
 // ----------------------------------------------------------------------
 

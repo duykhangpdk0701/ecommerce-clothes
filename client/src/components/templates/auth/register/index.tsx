@@ -1,21 +1,21 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import LoadingButton from "@mui/lab/LoadingButton";
-
-import {
-  Box,
-  InputLabel,
-  Paper,
-  OutlinedInput,
-  InputAdornment,
-  FormHelperText,
-  Divider,
-  IconButton,
-  Grid,
-  Checkbox,
-  FormControlLabel,
-  Alert,
-  AlertTitle,
-} from "@mui/material";
+//mui Component
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import Paper from "@mui/material/Paper";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormHelperText from "@mui/material/FormHelperText";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import AlertTitle from "@mui/material/AlertTitle";
+import Alert from "@mui/material/Alert";
+import InputAdornment from "@mui/material/InputAdornment";
+import Grid from "@mui/material/Grid";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+//next
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, FC } from "react";
@@ -58,7 +58,13 @@ const RegisterTemplate: FC<IRegisterTemplate> = (props) => {
         sx={{ boxShadow: "0px 8px 45px rgb(3 0 71 / 9%)" }}
       >
         <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-          <Image src={logoSvg} alt="DBRR logo" className="mx-auto block" />
+          <Image
+            src={logoSvg}
+            alt="DBRR logo"
+            className="mx-auto block"
+            width={100}
+            height={100}
+          />
           <h1 className="mb-8 mt-2 text-[16px] font-bold text-center">
             Create Your Account
           </h1>
@@ -169,9 +175,9 @@ const RegisterTemplate: FC<IRegisterTemplate> = (props) => {
                           edge="end"
                         >
                           {showPassword ? (
-                            <Visibility />
+                            <VisibilityIcon />
                           ) : (
-                            <VisibilityOff className="text-[#C0C3C8]" />
+                            <VisibilityOffIcon className="text-[#C0C3C8]" />
                           )}
                         </IconButton>
                       </InputAdornment>
@@ -213,9 +219,9 @@ const RegisterTemplate: FC<IRegisterTemplate> = (props) => {
                           edge="end"
                         >
                           {showConfirmPassword ? (
-                            <Visibility />
+                            <VisibilityIcon />
                           ) : (
-                            <VisibilityOff className="text-[#C0C3C8]" />
+                            <VisibilityOffIcon className="text-[#C0C3C8]" />
                           )}
                         </IconButton>
                       </InputAdornment>

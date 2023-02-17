@@ -1,18 +1,19 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { LoadingButton } from "@mui/lab";
-import {
-  Box,
-  Button,
-  InputLabel,
-  Paper,
-  OutlinedInput,
-  InputAdornment,
-  FormHelperText,
-  Divider,
-  IconButton,
-  AlertTitle,
-  Alert,
-} from "@mui/material";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+//mui component
+import LoadingButton from "@mui/lab/LoadingButton";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import InputLabel from "@mui/material/InputLabel";
+import Paper from "@mui/material/Paper";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormHelperText from "@mui/material/FormHelperText";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import AlertTitle from "@mui/material/AlertTitle";
+import Alert from "@mui/material/Alert";
+import InputAdornment from "@mui/material/InputAdornment";
+//nextjs
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
@@ -54,7 +55,13 @@ const LoginTemplate: FC<ILoginTempalte> = (props) => {
         sx={{ boxShadow: "0px 8px 45px rgb(3 0 71 / 9%)" }}
       >
         <Box>
-          <Image src={logoSvg} alt="DBRR logo" className="mx-auto block" />
+          <Image
+            src={logoSvg}
+            alt="DBRR logo"
+            className="mx-auto block"
+            width={100}
+            height={100}
+          />
           <h1 className="mb-8 mt-2 text-[16px] font-bold text-center">
             Welcome to DBRR
           </h1>
@@ -114,9 +121,9 @@ const LoginTemplate: FC<ILoginTempalte> = (props) => {
                             edge="end"
                           >
                             {showPassword ? (
-                              <Visibility />
+                              <VisibilityIcon />
                             ) : (
-                              <VisibilityOff className="text-[#C0C3C8]" />
+                              <VisibilityOffIcon className="text-[#C0C3C8]" />
                             )}
                           </IconButton>
                         </InputAdornment>

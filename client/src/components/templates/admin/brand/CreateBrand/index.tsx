@@ -1,22 +1,49 @@
-import React from "react";
-import {
-  Container,
-  Typography,
-  Stack,
-  Button,
-  Grid,
-  Paper,
-  TextField,
-  Box,
-  FormControlLabel,
-  Switch,
-} from "@mui/material";
+import React, { FC } from "react";
+//mui Component
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import FormHelperText from "@mui/material/FormHelperText";
+import LoadingButton from "@mui/lab/LoadingButton";
+//icon
 import Iconify from "@/components/shared/iconify";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import {
+  Control,
+  FieldErrors,
+  SubmitHandler,
+  UseFormHandleSubmit,
+  Controller,
+} from "react-hook-form";
+import { ICreateBrandParams } from "../../../../../../pages/admin/brand/create";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
-const CreateBrandTemplate = () => {
+interface ICreateBrandTemplate {
+  control: Control<ICreateBrandParams, any>;
+  handleSubmit: UseFormHandleSubmit<ICreateBrandParams>;
+  onSubmit: SubmitHandler<ICreateBrandParams>;
+  errors: FieldErrors<ICreateBrandParams>;
+  isLoading: boolean;
+  errorResMessage: string;
+}
+
+const CreateBrandTemplate: FC<ICreateBrandTemplate> = (props) => {
+  const {
+    control,
+    handleSubmit,
+    onSubmit,
+    errors,
+    isLoading,
+    errorResMessage,
+  } = props;
   return (
     <main>
       <Container>
@@ -27,7 +54,7 @@ const CreateBrandTemplate = () => {
           mb={5}
         >
           <Typography variant="h4" gutterBottom>
-            Brand
+            Create Brand
           </Typography>
           <Button
             LinkComponent={Link}
@@ -38,11 +65,27 @@ const CreateBrandTemplate = () => {
             Back to List Brand
           </Button>
         </Stack>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={8}>
               <Paper className="p-6">
-                <TextField label="Name" fullWidth />
+                <Controller
+                  name="name"
+                  control={control}
+                  render={({ field }) => (
+                    <>
+                      <TextField
+                        error={errors.name ? true : false}
+                        {...field}
+                        label="Name"
+                        fullWidth
+                      />
+                      <FormHelperText error={errors.name ? true : false}>
+                        {errors.name?.message}
+                      </FormHelperText>
+                    </>
+                  )}
+                />
                 <Box className="mt-6">
                   <Typography variant="h6">Description</Typography>
                   <ReactQuill placeholder="Write something about Brand" />
@@ -51,25 +94,69 @@ const CreateBrandTemplate = () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Paper className="p-6">
-                <FormControlLabel
-                  control={<Switch defaultChecked />}
-                  label="Status"
+                <Controller
+                  name="status"
+                  control={control}
+                  render={({ field }) => (
+                    <>
+                      <FormControlLabel
+                        control={<Switch {...field} defaultChecked />}
+                        label="Status"
+                      />
+                      <FormHelperText error={errors.status ? true : false}>
+                        {errors.status?.message}
+                      </FormHelperText>
+                    </>
+                  )}
                 />
                 <Box className="mt-6">
-                  <TextField label="Slug" fullWidth />
+                  <Controller
+                    name="slug"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                        <TextField
+                          error={errors.slug ? true : false}
+                          {...field}
+                          label="Slug"
+                          fullWidth
+                        />
+                        <FormHelperText error={errors.slug ? true : false}>
+                          {errors.slug?.message}
+                        </FormHelperText>
+                      </>
+                    )}
+                  />
                 </Box>
                 <Box className="mt-6">
-                  <TextField label="Order" fullWidth />
+                  <Controller
+                    name="order"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                        <TextField
+                          error={errors.order ? true : false}
+                          {...field}
+                          label="Order"
+                          fullWidth
+                        />
+                        <FormHelperText error={errors.order ? true : false}>
+                          {errors.order?.message}
+                        </FormHelperText>
+                      </>
+                    )}
+                  />
                 </Box>
               </Paper>
-              <Button
+              <LoadingButton
                 className="mt-6"
                 fullWidth
                 variant="contained"
                 size="large"
+                type="submit"
               >
                 Submit
-              </Button>
+              </LoadingButton>
             </Grid>
           </Grid>
         </form>

@@ -1,3 +1,4 @@
+import { getToken } from "@/utils/tokenHandler";
 import axios from "axios";
 
 const axiosClient = axios.create({
@@ -14,7 +15,7 @@ axiosClient.interceptors.request.use(
       config.headers["API-KEY"] = process.env.NEXT_PUBLIC_API_KEY as string;
     }
 
-    const accessToken = null;
+    const accessToken = getToken();
     if (accessToken && config.headers) {
       config.headers["Authorization"] = `Bearer ${accessToken}`;
     }

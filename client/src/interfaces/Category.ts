@@ -8,6 +8,7 @@ interface ICategory {
   slug: string;
   description: string;
   status: boolean;
+  children?: ICategory[];
 }
 
 export default ICategory;

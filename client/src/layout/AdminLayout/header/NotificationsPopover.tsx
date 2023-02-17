@@ -4,22 +4,21 @@ import { noCase } from "change-case";
 import { faker } from "@faker-js/faker";
 import { useState } from "react";
 // @mui
-import {
-  Box,
-  List,
-  Badge,
-  Button,
-  Avatar,
-  Tooltip,
-  Divider,
-  Popover,
-  Typography,
-  IconButton,
-  ListItemText,
-  ListSubheader,
-  ListItemAvatar,
-  ListItemButton,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import Badge from "@mui/material/Badge";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import Divider from "@mui/material/Divider";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import ListItemButton from "@mui/material/ListItemButton";
+
 // utils
 import { fToNow } from "../../../utils/formatTime";
 // components

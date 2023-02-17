@@ -1,19 +1,19 @@
 import { Add, Close } from "@mui/icons-material";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Grid,
-  IconButton,
-  Paper,
-  Rating,
-} from "@mui/material";
+
 import Link from "next/link";
 import React, { useState } from "react";
 import { TEXT_COLOR_BLACK, TEXT_COLOR_PRICE } from "@/styles/color";
 import productWebp from "@/assets/8.webp";
 import Image from "next/image";
+// mui component
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Rating from "@mui/material/Rating";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import IconButton from "@mui/material/IconButton";
 
 const ProductItem = () => {
   const [open, setOpen] = useState(false);

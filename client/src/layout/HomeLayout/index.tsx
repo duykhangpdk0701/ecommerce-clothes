@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { FC, ReactElement } from "react";
 import { BACKGROUND_COLOR } from "@/styles/color";
 import Header from "../shared/Header";
 import CartDrawer from "../shared/CartDrawer";

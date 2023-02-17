@@ -51,6 +51,26 @@ class BrandController extends Controller
     }
 
     /**
+     * Get brand detail.
+     *
+     * This endpoint lets you get  brand detail
+     *
+     * @queryParam is_show boolean True will return active brands and False will return inactive brands. Example: true
+     * @queryParam limit integer The number of resource that will show and then paginate. Example: 50
+     *
+     * @param string $slug
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show (int $id): \Illuminate\Http\JsonResponse
+    {
+        $result = $this->brandRepository->find($id);
+        if ($result) {
+            return response()->json(new JsonResponse(new BrandResource($result)), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.brand.brand_detail')), ResponseAlias::HTTP_NOT_FOUND);
+    }
+
+    /**
      * Create a new Brand
      *
      * This endpoint lets you create a brand

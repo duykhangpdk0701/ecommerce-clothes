@@ -1,31 +1,29 @@
-import {
-  PhoneOutlined,
-  EmailOutlined,
-  ShoppingBagOutlined,
-  PersonOutline,
-  Search,
-  KeyboardArrowDown,
-} from "@mui/icons-material";
 import React from "react";
-import {
-  Container,
-  IconButton,
-  Box,
-  Badge,
-  Button,
-  Paper,
-  InputBase,
-  Popper,
-  Grow,
-  ClickAwayListener,
-  MenuItem,
-  MenuList,
-  InputAdornment,
-  Divider,
-} from "@mui/material";
 import Link from "next/link";
 import { useAppDispatch } from "@/hooks/redux";
 import { setOpenCartDrawer } from "@/contexts/slices/cartDrawerSlice";
+//Mui comoponent
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Badge from "@mui/material/Badge";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import Popper from "@mui/material/Popper";
+import Grow from "@mui/material/Grow";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import InputAdornment from "@mui/material/InputAdornment";
+import Divider from "@mui/material/Divider";
+//mui icon
+import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import SearchIcon from "@mui/icons-material/Search";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const options = [
   "Create a merge commit",
@@ -72,22 +70,22 @@ const Header = () => {
         <Container className="flex justify-between px-6 h-10">
           <div className="flex items-center">
             <div className="flex items-center">
-              <PhoneOutlined className="text-xl" />
+              <PhoneOutlinedIcon className="text-xl" />
               <span className="text-xs ml-1">+079607376</span>
             </div>
             <div className="flex items-center ml-5">
-              <EmailOutlined className="text-xl" />
+              <EmailOutlinedIcon className="text-xl" />
               <span className="text-xs ml-1">duykhangpdk0701@gmail.com</span>
             </div>
           </div>
 
           <div className="flex items-center">
             <div className="flex items-center">
-              <PhoneOutlined className="text-xl" />
+              <PhoneOutlinedIcon className="text-xl" />
               <span className="text-xs ml-1">+079607376</span>
             </div>
             <div className="flex items-center ml-5">
-              <EmailOutlined className="text-xl" />
+              <EmailOutlinedIcon className="text-xl" />
               <span className="text-xs ml-1">duykhangpdk0701@gmail.com</span>
             </div>
           </div>
@@ -107,7 +105,7 @@ const Header = () => {
               <InputBase
                 startAdornment={
                   <InputAdornment className="ml-3" position="start">
-                    <Search />
+                    <SearchIcon />
                   </InputAdornment>
                 }
                 placeholder="Searching for..."
@@ -122,7 +120,7 @@ const Header = () => {
                 aria-haspopup="menu"
                 onClick={handleToggle}
                 variant="text"
-                endIcon={<KeyboardArrowDown className="mr-1" />}
+                endIcon={<KeyboardArrowDownIcon className="mr-1" />}
                 className="rounded-br-full rounded-tr-full"
               >
                 {options[selectedIndex]}
@@ -167,7 +165,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link href="/auth/login">
             <IconButton className="bg-[#F3F5F9] w-11 h-11">
-              <PersonOutline />
+              <PersonOutlineIcon />
             </IconButton>
           </Link>
 
@@ -176,7 +174,7 @@ const Header = () => {
               onClick={handleClickCartButton}
               className="bg-[#F3F5F9] w-11 h-11 ml-5"
             >
-              <ShoppingBagOutlined />
+              <ShoppingBagOutlinedIcon />
             </IconButton>
           </Badge>
         </div>

@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { FC, ReactElement, useState } from "react";
 import Header from "./header";
 import Nav from "./nav";

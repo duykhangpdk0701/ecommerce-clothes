@@ -1,10 +1,16 @@
-import { Close, ShoppingBagOutlined } from "@mui/icons-material";
-import { Button, Divider, Drawer, IconButton } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { setCloseCartDrawer } from "../../../contexts/slices/cartDrawerSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import CartDrawerItem from "./CartDrawerItem";
+//mui component
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+//mui icon
+import CloseIcon from "@mui/icons-material/Close";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
 const CartDrawer = () => {
   const cartDrawerState = useAppSelector((state) => state.CartDrawer);
@@ -24,11 +30,11 @@ const CartDrawer = () => {
         <div className="flex-1">
           <div className="h-20 flex justify-between items-center mx-5">
             <div className="flex items-center">
-              <ShoppingBagOutlined />
+              <ShoppingBagOutlinedIcon />
               <span className="ml-2 text-base font-semibold">3 item</span>
             </div>
             <IconButton onClick={handleOnCloseCartDrawer}>
-              <Close />
+              <CloseIcon />
             </IconButton>
           </div>
           <Divider />

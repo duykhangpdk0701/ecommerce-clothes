@@ -74,7 +74,7 @@ paths:
         in: path
         name: address_id
         description: 'The ID of the address.'
-        example: 19
+        example: 20
         required: true
         schema:
           type: integer
@@ -171,7 +171,7 @@ paths:
       tags:
         - 'Admin Brand'
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
@@ -180,16 +180,95 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: null
+                  example: enim
                 slug:
                   type: string
                   description: ''
                   example: null
+                status:
+                  type: boolean
+                  description: ''
+                  example: false
                 order:
                   type: string
                   description: ''
                   example: null
+              required:
+                - name
+                - status
       security: []
+  '/api/v1/admin/brand/{slug}':
+    get:
+      summary: 'Get brand detail.'
+      operationId: getBrandDetail
+      description: 'This endpoint lets you get  brand detail'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Brand'
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: 'The slug of the brand.'
+        example: 1
+        required: true
+        schema:
+          type: integer
   '/api/v1/admin/brand/{id}':
     put:
       summary: 'Update Brand'
@@ -230,7 +309,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: hic
+                  example: qui
                 slug:
                   type: string
                   description: ''
@@ -275,6 +354,394 @@ paths:
         in: path
         name: id
         description: 'The ID of the brand.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/item-category:
+    get:
+      summary: 'Get a list of Item Category.'
+      operationId: getAListOfItemCategory
+      description: 'This endpoint lets you get a list of item-category'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin ItemCategory'
+      security: []
+  '/api/v1/admin/item-category/{slug}':
+    get:
+      summary: 'Get itemCategory detail.'
+      operationId: getItemCategoryDetail
+      description: 'This endpoint lets you get  itemCategory detail'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin ItemCategory'
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: 'The slug of the item category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/admin/item-category/{category}':
+    delete:
+      summary: 'Delete Category'
+      operationId: deleteCategory
+      description: 'This endpoint lets you delete Item Category'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin ItemCategory'
+      security: []
+    parameters:
+      -
+        in: path
+        name: category
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/user:
+    get:
+      summary: 'Get a list of user.'
+      operationId: getAListOfUser
+      description: 'This endpoint lets you get a list of brands'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin User'
+      security: []
+    post:
+      summary: 'Create a new Brand'
+      operationId: createANewBrand
+      description: 'This endpoint lets you create a user'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin User'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'Must not be greater than 20 characters.'
+                  example: oezgie
+                last_name:
+                  type: string
+                  description: 'Must not be greater than 20 characters.'
+                  example: wkgyhuianofl
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: jazlyn.simonis@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: architecto
+                role:
+                  type: string
+                  description: ''
+                  example: autem
+                phone:
+                  type: number
+                  description: ''
+                  example: 82111938.8301
+                city_id:
+                  type: string
+                  description: ''
+                  example: maxime
+                district_id:
+                  type: string
+                  description: ''
+                  example: eveniet
+                ward_id:
+                  type: string
+                  description: ''
+                  example: recusandae
+                address:
+                  type: string
+                  description: ''
+                  example: repellat
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - role
+                - phone
+                - city_id
+                - district_id
+                - ward_id
+                - address
+      security: []
+  '/api/v1/admin/user/{id}':
+    get:
+      summary: 'Get brand detail.'
+      operationId: getBrandDetail
+      description: 'This endpoint lets you get user detail'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin User'
+      security: []
+    delete:
+      summary: 'Delete User'
+      operationId: deleteUser
+      description: 'This endpoint lets you delete users'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin User'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
         example: 1
         required: true
         schema:
@@ -388,7 +855,7 @@ paths:
                 agree_ckb:
                   type: boolean
                   description: 'Agree to the terms.'
-                  example: true
+                  example: false
                 password_confirmation:
                   type: string
                   description: 'The password confirmation of the user.'
@@ -628,7 +1095,19 @@ paths:
               schema:
                 type: object
                 example:
-                  data: []
+                  data:
+                    -
+                      id: 3
+                      name: Gucci
+                      slug: gucci
+                      order: 2
+                      status: 1
+                    -
+                      id: 4
+                      name: yame
+                      slug: yame
+                      order: 1
+                      status: 1
                   links:
                     first: 'http://127.0.0.1:8000/api/v1/brand?page=1'
                     last: 'http://127.0.0.1:8000/api/v1/brand?page=1'
@@ -636,7 +1115,7 @@ paths:
                     next: null
                   meta:
                     current_page: 1
-                    from: null
+                    from: 1
                     last_page: 1
                     links:
                       -
@@ -653,12 +1132,42 @@ paths:
                         active: false
                     path: 'http://127.0.0.1:8000/api/v1/brand'
                     per_page: 50
-                    to: null
-                    total: 0
+                    to: 2
+                    total: 2
                 properties:
                   data:
                     type: array
-                    example: []
+                    example:
+                      -
+                        id: 3
+                        name: Gucci
+                        slug: gucci
+                        order: 2
+                        status: 1
+                      -
+                        id: 4
+                        name: yame
+                        slug: yame
+                        order: 1
+                        status: 1
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Gucci
+                        slug:
+                          type: string
+                          example: gucci
+                        order:
+                          type: integer
+                          example: 2
+                        status:
+                          type: integer
+                          example: 1
                   links:
                     type: object
                     properties:
@@ -681,8 +1190,8 @@ paths:
                         type: integer
                         example: 1
                       from:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 1
                       last_page:
                         type: integer
                         example: 1
@@ -720,11 +1229,11 @@ paths:
                         type: integer
                         example: 50
                       to:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 2
                       total:
                         type: integer
-                        example: 0
+                        example: 2
       tags:
         - Brand
       security: []
@@ -2845,24 +3354,10 @@ paths:
                 example:
                   data:
                     -
-                      id: 145
-                      city_id: 12
-                      name: 'Bắc Ninh'
-                      slug: bac-ninh-bac-ninh
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: 'Thành phố'
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 146
-                      city_id: 12
-                      name: 'Gia Bình'
-                      slug: bac-ninh-gia-binh
+                      id: 225
+                      city_id: 20
+                      name: 'Buôn Đôn'
+                      slug: dak-lak-buon-don
                       geometry: null
                       center: null
                       color: null
@@ -2873,66 +3368,10 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 147
-                      city_id: 12
-                      name: 'Lương Tài'
-                      slug: bac-ninh-luong-tai
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 148
-                      city_id: 12
-                      name: 'Quế Võ'
-                      slug: bac-ninh-que-vo
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 149
-                      city_id: 12
-                      name: 'Thuận Thành'
-                      slug: bac-ninh-thuan-thanh
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 150
-                      city_id: 12
-                      name: 'Tiên Du'
-                      slug: bac-ninh-tien-du
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 151
-                      city_id: 12
-                      name: 'Từ Sơn'
-                      slug: bac-ninh-tu-son
+                      id: 226
+                      city_id: 20
+                      name: 'Buôn Hồ'
+                      slug: dak-lak-buon-ho
                       geometry: null
                       center: null
                       color: null
@@ -2943,10 +3382,178 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 152
-                      city_id: 12
-                      name: 'Yên Phong'
-                      slug: bac-ninh-yen-phong
+                      id: 227
+                      city_id: 20
+                      name: 'Buôn Ma Thuột'
+                      slug: dak-lak-buon-ma-thuot
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: 'Thành phố'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 228
+                      city_id: 20
+                      name: 'Cư Kuin'
+                      slug: dak-lak-cu-kuin
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 229
+                      city_id: 20
+                      name: "Cư M'gar"
+                      slug: dak-lak-cu-m-gar
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 230
+                      city_id: 20
+                      name: "Ea H'Leo"
+                      slug: dak-lak-ea-h-leo
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 231
+                      city_id: 20
+                      name: 'Ea Kar'
+                      slug: dak-lak-ea-kar
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 232
+                      city_id: 20
+                      name: 'Ea Súp'
+                      slug: dak-lak-ea-sup
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 233
+                      city_id: 20
+                      name: 'Krông Ana'
+                      slug: dak-lak-krong-ana
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 234
+                      city_id: 20
+                      name: 'Krông Bông'
+                      slug: dak-lak-krong-bong
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 235
+                      city_id: 20
+                      name: 'Krông Buk'
+                      slug: dak-lak-krong-buk
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 236
+                      city_id: 20
+                      name: 'Krông Năng'
+                      slug: dak-lak-krong-nang
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 237
+                      city_id: 20
+                      name: 'Krông Pắc'
+                      slug: dak-lak-krong-pac
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 238
+                      city_id: 20
+                      name: Lăk
+                      slug: dak-lak-lak
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 239
+                      city_id: 20
+                      name: "M'Đrăk"
+                      slug: dak-lak-m-drak
                       geometry: null
                       center: null
                       color: null
@@ -2961,24 +3568,10 @@ paths:
                     type: array
                     example:
                       -
-                        id: 145
-                        city_id: 12
-                        name: 'Bắc Ninh'
-                        slug: bac-ninh-bac-ninh
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: 'Thành phố'
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 146
-                        city_id: 12
-                        name: 'Gia Bình'
-                        slug: bac-ninh-gia-binh
+                        id: 225
+                        city_id: 20
+                        name: 'Buôn Đôn'
+                        slug: dak-lak-buon-don
                         geometry: null
                         center: null
                         color: null
@@ -2989,66 +3582,10 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 147
-                        city_id: 12
-                        name: 'Lương Tài'
-                        slug: bac-ninh-luong-tai
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 148
-                        city_id: 12
-                        name: 'Quế Võ'
-                        slug: bac-ninh-que-vo
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 149
-                        city_id: 12
-                        name: 'Thuận Thành'
-                        slug: bac-ninh-thuan-thanh
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 150
-                        city_id: 12
-                        name: 'Tiên Du'
-                        slug: bac-ninh-tien-du
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 151
-                        city_id: 12
-                        name: 'Từ Sơn'
-                        slug: bac-ninh-tu-son
+                        id: 226
+                        city_id: 20
+                        name: 'Buôn Hồ'
+                        slug: dak-lak-buon-ho
                         geometry: null
                         center: null
                         color: null
@@ -3059,10 +3596,178 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 152
-                        city_id: 12
-                        name: 'Yên Phong'
-                        slug: bac-ninh-yen-phong
+                        id: 227
+                        city_id: 20
+                        name: 'Buôn Ma Thuột'
+                        slug: dak-lak-buon-ma-thuot
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: 'Thành phố'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 228
+                        city_id: 20
+                        name: 'Cư Kuin'
+                        slug: dak-lak-cu-kuin
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 229
+                        city_id: 20
+                        name: "Cư M'gar"
+                        slug: dak-lak-cu-m-gar
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 230
+                        city_id: 20
+                        name: "Ea H'Leo"
+                        slug: dak-lak-ea-h-leo
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 231
+                        city_id: 20
+                        name: 'Ea Kar'
+                        slug: dak-lak-ea-kar
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 232
+                        city_id: 20
+                        name: 'Ea Súp'
+                        slug: dak-lak-ea-sup
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 233
+                        city_id: 20
+                        name: 'Krông Ana'
+                        slug: dak-lak-krong-ana
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 234
+                        city_id: 20
+                        name: 'Krông Bông'
+                        slug: dak-lak-krong-bong
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 235
+                        city_id: 20
+                        name: 'Krông Buk'
+                        slug: dak-lak-krong-buk
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 236
+                        city_id: 20
+                        name: 'Krông Năng'
+                        slug: dak-lak-krong-nang
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 237
+                        city_id: 20
+                        name: 'Krông Pắc'
+                        slug: dak-lak-krong-pac
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 238
+                        city_id: 20
+                        name: Lăk
+                        slug: dak-lak-lak
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 239
+                        city_id: 20
+                        name: "M'Đrăk"
+                        slug: dak-lak-m-drak
                         geometry: null
                         center: null
                         color: null
@@ -3077,16 +3782,16 @@ paths:
                       properties:
                         id:
                           type: integer
-                          example: 145
+                          example: 225
                         city_id:
                           type: integer
-                          example: 12
+                          example: 20
                         name:
                           type: string
-                          example: 'Bắc Ninh'
+                          example: 'Buôn Đôn'
                         slug:
                           type: string
-                          example: bac-ninh-bac-ninh
+                          example: dak-lak-buon-don
                         geometry:
                           type: string
                           example: null
@@ -3101,7 +3806,7 @@ paths:
                           example: null
                         pre:
                           type: string
-                          example: 'Thành phố'
+                          example: Huyện
                         order:
                           type: string
                           example: null
@@ -3122,7 +3827,7 @@ paths:
         in: path
         name: city_id
         description: 'Get district after choose city.'
-        example: 12
+        example: 20
         required: true
         schema:
           type: integer
@@ -3163,106 +3868,211 @@ paths:
                 example:
                   data:
                     -
-                      id: 105
+                      id: 236
                       city_id: 1
-                      district_id: 8
-                      name: 'Hiệp Phước'
-                      slug: ho-chi-minh-nha-be-hiep-phuoc
+                      district_id: 18
+                      name: '1'
+                      slug: ho-chi-minh-quan-6-phuong-1
                       geometry: null
-                      center: '[10.608508,106.751715]'
+                      center: '[10.746459,106.650904]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                      bounding_box: '{\"tl\":[10.743004,106.647697],\"br\":[10.749011,106.654579]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 106
+                      id: 237
                       city_id: 1
-                      district_id: 8
-                      name: 'Long Thới'
-                      slug: ho-chi-minh-nha-be-long-thoi
+                      district_id: 18
+                      name: '10'
+                      slug: ho-chi-minh-quan-6-phuong-10
                       geometry: null
-                      center: '[10.653873,106.724979]'
+                      center: '[10.73724,106.6278]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.633926,106.700119],\"br\":[10.669222,106.748451]}'
-                      pre: Xã
+                      bounding_box: '{\"tl\":[10.730059,106.620743],\"br\":[10.74285,106.634445]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 107
+                      id: 238
                       city_id: 1
-                      district_id: 8
-                      name: 'Nhà Bè'
-                      slug: ho-chi-minh-nha-be-nha-be
+                      district_id: 18
+                      name: '11'
+                      slug: ho-chi-minh-quan-6-phuong-11
                       geometry: null
-                      center: '[10.69367,106.741852]'
+                      center: '[10.745016,106.632047]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.681742,106.722763],\"br\":[10.704349,106.759819]}'
-                      pre: 'Thị trấn'
+                      bounding_box: '{\"tl\":[10.741161,106.622078],\"br\":[10.749264,106.639809]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 108
+                      id: 239
                       city_id: 1
-                      district_id: 8
-                      name: 'Nhơn Đức'
-                      slug: ho-chi-minh-nha-be-nhon-duc
+                      district_id: 18
+                      name: '12'
+                      slug: ho-chi-minh-quan-6-phuong-12
                       geometry: null
-                      center: '[10.672555,106.699373]'
+                      center: '[10.74994,106.632616]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.64864,106.678223],\"br\":[10.694305,106.727921]}'
-                      pre: Xã
+                      bounding_box: '{\"tl\":[10.745202,106.623245],\"br\":[10.75503,106.63945]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 109
+                      id: 240
                       city_id: 1
-                      district_id: 8
-                      name: 'Phú Xuân'
-                      slug: ho-chi-minh-nha-be-phu-xuan
+                      district_id: 18
+                      name: '13'
+                      slug: ho-chi-minh-quan-6-phuong-13
                       geometry: null
-                      center: '[10.67656,106.749843]'
+                      center: '[10.75279,106.627423]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.665042,106.725693],\"br\":[10.690324,106.775848]}'
-                      pre: Xã
+                      bounding_box: '{\"tl\":[10.745772,106.623489],\"br\":[10.757941,106.634117]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 110
+                      id: 241
                       city_id: 1
-                      district_id: 8
-                      name: 'Phước Kiển'
-                      slug: ho-chi-minh-nha-be-phuoc-kien
+                      district_id: 18
+                      name: '14'
+                      slug: ho-chi-minh-quan-6-phuong-14
                       geometry: null
-                      center: '[10.704274,106.709206]'
+                      center: '[10.757735,106.630693]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.6805,106.688087],\"br\":[10.725589,106.72847]}'
-                      pre: Xã
+                      bounding_box: '{\"tl\":[10.754242,106.624718],\"br\":[10.76053,106.637123]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 111
+                      id: 242
                       city_id: 1
-                      district_id: 8
-                      name: 'Phước Lộc'
-                      slug: ho-chi-minh-nha-be-phuoc-loc
+                      district_id: 18
+                      name: '2'
+                      slug: ho-chi-minh-quan-6-phuong-2
                       geometry: null
-                      center: '[10.69858,106.683571]'
+                      center: '[10.750195,106.650241]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.681792,106.672806],\"br\":[10.714979,106.698814]}'
-                      pre: Xã
+                      bounding_box: '{\"tl\":[10.748121,106.647232],\"br\":[10.753674,106.653564]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 243
+                      city_id: 1
+                      district_id: 18
+                      name: '3'
+                      slug: ho-chi-minh-quan-6-phuong-3
+                      geometry: null
+                      center: '[10.7429,106.645869]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.739756,106.64283],\"br\":[10.745982,106.649101]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 244
+                      city_id: 1
+                      district_id: 18
+                      name: '4'
+                      slug: ho-chi-minh-quan-6-phuong-4
+                      geometry: null
+                      center: '[10.745988,106.644996]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.742957,106.64241],\"br\":[10.748121,106.648125]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 245
+                      city_id: 1
+                      district_id: 18
+                      name: '5'
+                      slug: ho-chi-minh-quan-6-phuong-5
+                      geometry: null
+                      center: '[10.748519,106.64313]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.74666,106.63945],\"br\":[10.749896,106.647697]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 246
+                      city_id: 1
+                      district_id: 18
+                      name: '6'
+                      slug: ho-chi-minh-quan-6-phuong-6
+                      geometry: null
+                      center: '[10.751983,106.645498]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.749616,106.642067],\"br\":[10.754342,106.649292]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 247
+                      city_id: 1
+                      district_id: 18
+                      name: '7'
+                      slug: ho-chi-minh-quan-6-phuong-7
+                      geometry: null
+                      center: '[10.738623,106.638144]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.73365,106.633514],\"br\":[10.742957,106.643669]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 248
+                      city_id: 1
+                      district_id: 18
+                      name: '8'
+                      slug: ho-chi-minh-quan-6-phuong-8
+                      geometry: null
+                      center: '[10.74295,106.638986]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.7389,106.634171],\"br\":[10.747242,106.64283]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 249
+                      city_id: 1
+                      district_id: 18
+                      name: '9'
+                      slug: ho-chi-minh-quan-6-phuong-9
+                      geometry: null
+                      center: '[10.752482,106.63994]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.749264,106.636398],\"br\":[10.755029,106.642838]}'
+                      pre: Phường
                       order: null
                       status: 1
                       created_at: null
@@ -3272,106 +4082,211 @@ paths:
                     type: array
                     example:
                       -
-                        id: 105
+                        id: 236
                         city_id: 1
-                        district_id: 8
-                        name: 'Hiệp Phước'
-                        slug: ho-chi-minh-nha-be-hiep-phuoc
+                        district_id: 18
+                        name: '1'
+                        slug: ho-chi-minh-quan-6-phuong-1
                         geometry: null
-                        center: '[10.608508,106.751715]'
+                        center: '[10.746459,106.650904]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                        bounding_box: '{\"tl\":[10.743004,106.647697],\"br\":[10.749011,106.654579]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 106
+                        id: 237
                         city_id: 1
-                        district_id: 8
-                        name: 'Long Thới'
-                        slug: ho-chi-minh-nha-be-long-thoi
+                        district_id: 18
+                        name: '10'
+                        slug: ho-chi-minh-quan-6-phuong-10
                         geometry: null
-                        center: '[10.653873,106.724979]'
+                        center: '[10.73724,106.6278]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.633926,106.700119],\"br\":[10.669222,106.748451]}'
-                        pre: Xã
+                        bounding_box: '{\"tl\":[10.730059,106.620743],\"br\":[10.74285,106.634445]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 107
+                        id: 238
                         city_id: 1
-                        district_id: 8
-                        name: 'Nhà Bè'
-                        slug: ho-chi-minh-nha-be-nha-be
+                        district_id: 18
+                        name: '11'
+                        slug: ho-chi-minh-quan-6-phuong-11
                         geometry: null
-                        center: '[10.69367,106.741852]'
+                        center: '[10.745016,106.632047]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.681742,106.722763],\"br\":[10.704349,106.759819]}'
-                        pre: 'Thị trấn'
+                        bounding_box: '{\"tl\":[10.741161,106.622078],\"br\":[10.749264,106.639809]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 108
+                        id: 239
                         city_id: 1
-                        district_id: 8
-                        name: 'Nhơn Đức'
-                        slug: ho-chi-minh-nha-be-nhon-duc
+                        district_id: 18
+                        name: '12'
+                        slug: ho-chi-minh-quan-6-phuong-12
                         geometry: null
-                        center: '[10.672555,106.699373]'
+                        center: '[10.74994,106.632616]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.64864,106.678223],\"br\":[10.694305,106.727921]}'
-                        pre: Xã
+                        bounding_box: '{\"tl\":[10.745202,106.623245],\"br\":[10.75503,106.63945]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 109
+                        id: 240
                         city_id: 1
-                        district_id: 8
-                        name: 'Phú Xuân'
-                        slug: ho-chi-minh-nha-be-phu-xuan
+                        district_id: 18
+                        name: '13'
+                        slug: ho-chi-minh-quan-6-phuong-13
                         geometry: null
-                        center: '[10.67656,106.749843]'
+                        center: '[10.75279,106.627423]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.665042,106.725693],\"br\":[10.690324,106.775848]}'
-                        pre: Xã
+                        bounding_box: '{\"tl\":[10.745772,106.623489],\"br\":[10.757941,106.634117]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 110
+                        id: 241
                         city_id: 1
-                        district_id: 8
-                        name: 'Phước Kiển'
-                        slug: ho-chi-minh-nha-be-phuoc-kien
+                        district_id: 18
+                        name: '14'
+                        slug: ho-chi-minh-quan-6-phuong-14
                         geometry: null
-                        center: '[10.704274,106.709206]'
+                        center: '[10.757735,106.630693]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.6805,106.688087],\"br\":[10.725589,106.72847]}'
-                        pre: Xã
+                        bounding_box: '{\"tl\":[10.754242,106.624718],\"br\":[10.76053,106.637123]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 111
+                        id: 242
                         city_id: 1
-                        district_id: 8
-                        name: 'Phước Lộc'
-                        slug: ho-chi-minh-nha-be-phuoc-loc
+                        district_id: 18
+                        name: '2'
+                        slug: ho-chi-minh-quan-6-phuong-2
                         geometry: null
-                        center: '[10.69858,106.683571]'
+                        center: '[10.750195,106.650241]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.681792,106.672806],\"br\":[10.714979,106.698814]}'
-                        pre: Xã
+                        bounding_box: '{\"tl\":[10.748121,106.647232],\"br\":[10.753674,106.653564]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 243
+                        city_id: 1
+                        district_id: 18
+                        name: '3'
+                        slug: ho-chi-minh-quan-6-phuong-3
+                        geometry: null
+                        center: '[10.7429,106.645869]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.739756,106.64283],\"br\":[10.745982,106.649101]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 244
+                        city_id: 1
+                        district_id: 18
+                        name: '4'
+                        slug: ho-chi-minh-quan-6-phuong-4
+                        geometry: null
+                        center: '[10.745988,106.644996]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.742957,106.64241],\"br\":[10.748121,106.648125]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 245
+                        city_id: 1
+                        district_id: 18
+                        name: '5'
+                        slug: ho-chi-minh-quan-6-phuong-5
+                        geometry: null
+                        center: '[10.748519,106.64313]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.74666,106.63945],\"br\":[10.749896,106.647697]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 246
+                        city_id: 1
+                        district_id: 18
+                        name: '6'
+                        slug: ho-chi-minh-quan-6-phuong-6
+                        geometry: null
+                        center: '[10.751983,106.645498]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.749616,106.642067],\"br\":[10.754342,106.649292]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 247
+                        city_id: 1
+                        district_id: 18
+                        name: '7'
+                        slug: ho-chi-minh-quan-6-phuong-7
+                        geometry: null
+                        center: '[10.738623,106.638144]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.73365,106.633514],\"br\":[10.742957,106.643669]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 248
+                        city_id: 1
+                        district_id: 18
+                        name: '8'
+                        slug: ho-chi-minh-quan-6-phuong-8
+                        geometry: null
+                        center: '[10.74295,106.638986]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.7389,106.634171],\"br\":[10.747242,106.64283]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 249
+                        city_id: 1
+                        district_id: 18
+                        name: '9'
+                        slug: ho-chi-minh-quan-6-phuong-9
+                        geometry: null
+                        center: '[10.752482,106.63994]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.749264,106.636398],\"br\":[10.755029,106.642838]}'
+                        pre: Phường
                         order: null
                         status: 1
                         created_at: null
@@ -3381,31 +4296,31 @@ paths:
                       properties:
                         id:
                           type: integer
-                          example: 105
+                          example: 236
                         city_id:
                           type: integer
                           example: 1
                         district_id:
                           type: integer
-                          example: 8
+                          example: 18
                         name:
                           type: string
-                          example: 'Hiệp Phước'
+                          example: '1'
                         slug:
                           type: string
-                          example: ho-chi-minh-nha-be-hiep-phuoc
+                          example: ho-chi-minh-quan-6-phuong-1
                         geometry:
                           type: string
                           example: null
                         center:
                           type: string
-                          example: '[10.608508,106.751715]'
+                          example: '[10.746459,106.650904]'
                         color:
                           type: string
                           example: '#FF0000'
                         bounding_box:
                           type: string
-                          example: '{\"tl\":[10.576117,106.718628],\"br\":[10.649294,106.783058]}'
+                          example: '{\"tl\":[10.743004,106.647697],\"br\":[10.749011,106.654579]}'
                         pre:
                           type: string
                           example: Phường
@@ -3429,7 +4344,7 @@ paths:
         in: path
         name: district_id
         description: 'Get ward after choose district.'
-        example: 8
+        example: 18
         required: true
         schema:
           type: integer
@@ -3711,12 +4626,12 @@ paths:
           in: query
           name: min_price
           description: 'The minimum price of the product to filter. 1000000'
-          example: 4
+          example: 10
           required: false
           schema:
             type: integer
             description: 'The minimum price of the product to filter. 1000000'
-            example: 4
+            example: 10
         -
           in: query
           name: max_price
@@ -3968,7 +4883,7 @@ paths:
         in: path
         name: slug
         description: 'The slug of the item.'
-        example: neque
+        example: aut
         required: true
         schema:
           type: string
@@ -4552,6 +5467,12 @@ tags:
   -
     name: 'Admin Brand'
     description: "\nAPIs for managing Brand"
+  -
+    name: 'Admin ItemCategory'
+    description: "\nAPIs for managing ItemCategory"
+  -
+    name: 'Admin User'
+    description: "\nAPIs for managing User"
   -
     name: 'Authentication Endpoints'
     description: "\nAPIs for authenticating user"

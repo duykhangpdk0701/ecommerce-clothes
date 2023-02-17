@@ -4,4 +4,9 @@ interface IBrand {
   slug: string;
 }
 
+export interface IAdminBrand extends IBrand {
+  order: number;
+  status: boolean;
+}
+
 export default IBrand;

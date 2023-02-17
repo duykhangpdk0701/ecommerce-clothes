@@ -1,5 +1,10 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { Box, Button, InputLabel, Paper, OutlinedInput } from "@mui/material";
+//mui component
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import Paper from "@mui/material/Paper";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import Button from "@mui/material/Button";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -22,7 +27,13 @@ const ResetPasswordTemplate = () => {
         sx={{ boxShadow: "0px 8px 45px rgb(3 0 71 / 9%)" }}
       >
         <Box component="form">
-          <Image src={logoSvg} alt="DBRR logo" className="mx-auto block" />
+          <Image
+            src={logoSvg}
+            alt="DBRR logo"
+            className="mx-auto block"
+            width={100}
+            height={100}
+          />
           <h1 className="mb-8 mt-2 text-[16px] font-bold text-center">
             Reset your password
           </h1>

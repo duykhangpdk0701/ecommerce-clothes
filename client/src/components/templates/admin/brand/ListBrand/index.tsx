@@ -1,25 +1,24 @@
 import React, { ChangeEvent, MouseEvent, useState, FC } from "react";
 import { filter } from "lodash";
 // @mui
-import {
-  Card,
-  Table,
-  Stack,
-  Paper,
-  Avatar,
-  Button,
-  Popover,
-  Checkbox,
-  TableRow,
-  MenuItem,
-  TableBody,
-  TableCell,
-  Container,
-  Typography,
-  IconButton,
-  TableContainer,
-  TablePagination,
-} from "@mui/material";
+import Card from "@mui/material/Card";
+import Table from "@mui/material/Table";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Popover from "@mui/material/Popover";
+import Checkbox from "@mui/material/Checkbox";
+import TableRow from "@mui/material/TableRow";
+import MenuItem from "@mui/material/MenuItem";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import TableContainer from "@mui/material/TableContainer";
+import TablePagination from "@mui/material/TablePagination";
+
 //component
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
@@ -168,7 +167,7 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
           mb={5}
         >
           <Typography variant="h4" gutterBottom>
-            Brand
+            List Brand
           </Typography>
           <Button
             LinkComponent={Link}
@@ -203,46 +202,94 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const { id, name } = row;
+                      const { id, name, slug } = row;
                       const selectedUser = selected.indexOf(name) !== -1;
 
                       return (
-                        <TableRow
-                          hover
-                          key={id}
-                          tabIndex={-1}
-                          role="checkbox"
-                          selected={selectedUser}
-                        >
-                          <TableCell padding="checkbox">
-                            <Checkbox
-                              checked={selectedUser}
-                              onChange={(event) => handleClick(event, name)}
-                            />
-                          </TableCell>
+                        <>
+                          <TableRow
+                            hover
+                            key={id}
+                            tabIndex={-1}
+                            role="checkbox"
+                            selected={selectedUser}
+                          >
+                            <TableCell padding="checkbox">
+                              <Checkbox
+                                checked={selectedUser}
+                                onChange={(event) => handleClick(event, name)}
+                              />
+                            </TableCell>
 
-                          <TableCell component="th" scope="row" padding="none">
-                            <Stack
-                              direction="row"
-                              alignItems="center"
-                              spacing={2}
+                            <TableCell
+                              component="th"
+                              scope="row"
+                              padding="none"
                             >
-                              <Typography variant="subtitle2" noWrap>
-                                {name}
-                              </Typography>
-                            </Stack>
-                          </TableCell>
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Typography variant="subtitle2" noWrap>
+                                  {name}
+                                </Typography>
+                              </Stack>
+                            </TableCell>
 
-                          <TableCell align="right">
-                            <IconButton
-                              size="large"
-                              color="inherit"
-                              onClick={handleOpenMenu}
-                            >
-                              <Iconify icon={"eva:more-vertical-fill"} />
-                            </IconButton>
-                          </TableCell>
-                        </TableRow>
+                            <TableCell align="right">
+                              <IconButton
+                                size="large"
+                                color="inherit"
+                                onClick={handleOpenMenu}
+                              >
+                                <Iconify icon={"eva:more-vertical-fill"} />
+                              </IconButton>
+                            </TableCell>
+                          </TableRow>
+                          <Popover
+                            open={Boolean(open)}
+                            anchorEl={open}
+                            onClose={handleCloseMenu}
+                            anchorOrigin={{
+                              vertical: "top",
+                              horizontal: "left",
+                            }}
+                            transformOrigin={{
+                              vertical: "top",
+                              horizontal: "right",
+                            }}
+                            PaperProps={{
+                              sx: {
+                                p: 1,
+                                width: 140,
+                                "& .MuiMenuItem-root": {
+                                  px: 1,
+                                  typography: "body2",
+                                  borderRadius: 0.75,
+                                },
+                              },
+                            }}
+                          >
+                            <Link href={`/admin/brand/${id}/update`} passHref>
+                              <MenuItem>
+                                <Iconify
+                                  icon={"eva:edit-fill"}
+                                  sx={{ mr: 2 }}
+                                />
+                                Edit
+                              </MenuItem>
+                            </Link>
+
+                            <MenuItem sx={{ color: "error.main" }}>
+                              <Iconify
+                                icon={"eva:trash-2-outline"}
+                                sx={{ mr: 2 }}
+                              />
+                              Delete
+                            </MenuItem>
+                          </Popover>
+                        </>
                       );
                     })}
                   {emptyRows > 0 && (
@@ -291,35 +338,6 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
           />
         </Card>
       </Container>
-
-      <Popover
-        open={Boolean(open)}
-        anchorEl={open}
-        onClose={handleCloseMenu}
-        anchorOrigin={{ vertical: "top", horizontal: "left" }}
-        transformOrigin={{ vertical: "top", horizontal: "right" }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            "& .MuiMenuItem-root": {
-              px: 1,
-              typography: "body2",
-              borderRadius: 0.75,
-            },
-          },
-        }}
-      >
-        <MenuItem>
-          <Iconify icon={"eva:edit-fill"} sx={{ mr: 2 }} />
-          Edit
-        </MenuItem>
-
-        <MenuItem sx={{ color: "error.main" }}>
-          <Iconify icon={"eva:trash-2-outline"} sx={{ mr: 2 }} />
-          Delete
-        </MenuItem>
-      </Popover>
     </>
   );
 };

@@ -1,8 +1,14 @@
 import React from "react";
 // @mui
 import { styled } from "@mui/material/styles";
-import { Button, Typography, Container, Box } from "@mui/material";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+//next
 import Link from "next/link";
+import Image from "next/image";
+//image
+import img404 from "@/assets/illustrations/illustration_404.svg";
 
 const StyledContent = styled("div")(({ theme }) => ({
   maxWidth: 480,
@@ -26,12 +32,15 @@ const Custom404 = () => {
           Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve
           mistyped the URL? Be sure to check your spelling.
         </Typography>
-
-        <Box
-          component="img"
-          src="/assets/illustrations/illustration_404.svg"
-          sx={{ height: 260, mx: "auto", my: { xs: 5, sm: 10 } }}
-        />
+        <div className="relative">
+          <Image
+            src={img404.src}
+            alt="logo"
+            height={260}
+            width={346}
+            className="mx-auto my-5 sm:my-10"
+          />
+        </div>
 
         <Button href="/" size="large" variant="contained" component={Link}>
           Go to Home

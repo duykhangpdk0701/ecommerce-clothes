@@ -1,14 +1,25 @@
-import adminBrandAPI from "@/api/admin/AdminAPI";
-import brandAPI from "@/api/brandAPI";
+import adminBrandAPI from "@/api/admin/adminBrandAPI";
 import ListBrandTemplate from "@/components/templates/admin/brand/ListBrand";
 import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
 import { NextPageWithLayout } from "../../_app";
 
 const Brand: NextPageWithLayout = () => {
-  const brandQuery = useQuery("listBrand", adminBrandAPI.getListOfBrand);
+  const route = useRouter();
+  const brandQuery = useQuery({
+    queryKey: "brand",
+    queryFn: adminBrandAPI.getListOfBrand,
+    onError(err: any) {
+      console.log(err.code);
+      const code = err.code;
+      if (code === 401) {
+        // route.replace("/auth/login");
+      }
+    },
+  });
 
   return (
     <>

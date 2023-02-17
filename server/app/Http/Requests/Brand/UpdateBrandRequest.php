@@ -24,9 +24,10 @@ class UpdateBrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'require|string',
+            'name' => 'required|string',
             'slug' => 'present|unique:brand,slug',
-            'order' => 'present'
+            'order' => 'present',
+            'status' => "required"
         ];
     }
 }

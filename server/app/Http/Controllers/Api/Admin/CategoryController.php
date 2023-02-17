@@ -40,7 +40,7 @@ class CategoryController extends Controller
      * @return AnonymousResourceCollection
      */
 
-    public function index (): AnonymousResourceCollection
+    public function index(): AnonymousResourceCollection
     {
         $result = $this->itemCategoryRepository->all();
         return ItemCategoryResource::collection($result);
@@ -62,6 +62,24 @@ class CategoryController extends Controller
         }
 
         return response()->json(new JsonResponse([], __('error.item_category.store_brand')), ResponseAlias::HTTP_NOT_FOUND);
+    }
+
+
+    /**
+     * Get itemCategory detail.
+     *
+     * This endpoint lets you get  itemCategory detail
+     *
+     * @param string $slug
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(int $id): \Illuminate\Http\JsonResponse
+    {
+        $result = $this->itemCategoryRepository->find($id);
+        if ($result) {
+            return response()->json(new JsonResponse(new ItemCategoryResource($result)), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.item_category.item_category_detail')), ResponseAlias::HTTP_NOT_FOUND);
     }
 
     /**

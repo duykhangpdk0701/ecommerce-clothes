@@ -178,7 +178,7 @@ endpoints:
         name: min_price
         description: 'The minimum price of the product to filter. 1000000'
         required: false
-        example: 4
+        example: 10
         type: integer
         custom: []
       max_price:
@@ -214,7 +214,7 @@ endpoints:
     cleanQueryParameters:
       limit: 50
       page: 1
-      min_price: 4
+      min_price: 10
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -260,11 +260,11 @@ endpoints:
         name: slug
         description: 'The slug of the item.'
         required: true
-        example: neque
+        example: aut
         type: string
         custom: []
     cleanUrlParameters:
-      slug: neque
+      slug: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

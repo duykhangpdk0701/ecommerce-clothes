@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, useState } from "react";
+import React, { ChangeEvent, FC, MouseEvent, useState } from "react";
 import { filter } from "lodash";
 import { sentenceCase } from "change-case";
 // @mui
@@ -28,6 +28,7 @@ import Label from "@/components/shared/label";
 import { UserListHead, UserListToolbar } from "./section/user";
 import USERLIST from "@/_mock/user";
 import IUser from "interfaces/User";
+import Link from "next/link";
 
 const TABLE_HEAD = [
   { id: "name", label: "Name", alignRight: false },
@@ -70,7 +71,12 @@ function applySortFilter(array: IUser[] = [], comparator: any, query: string) {
   return stabilizedThis.map((el) => el.el);
 }
 
-const UserTemplate = () => {
+interface IUserTemplate {
+  data?: IUser[];
+}
+
+const UserTemplate: FC<IUserTemplate> = (props) => {
+  const { data } = props;
   const [open, setOpen] = useState<any>(null);
 
   const [page, setPage] = useState(0);
@@ -149,7 +155,7 @@ const UserTemplate = () => {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
   const filteredUsers = applySortFilter(
-    [],
+    data,
     getComparator(order, orderBy),
     filterName
   );
@@ -203,44 +209,92 @@ const UserTemplate = () => {
                       const selectedUser = selected.indexOf(name) !== -1;
 
                       return (
-                        <TableRow
-                          hover
-                          key={id}
-                          tabIndex={-1}
-                          role="checkbox"
-                          selected={selectedUser}
-                        >
-                          <TableCell padding="checkbox">
-                            <Checkbox
-                              checked={selectedUser}
-                              onChange={(event) => handleClick(event, name)}
-                            />
-                          </TableCell>
+                        <>
+                          <TableRow
+                            hover
+                            key={id}
+                            tabIndex={-1}
+                            role="checkbox"
+                            selected={selectedUser}
+                          >
+                            <TableCell padding="checkbox">
+                              <Checkbox
+                                checked={selectedUser}
+                                onChange={(event) => handleClick(event, name)}
+                              />
+                            </TableCell>
 
-                          <TableCell component="th" scope="row" padding="none">
-                            <Stack
-                              direction="row"
-                              alignItems="center"
-                              spacing={2}
+                            <TableCell
+                              component="th"
+                              scope="row"
+                              padding="none"
                             >
-                              <Typography variant="subtitle2" noWrap>
-                                {name}
-                              </Typography>
-                            </Stack>
-                          </TableCell>
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Typography variant="subtitle2" noWrap>
+                                  {name}
+                                </Typography>
+                              </Stack>
+                            </TableCell>
 
-                          <TableCell align="left">{role}</TableCell>
+                            <TableCell align="left">{role}</TableCell>
 
-                          <TableCell align="right">
-                            <IconButton
-                              size="large"
-                              color="inherit"
-                              onClick={handleOpenMenu}
-                            >
-                              <Iconify icon={"eva:more-vertical-fill"} />
-                            </IconButton>
-                          </TableCell>
-                        </TableRow>
+                            <TableCell align="right">
+                              <IconButton
+                                size="large"
+                                color="inherit"
+                                onClick={handleOpenMenu}
+                              >
+                                <Iconify icon={"eva:more-vertical-fill"} />
+                              </IconButton>
+                            </TableCell>
+                          </TableRow>
+                          <Popover
+                            open={Boolean(open)}
+                            anchorEl={open}
+                            onClose={handleCloseMenu}
+                            anchorOrigin={{
+                              vertical: "top",
+                              horizontal: "left",
+                            }}
+                            transformOrigin={{
+                              vertical: "top",
+                              horizontal: "right",
+                            }}
+                            PaperProps={{
+                              sx: {
+                                p: 1,
+                                width: 140,
+                                "& .MuiMenuItem-root": {
+                                  px: 1,
+                                  typography: "body2",
+                                  borderRadius: 0.75,
+                                },
+                              },
+                            }}
+                          >
+                            <Link passHref href={`/admin/user/${id}/update`}>
+                              <MenuItem>
+                                <Iconify
+                                  icon={"eva:edit-fill"}
+                                  sx={{ mr: 2 }}
+                                />
+                                Edit
+                              </MenuItem>
+                            </Link>
+
+                            <MenuItem sx={{ color: "error.main" }}>
+                              <Iconify
+                                icon={"eva:trash-2-outline"}
+                                sx={{ mr: 2 }}
+                              />
+                              Delete
+                            </MenuItem>
+                          </Popover>
+                        </>
                       );
                     })}
                   {emptyRows > 0 && (
@@ -289,35 +343,6 @@ const UserTemplate = () => {
           />
         </Card>
       </Container>
-
-      <Popover
-        open={Boolean(open)}
-        anchorEl={open}
-        onClose={handleCloseMenu}
-        anchorOrigin={{ vertical: "top", horizontal: "left" }}
-        transformOrigin={{ vertical: "top", horizontal: "right" }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            "& .MuiMenuItem-root": {
-              px: 1,
-              typography: "body2",
-              borderRadius: 0.75,
-            },
-          },
-        }}
-      >
-        <MenuItem>
-          <Iconify icon={"eva:edit-fill"} sx={{ mr: 2 }} />
-          Edit
-        </MenuItem>
-
-        <MenuItem sx={{ color: "error.main" }}>
-          <Iconify icon={"eva:trash-2-outline"} sx={{ mr: 2 }} />
-          Delete
-        </MenuItem>
-      </Popover>
     </>
   );
 };

@@ -20,7 +20,9 @@ class BrandResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'slug' => $this->slug,
-//            'qty_items' => number_format($this->items->count())
+            'order' => $this->order,
+            'status' => $this->status,
+//            'qty _items' => number_format($this->items->count())
         ];
     }
 }

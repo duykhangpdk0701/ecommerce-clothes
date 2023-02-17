@@ -63,6 +63,72 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - GET
+    uri: 'api/v1/admin/brand/{slug}'
+    metadata:
+      groupName: 'Admin Brand'
+      groupDescription: |-
+
+        APIs for managing Brand
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get brand detail.'
+      description: 'This endpoint lets you get  brand detail'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the brand.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      slug: 1
+    queryParameters:
+      is_show:
+        name: is_show
+        description: 'True will return active brands and False will return inactive brands.'
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      limit:
+        name: limit
+        description: 'The number of resource that will show and then paginate.'
+        required: false
+        example: 50
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      is_show: true
+      limit: 50
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/v1/admin/brand
     metadata:
@@ -88,8 +154,8 @@ endpoints:
       name:
         name: name
         description: ''
-        required: false
-        example: null
+        required: true
+        example: enim
         type: string
         custom: []
       slug:
@@ -99,6 +165,13 @@ endpoints:
         example: null
         type: string
         custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        custom: []
       order:
         name: order
         description: ''
@@ -106,7 +179,9 @@ endpoints:
         example: null
         type: string
         custom: []
-    cleanBodyParameters: []
+    cleanBodyParameters:
+      name: enim
+      status: false
     fileParameters: []
     responses: []
     responseFields: []
@@ -151,7 +226,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: hic
+        example: qui
         type: string
         custom: []
       slug:
@@ -169,7 +244,7 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: hic
+      name: qui
     fileParameters: []
     responses: []
     responseFields: []

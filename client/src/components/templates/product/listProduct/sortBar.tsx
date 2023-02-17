@@ -1,14 +1,15 @@
-import { Apps, ViewList } from "@mui/icons-material";
-import {
-  FormLabel,
-  MenuItem,
-  Paper,
-  Select,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
 import React from "react";
 import { TEXT_COLOR_GRAY } from "@/styles/color";
+// mui component
+import FormLabel from "@mui/material/FormLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Paper from "@mui/material/Paper";
+import Select from "@mui/material/Select";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+// mui icon
+import AppsIcon from "@mui/icons-material/Apps";
+import ViewListIcon from "@mui/icons-material/ViewList";
 
 const ListProductSortBar = () => {
   return (
@@ -51,10 +52,10 @@ const ListProductSortBar = () => {
           </FormLabel>
           <ToggleButtonGroup>
             <ToggleButton value="grid" aria-label="grid">
-              <Apps />
+              <AppsIcon />
             </ToggleButton>
             <ToggleButton value="list" aria-label="list">
-              <ViewList />
+              <ViewListIcon />
             </ToggleButton>
           </ToggleButtonGroup>
         </div>

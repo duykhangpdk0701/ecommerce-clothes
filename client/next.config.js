@@ -1,8 +1,18 @@
-const withTM = require("next-transpile-modules")(["@mui/material"]);
+const withTM = require("next-transpile-modules")([
+  "@mui/material",
+  "@mui/system",
+  "@mui/icons-material", // If @mui/icons-material is being used
+]);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+    };
+    return config;
+  },
   // experimental: {
   //   modularizeImports: {
   //     "@mui/material/?(((\\w*)?/?)*)": {
@@ -18,4 +28,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = nextConfig;
+module.exports = withTM(nextConfig);

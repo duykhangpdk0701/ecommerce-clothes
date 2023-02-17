@@ -1,20 +1,26 @@
-import { Container, Grid } from "@mui/material";
-import React from "react";
-import ListProductProducts from "./products";
-import ListProductSideBar from "./sideBar";
-import ListProductSortBar from "./sortBar";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import React, { FC, ReactNode } from "react";
 
-const ListProductTemplate = () => {
+interface IListProductTemplate {
+  listProductSortBar: ReactNode;
+  listProductSideBar: ReactNode;
+  listProductProducts: ReactNode;
+}
+
+const ListProductTemplate: FC<IListProductTemplate> = (props) => {
+  const { listProductSortBar, listProductSideBar, listProductProducts } = props;
+
   return (
     <Container className="my-8">
-      <ListProductSortBar />
+      {listProductSortBar}
       <div>
         <Grid container spacing={3}>
           <Grid item xs={3}>
-            <ListProductSideBar />
+            {listProductSideBar}
           </Grid>
           <Grid item xs={9}>
-            <ListProductProducts />
+            {listProductProducts}
           </Grid>
         </Grid>
       </div>

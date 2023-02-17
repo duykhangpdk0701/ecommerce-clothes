@@ -2,15 +2,13 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 // @mui
 import { styled, alpha } from "@mui/material/styles";
-import {
-  Box,
-  Link,
-  Button,
-  Drawer,
-  Typography,
-  Avatar,
-  Stack,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
 // mock
 import account from "@/_mock/account";
 // hooks

@@ -2,25 +2,23 @@ import React, { ChangeEvent, FC, MouseEvent, useState, useEffect } from "react";
 import { filter } from "lodash";
 import { sentenceCase } from "change-case";
 // @mui
-import {
-  Card,
-  Table,
-  Stack,
-  Paper,
-  Avatar,
-  Button,
-  Popover,
-  Checkbox,
-  TableRow,
-  MenuItem,
-  TableBody,
-  TableCell,
-  Container,
-  Typography,
-  IconButton,
-  TableContainer,
-  TablePagination,
-} from "@mui/material";
+import Card from "@mui/material/Card";
+import Table from "@mui/material/Table";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Popover from "@mui/material/Popover";
+import Checkbox from "@mui/material/Checkbox";
+import TableRow from "@mui/material/TableRow";
+import MenuItem from "@mui/material/MenuItem";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import TableContainer from "@mui/material/TableContainer";
+import TablePagination from "@mui/material/TablePagination";
 //component
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
@@ -29,6 +27,7 @@ import ListCategoryHead from "./section/ListCategoryHead";
 import ListCategoryToolbar from "./section/ListCategoryToolbar";
 import USERLIST from "@/_mock/user";
 import ICategory from "interfaces/Category";
+import Link from "next/link";
 
 const TABLE_HEAD = [
   { id: "name", label: "Name", alignRight: false },
@@ -189,6 +188,8 @@ const ListCategoryTemplate: FC<IListCategoryTempalte> = (props) => {
           <Button
             variant="contained"
             startIcon={<Iconify icon="eva:plus-fill" />}
+            LinkComponent={Link}
+            href="/admin/category/create"
           >
             New Category
           </Button>

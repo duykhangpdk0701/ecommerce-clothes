@@ -1,6 +1,4 @@
-import brandAPI from "@/api/brandAPI";
-import categoryAPI from "@/api/categoryAPI";
-import ListBrandTemplate from "@/components/templates/admin/brand/ListBrand";
+import adminItemCategoryAPI from "@/api/admin/adminItemCategoryAPI";
 import ListCategoryTemplate from "@/components/templates/admin/category/ListCategory";
 import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
@@ -9,7 +7,10 @@ import { useQuery } from "react-query";
 import { NextPageWithLayout } from "../../_app";
 
 const Category: NextPageWithLayout = () => {
-  const categoryQuery = useQuery("listCategory", categoryAPI.getListOfCategory);
+  const categoryQuery = useQuery(
+    "item-category",
+    adminItemCategoryAPI.getListOfItemCategory
+  );
 
   return (
     <>
