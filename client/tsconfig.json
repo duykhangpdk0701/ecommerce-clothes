@@ -35,7 +35,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/templates/address/listAddress"
+    "components/templates/address/listAddress",
+    "src/components/templates/Home"
   ],
   "exclude": ["node_modules"]
 }

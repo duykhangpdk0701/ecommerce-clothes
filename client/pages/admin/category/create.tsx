@@ -14,7 +14,7 @@ export interface ICreateBrandParams {
   name: string;
   slug: string;
   status: boolean;
-  order: string;
+  order: number;
 }
 
 const createBrandSchema = yup.object({
