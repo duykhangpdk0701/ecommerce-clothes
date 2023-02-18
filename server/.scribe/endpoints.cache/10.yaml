@@ -157,83 +157,148 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: oezgie
+        example: jxhletzteilicx
         type: string
         custom: []
       last_name:
         name: last_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: wkgyhuianofl
+        example: fhjaygssfkelr
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: jazlyn.simonis@example.com
+        example: kitty59@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: architecto
+        example: quo
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: autem
+        example: est
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: 82111938.8301
+        example: 5268088.1269493
         type: number
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: maxime
+        example: dolorum
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: eveniet
+        example: ut
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: recusandae
+        example: molestias
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: repellat
+        example: quo
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: oezgie
-      last_name: wkgyhuianofl
-      email: jazlyn.simonis@example.com
-      password: architecto
-      role: autem
-      phone: 82111938.8301
-      city_id: maxime
-      district_id: eveniet
-      ward_id: recusandae
-      address: repellat
+      first_name: jxhletzteilicx
+      last_name: fhjaygssfkelr
+      email: kitty59@example.org
+      password: quo
+      role: est
+      phone: 5268088.1269493
+      city_id: dolorum
+      district_id: ut
+      ward_id: molestias
+      address: quo
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/admin/user/{id}'
+    metadata:
+      groupName: 'Admin User'
+      groupDescription: |-
+
+        APIs for managing User
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Brand'
+      description: 'This endpoint lets you update user'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rwtxzdclhasbptysqfm
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: sterry@example.com
+        type: string
+        custom: []
+      role:
+        name: role
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: rwtxzdclhasbptysqfm
+      email: sterry@example.com
+      role: ut
     fileParameters: []
     responses: []
     responseFields: []

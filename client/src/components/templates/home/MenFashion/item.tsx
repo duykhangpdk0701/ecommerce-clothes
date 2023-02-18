@@ -12,12 +12,12 @@ const MenFashionItem = () => {
     <div className="px-4">
       <div className="bg-white">
         <div>
-          <Link href={"/product"}>
+          <Link href={"/product"} className="block w-full h-[225px] relative">
             <Image
               src={product_1.src}
               alt="product1"
-              height={225}
-              width={225}
+              fill
+              className="object-cover"
             />
           </Link>
         </div>

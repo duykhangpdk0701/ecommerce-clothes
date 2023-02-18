@@ -64,7 +64,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/admin/brand/{slug}'
+    uri: 'api/v1/admin/brand/{id}'
     metadata:
       groupName: 'Admin Brand'
       groupDescription: |-
@@ -81,15 +81,15 @@ endpoints:
       Accept: application/json
       API-KEY: RANDOM_STUFF
     urlParameters:
-      slug:
-        name: slug
-        description: 'The slug of the brand.'
+      id:
+        name: id
+        description: 'The ID of the brand.'
         required: true
         example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      slug: 1
+      id: 1
     queryParameters:
       is_show:
         name: is_show
@@ -155,7 +155,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: enim
+        example: sunt
         type: string
         custom: []
       slug:
@@ -169,7 +169,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
         custom: []
       order:
@@ -180,8 +180,8 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: enim
-      status: false
+      name: sunt
+      status: true
     fileParameters: []
     responses: []
     responseFields: []
@@ -225,8 +225,8 @@ endpoints:
       name:
         name: name
         description: ''
-        required: false
-        example: qui
+        required: true
+        example: necessitatibus
         type: string
         custom: []
       slug:
@@ -243,8 +243,16 @@ endpoints:
         example: null
         type: string
         custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: minima
+        type: string
+        custom: []
     cleanBodyParameters:
-      name: qui
+      name: necessitatibus
+      status: minima
     fileParameters: []
     responses: []
     responseFields: []

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8e7c51a9-26e0-4386-858d-d6706b9eb61d",
+        "_postman_id": "c480cccb-6d96-4dcf-9ed9-9324ab8f55a0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -63,7 +63,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "20",
+                                    "value": "4",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -167,7 +167,7 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/brand\/:slug",
+                            "path": "api\/v1\/admin\/brand\/:id",
                             "query": [
                                 {
                                     "key": "is_show",
@@ -182,13 +182,13 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/brand\/:slug?is_show=1&limit=50",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/brand\/:id?is_show=1&limit=50",
                             "variable": [
                                 {
-                                    "id": "slug",
-                                    "key": "slug",
+                                    "id": "id",
+                                    "key": "id",
                                     "value": "1",
-                                    "description": "The slug of the brand."
+                                    "description": "The ID of the brand."
                                 }
                             ]
                         },
@@ -261,7 +261,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"enim\",\"status\":false}"
+                            "raw": "{\"name\":\"sunt\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create a brand",
                         "auth": {
@@ -304,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qui\"}"
+                            "raw": "{\"name\":\"necessitatibus\",\"status\":\"minima\"}"
                         },
                         "description": "This endpoint lets you update brands",
                         "auth": {
@@ -416,15 +416,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-category\/:slug",
+                            "path": "api\/v1\/admin\/item-category\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-category\/:slug",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-category\/:id",
                             "variable": [
                                 {
-                                    "id": "slug",
-                                    "key": "slug",
+                                    "id": "id",
+                                    "key": "id",
                                     "value": "1",
-                                    "description": "The slug of the item category."
+                                    "description": "The ID of the item category."
                                 }
                             ]
                         },
@@ -681,9 +681,52 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"oezgie\",\"last_name\":\"wkgyhuianofl\",\"email\":\"jazlyn.simonis@example.com\",\"password\":\"architecto\",\"role\":\"autem\",\"phone\":82111938.8301,\"city_id\":\"maxime\",\"district_id\":\"eveniet\",\"ward_id\":\"recusandae\",\"address\":\"repellat\"}"
+                            "raw": "{\"first_name\":\"jxhletzteilicx\",\"last_name\":\"fhjaygssfkelr\",\"email\":\"kitty59@example.org\",\"password\":\"quo\",\"role\":\"est\",\"phone\":5268088.12694931,\"city_id\":\"dolorum\",\"district_id\":\"ut\",\"ward_id\":\"molestias\",\"address\":\"quo\"}"
                         },
                         "description": "This endpoint lets you create a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"rwtxzdclhasbptysqfm\",\"email\":\"sterry@example.com\",\"role\":\"ut\"}"
+                        },
+                        "description": "This endpoint lets you update user",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1356,7 +1399,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "20",
+                                    "value": "9",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -1407,7 +1450,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":225,\"city_id\":20,\"name\":\"Bu\\u00f4n \\u0110\\u00f4n\",\"slug\":\"dak-lak-buon-don\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":226,\"city_id\":20,\"name\":\"Bu\\u00f4n H\\u1ed3\",\"slug\":\"dak-lak-buon-ho\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":227,\"city_id\":20,\"name\":\"Bu\\u00f4n Ma Thu\\u1ed9t\",\"slug\":\"dak-lak-buon-ma-thuot\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":228,\"city_id\":20,\"name\":\"C\\u01b0 Kuin\",\"slug\":\"dak-lak-cu-kuin\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":229,\"city_id\":20,\"name\":\"C\\u01b0 M'gar\",\"slug\":\"dak-lak-cu-m-gar\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":230,\"city_id\":20,\"name\":\"Ea H'Leo\",\"slug\":\"dak-lak-ea-h-leo\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":231,\"city_id\":20,\"name\":\"Ea Kar\",\"slug\":\"dak-lak-ea-kar\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":232,\"city_id\":20,\"name\":\"Ea S\\u00fap\",\"slug\":\"dak-lak-ea-sup\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":233,\"city_id\":20,\"name\":\"Kr\\u00f4ng Ana\",\"slug\":\"dak-lak-krong-ana\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":234,\"city_id\":20,\"name\":\"Kr\\u00f4ng B\\u00f4ng\",\"slug\":\"dak-lak-krong-bong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":235,\"city_id\":20,\"name\":\"Kr\\u00f4ng Buk\",\"slug\":\"dak-lak-krong-buk\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":236,\"city_id\":20,\"name\":\"Kr\\u00f4ng N\\u0103ng\",\"slug\":\"dak-lak-krong-nang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":237,\"city_id\":20,\"name\":\"Kr\\u00f4ng P\\u1eafc\",\"slug\":\"dak-lak-krong-pac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":238,\"city_id\":20,\"name\":\"L\\u0103k\",\"slug\":\"dak-lak-lak\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":239,\"city_id\":20,\"name\":\"M'\\u0110r\\u0103k\",\"slug\":\"dak-lak-m-drak\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":120,\"city_id\":9,\"name\":\"B\\u1eafc Giang\",\"slug\":\"bac-giang-bac-giang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":121,\"city_id\":9,\"name\":\"Hi\\u1ec7p H\\u00f2a\",\"slug\":\"bac-giang-hiep-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":122,\"city_id\":9,\"name\":\"L\\u1ea1ng Giang\",\"slug\":\"bac-giang-lang-giang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":123,\"city_id\":9,\"name\":\"L\\u1ee5c Nam\",\"slug\":\"bac-giang-luc-nam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":124,\"city_id\":9,\"name\":\"L\\u1ee5c Ng\\u1ea1n\",\"slug\":\"bac-giang-luc-ngan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":125,\"city_id\":9,\"name\":\"S\\u01a1n \\u0110\\u1ed9ng\",\"slug\":\"bac-giang-son-dong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":126,\"city_id\":9,\"name\":\"T\\u00e2n Y\\u00ean\",\"slug\":\"bac-giang-tan-yen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":127,\"city_id\":9,\"name\":\"Vi\\u1ec7t Y\\u00ean\",\"slug\":\"bac-giang-viet-yen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":128,\"city_id\":9,\"name\":\"Y\\u00ean D\\u0169ng\",\"slug\":\"bac-giang-yen-dung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":129,\"city_id\":9,\"name\":\"Y\\u00ean Th\\u1ebf\",\"slug\":\"bac-giang-yen-the\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -1424,7 +1467,7 @@
                                 {
                                     "id": "district_id",
                                     "key": "district_id",
-                                    "value": "18",
+                                    "value": "2",
                                     "description": "Get ward after choose district."
                                 }
                             ]
@@ -1475,10 +1518,272 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":236,\"city_id\":1,\"district_id\":18,\"name\":\"1\",\"slug\":\"ho-chi-minh-quan-6-phuong-1\",\"geometry\":null,\"center\":\"[10.746459,106.650904]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.743004,106.647697],\\\\\\\"br\\\\\\\":[10.749011,106.654579]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":237,\"city_id\":1,\"district_id\":18,\"name\":\"10\",\"slug\":\"ho-chi-minh-quan-6-phuong-10\",\"geometry\":null,\"center\":\"[10.73724,106.6278]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.730059,106.620743],\\\\\\\"br\\\\\\\":[10.74285,106.634445]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":238,\"city_id\":1,\"district_id\":18,\"name\":\"11\",\"slug\":\"ho-chi-minh-quan-6-phuong-11\",\"geometry\":null,\"center\":\"[10.745016,106.632047]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.741161,106.622078],\\\\\\\"br\\\\\\\":[10.749264,106.639809]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":239,\"city_id\":1,\"district_id\":18,\"name\":\"12\",\"slug\":\"ho-chi-minh-quan-6-phuong-12\",\"geometry\":null,\"center\":\"[10.74994,106.632616]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.745202,106.623245],\\\\\\\"br\\\\\\\":[10.75503,106.63945]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":240,\"city_id\":1,\"district_id\":18,\"name\":\"13\",\"slug\":\"ho-chi-minh-quan-6-phuong-13\",\"geometry\":null,\"center\":\"[10.75279,106.627423]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.745772,106.623489],\\\\\\\"br\\\\\\\":[10.757941,106.634117]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":241,\"city_id\":1,\"district_id\":18,\"name\":\"14\",\"slug\":\"ho-chi-minh-quan-6-phuong-14\",\"geometry\":null,\"center\":\"[10.757735,106.630693]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.754242,106.624718],\\\\\\\"br\\\\\\\":[10.76053,106.637123]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":242,\"city_id\":1,\"district_id\":18,\"name\":\"2\",\"slug\":\"ho-chi-minh-quan-6-phuong-2\",\"geometry\":null,\"center\":\"[10.750195,106.650241]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.748121,106.647232],\\\\\\\"br\\\\\\\":[10.753674,106.653564]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":243,\"city_id\":1,\"district_id\":18,\"name\":\"3\",\"slug\":\"ho-chi-minh-quan-6-phuong-3\",\"geometry\":null,\"center\":\"[10.7429,106.645869]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.739756,106.64283],\\\\\\\"br\\\\\\\":[10.745982,106.649101]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":244,\"city_id\":1,\"district_id\":18,\"name\":\"4\",\"slug\":\"ho-chi-minh-quan-6-phuong-4\",\"geometry\":null,\"center\":\"[10.745988,106.644996]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.742957,106.64241],\\\\\\\"br\\\\\\\":[10.748121,106.648125]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":245,\"city_id\":1,\"district_id\":18,\"name\":\"5\",\"slug\":\"ho-chi-minh-quan-6-phuong-5\",\"geometry\":null,\"center\":\"[10.748519,106.64313]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.74666,106.63945],\\\\\\\"br\\\\\\\":[10.749896,106.647697]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":246,\"city_id\":1,\"district_id\":18,\"name\":\"6\",\"slug\":\"ho-chi-minh-quan-6-phuong-6\",\"geometry\":null,\"center\":\"[10.751983,106.645498]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.749616,106.642067],\\\\\\\"br\\\\\\\":[10.754342,106.649292]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":247,\"city_id\":1,\"district_id\":18,\"name\":\"7\",\"slug\":\"ho-chi-minh-quan-6-phuong-7\",\"geometry\":null,\"center\":\"[10.738623,106.638144]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.73365,106.633514],\\\\\\\"br\\\\\\\":[10.742957,106.643669]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":248,\"city_id\":1,\"district_id\":18,\"name\":\"8\",\"slug\":\"ho-chi-minh-quan-6-phuong-8\",\"geometry\":null,\"center\":\"[10.74295,106.638986]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.7389,106.634171],\\\\\\\"br\\\\\\\":[10.747242,106.64283]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":249,\"city_id\":1,\"district_id\":18,\"name\":\"9\",\"slug\":\"ho-chi-minh-quan-6-phuong-9\",\"geometry\":null,\"center\":\"[10.752482,106.63994]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.749264,106.636398],\\\\\\\"br\\\\\\\":[10.755029,106.642838]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":17,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c\",\"slug\":\"ho-chi-minh-binh-tan-an-lac\",\"geometry\":null,\"center\":\"[10.725189,106.611877]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[21.271919,106.858543],\\\\\\\"br\\\\\\\":[21.382446,107.033302]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":18,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c A\",\"slug\":\"ho-chi-minh-binh-tan-an-lac-a\",\"geometry\":null,\"center\":\"[10.746428,106.618603]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.730873,106.608978],\\\\\\\"br\\\\\\\":[10.757444,106.623894]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":19,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa\",\"geometry\":null,\"center\":\"[10.805627,106.604079]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.78757,106.595116],\\\\\\\"br\\\\\\\":[10.826193,106.61573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":20,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a A\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-a\",\"geometry\":null,\"center\":\"[10.783846,106.607692]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.773629,106.592697],\\\\\\\"br\\\\\\\":[10.796749,106.621246]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":21,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a B\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-b\",\"geometry\":null,\"center\":\"[10.805476,106.591707]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.775042,106.582001],\\\\\\\"br\\\\\\\":[10.829794,106.602936]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":22,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong\",\"geometry\":null,\"center\":\"[10.765981,106.616146]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.755939,106.608429],\\\\\\\"br\\\\\\\":[10.776417,106.62574]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":23,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng A\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-a\",\"geometry\":null,\"center\":\"[10.769627,106.596629]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.757954,106.576408],\\\\\\\"br\\\\\\\":[10.778677,106.609573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":24,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng B\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-b\",\"geometry\":null,\"center\":\"[10.745272,106.60885]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.727364,106.597572],\\\\\\\"br\\\\\\\":[10.758321,106.620094]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":25,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao\",\"geometry\":null,\"center\":\"[10.759283,106.588809]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.743312,106.566978],\\\\\\\"br\\\\\\\":[10.771526,106.606071]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":26,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o A\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao-a\",\"geometry\":null,\"center\":\"[10.742232,106.580911]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.722403,106.55822],\\\\\\\"br\\\\\\\":[10.760674,106.602715]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get a list of item color.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color?is_show=1&limit=50"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get a list of item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get item color detail.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id?is_show=1&limit=50",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the item color."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get item color detail",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new item color",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"qui\"}"
+                        },
+                        "description": "This endpoint lets you create an item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"laudantium\"}"
+                        },
+                        "description": "This endpoint lets you update brands",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Item color",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "12",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you delete item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -1637,7 +1942,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "10",
+                                    "value": "18",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -1660,7 +1965,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=10&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=18&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -1725,7 +2030,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "aut",
+                                    "value": "necessitatibus",
                                     "description": "The slug of the item."
                                 }
                             ]
