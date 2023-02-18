@@ -1,4 +1,4 @@
-import HomeTemplate from "@/components/templates/Home";
+import HomeTemplate from "@/components/templates/home";
 import HomeLayout from "@/layout/HomeLayout";
 import Head from "next/head";
 import { ReactElement } from "react";
