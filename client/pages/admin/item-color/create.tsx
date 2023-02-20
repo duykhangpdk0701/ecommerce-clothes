@@ -6,20 +6,20 @@ import { NextPageWithLayout } from "../../_app";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation } from "react-query";
-import categoryAPI from "@/api/categoryAPI";
+import { useMutation, useQuery } from "react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
+import adminItemColorAPI from "@/api/admin/adminItemColor";
 
-export interface ICreateBrandParams {
+export interface ICreateItemColorParams {
   name: string;
-  slug: string;
+  color: string;
   status: boolean;
   order: number;
 }
 
-const createBrandSchema = yup.object({
+const createItemColorSchema = yup.object({
   name: yup.string().required(),
-  slug: yup.string().required(),
+  color: yup.string().required(),
   status: yup.boolean().required(),
   order: yup.string().required(),
 });
@@ -33,18 +33,19 @@ const CreateItemColor: NextPageWithLayout = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<ICreateBrandParams>({
+  } = useForm<ICreateItemColorParams>({
     defaultValues: {
+      order: 0,
       status: true,
     },
-    resolver: yupResolver(createBrandSchema),
+    resolver: yupResolver(createItemColorSchema),
   });
 
-  const createBrandMutation = useMutation({
+  const createItemColorMutation = useMutation({
     mutationKey: "brand",
-    mutationFn: ({ name, slug, order, status }: ICreateBrandParams) => {
+    mutationFn: ({ name, color, order, status }: ICreateItemColorParams) => {
       setLoading(true);
-      return categoryAPI.getListOfCategory();
+      return adminItemColorAPI.createItemColor(name, color, order);
     },
     onSuccess: (data) => {
       console.log(data);
@@ -56,9 +57,9 @@ const CreateItemColor: NextPageWithLayout = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<ICreateBrandParams> = (data) => {
-    const { name, slug, order, status } = data;
-    createBrandMutation.mutate({ name, slug, order, status });
+  const onSubmit: SubmitHandler<ICreateItemColorParams> = (data) => {
+    const { name, color, order, status } = data;
+    createItemColorMutation.mutate({ name, color, order, status });
   };
 
   return (

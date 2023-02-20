@@ -155,7 +155,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: sunt
+        example: in
         type: string
         custom: []
       slug:
@@ -169,7 +169,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: true
+        example: false
         type: boolean
         custom: []
       order:
@@ -180,8 +180,8 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: sunt
-      status: true
+      name: in
+      status: false
     fileParameters: []
     responses: []
     responseFields: []
@@ -226,7 +226,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: necessitatibus
+        example: assumenda
         type: string
         custom: []
       slug:
@@ -247,12 +247,12 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: minima
+        example: maiores
         type: string
         custom: []
     cleanBodyParameters:
-      name: necessitatibus
-      status: minima
+      name: assumenda
+      status: maiores
     fileParameters: []
     responses: []
     responseFields: []

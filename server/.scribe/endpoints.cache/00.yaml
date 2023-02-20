@@ -116,7 +116,7 @@ endpoints:
         name: agree_ckb
         description: 'Agree to the terms.'
         required: true
-        example: false
+        example: true
         type: boolean
         custom: []
       password_confirmation:
@@ -131,7 +131,7 @@ endpoints:
       last_name: null
       email: null
       password: null
-      agree_ckb: false
+      agree_ckb: true
       password_confirmation: null
     fileParameters: []
     responses: []

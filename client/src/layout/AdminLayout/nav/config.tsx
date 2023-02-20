@@ -34,13 +34,18 @@ const navConfig: INavConfig[] = [
     icon: icon("ic_cart"),
   },
   {
-    title: "category",
+    title: "Category",
     path: "/admin/category",
     icon: icon("ic_cart"),
   },
   {
     title: "Item Color",
     path: "/admin/item-color",
+    icon: icon("ic_cart"),
+  },
+  {
+    title: "Item Size",
+    path: "/admin/item-size",
     icon: icon("ic_cart"),
   },
   {

@@ -13,7 +13,11 @@ use App\Responses\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
-
+/**
+ * @group Admin Item color
+ *
+ * APIs for managing Item color
+ */
 class ItemColorController extends Controller
 {
     protected ItemColorRepositoryInterface $itemColorRepository;
@@ -84,9 +88,9 @@ class ItemColorController extends Controller
     }
 
     /**
-     * Update Brand
+     * Update Item color
      *
-     * This endpoint lets you update brands
+     * This endpoint lets you update item color
      *
      * @param UpdateItemColorRequest $request
      * @param ItemColor $itemColor
@@ -106,7 +110,7 @@ class ItemColorController extends Controller
     /**
      * Delete Item color
      *
-     * This endpoint lets you delete item color
+     * This endpoint lets you delete an item color
      *
      * @param ItemColor $brand
      * @return \Illuminate\Http\JsonResponse

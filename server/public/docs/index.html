@@ -117,6 +117,50 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-admin-item-size" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="admin-item-size">
+                    <a href="#admin-item-size">Admin Item Size</a>
+                </li>
+                                    <ul id="tocify-subheader-admin-item-size" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="admin-item-size-GETapi-v1-admin-item-size">
+                                <a href="#admin-item-size-GETapi-v1-admin-item-size">Get a list of item size.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-size-GETapi-v1-admin-item-size--id-">
+                                <a href="#admin-item-size-GETapi-v1-admin-item-size--id-">Get item size detail.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-size-POSTapi-v1-admin-item-size">
+                                <a href="#admin-item-size-POSTapi-v1-admin-item-size">Create a new item size</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-size-PUTapi-v1-admin-item-size--id--">
+                                <a href="#admin-item-size-PUTapi-v1-admin-item-size--id--">Update Item size</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-size-DELETEapi-v1-admin-item-size--id--">
+                                <a href="#admin-item-size-DELETEapi-v1-admin-item-size--id--">Delete Item size</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-admin-item-color" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="admin-item-color">
+                    <a href="#admin-item-color">Admin Item color</a>
+                </li>
+                                    <ul id="tocify-subheader-admin-item-color" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="admin-item-color-GETapi-v1-admin-item-color">
+                                <a href="#admin-item-color-GETapi-v1-admin-item-color">Get a list of item color.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-color-GETapi-v1-admin-item-color--id-">
+                                <a href="#admin-item-color-GETapi-v1-admin-item-color--id-">Get item color detail.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-color-POSTapi-v1-admin-item-color">
+                                <a href="#admin-item-color-POSTapi-v1-admin-item-color">Create a new item color</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-color-PUTapi-v1-admin-item-color--id--">
+                                <a href="#admin-item-color-PUTapi-v1-admin-item-color--id--">Update Item color</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-color-DELETEapi-v1-admin-item-color--id--">
+                                <a href="#admin-item-color-DELETEapi-v1-admin-item-color--id--">Delete Item color</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-admin-user" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="admin-user">
                     <a href="#admin-user">Admin User</a>
@@ -215,28 +259,6 @@
                             </li>
                                                                         </ul>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
-                </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-admin-item-color">
-                                <a href="#endpoints-GETapi-v1-admin-item-color">Get a list of item color.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-admin-item-color--id-">
-                                <a href="#endpoints-GETapi-v1-admin-item-color--id-">Get item color detail.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-admin-item-color">
-                                <a href="#endpoints-POSTapi-v1-admin-item-color">Create a new item color</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-admin-item-color--id--">
-                                <a href="#endpoints-PUTapi-v1-admin-item-color--id--">Update Brand</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-admin-item-color--id--">
-                                <a href="#endpoints-DELETEapi-v1-admin-item-color--id--">Delete Item color</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
                     <ul id="tocify-header-item" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="item">
                     <a href="#item">Item</a>
@@ -298,7 +320,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 18, 2023</li>
+        <li>Last updated: February 20, 2023</li>
     </ul>
 </div>
 
@@ -446,7 +468,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/address/4" \
+    "http://127.0.0.1:8000/api/v1/address/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -454,7 +476,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/address/4"
+    "http://127.0.0.1:8000/api/v1/address/15"
 );
 
 const headers = {
@@ -551,10 +573,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="address_id"                data-endpoint="DELETEapi-v1-address--address_id-"
-               value="4"
+               value="15"
                data-component="url">
     <br>
-<p>The ID of the address. Example: <code>4</code></p>
+<p>The ID of the address. Example: <code>15</code></p>
             </div>
                     </form>
 
@@ -930,8 +952,8 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"sunt\",
-    \"status\": true
+    \"name\": \"in\",
+    \"status\": false
 }"
 </code></pre></div>
 
@@ -948,8 +970,8 @@ const headers = {
 };
 
 let body = {
-    "name": "sunt",
-    "status": true
+    "name": "in",
+    "status": false
 };
 
 fetch(url, {
@@ -1041,10 +1063,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-brand"
-               value="sunt"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>sunt</code></p>
+<p>Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
@@ -1076,7 +1098,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -1109,8 +1131,8 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"necessitatibus\",
-    \"status\": \"minima\"
+    \"name\": \"assumenda\",
+    \"status\": \"maiores\"
 }"
 </code></pre></div>
 
@@ -1127,8 +1149,8 @@ const headers = {
 };
 
 let body = {
-    "name": "necessitatibus",
-    "status": "minima"
+    "name": "assumenda",
+    "status": "maiores"
 };
 
 fetch(url, {
@@ -1232,10 +1254,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="necessitatibus"
+               value="assumenda"
                data-component="body">
     <br>
-<p>Example: <code>necessitatibus</code></p>
+<p>Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
@@ -1265,10 +1287,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="status"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="minima"
+               value="maiores"
                data-component="body">
     <br>
-<p>Example: <code>minima</code></p>
+<p>Example: <code>maiores</code></p>
         </div>
         </form>
 
@@ -1796,6 +1818,1665 @@ fetch(url, {
             </div>
                     </form>
 
+                <h1 id="admin-item-size">Admin Item Size</h1>
+
+    <p>APIS for managing Item Size</p>
+
+                                <h2 id="admin-item-size-GETapi-v1-admin-item-size">Get a list of item size.</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you get a list of item size</p>
+
+<span id="example-requests-GETapi-v1-admin-item-size">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-size?is_show=1&amp;limit=50" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-size"
+);
+
+const params = {
+    "is_show": "1",
+    "limit": "50",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-size">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-size" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-size"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-size" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-size" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-size"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-size" data-method="GET"
+      data-path="api/v1/admin/item-size"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-size', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-size"
+                    onclick="tryItOut('GETapi-v1-admin-item-size');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-size"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-size');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-size" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-size</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-size"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETapi-v1-admin-item-size" style="display: none">
+            <input type="radio" name="is_show"
+                   value="1"
+                   data-endpoint="GETapi-v1-admin-item-size"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-v1-admin-item-size" style="display: none">
+            <input type="radio" name="is_show"
+                   value="0"
+                   data-endpoint="GETapi-v1-admin-item-size"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETapi-v1-admin-item-size"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-item-size-GETapi-v1-admin-item-size--id-">Get item size detail.</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you get item color size</p>
+
+<span id="example-requests-GETapi-v1-admin-item-size--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-size/9?is_show=1&amp;limit=50" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-size/9"
+);
+
+const params = {
+    "is_show": "1",
+    "limit": "50",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-size--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-size--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-size--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-size--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-size--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-size--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-size--id-" data-method="GET"
+      data-path="api/v1/admin/item-size/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-size--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-size--id-"
+                    onclick="tryItOut('GETapi-v1-admin-item-size--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-size--id-"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-size--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-size--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-size/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="9"
+               data-component="url">
+    <br>
+<p>The ID of the item size. Example: <code>9</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETapi-v1-admin-item-size--id-" style="display: none">
+            <input type="radio" name="is_show"
+                   value="1"
+                   data-endpoint="GETapi-v1-admin-item-size--id-"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-v1-admin-item-size--id-" style="display: none">
+            <input type="radio" name="is_show"
+                   value="0"
+                   data-endpoint="GETapi-v1-admin-item-size--id-"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-item-size-POSTapi-v1-admin-item-size">Create a new item size</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you create an item size</p>
+
+<span id="example-requests-POSTapi-v1-admin-item-size">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/admin/item-size" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"item_category_id\": \"in\",
+    \"item_person_type_id\": \"quia\",
+    \"value\": \"voluptas\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-size"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "item_category_id": "in",
+    "item_person_type_id": "quia",
+    "value": "voluptas"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-admin-item-size">
+</span>
+<span id="execution-results-POSTapi-v1-admin-item-size" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-admin-item-size"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-item-size" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-admin-item-size" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-admin-item-size"></code></pre>
+</span>
+<form id="form-POSTapi-v1-admin-item-size" data-method="POST"
+      data-path="api/v1/admin/item-size"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-item-size', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-admin-item-size"
+                    onclick="tryItOut('POSTapi-v1-admin-item-size');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-admin-item-size"
+                    onclick="cancelTryOut('POSTapi-v1-admin-item-size');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-admin-item-size" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/admin/item-size</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_category_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="item_category_id"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="in"
+               data-component="body">
+    <br>
+<p>Example: <code>in</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="quia"
+               data-component="body">
+    <br>
+<p>Example: <code>quia</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="value"                data-endpoint="POSTapi-v1-admin-item-size"
+               value="voluptas"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptas</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="POSTapi-v1-admin-item-size"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="admin-item-size-PUTapi-v1-admin-item-size--id--">Update Item size</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you update item size</p>
+
+<span id="example-requests-PUTapi-v1-admin-item-size--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/v1/admin/item-size/19" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"item_category_id\": \"praesentium\",
+    \"item_person_type_id\": \"ut\",
+    \"value\": \"quas\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-size/19"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "item_category_id": "praesentium",
+    "item_person_type_id": "ut",
+    "value": "quas"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-admin-item-size--id--">
+</span>
+<span id="execution-results-PUTapi-v1-admin-item-size--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-admin-item-size--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-item-size--id--" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-admin-item-size--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-admin-item-size--id--"></code></pre>
+</span>
+<form id="form-PUTapi-v1-admin-item-size--id--" data-method="PUT"
+      data-path="api/v1/admin/item-size/{id?}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-item-size--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-admin-item-size--id--"
+                    onclick="tryItOut('PUTapi-v1-admin-item-size--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-admin-item-size--id--"
+                    onclick="cancelTryOut('PUTapi-v1-admin-item-size--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-admin-item-size--id--" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/admin/item-size/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="19"
+               data-component="url">
+    <br>
+<p>The ID of the . Example: <code>19</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_category_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="item_category_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="praesentium"
+               data-component="body">
+    <br>
+<p>Example: <code>praesentium</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="item_person_type_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="ut"
+               data-component="body">
+    <br>
+<p>Example: <code>ut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="value"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="quas"
+               data-component="body">
+    <br>
+<p>Example: <code>quas</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="admin-item-size-DELETEapi-v1-admin-item-size--id--">Delete Item size</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you delete an item size</p>
+
+<span id="example-requests-DELETEapi-v1-admin-item-size--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8000/api/v1/admin/item-size/9" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-size/9"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-admin-item-size--id--">
+</span>
+<span id="execution-results-DELETEapi-v1-admin-item-size--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-admin-item-size--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-admin-item-size--id--" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-admin-item-size--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-admin-item-size--id--"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-admin-item-size--id--" data-method="DELETE"
+      data-path="api/v1/admin/item-size/{id?}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-admin-item-size--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-admin-item-size--id--"
+                    onclick="tryItOut('DELETEapi-v1-admin-item-size--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-admin-item-size--id--"
+                    onclick="cancelTryOut('DELETEapi-v1-admin-item-size--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-admin-item-size--id--" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/admin/item-size/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="DELETEapi-v1-admin-item-size--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="DELETEapi-v1-admin-item-size--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="DELETEapi-v1-admin-item-size--id--"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="DELETEapi-v1-admin-item-size--id--"
+               value="9"
+               data-component="url">
+    <br>
+<p>The ID of the . Example: <code>9</code></p>
+            </div>
+                    </form>
+
+                <h1 id="admin-item-color">Admin Item color</h1>
+
+    <p>APIs for managing Item color</p>
+
+                                <h2 id="admin-item-color-GETapi-v1-admin-item-color">Get a list of item color.</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you get a list of item color</p>
+
+<span id="example-requests-GETapi-v1-admin-item-color">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-color?is_show=1&amp;limit=50" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-color"
+);
+
+const params = {
+    "is_show": "1",
+    "limit": "50",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-color">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-color" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-color"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-color" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-color" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-color"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-color" data-method="GET"
+      data-path="api/v1/admin/item-color"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-color', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-color"
+                    onclick="tryItOut('GETapi-v1-admin-item-color');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-color"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-color');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-color" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-color</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-color"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-color"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-color"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETapi-v1-admin-item-color" style="display: none">
+            <input type="radio" name="is_show"
+                   value="1"
+                   data-endpoint="GETapi-v1-admin-item-color"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-v1-admin-item-color" style="display: none">
+            <input type="radio" name="is_show"
+                   value="0"
+                   data-endpoint="GETapi-v1-admin-item-color"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETapi-v1-admin-item-color"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-item-color-GETapi-v1-admin-item-color--id-">Get item color detail.</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you get item color detail</p>
+
+<span id="example-requests-GETapi-v1-admin-item-color--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-color/1?is_show=1&amp;limit=50" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+);
+
+const params = {
+    "is_show": "1",
+    "limit": "50",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-color--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-color--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-color--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-color--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-color--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-color--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-color--id-" data-method="GET"
+      data-path="api/v1/admin/item-color/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-color--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-color--id-"
+                    onclick="tryItOut('GETapi-v1-admin-item-color--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-color--id-"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-color--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-color--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-color/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the item color. Example: <code>1</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="GETapi-v1-admin-item-color--id-" style="display: none">
+            <input type="radio" name="is_show"
+                   value="1"
+                   data-endpoint="GETapi-v1-admin-item-color--id-"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-v1-admin-item-color--id-" style="display: none">
+            <input type="radio" name="is_show"
+                   value="0"
+                   data-endpoint="GETapi-v1-admin-item-color--id-"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-item-color-POSTapi-v1-admin-item-color">Create a new item color</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you create an item color</p>
+
+<span id="example-requests-POSTapi-v1-admin-item-color">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/admin/item-color" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"name\": \"et\",
+    \"status\": false
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-color"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "name": "et",
+    "status": false
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-admin-item-color">
+</span>
+<span id="execution-results-POSTapi-v1-admin-item-color" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-admin-item-color"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-item-color" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-admin-item-color" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-admin-item-color"></code></pre>
+</span>
+<form id="form-POSTapi-v1-admin-item-color" data-method="POST"
+      data-path="api/v1/admin/item-color"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-item-color', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-admin-item-color"
+                    onclick="tryItOut('POSTapi-v1-admin-item-color');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-admin-item-color"
+                    onclick="cancelTryOut('POSTapi-v1-admin-item-color');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-admin-item-color" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/admin/item-color</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-admin-item-color"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-admin-item-color"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="POSTapi-v1-admin-item-color"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name"                data-endpoint="POSTapi-v1-admin-item-color"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="value"                data-endpoint="POSTapi-v1-admin-item-color"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="POSTapi-v1-admin-item-color"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+                <label data-endpoint="POSTapi-v1-admin-item-color" style="display: none">
+            <input type="radio" name="status"
+                   value="true"
+                   data-endpoint="POSTapi-v1-admin-item-color"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-v1-admin-item-color" style="display: none">
+            <input type="radio" name="status"
+                   value="false"
+                   data-endpoint="POSTapi-v1-admin-item-color"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Example: <code>false</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-item-color-PUTapi-v1-admin-item-color--id--">Update Item color</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you update item color</p>
+
+<span id="example-requests-PUTapi-v1-admin-item-color--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/v1/admin/item-color/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"name\": \"iure\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "name": "iure"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-admin-item-color--id--">
+</span>
+<span id="execution-results-PUTapi-v1-admin-item-color--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-admin-item-color--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-item-color--id--" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-admin-item-color--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-admin-item-color--id--"></code></pre>
+</span>
+<form id="form-PUTapi-v1-admin-item-color--id--" data-method="PUT"
+      data-path="api/v1/admin/item-color/{id?}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-item-color--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-admin-item-color--id--"
+                    onclick="tryItOut('PUTapi-v1-admin-item-color--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-admin-item-color--id--"
+                    onclick="cancelTryOut('PUTapi-v1-admin-item-color--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-admin-item-color--id--" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/admin/item-color/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the . Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="iure"
+               data-component="body">
+    <br>
+<p>Example: <code>iure</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="value"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="admin-item-color-DELETEapi-v1-admin-item-color--id--">Delete Item color</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you delete an item color</p>
+
+<span id="example-requests-DELETEapi-v1-admin-item-color--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8000/api/v1/admin/item-color/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-admin-item-color--id--">
+</span>
+<span id="execution-results-DELETEapi-v1-admin-item-color--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-admin-item-color--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-admin-item-color--id--" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-admin-item-color--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-admin-item-color--id--"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-admin-item-color--id--" data-method="DELETE"
+      data-path="api/v1/admin/item-color/{id?}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-admin-item-color--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-admin-item-color--id--"
+                    onclick="tryItOut('DELETEapi-v1-admin-item-color--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-admin-item-color--id--"
+                    onclick="cancelTryOut('DELETEapi-v1-admin-item-color--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-admin-item-color--id--" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/admin/item-color/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the . Example: <code>1</code></p>
+            </div>
+                    </form>
+
                 <h1 id="admin-user">Admin User</h1>
 
     <p>APIs for managing User</p>
@@ -2168,16 +3849,16 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"first_name\": \"jxhletzteilicx\",
-    \"last_name\": \"fhjaygssfkelr\",
-    \"email\": \"kitty59@example.org\",
-    \"password\": \"quo\",
-    \"role\": \"est\",
-    \"phone\": 5268088.12694931,
-    \"city_id\": \"dolorum\",
-    \"district_id\": \"ut\",
-    \"ward_id\": \"molestias\",
-    \"address\": \"quo\"
+    \"first_name\": \"nwwnntnw\",
+    \"last_name\": \"j\",
+    \"email\": \"ashlee41@example.org\",
+    \"password\": \"quod\",
+    \"role\": \"animi\",
+    \"phone\": 1794.9,
+    \"city_id\": \"veniam\",
+    \"district_id\": \"fuga\",
+    \"ward_id\": \"natus\",
+    \"address\": \"perferendis\"
 }"
 </code></pre></div>
 
@@ -2194,16 +3875,16 @@ const headers = {
 };
 
 let body = {
-    "first_name": "jxhletzteilicx",
-    "last_name": "fhjaygssfkelr",
-    "email": "kitty59@example.org",
-    "password": "quo",
-    "role": "est",
-    "phone": 5268088.12694931,
-    "city_id": "dolorum",
-    "district_id": "ut",
-    "ward_id": "molestias",
-    "address": "quo"
+    "first_name": "nwwnntnw",
+    "last_name": "j",
+    "email": "ashlee41@example.org",
+    "password": "quod",
+    "role": "animi",
+    "phone": 1794.9,
+    "city_id": "veniam",
+    "district_id": "fuga",
+    "ward_id": "natus",
+    "address": "perferendis"
 };
 
 fetch(url, {
@@ -2295,10 +3976,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="first_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="jxhletzteilicx"
+               value="nwwnntnw"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>jxhletzteilicx</code></p>
+<p>Must not be greater than 20 characters. Example: <code>nwwnntnw</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -2306,10 +3987,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="last_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="fhjaygssfkelr"
+               value="j"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>fhjaygssfkelr</code></p>
+<p>Must not be greater than 20 characters. Example: <code>j</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2317,10 +3998,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-v1-admin-user"
-               value="kitty59@example.org"
+               value="ashlee41@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>kitty59@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ashlee41@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -2328,10 +4009,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-v1-admin-user"
-               value="quo"
+               value="quod"
                data-component="body">
     <br>
-<p>Example: <code>quo</code></p>
+<p>Example: <code>quod</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -2339,10 +4020,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="POSTapi-v1-admin-user"
-               value="est"
+               value="animi"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>animi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -2350,10 +4031,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="phone"                data-endpoint="POSTapi-v1-admin-user"
-               value="5268088.1269493"
+               value="1794.9"
                data-component="body">
     <br>
-<p>Example: <code>5268088.1269493</code></p>
+<p>Example: <code>1794.9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -2361,10 +4042,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="dolorum"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>dolorum</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>district_id</code></b>&nbsp;&nbsp;
@@ -2372,10 +4053,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="district_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="ut"
+               value="fuga"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>fuga</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ward_id</code></b>&nbsp;&nbsp;
@@ -2383,10 +4064,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="ward_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="molestias"
+               value="natus"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>Example: <code>natus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -2394,10 +4075,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="address"                data-endpoint="POSTapi-v1-admin-user"
-               value="quo"
+               value="perferendis"
                data-component="body">
     <br>
-<p>Example: <code>quo</code></p>
+<p>Example: <code>perferendis</code></p>
         </div>
         </form>
 
@@ -2419,9 +4100,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"rwtxzdclhasbptysqfm\",
-    \"email\": \"sterry@example.com\",
-    \"role\": \"ut\"
+    \"name\": \"pcenx\",
+    \"email\": \"greta37@example.net\",
+    \"role\": \"et\"
 }"
 </code></pre></div>
 
@@ -2438,9 +4119,9 @@ const headers = {
 };
 
 let body = {
-    "name": "rwtxzdclhasbptysqfm",
-    "email": "sterry@example.com",
-    "role": "ut"
+    "name": "pcenx",
+    "email": "greta37@example.net",
+    "role": "et"
 };
 
 fetch(url, {
@@ -2544,10 +4225,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="rwtxzdclhasbptysqfm"
+               value="pcenx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rwtxzdclhasbptysqfm</code></p>
+<p>Must not be greater than 255 characters. Example: <code>pcenx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2555,10 +4236,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="sterry@example.com"
+               value="greta37@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>sterry@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>greta37@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -2566,10 +4247,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="ut"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>et</code></p>
         </div>
         </form>
 
@@ -2878,7 +4559,7 @@ fetch(url, {
     \"last_name\": null,
     \"email\": null,
     \"password\": null,
-    \"agree_ckb\": false,
+    \"agree_ckb\": true,
     \"password_confirmation\": null
 }"
 </code></pre></div>
@@ -2900,7 +4581,7 @@ let body = {
     "last_name": null,
     "email": null,
     "password": null,
-    "agree_ckb": false,
+    "agree_ckb": true,
     "password_confirmation": null
 };
 
@@ -3050,7 +4731,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Agree to the terms. Example: <code>false</code></p>
+<p>Agree to the terms. Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -3573,7 +5254,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 43
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -4896,7 +6577,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 42
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -5875,7 +7556,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/city/9" \
+    --get "http://127.0.0.1:8000/api/v1/destination/city/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -5883,7 +7564,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/city/9"
+    "http://127.0.0.1:8000/api/v1/destination/city/8"
 );
 
 const headers = {
@@ -5910,17 +7591,92 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 41
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 120,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Bắc Giang&quot;,
-            &quot;slug&quot;: &quot;bac-giang-bac-giang&quot;,
+            &quot;id&quot;: 109,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;An Ph&uacute;&quot;,
+            &quot;slug&quot;: &quot;an-giang-an-phu&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 110,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Ch&acirc;u Đốc&quot;,
+            &quot;slug&quot;: &quot;an-giang-chau-doc&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Thị x&atilde;&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 111,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Ch&acirc;u Ph&uacute;&quot;,
+            &quot;slug&quot;: &quot;an-giang-chau-phu&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 112,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Ch&acirc;u Th&agrave;nh&quot;,
+            &quot;slug&quot;: &quot;an-giang-chau-thanh&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 113,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Chợ Mới&quot;,
+            &quot;slug&quot;: &quot;an-giang-cho-moi&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 114,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Long Xuy&ecirc;n&quot;,
+            &quot;slug&quot;: &quot;an-giang-long-xuyen&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -5932,10 +7688,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 121,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Hiệp H&ograve;a&quot;,
-            &quot;slug&quot;: &quot;bac-giang-hiep-hoa&quot;,
+            &quot;id&quot;: 115,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Ph&uacute; T&acirc;n&quot;,
+            &quot;slug&quot;: &quot;an-giang-phu-tan&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -5947,10 +7703,25 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 122,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Lạng Giang&quot;,
-            &quot;slug&quot;: &quot;bac-giang-lang-giang&quot;,
+            &quot;id&quot;: 116,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;T&acirc;n Ch&acirc;u&quot;,
+            &quot;slug&quot;: &quot;an-giang-tan-chau&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Thị x&atilde;&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 117,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Thoại Sơn&quot;,
+            &quot;slug&quot;: &quot;an-giang-thoai-son&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -5962,10 +7733,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 123,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Lục Nam&quot;,
-            &quot;slug&quot;: &quot;bac-giang-luc-nam&quot;,
+            &quot;id&quot;: 118,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Tịnh Bi&ecirc;n&quot;,
+            &quot;slug&quot;: &quot;an-giang-tinh-bien&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -5977,85 +7748,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 124,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Lục Ngạn&quot;,
-            &quot;slug&quot;: &quot;bac-giang-luc-ngan&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 125,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Sơn Động&quot;,
-            &quot;slug&quot;: &quot;bac-giang-son-dong&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 126,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;T&acirc;n Y&ecirc;n&quot;,
-            &quot;slug&quot;: &quot;bac-giang-tan-yen&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 127,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Việt Y&ecirc;n&quot;,
-            &quot;slug&quot;: &quot;bac-giang-viet-yen&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 128,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Y&ecirc;n Dũng&quot;,
-            &quot;slug&quot;: &quot;bac-giang-yen-dung&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 129,
-            &quot;city_id&quot;: 9,
-            &quot;name&quot;: &quot;Y&ecirc;n Thế&quot;,
-            &quot;slug&quot;: &quot;bac-giang-yen-the&quot;,
+            &quot;id&quot;: 119,
+            &quot;city_id&quot;: 8,
+            &quot;name&quot;: &quot;Tri T&ocirc;n&quot;,
+            &quot;slug&quot;: &quot;an-giang-tri-ton&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -6149,10 +7845,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="city_id"                data-endpoint="GETapi-v1-destination-city--city_id-"
-               value="9"
+               value="8"
                data-component="url">
     <br>
-<p>Get district after choose city. Example: <code>9</code></p>
+<p>Get district after choose city. Example: <code>8</code></p>
             </div>
                     </form>
 
@@ -6169,7 +7865,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/district/2" \
+    --get "http://127.0.0.1:8000/api/v1/destination/district/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -6177,7 +7873,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/district/2"
+    "http://127.0.0.1:8000/api/v1/destination/district/3"
 );
 
 const headers = {
@@ -6204,22 +7900,22 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 40
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 17,
+            &quot;id&quot;: 27,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;An Lạc&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-an-lac&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;1&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-1&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.725189,106.611877]&quot;,
+            &quot;center&quot;: &quot;[10.798687,106.697149]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[21.271919,106.858543],\\\&quot;br\\\&quot;:[21.382446,107.033302]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793636,106.695747],\\\&quot;br\\\&quot;:[10.80284,106.69915]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6227,15 +7923,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 18,
+            &quot;id&quot;: 28,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;An Lạc A&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-an-lac-a&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;11&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-11&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.746428,106.618603]&quot;,
+            &quot;center&quot;: &quot;[10.815742,106.693707]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.730873,106.608978],\\\&quot;br\\\&quot;:[10.757444,106.623894]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808447,106.689049],\\\&quot;br\\\&quot;:[10.822668,106.698456]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6243,15 +7939,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 19,
+            &quot;id&quot;: 29,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;12&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-12&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.805627,106.604079]&quot;,
+            &quot;center&quot;: &quot;[10.812367,106.700107]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.78757,106.595116],\\\&quot;br\\\&quot;:[10.826193,106.61573]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.806612,106.694809],\\\&quot;br\\\&quot;:[10.818374,106.70726]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6259,15 +7955,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 20,
+            &quot;id&quot;: 30,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a A&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa-a&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;13&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-13&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.783846,106.607692]&quot;,
+            &quot;center&quot;: &quot;[10.826655,106.703755]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.773629,106.592697],\\\&quot;br\\\&quot;:[10.796749,106.621246]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.816566,106.694565],\\\&quot;br\\\&quot;:[10.839021,106.712784]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6275,15 +7971,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 21,
+            &quot;id&quot;: 31,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a B&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa-b&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;14&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-14&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.805476,106.591707]&quot;,
+            &quot;center&quot;: &quot;[10.805567,106.696771]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.775042,106.582001],\\\&quot;br\\\&quot;:[10.829794,106.602936]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802719,106.694435],\\\&quot;br\\\&quot;:[10.81138,106.701332]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6291,15 +7987,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 22,
+            &quot;id&quot;: 32,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;15&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-15&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.765981,106.616146]&quot;,
+            &quot;center&quot;: &quot;[10.79924,106.70373]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.755939,106.608429],\\\&quot;br\\\&quot;:[10.776417,106.62574]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793369,106.69754],\\\&quot;br\\\&quot;:[10.803786,106.711121]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6307,15 +8003,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 23,
+            &quot;id&quot;: 33,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng A&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong-a&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;17&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-17&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.769627,106.596629]&quot;,
+            &quot;center&quot;: &quot;[10.796474,106.706349]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.757954,106.576408],\\\&quot;br\\\&quot;:[10.778677,106.609573]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.791817,106.699936],\\\&quot;br\\\&quot;:[10.801545,106.711121]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6323,15 +8019,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 24,
+            &quot;id&quot;: 34,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng B&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong-b&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;19&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-19&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.745272,106.60885]&quot;,
+            &quot;center&quot;: &quot;[10.790673,106.70973]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.727364,106.597572],\\\&quot;br\\\&quot;:[10.758321,106.620094]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.787415,106.705956],\\\&quot;br\\\&quot;:[10.795218,106.713142]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6339,15 +8035,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 25,
+            &quot;id&quot;: 35,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;T&acirc;n Tạo&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-tan-tao&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;2&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-2&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.759283,106.588809]&quot;,
+            &quot;center&quot;: &quot;[10.800303,106.700776]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.743312,106.566978],\\\&quot;br\\\&quot;:[10.771526,106.606071]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793675,106.697029],\\\&quot;br\\\&quot;:[10.803861,106.703957]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6355,15 +8051,175 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 26,
+            &quot;id&quot;: 36,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 2,
-            &quot;name&quot;: &quot;T&acirc;n Tạo A&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-tan-tao-a&quot;,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;21&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-21&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.742232,106.580911]&quot;,
+            &quot;center&quot;: &quot;[10.797143,106.712088]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.722403,106.55822],\\\&quot;br\\\&quot;:[10.760674,106.602715]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.792197,106.708885],\\\&quot;br\\\&quot;:[10.801545,106.715942]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 37,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;22&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-22&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.79286,106.718995]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.784935,106.712128],\\\&quot;br\\\&quot;:[10.800401,106.727013]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 38,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;24&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-24&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.805542,106.704941]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802744,106.698257],\\\&quot;br\\\&quot;:[10.808313,106.711166]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 39,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;25&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-25&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.805056,106.718101]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.797979,106.711105],\\\&quot;br\\\&quot;:[10.814244,106.726768]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 40,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;26&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-26&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.813467,106.709885]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.805563,106.703461],\\\&quot;br\\\&quot;:[10.821371,106.71714]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 41,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;27&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-27&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.816352,106.719833]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.80968,106.714073],\\\&quot;br\\\&quot;:[10.8209,106.725151]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 42,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;28&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-28&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.821861,106.740923]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808211,106.722687],\\\&quot;br\\\&quot;:[10.835501,106.751221]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 43,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;3&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-3&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.798988,106.693699]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793472,106.690025],\\\&quot;br\\\&quot;:[10.803514,106.696098]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 44,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;5&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-5&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.811837,106.687119]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808375,106.683586],\\\&quot;br\\\&quot;:[10.815954,106.690697]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 45,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;6&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-6&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.806033,106.687654]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.80278,106.683662],\\\&quot;br\\\&quot;:[10.809569,106.691971]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 46,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 3,
+            &quot;name&quot;: &quot;7&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-7&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.807155,106.691832]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802993,106.687851],\\\&quot;br\\\&quot;:[10.81114,106.694679]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -6453,813 +8309,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="district_id"                data-endpoint="GETapi-v1-destination-district--district_id-"
-               value="2"
+               value="3"
                data-component="url">
     <br>
-<p>Get ward after choose district. Example: <code>2</code></p>
-            </div>
-                    </form>
-
-                <h1 id="endpoints">Endpoints</h1>
-
-    
-
-                                <h2 id="endpoints-GETapi-v1-admin-item-color">Get a list of item color.</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you get a list of item color</p>
-
-<span id="example-requests-GETapi-v1-admin-item-color">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/admin/item-color?is_show=1&amp;limit=50" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color"
-);
-
-const params = {
-    "is_show": "1",
-    "limit": "50",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-admin-item-color">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-admin-item-color" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-admin-item-color"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-color" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-admin-item-color" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-admin-item-color"></code></pre>
-</span>
-<form id="form-GETapi-v1-admin-item-color" data-method="GET"
-      data-path="api/v1/admin/item-color"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-color', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-admin-item-color"
-                    onclick="tryItOut('GETapi-v1-admin-item-color');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-admin-item-color"
-                    onclick="cancelTryOut('GETapi-v1-admin-item-color');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-admin-item-color" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/admin/item-color</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-color"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-admin-item-color"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-color"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
-<i>optional</i> &nbsp;
-                <label data-endpoint="GETapi-v1-admin-item-color" style="display: none">
-            <input type="radio" name="is_show"
-                   value="1"
-                   data-endpoint="GETapi-v1-admin-item-color"
-                   data-component="query"             >
-            <code>true</code>
-        </label>
-        <label data-endpoint="GETapi-v1-admin-item-color" style="display: none">
-            <input type="radio" name="is_show"
-                   value="0"
-                   data-endpoint="GETapi-v1-admin-item-color"
-                   data-component="query"             >
-            <code>false</code>
-        </label>
-    <br>
-<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               name="limit"                data-endpoint="GETapi-v1-admin-item-color"
-               value="50"
-               data-component="query">
-    <br>
-<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
-            </div>
-                </form>
-
-                    <h2 id="endpoints-GETapi-v1-admin-item-color--id-">Get item color detail.</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you get item color detail</p>
-
-<span id="example-requests-GETapi-v1-admin-item-color--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/admin/item-color/16?is_show=1&amp;limit=50" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/16"
-);
-
-const params = {
-    "is_show": "1",
-    "limit": "50",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-admin-item-color--id-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-admin-item-color--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-admin-item-color--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-color--id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-admin-item-color--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-admin-item-color--id-"></code></pre>
-</span>
-<form id="form-GETapi-v1-admin-item-color--id-" data-method="GET"
-      data-path="api/v1/admin/item-color/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-color--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-admin-item-color--id-"
-                    onclick="tryItOut('GETapi-v1-admin-item-color--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-admin-item-color--id-"
-                    onclick="cancelTryOut('GETapi-v1-admin-item-color--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-admin-item-color--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/admin/item-color/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="id"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="16"
-               data-component="url">
-    <br>
-<p>The ID of the item color. Example: <code>16</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
-<i>optional</i> &nbsp;
-                <label data-endpoint="GETapi-v1-admin-item-color--id-" style="display: none">
-            <input type="radio" name="is_show"
-                   value="1"
-                   data-endpoint="GETapi-v1-admin-item-color--id-"
-                   data-component="query"             >
-            <code>true</code>
-        </label>
-        <label data-endpoint="GETapi-v1-admin-item-color--id-" style="display: none">
-            <input type="radio" name="is_show"
-                   value="0"
-                   data-endpoint="GETapi-v1-admin-item-color--id-"
-                   data-component="query"             >
-            <code>false</code>
-        </label>
-    <br>
-<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               name="limit"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="50"
-               data-component="query">
-    <br>
-<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
-            </div>
-                </form>
-
-                    <h2 id="endpoints-POSTapi-v1-admin-item-color">Create a new item color</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you create an item color</p>
-
-<span id="example-requests-POSTapi-v1-admin-item-color">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/v1/admin/item-color" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF" \
-    --data "{
-    \"name\": \"qui\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-let body = {
-    "name": "qui"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-admin-item-color">
-</span>
-<span id="execution-results-POSTapi-v1-admin-item-color" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-admin-item-color"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-item-color" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-admin-item-color" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-admin-item-color"></code></pre>
-</span>
-<form id="form-POSTapi-v1-admin-item-color" data-method="POST"
-      data-path="api/v1/admin/item-color"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-item-color', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-admin-item-color"
-                    onclick="tryItOut('POSTapi-v1-admin-item-color');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-admin-item-color"
-                    onclick="cancelTryOut('POSTapi-v1-admin-item-color');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-admin-item-color" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/admin/item-color</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="name"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="qui"
-               data-component="body">
-    <br>
-<p>Example: <code>qui</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="value"                data-endpoint="POSTapi-v1-admin-item-color"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="order"                data-endpoint="POSTapi-v1-admin-item-color"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-        </form>
-
-                    <h2 id="endpoints-PUTapi-v1-admin-item-color--id--">Update Brand</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you update brands</p>
-
-<span id="example-requests-PUTapi-v1-admin-item-color--id--">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/admin/item-color/2" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF" \
-    --data "{
-    \"name\": \"laudantium\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/2"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-let body = {
-    "name": "laudantium"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-v1-admin-item-color--id--">
-</span>
-<span id="execution-results-PUTapi-v1-admin-item-color--id--" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-admin-item-color--id--"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-item-color--id--" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-admin-item-color--id--" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-admin-item-color--id--"></code></pre>
-</span>
-<form id="form-PUTapi-v1-admin-item-color--id--" data-method="PUT"
-      data-path="api/v1/admin/item-color/{id?}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-item-color--id--', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-admin-item-color--id--"
-                    onclick="tryItOut('PUTapi-v1-admin-item-color--id--');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-admin-item-color--id--"
-                    onclick="cancelTryOut('PUTapi-v1-admin-item-color--id--');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-admin-item-color--id--" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/admin/item-color/{id?}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               name="id"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="2"
-               data-component="url">
-    <br>
-<p>The ID of the . Example: <code>2</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="name"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="laudantium"
-               data-component="body">
-    <br>
-<p>Example: <code>laudantium</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="value"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="order"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-v1-admin-item-color--id--">Delete Item color</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you delete item color</p>
-
-<span id="example-requests-DELETEapi-v1-admin-item-color--id--">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/admin/item-color/12" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/12"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-v1-admin-item-color--id--">
-</span>
-<span id="execution-results-DELETEapi-v1-admin-item-color--id--" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-admin-item-color--id--"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-admin-item-color--id--" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-admin-item-color--id--" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-admin-item-color--id--"></code></pre>
-</span>
-<form id="form-DELETEapi-v1-admin-item-color--id--" data-method="DELETE"
-      data-path="api/v1/admin/item-color/{id?}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-admin-item-color--id--', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-admin-item-color--id--"
-                    onclick="tryItOut('DELETEapi-v1-admin-item-color--id--');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-admin-item-color--id--"
-                    onclick="cancelTryOut('DELETEapi-v1-admin-item-color--id--');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-admin-item-color--id--" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/admin/item-color/{id?}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               name="id"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
-               value="12"
-               data-component="url">
-    <br>
-<p>The ID of the . Example: <code>12</code></p>
+<p>Get ward after choose district. Example: <code>3</code></p>
             </div>
                     </form>
 
@@ -7321,12 +8374,31 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 37
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Black&quot;,
+            &quot;value&quot;: &quot;#000000&quot;,
+            &quot;status&quot;: 1,
+            &quot;order&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-02-20T07:49:30.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-20T07:49:30.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;White&quot;,
+            &quot;value&quot;: &quot;#ffffff&quot;,
+            &quot;status&quot;: 1,
+            &quot;order&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-02-20T07:49:49.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-20T07:49:49.000000Z&quot;
+        }
+    ],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color?page=1&quot;,
         &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color?page=1&quot;,
@@ -7335,7 +8407,7 @@ access-control-allow-origin: *
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: null,
+        &quot;from&quot;: 1,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -7356,8 +8428,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color&quot;,
         &quot;per_page&quot;: 50,
-        &quot;to&quot;: null,
-        &quot;total&quot;: 0
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
     }
 }</code>
  </pre>
@@ -7581,7 +8653,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=18" \
+    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=9" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -7595,7 +8667,7 @@ fetch(url, {
 const params = {
     "limit": "50",
     "page": "1",
-    "min_price": "18",
+    "min_price": "9",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -7624,7 +8696,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 36
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -7836,10 +8908,10 @@ access-control-allow-origin: *
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="min_price"                data-endpoint="GETapi-v1-item"
-               value="18"
+               value="9"
                data-component="query">
     <br>
-<p>The minimum price of the product to filter. 1000000 Example: <code>18</code></p>
+<p>The minimum price of the product to filter. 1000000 Example: <code>9</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
@@ -7907,7 +8979,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item/necessitatibus" \
+    --get "http://127.0.0.1:8000/api/v1/item/est" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -7915,7 +8987,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/item/necessitatibus"
+    "http://127.0.0.1:8000/api/v1/item/est"
 );
 
 const headers = {
@@ -8033,10 +9105,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="slug"                data-endpoint="GETapi-v1-item--slug-"
-               value="necessitatibus"
+               value="est"
                data-component="url">
     <br>
-<p>The slug of the item. Example: <code>necessitatibus</code></p>
+<p>The slug of the item. Example: <code>est</code></p>
             </div>
                     </form>
 
@@ -8099,7 +9171,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 38
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -8713,7 +9785,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 39
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

@@ -1,11 +1,7 @@
 import React, { FC } from "react";
 
 //mui component
-import {
-  MuiColorInput,
-  MuiColorInputColors,
-  MuiColorInputValue,
-} from "mui-color-input";
+import { MuiColorInput } from "mui-color-input";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
@@ -28,15 +24,15 @@ import {
   UseFormHandleSubmit,
   Controller,
 } from "react-hook-form";
-import { ICreateBrandParams } from "../../../../../../pages/admin/brand/create";
 import { LoadingButton } from "@mui/lab";
+import { ICreateItemColorParams } from "../../../../../../pages/admin/item-color/create";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface ICreateItemCategoryTemplate {
-  control: Control<ICreateBrandParams, any>;
-  handleSubmit: UseFormHandleSubmit<ICreateBrandParams>;
-  onSubmit: SubmitHandler<ICreateBrandParams>;
-  errors: FieldErrors<ICreateBrandParams>;
+  control: Control<ICreateItemColorParams, any>;
+  handleSubmit: UseFormHandleSubmit<ICreateItemColorParams>;
+  onSubmit: SubmitHandler<ICreateItemColorParams>;
+  errors: FieldErrors<ICreateItemColorParams>;
   isLoading: boolean;
   errorResMessage: string;
 }
@@ -50,12 +46,6 @@ const CreateItemColorTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
     isLoading,
     errorResMessage,
   } = props;
-
-  const [color, setColor] = React.useState<MuiColorInputValue>("#ffffff");
-
-  const handleChange = (newValue: string, colors: MuiColorInputColors) => {
-    setColor(newValue);
-  };
 
   return (
     <main>
@@ -101,14 +91,26 @@ const CreateItemColorTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
                     )}
                   />
                 </Box>
-
-                <MuiColorInput
-                  label="Color"
-                  value={color}
-                  onChange={handleChange}
-                  fullWidth
-                />
-
+                <Box>
+                  <Controller
+                    name="color"
+                    control={control}
+                    render={({ field }) => (
+                      <>
+                        <MuiColorInput
+                          {...field}
+                          error={errors.color ? true : false}
+                          format="hex"
+                          label="Color"
+                          fullWidth
+                        />
+                        <FormHelperText error={errors.color ? true : false}>
+                          {errors.color?.message}
+                        </FormHelperText>
+                      </>
+                    )}
+                  />
+                </Box>
                 <Box className="mt-6">
                   <Typography variant="h6">Description</Typography>
                   <ReactQuill placeholder="Write something about Brand" />
@@ -132,25 +134,6 @@ const CreateItemColorTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
                     </>
                   )}
                 />
-                <Box className="mt-6">
-                  <Controller
-                    name="slug"
-                    control={control}
-                    render={({ field }) => (
-                      <>
-                        <TextField
-                          error={errors.slug ? true : false}
-                          {...field}
-                          label="Slug"
-                          fullWidth
-                        />
-                        <FormHelperText error={errors.slug ? true : false}>
-                          {errors.slug?.message}
-                        </FormHelperText>
-                      </>
-                    )}
-                  />
-                </Box>
                 <Box className="mt-6">
                   <Controller
                     name="order"

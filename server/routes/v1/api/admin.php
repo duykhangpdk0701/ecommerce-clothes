@@ -10,5 +10,6 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         include('admin/user.php');
         include('admin/itemCategory.php');
         include ('admin/itemColor.php');
+        include('admin/itemSize.php');
     });
 });

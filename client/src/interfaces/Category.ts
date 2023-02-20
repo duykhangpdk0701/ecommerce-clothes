@@ -7,8 +7,11 @@ interface ICategory {
   };
   slug: string;
   description: string;
-  status: boolean;
   children?: ICategory[];
+}
+
+export interface IAdminCategory extends ICategory {
+  status: boolean;
 }
 
 export default ICategory;

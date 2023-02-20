@@ -58,7 +58,7 @@ class BrandController extends Controller
      * @queryParam is_show boolean True will return active brands and False will return inactive brands. Example: true
      * @queryParam limit integer The number of resource that will show and then paginate. Example: 50
      *
-     * @param string $slug
+     * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function show (int $id): \Illuminate\Http\JsonResponse

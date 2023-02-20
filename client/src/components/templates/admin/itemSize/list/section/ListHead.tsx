@@ -20,7 +20,7 @@ const visuallyHidden = {
   clip: "rect(0 0 0 0)",
 };
 
-interface IListItemColorHead {
+interface IListItemSizeHead {
   order: "asc" | "desc";
   orderBy: string;
   rowCount: number;
@@ -29,7 +29,7 @@ interface IListItemColorHead {
   onRequestSort: any;
   onSelectAllClick: any;
 }
-const ListItemColorHead: FC<IListItemColorHead> = (props) => {
+const ListItemSizeHead: FC<IListItemSizeHead> = (props) => {
   const {
     order,
     orderBy,
@@ -79,4 +79,4 @@ const ListItemColorHead: FC<IListItemColorHead> = (props) => {
   );
 };
 
-export default ListItemColorHead;
+export default ListItemSizeHead;

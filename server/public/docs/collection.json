@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c480cccb-6d96-4dcf-9ed9-9324ab8f55a0",
+        "_postman_id": "5423c0ab-8824-41f8-b8e4-090dd3ffab08",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -63,7 +63,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "4",
+                                    "value": "15",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -261,7 +261,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sunt\",\"status\":true}"
+                            "raw": "{\"name\":\"in\",\"status\":false}"
                         },
                         "description": "This endpoint lets you create a brand",
                         "auth": {
@@ -304,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"necessitatibus\",\"status\":\"minima\"}"
+                            "raw": "{\"name\":\"assumenda\",\"status\":\"maiores\"}"
                         },
                         "description": "This endpoint lets you update brands",
                         "auth": {
@@ -514,6 +514,530 @@
             ]
         },
         {
+            "name": "Admin Item Size",
+            "description": "\nAPIS for managing Item Size",
+            "item": [
+                {
+                    "name": "Get a list of item size.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-size",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size?is_show=1&limit=50"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get a list of item size",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get item size detail.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-size\/:id",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:id?is_show=1&limit=50",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the item size."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get item color size",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new item size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-size",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"item_category_id\":\"in\",\"item_person_type_id\":\"quia\",\"value\":\"voluptas\"}"
+                        },
+                        "description": "This endpoint lets you create an item size",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Item size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-size\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "19",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"item_category_id\":\"praesentium\",\"item_person_type_id\":\"ut\",\"value\":\"quas\"}"
+                        },
+                        "description": "This endpoint lets you update item size",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Item size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-size\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you delete an item size",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Admin Item color",
+            "description": "\nAPIs for managing Item color",
+            "item": [
+                {
+                    "name": "Get a list of item color.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color?is_show=1&limit=50"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get a list of item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get item color detail.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [
+                                {
+                                    "key": "is_show",
+                                    "value": "1",
+                                    "description": "True will return active brands and False will return inactive brands.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id?is_show=1&limit=50",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the item color."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you get item color detail",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new item color",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"et\",\"status\":false}"
+                        },
+                        "description": "This endpoint lets you create an item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Item color",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"iure\"}"
+                        },
+                        "description": "This endpoint lets you update item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Item color",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint lets you delete an item color",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Admin User",
             "description": "\nAPIs for managing User",
             "item": [
@@ -681,7 +1205,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"jxhletzteilicx\",\"last_name\":\"fhjaygssfkelr\",\"email\":\"kitty59@example.org\",\"password\":\"quo\",\"role\":\"est\",\"phone\":5268088.12694931,\"city_id\":\"dolorum\",\"district_id\":\"ut\",\"ward_id\":\"molestias\",\"address\":\"quo\"}"
+                            "raw": "{\"first_name\":\"nwwnntnw\",\"last_name\":\"j\",\"email\":\"ashlee41@example.org\",\"password\":\"quod\",\"role\":\"animi\",\"phone\":1794.9,\"city_id\":\"veniam\",\"district_id\":\"fuga\",\"ward_id\":\"natus\",\"address\":\"perferendis\"}"
                         },
                         "description": "This endpoint lets you create a user",
                         "auth": {
@@ -724,7 +1248,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rwtxzdclhasbptysqfm\",\"email\":\"sterry@example.com\",\"role\":\"ut\"}"
+                            "raw": "{\"name\":\"pcenx\",\"email\":\"greta37@example.net\",\"role\":\"et\"}"
                         },
                         "description": "This endpoint lets you update user",
                         "auth": {
@@ -847,7 +1371,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":false,\"password_confirmation\":null}"
+                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":true,\"password_confirmation\":null}"
                         },
                         "description": "This endpoint let the user register to the account.",
                         "auth": {
@@ -1044,7 +1568,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "43"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1374,7 +1898,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "42"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1399,7 +1923,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "9",
+                                    "value": "8",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -1442,7 +1966,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "41"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1450,7 +1974,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":120,\"city_id\":9,\"name\":\"B\\u1eafc Giang\",\"slug\":\"bac-giang-bac-giang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":121,\"city_id\":9,\"name\":\"Hi\\u1ec7p H\\u00f2a\",\"slug\":\"bac-giang-hiep-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":122,\"city_id\":9,\"name\":\"L\\u1ea1ng Giang\",\"slug\":\"bac-giang-lang-giang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":123,\"city_id\":9,\"name\":\"L\\u1ee5c Nam\",\"slug\":\"bac-giang-luc-nam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":124,\"city_id\":9,\"name\":\"L\\u1ee5c Ng\\u1ea1n\",\"slug\":\"bac-giang-luc-ngan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":125,\"city_id\":9,\"name\":\"S\\u01a1n \\u0110\\u1ed9ng\",\"slug\":\"bac-giang-son-dong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":126,\"city_id\":9,\"name\":\"T\\u00e2n Y\\u00ean\",\"slug\":\"bac-giang-tan-yen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":127,\"city_id\":9,\"name\":\"Vi\\u1ec7t Y\\u00ean\",\"slug\":\"bac-giang-viet-yen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":128,\"city_id\":9,\"name\":\"Y\\u00ean D\\u0169ng\",\"slug\":\"bac-giang-yen-dung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":129,\"city_id\":9,\"name\":\"Y\\u00ean Th\\u1ebf\",\"slug\":\"bac-giang-yen-the\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":109,\"city_id\":8,\"name\":\"An Ph\\u00fa\",\"slug\":\"an-giang-an-phu\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":110,\"city_id\":8,\"name\":\"Ch\\u00e2u \\u0110\\u1ed1c\",\"slug\":\"an-giang-chau-doc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":111,\"city_id\":8,\"name\":\"Ch\\u00e2u Ph\\u00fa\",\"slug\":\"an-giang-chau-phu\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":112,\"city_id\":8,\"name\":\"Ch\\u00e2u Th\\u00e0nh\",\"slug\":\"an-giang-chau-thanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":113,\"city_id\":8,\"name\":\"Ch\\u1ee3 M\\u1edbi\",\"slug\":\"an-giang-cho-moi\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":114,\"city_id\":8,\"name\":\"Long Xuy\\u00ean\",\"slug\":\"an-giang-long-xuyen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":115,\"city_id\":8,\"name\":\"Ph\\u00fa T\\u00e2n\",\"slug\":\"an-giang-phu-tan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":116,\"city_id\":8,\"name\":\"T\\u00e2n Ch\\u00e2u\",\"slug\":\"an-giang-tan-chau\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":117,\"city_id\":8,\"name\":\"Tho\\u1ea1i S\\u01a1n\",\"slug\":\"an-giang-thoai-son\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":118,\"city_id\":8,\"name\":\"T\\u1ecbnh Bi\\u00ean\",\"slug\":\"an-giang-tinh-bien\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":119,\"city_id\":8,\"name\":\"Tri T\\u00f4n\",\"slug\":\"an-giang-tri-ton\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -1467,7 +1991,7 @@
                                 {
                                     "id": "district_id",
                                     "key": "district_id",
-                                    "value": "2",
+                                    "value": "3",
                                     "description": "Get ward after choose district."
                                 }
                             ]
@@ -1510,7 +2034,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "40"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1518,272 +2042,10 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":17,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c\",\"slug\":\"ho-chi-minh-binh-tan-an-lac\",\"geometry\":null,\"center\":\"[10.725189,106.611877]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[21.271919,106.858543],\\\\\\\"br\\\\\\\":[21.382446,107.033302]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":18,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c A\",\"slug\":\"ho-chi-minh-binh-tan-an-lac-a\",\"geometry\":null,\"center\":\"[10.746428,106.618603]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.730873,106.608978],\\\\\\\"br\\\\\\\":[10.757444,106.623894]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":19,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa\",\"geometry\":null,\"center\":\"[10.805627,106.604079]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.78757,106.595116],\\\\\\\"br\\\\\\\":[10.826193,106.61573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":20,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a A\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-a\",\"geometry\":null,\"center\":\"[10.783846,106.607692]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.773629,106.592697],\\\\\\\"br\\\\\\\":[10.796749,106.621246]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":21,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a B\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-b\",\"geometry\":null,\"center\":\"[10.805476,106.591707]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.775042,106.582001],\\\\\\\"br\\\\\\\":[10.829794,106.602936]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":22,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong\",\"geometry\":null,\"center\":\"[10.765981,106.616146]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.755939,106.608429],\\\\\\\"br\\\\\\\":[10.776417,106.62574]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":23,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng A\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-a\",\"geometry\":null,\"center\":\"[10.769627,106.596629]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.757954,106.576408],\\\\\\\"br\\\\\\\":[10.778677,106.609573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":24,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng B\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-b\",\"geometry\":null,\"center\":\"[10.745272,106.60885]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.727364,106.597572],\\\\\\\"br\\\\\\\":[10.758321,106.620094]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":25,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao\",\"geometry\":null,\"center\":\"[10.759283,106.588809]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.743312,106.566978],\\\\\\\"br\\\\\\\":[10.771526,106.606071]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":26,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o A\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao-a\",\"geometry\":null,\"center\":\"[10.742232,106.580911]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.722403,106.55822],\\\\\\\"br\\\\\\\":[10.760674,106.602715]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":27,\"city_id\":1,\"district_id\":3,\"name\":\"1\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-1\",\"geometry\":null,\"center\":\"[10.798687,106.697149]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.793636,106.695747],\\\\\\\"br\\\\\\\":[10.80284,106.69915]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":28,\"city_id\":1,\"district_id\":3,\"name\":\"11\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-11\",\"geometry\":null,\"center\":\"[10.815742,106.693707]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.808447,106.689049],\\\\\\\"br\\\\\\\":[10.822668,106.698456]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":29,\"city_id\":1,\"district_id\":3,\"name\":\"12\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-12\",\"geometry\":null,\"center\":\"[10.812367,106.700107]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.806612,106.694809],\\\\\\\"br\\\\\\\":[10.818374,106.70726]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":30,\"city_id\":1,\"district_id\":3,\"name\":\"13\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-13\",\"geometry\":null,\"center\":\"[10.826655,106.703755]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.816566,106.694565],\\\\\\\"br\\\\\\\":[10.839021,106.712784]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":31,\"city_id\":1,\"district_id\":3,\"name\":\"14\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-14\",\"geometry\":null,\"center\":\"[10.805567,106.696771]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.802719,106.694435],\\\\\\\"br\\\\\\\":[10.81138,106.701332]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":32,\"city_id\":1,\"district_id\":3,\"name\":\"15\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-15\",\"geometry\":null,\"center\":\"[10.79924,106.70373]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.793369,106.69754],\\\\\\\"br\\\\\\\":[10.803786,106.711121]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":33,\"city_id\":1,\"district_id\":3,\"name\":\"17\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-17\",\"geometry\":null,\"center\":\"[10.796474,106.706349]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.791817,106.699936],\\\\\\\"br\\\\\\\":[10.801545,106.711121]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":34,\"city_id\":1,\"district_id\":3,\"name\":\"19\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-19\",\"geometry\":null,\"center\":\"[10.790673,106.70973]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.787415,106.705956],\\\\\\\"br\\\\\\\":[10.795218,106.713142]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":35,\"city_id\":1,\"district_id\":3,\"name\":\"2\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-2\",\"geometry\":null,\"center\":\"[10.800303,106.700776]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.793675,106.697029],\\\\\\\"br\\\\\\\":[10.803861,106.703957]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":36,\"city_id\":1,\"district_id\":3,\"name\":\"21\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-21\",\"geometry\":null,\"center\":\"[10.797143,106.712088]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.792197,106.708885],\\\\\\\"br\\\\\\\":[10.801545,106.715942]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":37,\"city_id\":1,\"district_id\":3,\"name\":\"22\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-22\",\"geometry\":null,\"center\":\"[10.79286,106.718995]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.784935,106.712128],\\\\\\\"br\\\\\\\":[10.800401,106.727013]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":38,\"city_id\":1,\"district_id\":3,\"name\":\"24\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-24\",\"geometry\":null,\"center\":\"[10.805542,106.704941]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.802744,106.698257],\\\\\\\"br\\\\\\\":[10.808313,106.711166]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":39,\"city_id\":1,\"district_id\":3,\"name\":\"25\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-25\",\"geometry\":null,\"center\":\"[10.805056,106.718101]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.797979,106.711105],\\\\\\\"br\\\\\\\":[10.814244,106.726768]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":40,\"city_id\":1,\"district_id\":3,\"name\":\"26\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-26\",\"geometry\":null,\"center\":\"[10.813467,106.709885]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.805563,106.703461],\\\\\\\"br\\\\\\\":[10.821371,106.71714]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":41,\"city_id\":1,\"district_id\":3,\"name\":\"27\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-27\",\"geometry\":null,\"center\":\"[10.816352,106.719833]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.80968,106.714073],\\\\\\\"br\\\\\\\":[10.8209,106.725151]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":42,\"city_id\":1,\"district_id\":3,\"name\":\"28\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-28\",\"geometry\":null,\"center\":\"[10.821861,106.740923]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.808211,106.722687],\\\\\\\"br\\\\\\\":[10.835501,106.751221]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":43,\"city_id\":1,\"district_id\":3,\"name\":\"3\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-3\",\"geometry\":null,\"center\":\"[10.798988,106.693699]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.793472,106.690025],\\\\\\\"br\\\\\\\":[10.803514,106.696098]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":44,\"city_id\":1,\"district_id\":3,\"name\":\"5\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-5\",\"geometry\":null,\"center\":\"[10.811837,106.687119]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.808375,106.683586],\\\\\\\"br\\\\\\\":[10.815954,106.690697]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":45,\"city_id\":1,\"district_id\":3,\"name\":\"6\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-6\",\"geometry\":null,\"center\":\"[10.806033,106.687654]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.80278,106.683662],\\\\\\\"br\\\\\\\":[10.809569,106.691971]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":46,\"city_id\":1,\"district_id\":3,\"name\":\"7\",\"slug\":\"ho-chi-minh-binh-thanh-phuong-7\",\"geometry\":null,\"center\":\"[10.807155,106.691832]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.802993,106.687851],\\\\\\\"br\\\\\\\":[10.81114,106.694679]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "name": "Endpoints",
-            "description": "",
-            "item": [
-                {
-                    "name": "Get a list of item color.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color",
-                            "query": [
-                                {
-                                    "key": "is_show",
-                                    "value": "1",
-                                    "description": "True will return active brands and False will return inactive brands.",
-                                    "disabled": false
-                                },
-                                {
-                                    "key": "limit",
-                                    "value": "50",
-                                    "description": "The number of resource that will show and then paginate.",
-                                    "disabled": false
-                                }
-                            ],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color?is_show=1&limit=50"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "API-KEY",
-                                "value": "RANDOM_STUFF"
-                            }
-                        ],
-                        "body": null,
-                        "description": "This endpoint lets you get a list of item color",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Get item color detail.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color\/:id",
-                            "query": [
-                                {
-                                    "key": "is_show",
-                                    "value": "1",
-                                    "description": "True will return active brands and False will return inactive brands.",
-                                    "disabled": false
-                                },
-                                {
-                                    "key": "limit",
-                                    "value": "50",
-                                    "description": "The number of resource that will show and then paginate.",
-                                    "disabled": false
-                                }
-                            ],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id?is_show=1&limit=50",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "16",
-                                    "description": "The ID of the item color."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "API-KEY",
-                                "value": "RANDOM_STUFF"
-                            }
-                        ],
-                        "body": null,
-                        "description": "This endpoint lets you get item color detail",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Create a new item color",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "API-KEY",
-                                "value": "RANDOM_STUFF"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"qui\"}"
-                        },
-                        "description": "This endpoint lets you create an item color",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Update Brand",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "2",
-                                    "description": "The ID of the ."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "API-KEY",
-                                "value": "RANDOM_STUFF"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"laudantium\"}"
-                        },
-                        "description": "This endpoint lets you update brands",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Delete Item color",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "12",
-                                    "description": "The ID of the ."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "API-KEY",
-                                "value": "RANDOM_STUFF"
-                            }
-                        ],
-                        "body": null,
-                        "description": "This endpoint lets you delete item color",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         },
@@ -1845,7 +2107,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "37"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1853,7 +2115,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Black\",\"value\":\"#000000\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-20T07:49:30.000000Z\",\"updated_at\":\"2023-02-20T07:49:30.000000Z\"},{\"id\":2,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-20T07:49:49.000000Z\",\"updated_at\":\"2023-02-20T07:49:49.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -1942,7 +2204,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "18",
+                                    "value": "9",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -1965,7 +2227,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=18&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=9&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -2005,7 +2267,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "36"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -2030,7 +2292,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "necessitatibus",
+                                    "value": "est",
                                     "description": "The slug of the item."
                                 }
                             ]
@@ -2137,7 +2399,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "38"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -2327,7 +2589,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "39"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

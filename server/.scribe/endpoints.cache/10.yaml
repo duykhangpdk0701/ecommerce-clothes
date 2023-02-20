@@ -157,83 +157,83 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: jxhletzteilicx
+        example: nwwnntnw
         type: string
         custom: []
       last_name:
         name: last_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: fhjaygssfkelr
+        example: j
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: kitty59@example.org
+        example: ashlee41@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: quo
+        example: quod
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: est
+        example: animi
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: 5268088.1269493
+        example: 1794.9
         type: number
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: dolorum
+        example: veniam
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: ut
+        example: fuga
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: molestias
+        example: natus
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: quo
+        example: perferendis
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: jxhletzteilicx
-      last_name: fhjaygssfkelr
-      email: kitty59@example.org
-      password: quo
-      role: est
-      phone: 5268088.1269493
-      city_id: dolorum
-      district_id: ut
-      ward_id: molestias
-      address: quo
+      first_name: nwwnntnw
+      last_name: j
+      email: ashlee41@example.org
+      password: quod
+      role: animi
+      phone: 1794.9
+      city_id: veniam
+      district_id: fuga
+      ward_id: natus
+      address: perferendis
     fileParameters: []
     responses: []
     responseFields: []
@@ -278,27 +278,27 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rwtxzdclhasbptysqfm
+        example: pcenx
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: sterry@example.com
+        example: greta37@example.net
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: ut
+        example: et
         type: string
         custom: []
     cleanBodyParameters:
-      name: rwtxzdclhasbptysqfm
-      email: sterry@example.com
-      role: ut
+      name: pcenx
+      email: greta37@example.net
+      role: et
     fileParameters: []
     responses: []
     responseFields: []

@@ -14,7 +14,7 @@ class StoreItemSizeRequest extends FormRequest
      */
     public function authorize()
     {
-        return checkPermission(Acl::PERMISSION_ITEM_SIZE_ADD);
+        return true;
     }
 
     /**

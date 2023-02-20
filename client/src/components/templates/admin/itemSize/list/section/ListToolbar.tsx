@@ -41,13 +41,13 @@ const StyledSearch = styled(OutlinedInput)(({ theme }) => {
 
 // ----------------------------------------------------------------------
 
-interface IListItemColorToolbar {
+interface IListItemSizeToolbar {
   numSelected: number;
   filterName: string;
   onFilterName: any;
 }
 
-const ListItemColorToolbar: FC<IListItemColorToolbar> = (props) => {
+const ListItemSizeToolbar: FC<IListItemSizeToolbar> = (props) => {
   const { numSelected, filterName, onFilterName } = props;
 
   return (
@@ -96,4 +96,4 @@ const ListItemColorToolbar: FC<IListItemColorToolbar> = (props) => {
   );
 };
 
-export default ListItemColorToolbar;
+export default ListItemSizeToolbar;

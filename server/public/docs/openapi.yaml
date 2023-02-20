@@ -74,7 +74,7 @@ paths:
         in: path
         name: address_id
         description: 'The ID of the address.'
-        example: 4
+        example: 15
         required: true
         schema:
           type: integer
@@ -180,7 +180,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sunt
+                  example: in
                 slug:
                   type: string
                   description: ''
@@ -188,7 +188,7 @@ paths:
                 status:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 order:
                   type: string
                   description: ''
@@ -299,7 +299,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: necessitatibus
+                  example: assumenda
                 slug:
                   type: string
                   description: ''
@@ -311,7 +311,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: minima
+                  example: maiores
               required:
                 - name
                 - status
@@ -490,6 +490,556 @@ paths:
         required: true
         schema:
           type: integer
+  /api/v1/admin/item-size:
+    get:
+      summary: 'Get a list of item size.'
+      operationId: getAListOfItemSize
+      description: 'This endpoint lets you get a list of item size'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Item Size'
+      security: []
+    post:
+      summary: 'Create a new item size'
+      operationId: createANewItemSize
+      description: 'This endpoint lets you create an item size'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item Size'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_category_id:
+                  type: string
+                  description: ''
+                  example: in
+                item_person_type_id:
+                  type: string
+                  description: ''
+                  example: quia
+                value:
+                  type: string
+                  description: ''
+                  example: voluptas
+                order:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - item_category_id
+                - item_person_type_id
+                - value
+      security: []
+  '/api/v1/admin/item-size/{id}':
+    get:
+      summary: 'Get item size detail.'
+      operationId: getItemSizeDetail
+      description: 'This endpoint lets you get item color size'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Item Size'
+      security: []
+    put:
+      summary: 'Update Item size'
+      operationId: updateItemSize
+      description: 'This endpoint lets you update item size'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item Size'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                item_category_id:
+                  type: string
+                  description: ''
+                  example: praesentium
+                item_person_type_id:
+                  type: string
+                  description: ''
+                  example: ut
+                value:
+                  type: string
+                  description: ''
+                  example: quas
+                order:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - item_category_id
+                - item_person_type_id
+                - value
+      security: []
+    delete:
+      summary: 'Delete Item size'
+      operationId: deleteItemSize
+      description: 'This endpoint lets you delete an item size'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item Size'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the item size.'
+        example: 9
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/item-color:
+    get:
+      summary: 'Get a list of item color.'
+      operationId: getAListOfItemColor
+      description: 'This endpoint lets you get a list of item color'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Item color'
+      security: []
+    post:
+      summary: 'Create a new item color'
+      operationId: createANewItemColor
+      description: 'This endpoint lets you create an item color'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item color'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: et
+                value:
+                  type: string
+                  description: ''
+                  example: null
+                order:
+                  type: string
+                  description: ''
+                  example: null
+                status:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - name
+      security: []
+  '/api/v1/admin/item-color/{id}':
+    get:
+      summary: 'Get item color detail.'
+      operationId: getItemColorDetail
+      description: 'This endpoint lets you get item color detail'
+      parameters:
+        -
+          in: query
+          name: is_show
+          description: 'True will return active brands and False will return inactive brands.'
+          example: true
+          required: false
+          schema:
+            type: boolean
+            description: 'True will return active brands and False will return inactive brands.'
+            example: true
+        -
+          in: query
+          name: limit
+          description: 'The number of resource that will show and then paginate.'
+          example: 50
+          required: false
+          schema:
+            type: integer
+            description: 'The number of resource that will show and then paginate.'
+            example: 50
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Item color'
+      security: []
+    put:
+      summary: 'Update Item color'
+      operationId: updateItemColor
+      description: 'This endpoint lets you update item color'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item color'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: iure
+                value:
+                  type: string
+                  description: ''
+                  example: null
+                order:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - name
+      security: []
+    delete:
+      summary: 'Delete Item color'
+      operationId: deleteItemColor
+      description: 'This endpoint lets you delete an item color'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: API-KEY
+          description: ''
+          example: RANDOM_STUFF
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Admin Item color'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the item color.'
+        example: 1
+        required: true
+        schema:
+          type: integer
   /api/v1/admin/user:
     get:
       summary: 'Get a list of user.'
@@ -592,43 +1142,43 @@ paths:
                 first_name:
                   type: string
                   description: 'Must not be greater than 20 characters.'
-                  example: jxhletzteilicx
+                  example: nwwnntnw
                 last_name:
                   type: string
                   description: 'Must not be greater than 20 characters.'
-                  example: fhjaygssfkelr
+                  example: j
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: kitty59@example.org
+                  example: ashlee41@example.org
                 password:
                   type: string
                   description: ''
-                  example: quo
+                  example: quod
                 role:
                   type: string
                   description: ''
-                  example: est
+                  example: animi
                 phone:
                   type: number
                   description: ''
-                  example: 5268088.1269493
+                  example: 1794.9
                 city_id:
                   type: string
                   description: ''
-                  example: dolorum
+                  example: veniam
                 district_id:
                   type: string
                   description: ''
-                  example: ut
+                  example: fuga
                 ward_id:
                   type: string
                   description: ''
-                  example: molestias
+                  example: natus
                 address:
                   type: string
                   description: ''
-                  example: quo
+                  example: perferendis
               required:
                 - first_name
                 - last_name
@@ -743,15 +1293,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rwtxzdclhasbptysqfm
+                  example: pcenx
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: sterry@example.com
+                  example: greta37@example.net
                 role:
                   type: string
                   description: ''
-                  example: ut
+                  example: et
               required:
                 - name
                 - email
@@ -905,7 +1455,7 @@ paths:
                 agree_ckb:
                   type: boolean
                   description: 'Agree to the terms.'
-                  example: false
+                  example: true
                 password_confirmation:
                   type: string
                   description: 'The password confirmation of the user.'
@@ -3404,10 +3954,80 @@ paths:
                 example:
                   data:
                     -
-                      id: 120
-                      city_id: 9
-                      name: 'Bắc Giang'
-                      slug: bac-giang-bac-giang
+                      id: 109
+                      city_id: 8
+                      name: 'An Phú'
+                      slug: an-giang-an-phu
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 110
+                      city_id: 8
+                      name: 'Châu Đốc'
+                      slug: an-giang-chau-doc
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: 'Thị xã'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 111
+                      city_id: 8
+                      name: 'Châu Phú'
+                      slug: an-giang-chau-phu
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 112
+                      city_id: 8
+                      name: 'Châu Thành'
+                      slug: an-giang-chau-thanh
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 113
+                      city_id: 8
+                      name: 'Chợ Mới'
+                      slug: an-giang-cho-moi
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: Huyện
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 114
+                      city_id: 8
+                      name: 'Long Xuyên'
+                      slug: an-giang-long-xuyen
                       geometry: null
                       center: null
                       color: null
@@ -3418,10 +4038,10 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 121
-                      city_id: 9
-                      name: 'Hiệp Hòa'
-                      slug: bac-giang-hiep-hoa
+                      id: 115
+                      city_id: 8
+                      name: 'Phú Tân'
+                      slug: an-giang-phu-tan
                       geometry: null
                       center: null
                       color: null
@@ -3432,10 +4052,24 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 122
-                      city_id: 9
-                      name: 'Lạng Giang'
-                      slug: bac-giang-lang-giang
+                      id: 116
+                      city_id: 8
+                      name: 'Tân Châu'
+                      slug: an-giang-tan-chau
+                      geometry: null
+                      center: null
+                      color: null
+                      bounding_box: null
+                      pre: 'Thị xã'
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 117
+                      city_id: 8
+                      name: 'Thoại Sơn'
+                      slug: an-giang-thoai-son
                       geometry: null
                       center: null
                       color: null
@@ -3446,10 +4080,10 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 123
-                      city_id: 9
-                      name: 'Lục Nam'
-                      slug: bac-giang-luc-nam
+                      id: 118
+                      city_id: 8
+                      name: 'Tịnh Biên'
+                      slug: an-giang-tinh-bien
                       geometry: null
                       center: null
                       color: null
@@ -3460,80 +4094,10 @@ paths:
                       created_at: null
                       updated_at: null
                     -
-                      id: 124
-                      city_id: 9
-                      name: 'Lục Ngạn'
-                      slug: bac-giang-luc-ngan
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 125
-                      city_id: 9
-                      name: 'Sơn Động'
-                      slug: bac-giang-son-dong
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 126
-                      city_id: 9
-                      name: 'Tân Yên'
-                      slug: bac-giang-tan-yen
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 127
-                      city_id: 9
-                      name: 'Việt Yên'
-                      slug: bac-giang-viet-yen
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 128
-                      city_id: 9
-                      name: 'Yên Dũng'
-                      slug: bac-giang-yen-dung
-                      geometry: null
-                      center: null
-                      color: null
-                      bounding_box: null
-                      pre: Huyện
-                      order: null
-                      status: 1
-                      created_at: null
-                      updated_at: null
-                    -
-                      id: 129
-                      city_id: 9
-                      name: 'Yên Thế'
-                      slug: bac-giang-yen-the
+                      id: 119
+                      city_id: 8
+                      name: 'Tri Tôn'
+                      slug: an-giang-tri-ton
                       geometry: null
                       center: null
                       color: null
@@ -3548,10 +4112,80 @@ paths:
                     type: array
                     example:
                       -
-                        id: 120
-                        city_id: 9
-                        name: 'Bắc Giang'
-                        slug: bac-giang-bac-giang
+                        id: 109
+                        city_id: 8
+                        name: 'An Phú'
+                        slug: an-giang-an-phu
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 110
+                        city_id: 8
+                        name: 'Châu Đốc'
+                        slug: an-giang-chau-doc
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: 'Thị xã'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 111
+                        city_id: 8
+                        name: 'Châu Phú'
+                        slug: an-giang-chau-phu
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 112
+                        city_id: 8
+                        name: 'Châu Thành'
+                        slug: an-giang-chau-thanh
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 113
+                        city_id: 8
+                        name: 'Chợ Mới'
+                        slug: an-giang-cho-moi
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: Huyện
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 114
+                        city_id: 8
+                        name: 'Long Xuyên'
+                        slug: an-giang-long-xuyen
                         geometry: null
                         center: null
                         color: null
@@ -3562,10 +4196,10 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 121
-                        city_id: 9
-                        name: 'Hiệp Hòa'
-                        slug: bac-giang-hiep-hoa
+                        id: 115
+                        city_id: 8
+                        name: 'Phú Tân'
+                        slug: an-giang-phu-tan
                         geometry: null
                         center: null
                         color: null
@@ -3576,10 +4210,24 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 122
-                        city_id: 9
-                        name: 'Lạng Giang'
-                        slug: bac-giang-lang-giang
+                        id: 116
+                        city_id: 8
+                        name: 'Tân Châu'
+                        slug: an-giang-tan-chau
+                        geometry: null
+                        center: null
+                        color: null
+                        bounding_box: null
+                        pre: 'Thị xã'
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 117
+                        city_id: 8
+                        name: 'Thoại Sơn'
+                        slug: an-giang-thoai-son
                         geometry: null
                         center: null
                         color: null
@@ -3590,10 +4238,10 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 123
-                        city_id: 9
-                        name: 'Lục Nam'
-                        slug: bac-giang-luc-nam
+                        id: 118
+                        city_id: 8
+                        name: 'Tịnh Biên'
+                        slug: an-giang-tinh-bien
                         geometry: null
                         center: null
                         color: null
@@ -3604,80 +4252,10 @@ paths:
                         created_at: null
                         updated_at: null
                       -
-                        id: 124
-                        city_id: 9
-                        name: 'Lục Ngạn'
-                        slug: bac-giang-luc-ngan
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 125
-                        city_id: 9
-                        name: 'Sơn Động'
-                        slug: bac-giang-son-dong
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 126
-                        city_id: 9
-                        name: 'Tân Yên'
-                        slug: bac-giang-tan-yen
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 127
-                        city_id: 9
-                        name: 'Việt Yên'
-                        slug: bac-giang-viet-yen
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 128
-                        city_id: 9
-                        name: 'Yên Dũng'
-                        slug: bac-giang-yen-dung
-                        geometry: null
-                        center: null
-                        color: null
-                        bounding_box: null
-                        pre: Huyện
-                        order: null
-                        status: 1
-                        created_at: null
-                        updated_at: null
-                      -
-                        id: 129
-                        city_id: 9
-                        name: 'Yên Thế'
-                        slug: bac-giang-yen-the
+                        id: 119
+                        city_id: 8
+                        name: 'Tri Tôn'
+                        slug: an-giang-tri-ton
                         geometry: null
                         center: null
                         color: null
@@ -3692,16 +4270,16 @@ paths:
                       properties:
                         id:
                           type: integer
-                          example: 120
+                          example: 109
                         city_id:
                           type: integer
-                          example: 9
+                          example: 8
                         name:
                           type: string
-                          example: 'Bắc Giang'
+                          example: 'An Phú'
                         slug:
                           type: string
-                          example: bac-giang-bac-giang
+                          example: an-giang-an-phu
                         geometry:
                           type: string
                           example: null
@@ -3716,7 +4294,7 @@ paths:
                           example: null
                         pre:
                           type: string
-                          example: 'Thành phố'
+                          example: Huyện
                         order:
                           type: string
                           example: null
@@ -3737,7 +4315,7 @@ paths:
         in: path
         name: city_id
         description: 'Get district after choose city.'
-        example: 9
+        example: 8
         required: true
         schema:
           type: integer
@@ -3778,150 +4356,300 @@ paths:
                 example:
                   data:
                     -
-                      id: 17
+                      id: 27
                       city_id: 1
-                      district_id: 2
-                      name: 'An Lạc'
-                      slug: ho-chi-minh-binh-tan-an-lac
+                      district_id: 3
+                      name: '1'
+                      slug: ho-chi-minh-binh-thanh-phuong-1
                       geometry: null
-                      center: '[10.725189,106.611877]'
+                      center: '[10.798687,106.697149]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[21.271919,106.858543],\"br\":[21.382446,107.033302]}'
+                      bounding_box: '{\"tl\":[10.793636,106.695747],\"br\":[10.80284,106.69915]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 18
+                      id: 28
                       city_id: 1
-                      district_id: 2
-                      name: 'An Lạc A'
-                      slug: ho-chi-minh-binh-tan-an-lac-a
+                      district_id: 3
+                      name: '11'
+                      slug: ho-chi-minh-binh-thanh-phuong-11
                       geometry: null
-                      center: '[10.746428,106.618603]'
+                      center: '[10.815742,106.693707]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.730873,106.608978],\"br\":[10.757444,106.623894]}'
+                      bounding_box: '{\"tl\":[10.808447,106.689049],\"br\":[10.822668,106.698456]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 19
+                      id: 29
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Hưng Hòa'
-                      slug: ho-chi-minh-binh-tan-binh-hung-hoa
+                      district_id: 3
+                      name: '12'
+                      slug: ho-chi-minh-binh-thanh-phuong-12
                       geometry: null
-                      center: '[10.805627,106.604079]'
+                      center: '[10.812367,106.700107]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.78757,106.595116],\"br\":[10.826193,106.61573]}'
+                      bounding_box: '{\"tl\":[10.806612,106.694809],\"br\":[10.818374,106.70726]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 20
+                      id: 30
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Hưng Hòa A'
-                      slug: ho-chi-minh-binh-tan-binh-hung-hoa-a
+                      district_id: 3
+                      name: '13'
+                      slug: ho-chi-minh-binh-thanh-phuong-13
                       geometry: null
-                      center: '[10.783846,106.607692]'
+                      center: '[10.826655,106.703755]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.773629,106.592697],\"br\":[10.796749,106.621246]}'
+                      bounding_box: '{\"tl\":[10.816566,106.694565],\"br\":[10.839021,106.712784]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 21
+                      id: 31
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Hưng Hòa B'
-                      slug: ho-chi-minh-binh-tan-binh-hung-hoa-b
+                      district_id: 3
+                      name: '14'
+                      slug: ho-chi-minh-binh-thanh-phuong-14
                       geometry: null
-                      center: '[10.805476,106.591707]'
+                      center: '[10.805567,106.696771]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.775042,106.582001],\"br\":[10.829794,106.602936]}'
+                      bounding_box: '{\"tl\":[10.802719,106.694435],\"br\":[10.81138,106.701332]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 22
+                      id: 32
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Trị Đông'
-                      slug: ho-chi-minh-binh-tan-binh-tri-dong
+                      district_id: 3
+                      name: '15'
+                      slug: ho-chi-minh-binh-thanh-phuong-15
                       geometry: null
-                      center: '[10.765981,106.616146]'
+                      center: '[10.79924,106.70373]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.755939,106.608429],\"br\":[10.776417,106.62574]}'
+                      bounding_box: '{\"tl\":[10.793369,106.69754],\"br\":[10.803786,106.711121]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 23
+                      id: 33
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Trị Đông A'
-                      slug: ho-chi-minh-binh-tan-binh-tri-dong-a
+                      district_id: 3
+                      name: '17'
+                      slug: ho-chi-minh-binh-thanh-phuong-17
                       geometry: null
-                      center: '[10.769627,106.596629]'
+                      center: '[10.796474,106.706349]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.757954,106.576408],\"br\":[10.778677,106.609573]}'
+                      bounding_box: '{\"tl\":[10.791817,106.699936],\"br\":[10.801545,106.711121]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 24
+                      id: 34
                       city_id: 1
-                      district_id: 2
-                      name: 'Bình Trị Đông B'
-                      slug: ho-chi-minh-binh-tan-binh-tri-dong-b
+                      district_id: 3
+                      name: '19'
+                      slug: ho-chi-minh-binh-thanh-phuong-19
                       geometry: null
-                      center: '[10.745272,106.60885]'
+                      center: '[10.790673,106.70973]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.727364,106.597572],\"br\":[10.758321,106.620094]}'
+                      bounding_box: '{\"tl\":[10.787415,106.705956],\"br\":[10.795218,106.713142]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 25
+                      id: 35
                       city_id: 1
-                      district_id: 2
-                      name: 'Tân Tạo'
-                      slug: ho-chi-minh-binh-tan-tan-tao
+                      district_id: 3
+                      name: '2'
+                      slug: ho-chi-minh-binh-thanh-phuong-2
                       geometry: null
-                      center: '[10.759283,106.588809]'
+                      center: '[10.800303,106.700776]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.743312,106.566978],\"br\":[10.771526,106.606071]}'
+                      bounding_box: '{\"tl\":[10.793675,106.697029],\"br\":[10.803861,106.703957]}'
                       pre: Phường
                       order: null
                       status: 1
                       created_at: null
                       updated_at: null
                     -
-                      id: 26
+                      id: 36
                       city_id: 1
-                      district_id: 2
-                      name: 'Tân Tạo A'
-                      slug: ho-chi-minh-binh-tan-tan-tao-a
+                      district_id: 3
+                      name: '21'
+                      slug: ho-chi-minh-binh-thanh-phuong-21
                       geometry: null
-                      center: '[10.742232,106.580911]'
+                      center: '[10.797143,106.712088]'
                       color: '#FF0000'
-                      bounding_box: '{\"tl\":[10.722403,106.55822],\"br\":[10.760674,106.602715]}'
+                      bounding_box: '{\"tl\":[10.792197,106.708885],\"br\":[10.801545,106.715942]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 37
+                      city_id: 1
+                      district_id: 3
+                      name: '22'
+                      slug: ho-chi-minh-binh-thanh-phuong-22
+                      geometry: null
+                      center: '[10.79286,106.718995]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.784935,106.712128],\"br\":[10.800401,106.727013]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 38
+                      city_id: 1
+                      district_id: 3
+                      name: '24'
+                      slug: ho-chi-minh-binh-thanh-phuong-24
+                      geometry: null
+                      center: '[10.805542,106.704941]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.802744,106.698257],\"br\":[10.808313,106.711166]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 39
+                      city_id: 1
+                      district_id: 3
+                      name: '25'
+                      slug: ho-chi-minh-binh-thanh-phuong-25
+                      geometry: null
+                      center: '[10.805056,106.718101]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.797979,106.711105],\"br\":[10.814244,106.726768]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 40
+                      city_id: 1
+                      district_id: 3
+                      name: '26'
+                      slug: ho-chi-minh-binh-thanh-phuong-26
+                      geometry: null
+                      center: '[10.813467,106.709885]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.805563,106.703461],\"br\":[10.821371,106.71714]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 41
+                      city_id: 1
+                      district_id: 3
+                      name: '27'
+                      slug: ho-chi-minh-binh-thanh-phuong-27
+                      geometry: null
+                      center: '[10.816352,106.719833]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.80968,106.714073],\"br\":[10.8209,106.725151]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 42
+                      city_id: 1
+                      district_id: 3
+                      name: '28'
+                      slug: ho-chi-minh-binh-thanh-phuong-28
+                      geometry: null
+                      center: '[10.821861,106.740923]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.808211,106.722687],\"br\":[10.835501,106.751221]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 43
+                      city_id: 1
+                      district_id: 3
+                      name: '3'
+                      slug: ho-chi-minh-binh-thanh-phuong-3
+                      geometry: null
+                      center: '[10.798988,106.693699]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.793472,106.690025],\"br\":[10.803514,106.696098]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 44
+                      city_id: 1
+                      district_id: 3
+                      name: '5'
+                      slug: ho-chi-minh-binh-thanh-phuong-5
+                      geometry: null
+                      center: '[10.811837,106.687119]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.808375,106.683586],\"br\":[10.815954,106.690697]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 45
+                      city_id: 1
+                      district_id: 3
+                      name: '6'
+                      slug: ho-chi-minh-binh-thanh-phuong-6
+                      geometry: null
+                      center: '[10.806033,106.687654]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.80278,106.683662],\"br\":[10.809569,106.691971]}'
+                      pre: Phường
+                      order: null
+                      status: 1
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 46
+                      city_id: 1
+                      district_id: 3
+                      name: '7'
+                      slug: ho-chi-minh-binh-thanh-phuong-7
+                      geometry: null
+                      center: '[10.807155,106.691832]'
+                      color: '#FF0000'
+                      bounding_box: '{\"tl\":[10.802993,106.687851],\"br\":[10.81114,106.694679]}'
                       pre: Phường
                       order: null
                       status: 1
@@ -3932,150 +4660,300 @@ paths:
                     type: array
                     example:
                       -
-                        id: 17
+                        id: 27
                         city_id: 1
-                        district_id: 2
-                        name: 'An Lạc'
-                        slug: ho-chi-minh-binh-tan-an-lac
+                        district_id: 3
+                        name: '1'
+                        slug: ho-chi-minh-binh-thanh-phuong-1
                         geometry: null
-                        center: '[10.725189,106.611877]'
+                        center: '[10.798687,106.697149]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[21.271919,106.858543],\"br\":[21.382446,107.033302]}'
+                        bounding_box: '{\"tl\":[10.793636,106.695747],\"br\":[10.80284,106.69915]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 18
+                        id: 28
                         city_id: 1
-                        district_id: 2
-                        name: 'An Lạc A'
-                        slug: ho-chi-minh-binh-tan-an-lac-a
+                        district_id: 3
+                        name: '11'
+                        slug: ho-chi-minh-binh-thanh-phuong-11
                         geometry: null
-                        center: '[10.746428,106.618603]'
+                        center: '[10.815742,106.693707]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.730873,106.608978],\"br\":[10.757444,106.623894]}'
+                        bounding_box: '{\"tl\":[10.808447,106.689049],\"br\":[10.822668,106.698456]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 19
+                        id: 29
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Hưng Hòa'
-                        slug: ho-chi-minh-binh-tan-binh-hung-hoa
+                        district_id: 3
+                        name: '12'
+                        slug: ho-chi-minh-binh-thanh-phuong-12
                         geometry: null
-                        center: '[10.805627,106.604079]'
+                        center: '[10.812367,106.700107]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.78757,106.595116],\"br\":[10.826193,106.61573]}'
+                        bounding_box: '{\"tl\":[10.806612,106.694809],\"br\":[10.818374,106.70726]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 20
+                        id: 30
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Hưng Hòa A'
-                        slug: ho-chi-minh-binh-tan-binh-hung-hoa-a
+                        district_id: 3
+                        name: '13'
+                        slug: ho-chi-minh-binh-thanh-phuong-13
                         geometry: null
-                        center: '[10.783846,106.607692]'
+                        center: '[10.826655,106.703755]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.773629,106.592697],\"br\":[10.796749,106.621246]}'
+                        bounding_box: '{\"tl\":[10.816566,106.694565],\"br\":[10.839021,106.712784]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 21
+                        id: 31
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Hưng Hòa B'
-                        slug: ho-chi-minh-binh-tan-binh-hung-hoa-b
+                        district_id: 3
+                        name: '14'
+                        slug: ho-chi-minh-binh-thanh-phuong-14
                         geometry: null
-                        center: '[10.805476,106.591707]'
+                        center: '[10.805567,106.696771]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.775042,106.582001],\"br\":[10.829794,106.602936]}'
+                        bounding_box: '{\"tl\":[10.802719,106.694435],\"br\":[10.81138,106.701332]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 22
+                        id: 32
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Trị Đông'
-                        slug: ho-chi-minh-binh-tan-binh-tri-dong
+                        district_id: 3
+                        name: '15'
+                        slug: ho-chi-minh-binh-thanh-phuong-15
                         geometry: null
-                        center: '[10.765981,106.616146]'
+                        center: '[10.79924,106.70373]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.755939,106.608429],\"br\":[10.776417,106.62574]}'
+                        bounding_box: '{\"tl\":[10.793369,106.69754],\"br\":[10.803786,106.711121]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 23
+                        id: 33
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Trị Đông A'
-                        slug: ho-chi-minh-binh-tan-binh-tri-dong-a
+                        district_id: 3
+                        name: '17'
+                        slug: ho-chi-minh-binh-thanh-phuong-17
                         geometry: null
-                        center: '[10.769627,106.596629]'
+                        center: '[10.796474,106.706349]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.757954,106.576408],\"br\":[10.778677,106.609573]}'
+                        bounding_box: '{\"tl\":[10.791817,106.699936],\"br\":[10.801545,106.711121]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 24
+                        id: 34
                         city_id: 1
-                        district_id: 2
-                        name: 'Bình Trị Đông B'
-                        slug: ho-chi-minh-binh-tan-binh-tri-dong-b
+                        district_id: 3
+                        name: '19'
+                        slug: ho-chi-minh-binh-thanh-phuong-19
                         geometry: null
-                        center: '[10.745272,106.60885]'
+                        center: '[10.790673,106.70973]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.727364,106.597572],\"br\":[10.758321,106.620094]}'
+                        bounding_box: '{\"tl\":[10.787415,106.705956],\"br\":[10.795218,106.713142]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 25
+                        id: 35
                         city_id: 1
-                        district_id: 2
-                        name: 'Tân Tạo'
-                        slug: ho-chi-minh-binh-tan-tan-tao
+                        district_id: 3
+                        name: '2'
+                        slug: ho-chi-minh-binh-thanh-phuong-2
                         geometry: null
-                        center: '[10.759283,106.588809]'
+                        center: '[10.800303,106.700776]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.743312,106.566978],\"br\":[10.771526,106.606071]}'
+                        bounding_box: '{\"tl\":[10.793675,106.697029],\"br\":[10.803861,106.703957]}'
                         pre: Phường
                         order: null
                         status: 1
                         created_at: null
                         updated_at: null
                       -
-                        id: 26
+                        id: 36
                         city_id: 1
-                        district_id: 2
-                        name: 'Tân Tạo A'
-                        slug: ho-chi-minh-binh-tan-tan-tao-a
+                        district_id: 3
+                        name: '21'
+                        slug: ho-chi-minh-binh-thanh-phuong-21
                         geometry: null
-                        center: '[10.742232,106.580911]'
+                        center: '[10.797143,106.712088]'
                         color: '#FF0000'
-                        bounding_box: '{\"tl\":[10.722403,106.55822],\"br\":[10.760674,106.602715]}'
+                        bounding_box: '{\"tl\":[10.792197,106.708885],\"br\":[10.801545,106.715942]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 37
+                        city_id: 1
+                        district_id: 3
+                        name: '22'
+                        slug: ho-chi-minh-binh-thanh-phuong-22
+                        geometry: null
+                        center: '[10.79286,106.718995]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.784935,106.712128],\"br\":[10.800401,106.727013]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 38
+                        city_id: 1
+                        district_id: 3
+                        name: '24'
+                        slug: ho-chi-minh-binh-thanh-phuong-24
+                        geometry: null
+                        center: '[10.805542,106.704941]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.802744,106.698257],\"br\":[10.808313,106.711166]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 39
+                        city_id: 1
+                        district_id: 3
+                        name: '25'
+                        slug: ho-chi-minh-binh-thanh-phuong-25
+                        geometry: null
+                        center: '[10.805056,106.718101]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.797979,106.711105],\"br\":[10.814244,106.726768]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 40
+                        city_id: 1
+                        district_id: 3
+                        name: '26'
+                        slug: ho-chi-minh-binh-thanh-phuong-26
+                        geometry: null
+                        center: '[10.813467,106.709885]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.805563,106.703461],\"br\":[10.821371,106.71714]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 41
+                        city_id: 1
+                        district_id: 3
+                        name: '27'
+                        slug: ho-chi-minh-binh-thanh-phuong-27
+                        geometry: null
+                        center: '[10.816352,106.719833]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.80968,106.714073],\"br\":[10.8209,106.725151]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 42
+                        city_id: 1
+                        district_id: 3
+                        name: '28'
+                        slug: ho-chi-minh-binh-thanh-phuong-28
+                        geometry: null
+                        center: '[10.821861,106.740923]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.808211,106.722687],\"br\":[10.835501,106.751221]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 43
+                        city_id: 1
+                        district_id: 3
+                        name: '3'
+                        slug: ho-chi-minh-binh-thanh-phuong-3
+                        geometry: null
+                        center: '[10.798988,106.693699]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.793472,106.690025],\"br\":[10.803514,106.696098]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 44
+                        city_id: 1
+                        district_id: 3
+                        name: '5'
+                        slug: ho-chi-minh-binh-thanh-phuong-5
+                        geometry: null
+                        center: '[10.811837,106.687119]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.808375,106.683586],\"br\":[10.815954,106.690697]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 45
+                        city_id: 1
+                        district_id: 3
+                        name: '6'
+                        slug: ho-chi-minh-binh-thanh-phuong-6
+                        geometry: null
+                        center: '[10.806033,106.687654]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.80278,106.683662],\"br\":[10.809569,106.691971]}'
+                        pre: Phường
+                        order: null
+                        status: 1
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 46
+                        city_id: 1
+                        district_id: 3
+                        name: '7'
+                        slug: ho-chi-minh-binh-thanh-phuong-7
+                        geometry: null
+                        center: '[10.807155,106.691832]'
+                        color: '#FF0000'
+                        bounding_box: '{\"tl\":[10.802993,106.687851],\"br\":[10.81114,106.694679]}'
                         pre: Phường
                         order: null
                         status: 1
@@ -4086,31 +4964,31 @@ paths:
                       properties:
                         id:
                           type: integer
-                          example: 17
+                          example: 27
                         city_id:
                           type: integer
                           example: 1
                         district_id:
                           type: integer
-                          example: 2
+                          example: 3
                         name:
                           type: string
-                          example: 'An Lạc'
+                          example: '1'
                         slug:
                           type: string
-                          example: ho-chi-minh-binh-tan-an-lac
+                          example: ho-chi-minh-binh-thanh-phuong-1
                         geometry:
                           type: string
                           example: null
                         center:
                           type: string
-                          example: '[10.725189,106.611877]'
+                          example: '[10.798687,106.697149]'
                         color:
                           type: string
                           example: '#FF0000'
                         bounding_box:
                           type: string
-                          example: '{\"tl\":[21.271919,106.858543],\"br\":[21.382446,107.033302]}'
+                          example: '{\"tl\":[10.793636,106.695747],\"br\":[10.80284,106.69915]}'
                         pre:
                           type: string
                           example: Phường
@@ -4134,274 +5012,7 @@ paths:
         in: path
         name: district_id
         description: 'Get ward after choose district.'
-        example: 2
-        required: true
-        schema:
-          type: integer
-  /api/v1/admin/item-color:
-    get:
-      summary: 'Get a list of item color.'
-      operationId: getAListOfItemColor
-      description: 'This endpoint lets you get a list of item color'
-      parameters:
-        -
-          in: query
-          name: is_show
-          description: 'True will return active brands and False will return inactive brands.'
-          example: true
-          required: false
-          schema:
-            type: boolean
-            description: 'True will return active brands and False will return inactive brands.'
-            example: true
-        -
-          in: query
-          name: limit
-          description: 'The number of resource that will show and then paginate.'
-          example: 50
-          required: false
-          schema:
-            type: integer
-            description: 'The number of resource that will show and then paginate.'
-            example: 50
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: API-KEY
-          description: ''
-          example: RANDOM_STUFF
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    post:
-      summary: 'Create a new item color'
-      operationId: createANewItemColor
-      description: 'This endpoint lets you create an item color'
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: API-KEY
-          description: ''
-          example: RANDOM_STUFF
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: ''
-                  example: qui
-                value:
-                  type: string
-                  description: ''
-                  example: null
-                order:
-                  type: string
-                  description: ''
-                  example: null
-              required:
-                - name
-      security: []
-  '/api/v1/admin/item-color/{id}':
-    get:
-      summary: 'Get item color detail.'
-      operationId: getItemColorDetail
-      description: 'This endpoint lets you get item color detail'
-      parameters:
-        -
-          in: query
-          name: is_show
-          description: 'True will return active brands and False will return inactive brands.'
-          example: true
-          required: false
-          schema:
-            type: boolean
-            description: 'True will return active brands and False will return inactive brands.'
-            example: true
-        -
-          in: query
-          name: limit
-          description: 'The number of resource that will show and then paginate.'
-          example: 50
-          required: false
-          schema:
-            type: integer
-            description: 'The number of resource that will show and then paginate.'
-            example: 50
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: API-KEY
-          description: ''
-          example: RANDOM_STUFF
-          schema:
-            type: string
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update Brand'
-      operationId: updateBrand
-      description: 'This endpoint lets you update brands'
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: API-KEY
-          description: ''
-          example: RANDOM_STUFF
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: ''
-                  example: laudantium
-                value:
-                  type: string
-                  description: ''
-                  example: null
-                order:
-                  type: string
-                  description: ''
-                  example: null
-              required:
-                - name
-      security: []
-    delete:
-      summary: 'Delete Item color'
-      operationId: deleteItemColor
-      description: 'This endpoint lets you delete item color'
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: API-KEY
-          description: ''
-          example: RANDOM_STUFF
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the item color.'
-        example: 16
+        example: 3
         required: true
         schema:
           type: integer
@@ -4450,7 +5061,23 @@ paths:
               schema:
                 type: object
                 example:
-                  data: []
+                  data:
+                    -
+                      id: 1
+                      name: Black
+                      value: '#000000'
+                      status: 1
+                      order: 0
+                      created_at: '2023-02-20T07:49:30.000000Z'
+                      updated_at: '2023-02-20T07:49:30.000000Z'
+                    -
+                      id: 2
+                      name: White
+                      value: '#ffffff'
+                      status: 1
+                      order: 0
+                      created_at: '2023-02-20T07:49:49.000000Z'
+                      updated_at: '2023-02-20T07:49:49.000000Z'
                   links:
                     first: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
                     last: 'http://127.0.0.1:8000/api/v1/item-color?page=1'
@@ -4458,7 +5085,7 @@ paths:
                     next: null
                   meta:
                     current_page: 1
-                    from: null
+                    from: 1
                     last_page: 1
                     links:
                       -
@@ -4475,12 +5102,52 @@ paths:
                         active: false
                     path: 'http://127.0.0.1:8000/api/v1/item-color'
                     per_page: 50
-                    to: null
-                    total: 0
+                    to: 2
+                    total: 2
                 properties:
                   data:
                     type: array
-                    example: []
+                    example:
+                      -
+                        id: 1
+                        name: Black
+                        value: '#000000'
+                        status: 1
+                        order: 0
+                        created_at: '2023-02-20T07:49:30.000000Z'
+                        updated_at: '2023-02-20T07:49:30.000000Z'
+                      -
+                        id: 2
+                        name: White
+                        value: '#ffffff'
+                        status: 1
+                        order: 0
+                        created_at: '2023-02-20T07:49:49.000000Z'
+                        updated_at: '2023-02-20T07:49:49.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Black
+                        value:
+                          type: string
+                          example: '#000000'
+                        status:
+                          type: integer
+                          example: 1
+                        order:
+                          type: integer
+                          example: 0
+                        created_at:
+                          type: string
+                          example: '2023-02-20T07:49:30.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-02-20T07:49:30.000000Z'
                   links:
                     type: object
                     properties:
@@ -4503,8 +5170,8 @@ paths:
                         type: integer
                         example: 1
                       from:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 1
                       last_page:
                         type: integer
                         example: 1
@@ -4542,11 +5209,11 @@ paths:
                         type: integer
                         example: 50
                       to:
-                        type: string
-                        example: null
+                        type: integer
+                        example: 2
                       total:
                         type: integer
-                        example: 0
+                        example: 2
       tags:
         - Item
       security: []
@@ -4683,12 +5350,12 @@ paths:
           in: query
           name: min_price
           description: 'The minimum price of the product to filter. 1000000'
-          example: 18
+          example: 9
           required: false
           schema:
             type: integer
             description: 'The minimum price of the product to filter. 1000000'
-            example: 18
+            example: 9
         -
           in: query
           name: max_price
@@ -4940,7 +5607,7 @@ paths:
         in: path
         name: slug
         description: 'The slug of the item.'
-        example: necessitatibus
+        example: est
         required: true
         schema:
           type: string
@@ -5528,6 +6195,12 @@ tags:
     name: 'Admin ItemCategory'
     description: "\nAPIs for managing ItemCategory"
   -
+    name: 'Admin Item Size'
+    description: "\nAPIS for managing Item Size"
+  -
+    name: 'Admin Item color'
+    description: "\nAPIs for managing Item color"
+  -
     name: 'Admin User'
     description: "\nAPIs for managing User"
   -
@@ -5542,9 +6215,6 @@ tags:
   -
     name: Destination
     description: "\nAPIs for destination"
-  -
-    name: Endpoints
-    description: ''
   -
     name: Item
     description: "\nAPIs for managing item"
