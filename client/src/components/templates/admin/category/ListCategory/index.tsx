@@ -26,7 +26,7 @@ import Label from "@/components/shared/label";
 import ListCategoryHead from "./section/ListCategoryHead";
 import ListCategoryToolbar from "./section/ListCategoryToolbar";
 import USERLIST from "@/_mock/user";
-import ICategory from "interfaces/Category";
+import ICategory, { IAdminCategory } from "interfaces/Category";
 import Link from "next/link";
 
 const TABLE_HEAD = [
@@ -39,8 +39,8 @@ const TABLE_HEAD = [
 type OrderByType = "name" | "description" | "status";
 
 function descendingComparator(
-  a: ICategory,
-  b: ICategory,
+  a: IAdminCategory,
+  b: IAdminCategory,
   orderBy: OrderByType
 ) {
   if (orderBy === "name") {
@@ -58,12 +58,14 @@ function descendingComparator(
 
 function getComparator(order: "asc" | "desc", orderBy: OrderByType) {
   return order === "desc"
-    ? (a: ICategory, b: ICategory) => descendingComparator(a, b, orderBy)
-    : (a: ICategory, b: ICategory) => -descendingComparator(a, b, orderBy);
+    ? (a: IAdminCategory, b: IAdminCategory) =>
+        descendingComparator(a, b, orderBy)
+    : (a: IAdminCategory, b: IAdminCategory) =>
+        -descendingComparator(a, b, orderBy);
 }
 
 function applySortFilter(
-  array: ICategory[] = [],
+  array: IAdminCategory[] = [],
   comparator: any,
   query: string
 ) {
@@ -83,7 +85,7 @@ function applySortFilter(
 }
 
 interface IListCategoryTempalte {
-  data?: ICategory[];
+  data?: IAdminCategory[];
 }
 
 const ListCategoryTemplate: FC<IListCategoryTempalte> = (props) => {
