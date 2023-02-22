@@ -34,12 +34,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"code":"men","name":"Men","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":2,"code":"women","name":"Women","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":3,"code":"kid","name":"Kid","status":1,"created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"}]}'
+        content: '{"data":[{"id":1,"code":"men","name":"Men","status":1,"created_at":"2023-02-21T11:40:54.000000Z","updated_at":"2023-02-21T11:40:54.000000Z"},{"id":2,"code":"women","name":"Women","status":1,"created_at":"2023-02-21T11:40:54.000000Z","updated_at":"2023-02-21T11:40:54.000000Z"},{"id":3,"code":"kid","name":"Kid","status":1,"created_at":"2023-02-21T11:40:54.000000Z","updated_at":"2023-02-21T11:40:54.000000Z"}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '39'
+          x-ratelimit-remaining: '47'
           access-control-allow-origin: '*'
         description: null
         custom: []

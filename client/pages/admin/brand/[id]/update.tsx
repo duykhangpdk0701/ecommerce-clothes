@@ -44,8 +44,25 @@ const UpdateAdminBrand: NextPageWithLayout = () => {
     resolver: yupResolver(updateBrandSchema),
   });
 
+  const updateBrandMutation = useMutation({
+    mutationKey: ["brand"],
+    mutationFn: ({ name, slug, order, status }: IUpdateBrandParams) => {
+      setLoading(true);
+      return adminBrandAPI.updateBrand(id as string, name, slug, order, status);
+    },
+    onSuccess: async (data) => {
+      await getBrandBySlugQuery.refetch();
+      console.log(data);
+      setLoading(false);
+    },
+    onError: (error: any) => {
+      console.log(error);
+      setLoading(false);
+    },
+  });
+
   const getBrandBySlugQuery = useQuery({
-    queryKey: ["brand-detail", id],
+    queryKey: ["brand", id],
     queryFn: () => {
       setLoading(true);
       if (id && typeof id !== "object") {
@@ -53,8 +70,7 @@ const UpdateAdminBrand: NextPageWithLayout = () => {
       }
       return;
     },
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: async (data) => {
       data?.name && setValue("name", data.name);
       data?.slug && setValue("slug", data.slug);
       data?.order && setValue("order", data.order);
@@ -64,20 +80,6 @@ const UpdateAdminBrand: NextPageWithLayout = () => {
     onError: (error: any) => {
       console.log(error);
       setLoading(false);
-    },
-  });
-
-  const updateBrandMutation = useMutation({
-    mutationKey: "brand-detail",
-    mutationFn: ({ name, slug, order, status }: IUpdateBrandParams) => {
-      setLoading(true);
-      return adminBrandAPI.updateBrand(id as string, name, slug, order, status);
-    },
-    onSuccess: (data) => {
-      console.log(data);
-    },
-    onError: (error: any) => {
-      console.log(error);
     },
   });
 

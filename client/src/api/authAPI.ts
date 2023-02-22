@@ -30,9 +30,9 @@ const authAPI = {
     return res;
   },
 
-  getUserDetail: async (): Promise<IUser> => {
-    const url = "/api/auth/user";
-    const res = await axiosClient.get(url);
+  logout: async () => {
+    const url = "/api/auth/logout";
+    const res = await axiosClient.post(url);
     return res.data;
   },
 };

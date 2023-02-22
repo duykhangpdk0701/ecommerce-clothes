@@ -30,7 +30,7 @@ const navConfig: INavConfig[] = [
   },
   {
     title: "product",
-    path: "/admin/products",
+    path: "/admin/product",
     icon: icon("ic_cart"),
   },
   {

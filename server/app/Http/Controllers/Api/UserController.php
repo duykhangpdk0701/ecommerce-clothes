@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\ChangeMyProfileRequest;
 use App\Http\Requests\User\ChangeUserPasswordRequest;
 use App\Http\Requests\User\UploadAvatarApiRequest;
 use App\Http\Resources\api\UserResource;
@@ -51,32 +52,12 @@ class UserController extends Controller
      * @bodyParam last_name string required The last name of the user. No-example
      * @bodyParam phone string The phone of the user. No-example
      *
+     * @param ChangeMyProfileRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function changeProfile(Request $request)
+    public function changeProfile(ChangeMyProfileRequest $request): \Illuminate\Http\JsonResponse
     {
-        $data = $request->validate([
-            'first_name' => [
-                'required',
-                'string',
-                'max:20',
-                new AlphaSpaces
-            ],
-            'last_name' => [
-                'required',
-                'string',
-                'max:20',
-                new AlphaSpaces
-            ],
-            'phone' => [
-                'sometimes',
-                'required',
-                'numeric',
-                'unique:user_profile,phone,' . auth()->user()->userProfile->id,
-                new PhoneNumber
-            ]
-        ]);
-        $result = $this->userRepository->update(auth()->user(), $data);
+        $result = $this->userRepository->update(auth()->user(), $request);
         if ($result) {
             return response()->json(new JsonResponse(new UserResource(auth()->user())), ResponseAlias::HTTP_OK);
         }

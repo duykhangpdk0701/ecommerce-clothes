@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 /**
  * @group Admin ItemCategory
  *
+ * @authenticated
+ *
  * APIs for managing ItemCategory
  */
 class CategoryController extends Controller

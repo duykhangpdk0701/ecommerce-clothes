@@ -1,5 +1,8 @@
-import { East } from "@mui/icons-material";
-import { Chip, IconButton, Paper } from "@mui/material";
+import EastIcon from "@mui/icons-material/East";
+import Chip from "@mui/material/Chip";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+
 import Link from "next/link";
 import React from "react";
 
@@ -15,7 +18,7 @@ const ListOrderItems = () => {
         <p className="flex-1">350,00 US$</p>
         <p>
           <IconButton>
-            <East className="text-xl" />
+            <EastIcon className="text-xl" />
           </IconButton>
         </p>
       </Paper>

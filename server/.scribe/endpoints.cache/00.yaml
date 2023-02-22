@@ -33,24 +33,24 @@ endpoints:
         name: email
         description: required.
         required: false
-        example: user@test.com
+        example: duykhangpdk0701@gmail.com
         type: string
         custom: []
       password:
         name: password
         description: required.
         required: false
-        example: password
+        example: Pdk@073101
         type: string
         custom: []
     cleanBodyParameters:
-      email: user@test.com
-      password: password
+      email: duykhangpdk0701@gmail.com
+      password: Pdk@073101
     fileParameters: []
     responses:
       -
         status: 200
-        content: null
+        content: '{"data":{"id":25,"name":"Amara Bruen","email":"nnikolaus@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Amara Bruen","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -217,7 +217,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: null
+        content: '{"data":{"id":26,"name":"Reva Champlin MD","email":"marks.geovanni@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Reva Champlin MD","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -241,6 +241,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -254,12 +255,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: null
+        content: '{"data":{"id":27,"name":"Aurelio Pfeffer","email":"bednar.anabel@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Aurelio Pfeffer","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fhE16VDk5aZ3gca864vbedP'
     controller: null
     method: null
     route: null
@@ -280,6 +284,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -298,7 +303,10 @@ endpoints:
         description: Success
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer PDvc6abZfE81kgad435eV6h'
     controller: null
     method: null
     route: null

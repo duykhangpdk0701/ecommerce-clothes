@@ -83,6 +83,10 @@ return [
     */
 
     'locale' => 'en',
+    'locales' => [
+        'vi',
+        'en'
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -209,8 +213,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
 
-    'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
 
-])->toArray(),
+    ])->toArray(),
 
 ];

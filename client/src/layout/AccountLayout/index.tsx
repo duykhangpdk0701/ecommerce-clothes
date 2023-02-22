@@ -1,4 +1,5 @@
-import { Container, Grid } from "@mui/material";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 import React, { FC, ReactElement } from "react";
 import { BACKGROUND_COLOR } from "@/styles/color";
 import CartDrawer from "../shared/CartDrawer";

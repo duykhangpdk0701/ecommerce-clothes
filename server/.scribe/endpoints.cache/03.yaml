@@ -62,11 +62,11 @@ endpoints:
         name: address_id
         description: 'The ID of the address.'
         required: true
-        example: 15
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      address_id: 15
+      address_id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

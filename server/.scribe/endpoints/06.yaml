@@ -40,12 +40,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Black","value":"#000000","status":1,"order":0,"created_at":"2023-02-20T07:49:30.000000Z","updated_at":"2023-02-20T07:49:30.000000Z"},{"id":2,"name":"White","value":"#ffffff","status":1,"order":0,"created_at":"2023-02-20T07:49:49.000000Z","updated_at":"2023-02-20T07:49:49.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color","per_page":50,"to":2,"total":2}}'
+        content: '{"data":[],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-color","per_page":50,"to":null,"total":0}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '37'
+          x-ratelimit-remaining: '45'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -176,7 +176,7 @@ endpoints:
         name: min_price
         description: 'The minimum price of the product to filter. 1000000'
         required: false
-        example: 9
+        example: 19
         type: integer
         custom: []
       max_price:
@@ -212,7 +212,7 @@ endpoints:
     cleanQueryParameters:
       limit: 50
       page: 1
-      min_price: 9
+      min_price: 19
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -224,7 +224,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '36'
+          x-ratelimit-remaining: '44'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -258,11 +258,11 @@ endpoints:
         name: slug
         description: 'The slug of the item.'
         required: true
-        example: est
+        example: et
         type: string
         custom: []
     cleanUrlParameters:
-      slug: est
+      slug: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

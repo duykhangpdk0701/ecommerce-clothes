@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 /**
  * @group Admin Item Size
  *
+ * @authenticated
+ *
  *APIS for managing Item Size
  *
  */

@@ -118,6 +118,7 @@ const UpdateBrandTemplate: FC<IUpdateBrandTemplate> = (props) => {
                     render={({ field }) => (
                       <>
                         <TextField
+                          disabled
                           error={errors.slug ? true : false}
                           {...field}
                           label="Slug"
@@ -156,6 +157,7 @@ const UpdateBrandTemplate: FC<IUpdateBrandTemplate> = (props) => {
                 variant="contained"
                 size="large"
                 type="submit"
+                loading={isLoading}
               >
                 Submit
               </LoadingButton>

@@ -57,12 +57,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"parent_id":null,"name":{"en":"Mr. Hillard Mante IV"},"slug":"mr-hillard-mante-iv","description":"Voluptas ab omnis a et rerum.","status":1,"order":"0","created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"},{"id":2,"parent_id":null,"name":{"en":"Josh Schneider"},"slug":"josh-schneider","description":"Fuga cupiditate sed aspernatur qui quam ea.","status":1,"order":"0","created_at":"2023-02-08T16:24:34.000000Z","updated_at":"2023-02-08T16:24:34.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category","per_page":50,"to":2,"total":2}}'
+        content: '{"data":[{"id":1,"parent_id":null,"name":{"en":"Vesta Hills"},"slug":"vesta-hills","description":"Nihil non quidem officiis necessitatibus rerum blanditiis reiciendis eius.","status":1,"order":"0","created_at":"2023-02-21T11:40:54.000000Z","updated_at":"2023-02-21T11:40:54.000000Z"},{"id":2,"parent_id":null,"name":{"en":"Prof. Camille Schmidt"},"slug":"prof-camille-schmidt","description":"Nemo cum repellendus voluptatibus et.","status":1,"order":"0","created_at":"2023-02-21T11:40:54.000000Z","updated_at":"2023-02-21T11:40:54.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-category","per_page":50,"to":2,"total":2}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '38'
+          x-ratelimit-remaining: '46'
           access-control-allow-origin: '*'
         description: null
         custom: []

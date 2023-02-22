@@ -178,6 +178,7 @@ return [
         /*
          * Middleware to attach to the docs endpoint (if `add_routes` is true).
          */
+
         'middleware' => [],
     ],
 
@@ -197,7 +198,7 @@ return [
         /**
          * Fetch a CSRF token before each request, and add it as an X-XSRF-TOKEN header. Needed if you're using Laravel Sanctum.
          */
-        'use_csrf' => false,
+        'use_csrf' => true,
 
         /**
          * The URL to fetch the CSRF token from (if `use_csrf` is true).
@@ -212,7 +213,7 @@ return [
         /*
          * Set this to true if any endpoints in your API use authentication.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
@@ -242,7 +243,7 @@ return [
          * Placeholder your users will see for the auth parameter in the example requests.
          * Set this to null if you want Scribe to use a random value as placeholder instead.
          */
-        'placeholder' => '{YOUR_AUTH_KEY}',
+        'placeholder' => '1|n5QJU3KB*****************************',
 
         /*
          * Any extra authentication-related info for your users. For instance, you can describe how to find or generate their auth credentials.
@@ -297,7 +298,7 @@ INTRO
      * Setting `laravel.add_routes` to true (above) will also add a route for the spec.
      */
     'openapi' => [
-        'enabled' => true,
+        'enabled' => false,
 
         /*
          * Manually override some generated content in the spec. Dot notation is supported.

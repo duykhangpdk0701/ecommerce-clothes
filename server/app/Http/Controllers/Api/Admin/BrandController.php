@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 /**
  * @group Admin Brand
  *
+ * @authenticated
+ *
  * APIs for managing Brand
  */
 class BrandController extends Controller
@@ -37,9 +39,9 @@ class BrandController extends Controller
      * Get a list of brands.
      *
      * This endpoint lets you get a list of brands
+     * @authencicated
      *
-     * @queryParam is_show boolean True will return active brands and False will return inactive brands. Example: true
-     * @queryParam limit integer The number of resource that will show and then paginate. Example: 50
+     *
      *
      * @param Request $request
      * @return AnonymousResourceCollection
@@ -61,7 +63,7 @@ class BrandController extends Controller
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show (int $id): \Illuminate\Http\JsonResponse
+    public function show(int $id): \Illuminate\Http\JsonResponse
     {
         $result = $this->brandRepository->find($id);
         if ($result) {
@@ -97,12 +99,13 @@ class BrandController extends Controller
      * @param Brand $brand
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(UpdateBrandRequest $request, Brand $brand): \Illuminate\Http\JsonResponse
+    public function update(UpdateBrandRequest $request,Brand $brand): \Illuminate\Http\JsonResponse
     {
         $result = $this->brandRepository->update($brand, $request->validated());
 
         if ($result) {
-            return response()->json(new JsonResponse(new BrandResource($result)), ResponseAlias::HTTP_OK);
+            $temp = $this->brandRepository->find($brand->id);
+            return response()->json(new JsonResponse(new BrandResource($temp)), ResponseAlias::HTTP_OK);
         }
 
         return response()->json(new JsonResponse([], __('error.brand.store_brand')), ResponseAlias::HTTP_NOT_FOUND);
@@ -118,6 +121,7 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand): \Illuminate\Http\JsonResponse
     {
+        dd(123);
         $result = $this->brandRepository->destroy($brand);
         if ($result) {
             return response()->json(new JsonResponse(['message' => __('error.brand.store_brand')]), ResponseAlias::HTTP_OK);

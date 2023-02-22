@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 /**
  * @group Admin Item color
  *
+ * @authenticated
+ *
  * APIs for managing Item color
  */
 class ItemColorController extends Controller

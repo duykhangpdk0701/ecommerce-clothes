@@ -17,20 +17,23 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 /**
  * @group Admin User
  *
+ * @authenticated
+ *
  * APIs for managing User
  */
 class UserController extends Controller
 {
-     protected UserRepositoryInterface $userRepository;
+    protected UserRepositoryInterface $userRepository;
 
-     public function __construct (UserRepositoryInterface $userRepository) {
-      $this->middleware('permission:' . Acl::PERMISSION_BRAND_LIST)->only(['index', 'show']);
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->middleware('permission:' . Acl::PERMISSION_BRAND_LIST)->only(['index', 'show']);
         $this->middleware('permission:' . Acl::PERMISSION_BRAND_ADD)->only(['create', 'store']);
         $this->middleware('permission:' . Acl::PERMISSION_BRAND_EDIT)->only(['edit', 'update']);
         $this->middleware('permission:' . Acl::PERMISSION_BRAND_DELETE)->only("destroy");
 
         $this->userRepository = $userRepository;
-     }
+    }
 
     /**
      * Get a list of user.
@@ -60,7 +63,7 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show (int $id): \Illuminate\Http\JsonResponse
+    public function show(int $id): \Illuminate\Http\JsonResponse
     {
         $result = $this->userRepository->find($id);
         if ($result) {

@@ -1,5 +1,5 @@
-import { ShoppingBag } from "@mui/icons-material";
-import { Pagination } from "@mui/material";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import Pagination from "@mui/material/Pagination";
 import React from "react";
 import { TEXT_COLOR_GRAY } from "@/styles/color";
 import ListOrderItems from "./ListOrderItems";
@@ -9,7 +9,7 @@ const ListOrdersTemplate = () => {
     <div>
       <div className="mt-4 mb-6">
         <div className="flex gap-3 items-center">
-          <ShoppingBag className="text-2xl" />
+          <ShoppingBagIcon className="text-2xl" />
           <h2 className="text-2xl">My Orders</h2>
         </div>
       </div>

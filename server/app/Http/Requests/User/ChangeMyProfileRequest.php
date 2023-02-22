@@ -27,22 +27,19 @@ class ChangeMyProfileRequest extends FormRequest
     {
         return [
             'first_name' => [
-                'required',
                 'string',
                 'max:20',
                 new AlphaSpaces
             ],
             'last_name' => [
-                'required',
                 'string',
                 'max:20',
                 new AlphaSpaces
             ],
             'email' => 'required|string|email|max:255|unique:users,email,' . auth()->id(),
             'phone' => [
-                'required',
                 'numeric',
-                'unique:user_profile,phone,' . auth()->user()->userProfile->id,
+                'unique:user_profiles,phone,' . auth()->user()->userProfile->id,
                 new PhoneNumber
             ],
             'avatar' => [
@@ -51,10 +48,6 @@ class ChangeMyProfileRequest extends FormRequest
                 'mimes:jpeg,jpg,png',
                 'max:10000'
             ],
-            'city_id' => 'required',
-            'district_id' => 'required',
-            'ward_id' => 'sometimes|required',
-            'address' => 'required|string',
         ];
     }
 }

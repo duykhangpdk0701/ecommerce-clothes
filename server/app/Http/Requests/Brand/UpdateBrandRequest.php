@@ -25,9 +25,32 @@ class UpdateBrandRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'slug' => 'present|unique:brand,slug',
+            'slug' => 'present|unique:brands,slug,' . $this->brand->id,
             'order' => 'present',
-            'status' => "required"
+            'status' => "required",
         ];
     }
+
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'Contents of the post',
+            ],
+            'slug' => [
+                'description' => 'The title of the post.',
+                'example' => 'aaa',
+            ],
+            'order' => [
+                'description' => 'Date to be used as the publication date.',
+                'example' => 2,
+            ],
+            'status' => [
+                'description' => 'Category the post belongs to.',
+                'example' => 1,
+            ],
+
+        ];
+    }
+
 }

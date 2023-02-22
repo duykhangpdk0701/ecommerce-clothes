@@ -54,8 +54,8 @@ class LoginController extends Controller
      * This endpoint let the user login to the system and return them with a token for authenticate on authenticated endpoints
      * @unauthenticated
      *
-     * @bodyParam email string required. Example: user@test.com
-     * @bodyParam password string required. Example: password
+     * @bodyParam email string required. Example: duykhangpdk0701@gmail.com
+     * @bodyParam password string required. Example: Pdk@073101
      *
      * @apiResource App\Http\Resources\Api\UserResource
      * @apiResourceModel App\Models\User

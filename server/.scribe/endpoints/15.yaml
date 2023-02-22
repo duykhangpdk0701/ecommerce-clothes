@@ -1,0 +1,47 @@
+name: 'Admin Item'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/item
+    metadata:
+      groupName: 'Admin Item'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of brands.'
+      description: 'This endpoint lets you get a list of brands'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1gk5Edcf84663PhbaeVZvDa'
+    controller: null
+    method: null
+    route: null
+    custom: []

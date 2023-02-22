@@ -1,24 +1,21 @@
-name: 'Admin Item Size'
-description: |-
-
-  APIS for managing Item Size
+name: 'Admin Item color'
+description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/admin/item-size
+    uri: api/v1/admin/item-color
     metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: |-
-
-        APIS for managing Item Size
+      groupName: 'Admin Item color'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get a list of item size.'
-      description: 'This endpoint lets you get a list of item size'
-      authenticated: false
+      title: 'Get a list of item color.'
+      description: 'This endpoint lets you get a list of item color'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -56,7 +53,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5dekvb3VEg6Dh1c6Pf8aZa4'
     controller: null
     method: null
     route: null
@@ -64,32 +64,31 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/admin/item-size/{id}'
+    uri: 'api/v1/admin/item-color/{id}'
     metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: |-
-
-        APIS for managing Item Size
+      groupName: 'Admin Item color'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get item size detail.'
-      description: 'This endpoint lets you get item color size'
-      authenticated: false
+      title: 'Get item color detail.'
+      description: 'This endpoint lets you get item color detail'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
     urlParameters:
       id:
         name: id
-        description: 'The ID of the item size.'
+        description: 'The ID of the item color.'
         required: true
-        example: 9
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 9
+      id: 8
     queryParameters:
       is_show:
         name: is_show
@@ -122,7 +121,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 8eg43cafDdhbP66k5EvVZa1'
     controller: null
     method: null
     route: null
@@ -130,19 +132,18 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/admin/item-size
+    uri: api/v1/admin/item-color
     metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: |-
-
-        APIS for managing Item Size
+      groupName: 'Admin Item color'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create a new item size'
-      description: 'This endpoint lets you create an item size'
-      authenticated: false
+      title: 'Create a new item color'
+      description: 'This endpoint lets you create an item color'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -151,25 +152,18 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      item_category_id:
-        name: item_category_id
+      name:
+        name: name
         description: ''
         required: true
-        example: in
-        type: string
-        custom: []
-      item_person_type_id:
-        name: item_person_type_id
-        description: ''
-        required: true
-        example: quia
+        example: dignissimos
         type: string
         custom: []
       value:
         name: value
         description: ''
-        required: true
-        example: voluptas
+        required: false
+        example: null
         type: string
         custom: []
       order:
@@ -179,14 +173,23 @@ endpoints:
         example: null
         type: string
         custom: []
+      status:
+        name: status
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
     cleanBodyParameters:
-      item_category_id: in
-      item_person_type_id: quia
-      value: voluptas
+      name: dignissimos
+      status: true
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6gfdh36Ea8cveZbkD41V5aP'
     controller: null
     method: null
     route: null
@@ -194,19 +197,18 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/v1/admin/item-size/{id?}'
+    uri: 'api/v1/admin/item-color/{id?}'
     metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: |-
-
-        APIS for managing Item Size
+      groupName: 'Admin Item color'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Item size'
-      description: 'This endpoint lets you update item size'
-      authenticated: false
+      title: 'Update Item color'
+      description: 'This endpoint lets you update item color'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -215,33 +217,26 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 19
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      item_category_id:
-        name: item_category_id
+      name:
+        name: name
         description: ''
         required: true
-        example: praesentium
-        type: string
-        custom: []
-      item_person_type_id:
-        name: item_person_type_id
-        description: ''
-        required: true
-        example: ut
+        example: temporibus
         type: string
         custom: []
       value:
         name: value
         description: ''
-        required: true
-        example: quas
+        required: false
+        example: null
         type: string
         custom: []
       order:
@@ -252,13 +247,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: praesentium
-      item_person_type_id: ut
-      value: quas
+      name: temporibus
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5Ve4Z8baEcP3a16gkhf6vdD'
     controller: null
     method: null
     route: null
@@ -266,19 +262,18 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/admin/item-size/{id?}'
+    uri: 'api/v1/admin/item-color/{id?}'
     metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: |-
-
-        APIS for managing Item Size
+      groupName: 'Admin Item color'
+      groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Item size'
-      description: 'This endpoint lets you delete an item size'
-      authenticated: false
+      title: 'Delete Item color'
+      description: 'This endpoint lets you delete an item color'
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
@@ -287,11 +282,11 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 9
+        example: 4
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 9
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -299,7 +294,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6Dhe6bdZ58kcVf4vEag1a3P'
     controller: null
     method: null
     route: null

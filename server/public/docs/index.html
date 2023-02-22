@@ -27,7 +27,7 @@
 
     <script>
         var baseUrl = "http://127.0.0.1:8000";
-        var useCsrf = Boolean();
+        var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
     <script src="../docs/js/tryitout-4.14.0.js"></script>
@@ -93,11 +93,18 @@
                                                                                 <li class="tocify-item level-2" data-unique="admin-brand-POSTapi-v1-admin-brand">
                                 <a href="#admin-brand-POSTapi-v1-admin-brand">Create a new Brand</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="admin-brand-PUTapi-v1-admin-brand--id-">
-                                <a href="#admin-brand-PUTapi-v1-admin-brand--id-">Update Brand</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="admin-brand-DELETEapi-v1-admin-brand--id-">
                                 <a href="#admin-brand-DELETEapi-v1-admin-brand--id-">Delete Brand</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-admin-item" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="admin-item">
+                    <a href="#admin-item">Admin Item</a>
+                </li>
+                                    <ul id="tocify-subheader-admin-item" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="admin-item-GETapi-v1-admin-item">
+                                <a href="#admin-item-GETapi-v1-admin-item">Get a list of brands.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -111,6 +118,12 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="admin-itemcategory-GETapi-v1-admin-item-category--id-">
                                 <a href="#admin-itemcategory-GETapi-v1-admin-item-category--id-">Get itemCategory detail.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-itemcategory-POSTapi-v1-admin-item-category">
+                                <a href="#admin-itemcategory-POSTapi-v1-admin-item-category">Update an Item Category</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-itemcategory-PUTapi-v1-admin-item-category--category_id-">
+                                <a href="#admin-itemcategory-PUTapi-v1-admin-item-category--category_id-">Update an Item Category</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="admin-itemcategory-DELETEapi-v1-admin-item-category--category-">
                                 <a href="#admin-itemcategory-DELETEapi-v1-admin-item-category--category-">Delete Category</a>
@@ -311,16 +324,28 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-user-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="user-endpoints">
+                    <a href="#user-endpoints">User Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-user-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="user-endpoints-PUTapi-v1-my-profile-change-password">
+                                <a href="#user-endpoints-PUTapi-v1-my-profile-change-password">Update the password of the current customer</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-endpoints-POSTapi-v1-my-profile-upload-avatar">
+                                <a href="#user-endpoints-POSTapi-v1-my-profile-upload-avatar">Upload avatar of the current customer</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
                     <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
-                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                        <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 20, 2023</li>
+        <li>Last updated: February 22, 2023</li>
     </ul>
 </div>
 
@@ -336,7 +361,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value **<code>"Bearer 1|n5QJU3KB*****************************"</code>**.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="address">Address</h1>
 
@@ -468,7 +495,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/address/15" \
+    "http://127.0.0.1:8000/api/v1/address/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -476,7 +503,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/address/15"
+    "http://127.0.0.1:8000/api/v1/address/8"
 );
 
 const headers = {
@@ -573,20 +600,21 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="address_id"                data-endpoint="DELETEapi-v1-address--address_id-"
-               value="15"
+               value="8"
                data-component="url">
     <br>
-<p>The ID of the address. Example: <code>15</code></p>
+<p>The ID of the address. Example: <code>8</code></p>
             </div>
                     </form>
 
                 <h1 id="admin-brand">Admin Brand</h1>
 
-    <p>APIs for managing Brand</p>
+    
 
                                 <h2 id="admin-brand-GETapi-v1-admin-brand">Get a list of brands.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get a list of brands</p>
@@ -597,7 +625,8 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/admin/brand?is_show=1&amp;limit=50" \
+    --get "http://127.0.0.1:8000/api/v1/admin/brand" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -608,14 +637,8 @@ fetch(url, {
     "http://127.0.0.1:8000/api/v1/admin/brand"
 );
 
-const params = {
-    "is_show": "1",
-    "limit": "50",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -658,7 +681,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-brand" data-method="GET"
       data-path="api/v1/admin/brand"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -685,6 +708,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/brand</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-brand"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -718,44 +752,12 @@ access-control-allow-origin: *
     <br>
 <p>Example: <code>RANDOM_STUFF</code></p>
             </div>
-                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>is_show</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
-<i>optional</i> &nbsp;
-                <label data-endpoint="GETapi-v1-admin-brand" style="display: none">
-            <input type="radio" name="is_show"
-                   value="1"
-                   data-endpoint="GETapi-v1-admin-brand"
-                   data-component="query"             >
-            <code>true</code>
-        </label>
-        <label data-endpoint="GETapi-v1-admin-brand" style="display: none">
-            <input type="radio" name="is_show"
-                   value="0"
-                   data-endpoint="GETapi-v1-admin-brand"
-                   data-component="query"             >
-            <code>false</code>
-        </label>
-    <br>
-<p>True will return active brands and False will return inactive brands. Example: <code>true</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               name="limit"                data-endpoint="GETapi-v1-admin-brand"
-               value="50"
-               data-component="query">
-    <br>
-<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
-            </div>
-                </form>
+                        </form>
 
                     <h2 id="admin-brand-GETapi-v1-admin-brand--id-">Get brand detail.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get  brand detail</p>
@@ -767,6 +769,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/brand/1?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -785,6 +788,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -827,7 +831,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-brand--id-" data-method="GET"
       data-path="api/v1/admin/brand/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -854,6 +858,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/brand/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-brand--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -937,6 +952,7 @@ access-control-allow-origin: *
                     <h2 id="admin-brand-POSTapi-v1-admin-brand">Create a new Brand</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you create a brand</p>
@@ -948,12 +964,13 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/admin/brand" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"in\",
-    \"status\": false
+    \"name\": \"quod\",
+    \"status\": true
 }"
 </code></pre></div>
 
@@ -964,14 +981,15 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "name": "in",
-    "status": false
+    "name": "quod",
+    "status": true
 };
 
 fetch(url, {
@@ -996,7 +1014,7 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-v1-admin-brand" data-method="POST"
       data-path="api/v1/admin/brand"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1023,6 +1041,17 @@ fetch(url, {
             <b><code>api/v1/admin/brand</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-admin-brand"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1063,10 +1092,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-brand"
-               value="in"
+               value="quod"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>quod</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
@@ -1098,7 +1127,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -1113,190 +1142,10 @@ fetch(url, {
         </div>
         </form>
 
-                    <h2 id="admin-brand-PUTapi-v1-admin-brand--id-">Update Brand</h2>
-
-<p>
-</p>
-
-<p>This endpoint lets you update brands</p>
-
-<span id="example-requests-PUTapi-v1-admin-brand--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/admin/brand/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "API-KEY: RANDOM_STUFF" \
-    --data "{
-    \"name\": \"assumenda\",
-    \"status\": \"maiores\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/brand/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "API-KEY": "RANDOM_STUFF",
-};
-
-let body = {
-    "name": "assumenda",
-    "status": "maiores"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-v1-admin-brand--id-">
-</span>
-<span id="execution-results-PUTapi-v1-admin-brand--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-admin-brand--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-brand--id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-admin-brand--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-admin-brand--id-"></code></pre>
-</span>
-<form id="form-PUTapi-v1-admin-brand--id-" data-method="PUT"
-      data-path="api/v1/admin/brand/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-brand--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-admin-brand--id-"
-                    onclick="tryItOut('PUTapi-v1-admin-brand--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-admin-brand--id-"
-                    onclick="cancelTryOut('PUTapi-v1-admin-brand--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-admin-brand--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/admin/brand/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="API-KEY"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="RANDOM_STUFF"
-               data-component="header">
-    <br>
-<p>Example: <code>RANDOM_STUFF</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="id"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the brand. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="name"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="assumenda"
-               data-component="body">
-    <br>
-<p>Example: <code>assumenda</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="slug"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="order"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value=""
-               data-component="body">
-    <br>
-
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="status"                data-endpoint="PUTapi-v1-admin-brand--id-"
-               value="maiores"
-               data-component="body">
-    <br>
-<p>Example: <code>maiores</code></p>
-        </div>
-        </form>
-
                     <h2 id="admin-brand-DELETEapi-v1-admin-brand--id-">Delete Brand</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you delete brands</p>
@@ -1308,6 +1157,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://127.0.0.1:8000/api/v1/admin/brand/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -1319,6 +1169,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -1345,7 +1196,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-admin-brand--id-" data-method="DELETE"
       data-path="api/v1/admin/brand/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1372,6 +1223,17 @@ fetch(url, {
             <b><code>api/v1/admin/brand/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-admin-brand--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1419,13 +1281,161 @@ fetch(url, {
             </div>
                     </form>
 
+                <h1 id="admin-item">Admin Item</h1>
+
+    
+
+                                <h2 id="admin-item-GETapi-v1-admin-item">Get a list of brands.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint lets you get a list of brands</p>
+
+<span id="example-requests-GETapi-v1-admin-item">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item" data-method="GET"
+      data-path="api/v1/admin/item"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item"
+                    onclick="tryItOut('GETapi-v1-admin-item');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item"
+                    onclick="cancelTryOut('GETapi-v1-admin-item');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        </form>
+
                 <h1 id="admin-itemcategory">Admin ItemCategory</h1>
 
-    <p>APIs for managing ItemCategory</p>
+    
 
                                 <h2 id="admin-itemcategory-GETapi-v1-admin-item-category">Get a list of Item Category.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get a list of item-category</p>
@@ -1437,6 +1447,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/item-category" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -1448,6 +1459,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -1490,7 +1502,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-category" data-method="GET"
       data-path="api/v1/admin/item-category"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1517,6 +1529,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-category</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-category"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1555,6 +1578,7 @@ access-control-allow-origin: *
                     <h2 id="admin-itemcategory-GETapi-v1-admin-item-category--id-">Get itemCategory detail.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get  itemCategory detail</p>
@@ -1566,6 +1590,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/item-category/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -1577,6 +1602,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -1619,7 +1645,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-category--id-" data-method="GET"
       data-path="api/v1/admin/item-category/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1646,6 +1672,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-category/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-category--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1693,9 +1730,448 @@ access-control-allow-origin: *
             </div>
                     </form>
 
+                    <h2 id="admin-itemcategory-POSTapi-v1-admin-item-category">Update an Item Category</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint lets you update an Item Category</p>
+
+<span id="example-requests-POSTapi-v1-admin-item-category">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/admin/item-category" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"description\": \"Soluta voluptatum doloribus impedit necessitatibus itaque.\",
+    \"order\": \"explicabo\",
+    \"name\": {
+        \"vi\": \"dxjjaiygrepyfrwcfaplfhl\",
+        \"en\": \"atcgzdrsl\"
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-category"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "description": "Soluta voluptatum doloribus impedit necessitatibus itaque.",
+    "order": "explicabo",
+    "name": {
+        "vi": "dxjjaiygrepyfrwcfaplfhl",
+        "en": "atcgzdrsl"
+    }
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-admin-item-category">
+</span>
+<span id="execution-results-POSTapi-v1-admin-item-category" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-admin-item-category"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-admin-item-category" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-admin-item-category" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-admin-item-category"></code></pre>
+</span>
+<form id="form-POSTapi-v1-admin-item-category" data-method="POST"
+      data-path="api/v1/admin/item-category"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-admin-item-category', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-admin-item-category"
+                    onclick="tryItOut('POSTapi-v1-admin-item-category');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-admin-item-category"
+                    onclick="cancelTryOut('POSTapi-v1-admin-item-category');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-admin-item-category" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/admin/item-category</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-admin-item-category"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="description"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="Soluta voluptatum doloribus impedit necessitatibus itaque."
+               data-component="body">
+    <br>
+<p>Example: <code>Soluta voluptatum doloribus impedit necessitatibus itaque.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="parent_id"                data-endpoint="POSTapi-v1-admin-item-category"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="explicabo"
+               data-component="body">
+    <br>
+<p>Example: <code>explicabo</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>vi</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name.vi"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="dxjjaiygrepyfrwcfaplfhl"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>dxjjaiygrepyfrwcfaplfhl</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name.en"                data-endpoint="POSTapi-v1-admin-item-category"
+               value="atcgzdrsl"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>atcgzdrsl</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
+
+                    <h2 id="admin-itemcategory-PUTapi-v1-admin-item-category--category_id-">Update an Item Category</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint lets you update an Item Category</p>
+
+<span id="example-requests-PUTapi-v1-admin-item-category--category_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/v1/admin/item-category/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"description\": \"Necessitatibus id voluptatem iste hic consequatur qui sed qui.\",
+    \"order\": \"incidunt\",
+    \"name\": {
+        \"vi\": \"ab\",
+        \"en\": \"sit\"
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-category/1"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "description": "Necessitatibus id voluptatem iste hic consequatur qui sed qui.",
+    "order": "incidunt",
+    "name": {
+        "vi": "ab",
+        "en": "sit"
+    }
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-admin-item-category--category_id-">
+</span>
+<span id="execution-results-PUTapi-v1-admin-item-category--category_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-admin-item-category--category_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-admin-item-category--category_id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-admin-item-category--category_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-admin-item-category--category_id-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-admin-item-category--category_id-" data-method="PUT"
+      data-path="api/v1/admin/item-category/{category_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-admin-item-category--category_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-admin-item-category--category_id-"
+                    onclick="tryItOut('PUTapi-v1-admin-item-category--category_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-admin-item-category--category_id-"
+                    onclick="cancelTryOut('PUTapi-v1-admin-item-category--category_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-admin-item-category--category_id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/admin/item-category/{category_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="category_id"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the category. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="description"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="Necessitatibus id voluptatem iste hic consequatur qui sed qui."
+               data-component="body">
+    <br>
+<p>Example: <code>Necessitatibus id voluptatem iste hic consequatur qui sed qui.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="parent_id"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value=""
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="order"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="incidunt"
+               data-component="body">
+    <br>
+<p>Example: <code>incidunt</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>vi</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name.vi"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="ab"
+               data-component="body">
+    <br>
+<p>Example: <code>ab</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name.en"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
+               value="sit"
+               data-component="body">
+    <br>
+<p>Example: <code>sit</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
+
                     <h2 id="admin-itemcategory-DELETEapi-v1-admin-item-category--category-">Delete Category</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you delete Item Category</p>
@@ -1707,6 +2183,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://127.0.0.1:8000/api/v1/admin/item-category/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -1718,6 +2195,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -1744,7 +2222,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-admin-item-category--category-" data-method="DELETE"
       data-path="api/v1/admin/item-category/{category}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1771,6 +2249,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-category/{category}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-admin-item-category--category-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1820,11 +2309,12 @@ fetch(url, {
 
                 <h1 id="admin-item-size">Admin Item Size</h1>
 
-    <p>APIS for managing Item Size</p>
+    
 
                                 <h2 id="admin-item-size-GETapi-v1-admin-item-size">Get a list of item size.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get a list of item size</p>
@@ -1836,6 +2326,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/item-size?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -1854,6 +2345,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -1896,7 +2388,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-size" data-method="GET"
       data-path="api/v1/admin/item-size"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1923,6 +2415,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-size</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-size"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1994,6 +2497,7 @@ access-control-allow-origin: *
                     <h2 id="admin-item-size-GETapi-v1-admin-item-size--id-">Get item size detail.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get item color size</p>
@@ -2005,6 +2509,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/item-size/9?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -2023,6 +2528,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -2065,7 +2571,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-size--id-" data-method="GET"
       data-path="api/v1/admin/item-size/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2092,6 +2598,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-size/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-size--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2175,6 +2692,7 @@ access-control-allow-origin: *
                     <h2 id="admin-item-size-POSTapi-v1-admin-item-size">Create a new item size</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you create an item size</p>
@@ -2186,13 +2704,14 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/admin/item-size" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"in\",
-    \"item_person_type_id\": \"quia\",
-    \"value\": \"voluptas\"
+    \"item_category_id\": \"illum\",
+    \"item_person_type_id\": \"eligendi\",
+    \"value\": \"dolor\"
 }"
 </code></pre></div>
 
@@ -2203,15 +2722,16 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "item_category_id": "in",
-    "item_person_type_id": "quia",
-    "value": "voluptas"
+    "item_category_id": "illum",
+    "item_person_type_id": "eligendi",
+    "value": "dolor"
 };
 
 fetch(url, {
@@ -2236,7 +2756,7 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-v1-admin-item-size" data-method="POST"
       data-path="api/v1/admin/item-size"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2263,6 +2783,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-size</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-admin-item-size"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2303,10 +2834,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="in"
+               value="illum"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>illum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -2314,10 +2845,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="quia"
+               value="eligendi"
                data-component="body">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>eligendi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -2325,10 +2856,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="voluptas"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -2346,6 +2877,7 @@ fetch(url, {
                     <h2 id="admin-item-size-PUTapi-v1-admin-item-size--id--">Update Item size</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you update item size</p>
@@ -2356,33 +2888,35 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/admin/item-size/19" \
+    "http://127.0.0.1:8000/api/v1/admin/item-size/7" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"praesentium\",
-    \"item_person_type_id\": \"ut\",
-    \"value\": \"quas\"
+    \"item_category_id\": \"quisquam\",
+    \"item_person_type_id\": \"doloribus\",
+    \"value\": \"amet\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-size/19"
+    "http://127.0.0.1:8000/api/v1/admin/item-size/7"
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "item_category_id": "praesentium",
-    "item_person_type_id": "ut",
-    "value": "quas"
+    "item_category_id": "quisquam",
+    "item_person_type_id": "doloribus",
+    "value": "amet"
 };
 
 fetch(url, {
@@ -2407,7 +2941,7 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-v1-admin-item-size--id--" data-method="PUT"
       data-path="api/v1/admin/item-size/{id?}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2434,6 +2968,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-size/{id?}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-admin-item-size--id--"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2474,10 +3019,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="19"
+               value="7"
                data-component="url">
     <br>
-<p>The ID of the . Example: <code>19</code></p>
+<p>The ID of the . Example: <code>7</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2486,10 +3031,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="praesentium"
+               value="quisquam"
                data-component="body">
     <br>
-<p>Example: <code>praesentium</code></p>
+<p>Example: <code>quisquam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -2497,10 +3042,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="ut"
+               value="doloribus"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>doloribus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -2508,10 +3053,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="quas"
+               value="amet"
                data-component="body">
     <br>
-<p>Example: <code>quas</code></p>
+<p>Example: <code>amet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -2529,6 +3074,7 @@ fetch(url, {
                     <h2 id="admin-item-size-DELETEapi-v1-admin-item-size--id--">Delete Item size</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you delete an item size</p>
@@ -2539,7 +3085,8 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/admin/item-size/9" \
+    "http://127.0.0.1:8000/api/v1/admin/item-size/7" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -2547,10 +3094,11 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-size/9"
+    "http://127.0.0.1:8000/api/v1/admin/item-size/7"
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -2577,7 +3125,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-admin-item-size--id--" data-method="DELETE"
       data-path="api/v1/admin/item-size/{id?}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2604,6 +3152,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-size/{id?}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-admin-item-size--id--"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2644,20 +3203,21 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="DELETEapi-v1-admin-item-size--id--"
-               value="9"
+               value="7"
                data-component="url">
     <br>
-<p>The ID of the . Example: <code>9</code></p>
+<p>The ID of the . Example: <code>7</code></p>
             </div>
                     </form>
 
                 <h1 id="admin-item-color">Admin Item color</h1>
 
-    <p>APIs for managing Item color</p>
+    
 
                                 <h2 id="admin-item-color-GETapi-v1-admin-item-color">Get a list of item color.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get a list of item color</p>
@@ -2669,6 +3229,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/item-color?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -2687,6 +3248,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -2729,7 +3291,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-color" data-method="GET"
       data-path="api/v1/admin/item-color"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2756,6 +3318,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-color</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-color"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2827,6 +3400,7 @@ access-control-allow-origin: *
                     <h2 id="admin-item-color-GETapi-v1-admin-item-color--id-">Get item color detail.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get item color detail</p>
@@ -2837,7 +3411,8 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/admin/item-color/1?is_show=1&amp;limit=50" \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-color/8?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -2845,7 +3420,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+    "http://127.0.0.1:8000/api/v1/admin/item-color/8"
 );
 
 const params = {
@@ -2856,6 +3431,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -2898,7 +3474,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-item-color--id-" data-method="GET"
       data-path="api/v1/admin/item-color/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -2925,6 +3501,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/item-color/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-color--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -2965,10 +3552,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="GETapi-v1-admin-item-color--id-"
-               value="1"
+               value="8"
                data-component="url">
     <br>
-<p>The ID of the item color. Example: <code>1</code></p>
+<p>The ID of the item color. Example: <code>8</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                                     <div style="padding-left: 28px; clear: unset;">
@@ -3008,6 +3595,7 @@ access-control-allow-origin: *
                     <h2 id="admin-item-color-POSTapi-v1-admin-item-color">Create a new item color</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you create an item color</p>
@@ -3019,12 +3607,13 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/admin/item-color" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"et\",
-    \"status\": false
+    \"name\": \"dignissimos\",
+    \"status\": true
 }"
 </code></pre></div>
 
@@ -3035,14 +3624,15 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "name": "et",
-    "status": false
+    "name": "dignissimos",
+    "status": true
 };
 
 fetch(url, {
@@ -3067,7 +3657,7 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-v1-admin-item-color" data-method="POST"
       data-path="api/v1/admin/item-color"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3094,6 +3684,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-color</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-admin-item-color"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3134,10 +3735,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="et"
+               value="dignissimos"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>dignissimos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3180,13 +3781,14 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
         </form>
 
                     <h2 id="admin-item-color-PUTapi-v1-admin-item-color--id--">Update Item color</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you update item color</p>
@@ -3197,29 +3799,31 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/admin/item-color/1" \
+    "http://127.0.0.1:8000/api/v1/admin/item-color/8" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"iure\"
+    \"name\": \"temporibus\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+    "http://127.0.0.1:8000/api/v1/admin/item-color/8"
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "name": "iure"
+    "name": "temporibus"
 };
 
 fetch(url, {
@@ -3244,7 +3848,7 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-v1-admin-item-color--id--" data-method="PUT"
       data-path="api/v1/admin/item-color/{id?}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3271,6 +3875,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-color/{id?}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-admin-item-color--id--"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3311,10 +3926,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="1"
+               value="8"
                data-component="url">
     <br>
-<p>The ID of the . Example: <code>1</code></p>
+<p>The ID of the . Example: <code>8</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3323,10 +3938,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="iure"
+               value="temporibus"
                data-component="body">
     <br>
-<p>Example: <code>iure</code></p>
+<p>Example: <code>temporibus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3355,6 +3970,7 @@ fetch(url, {
                     <h2 id="admin-item-color-DELETEapi-v1-admin-item-color--id--">Delete Item color</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you delete an item color</p>
@@ -3365,7 +3981,8 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/admin/item-color/1" \
+    "http://127.0.0.1:8000/api/v1/admin/item-color/4" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -3373,10 +3990,11 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/admin/item-color/1"
+    "http://127.0.0.1:8000/api/v1/admin/item-color/4"
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -3403,7 +4021,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-admin-item-color--id--" data-method="DELETE"
       data-path="api/v1/admin/item-color/{id?}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3430,6 +4048,17 @@ fetch(url, {
             <b><code>api/v1/admin/item-color/{id?}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-admin-item-color--id--"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3470,20 +4099,21 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="DELETEapi-v1-admin-item-color--id--"
-               value="1"
+               value="4"
                data-component="url">
     <br>
-<p>The ID of the . Example: <code>1</code></p>
+<p>The ID of the . Example: <code>4</code></p>
             </div>
                     </form>
 
                 <h1 id="admin-user">Admin User</h1>
 
-    <p>APIs for managing User</p>
+    
 
                                 <h2 id="admin-user-GETapi-v1-admin-user">Get a list of user.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get a list of brands</p>
@@ -3495,6 +4125,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/user?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -3513,6 +4144,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -3555,7 +4187,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-user" data-method="GET"
       data-path="api/v1/admin/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3582,6 +4214,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/user</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-user"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3653,6 +4296,7 @@ access-control-allow-origin: *
                     <h2 id="admin-user-GETapi-v1-admin-user--id-">Get brand detail.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you get user detail</p>
@@ -3664,6 +4308,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/admin/user/1?is_show=1&amp;limit=50" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -3682,6 +4327,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -3724,7 +4370,7 @@ access-control-allow-origin: *
 </span>
 <form id="form-GETapi-v1-admin-user--id-" data-method="GET"
       data-path="api/v1/admin/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3751,6 +4397,17 @@ access-control-allow-origin: *
             <b><code>api/v1/admin/user/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-user--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3834,6 +4491,7 @@ access-control-allow-origin: *
                     <h2 id="admin-user-POSTapi-v1-admin-user">Create a new Brand</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you create a user</p>
@@ -3845,20 +4503,21 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/admin/user" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"first_name\": \"nwwnntnw\",
-    \"last_name\": \"j\",
-    \"email\": \"ashlee41@example.org\",
-    \"password\": \"quod\",
-    \"role\": \"animi\",
-    \"phone\": 1794.9,
-    \"city_id\": \"veniam\",
-    \"district_id\": \"fuga\",
-    \"ward_id\": \"natus\",
-    \"address\": \"perferendis\"
+    \"first_name\": \"zomgzzkqmmasaizmyz\",
+    \"last_name\": \"bqcxlkwyixhvpsce\",
+    \"email\": \"giles.parisian@example.net\",
+    \"password\": \"qui\",
+    \"role\": \"non\",
+    \"phone\": 17277.7886934,
+    \"city_id\": \"rerum\",
+    \"district_id\": \"a\",
+    \"ward_id\": \"sunt\",
+    \"address\": \"placeat\"
 }"
 </code></pre></div>
 
@@ -3869,22 +4528,23 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "first_name": "nwwnntnw",
-    "last_name": "j",
-    "email": "ashlee41@example.org",
-    "password": "quod",
-    "role": "animi",
-    "phone": 1794.9,
-    "city_id": "veniam",
-    "district_id": "fuga",
-    "ward_id": "natus",
-    "address": "perferendis"
+    "first_name": "zomgzzkqmmasaizmyz",
+    "last_name": "bqcxlkwyixhvpsce",
+    "email": "giles.parisian@example.net",
+    "password": "qui",
+    "role": "non",
+    "phone": 17277.7886934,
+    "city_id": "rerum",
+    "district_id": "a",
+    "ward_id": "sunt",
+    "address": "placeat"
 };
 
 fetch(url, {
@@ -3909,7 +4569,7 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-v1-admin-user" data-method="POST"
       data-path="api/v1/admin/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3936,6 +4596,17 @@ fetch(url, {
             <b><code>api/v1/admin/user</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-admin-user"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -3976,10 +4647,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="first_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="nwwnntnw"
+               value="zomgzzkqmmasaizmyz"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>nwwnntnw</code></p>
+<p>Must not be greater than 20 characters. Example: <code>zomgzzkqmmasaizmyz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -3987,10 +4658,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="last_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="j"
+               value="bqcxlkwyixhvpsce"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>j</code></p>
+<p>Must not be greater than 20 characters. Example: <code>bqcxlkwyixhvpsce</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3998,10 +4669,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-v1-admin-user"
-               value="ashlee41@example.org"
+               value="giles.parisian@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ashlee41@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>giles.parisian@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -4009,10 +4680,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-v1-admin-user"
-               value="quod"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>quod</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -4020,10 +4691,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="POSTapi-v1-admin-user"
-               value="animi"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>animi</code></p>
+<p>Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -4031,10 +4702,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="phone"                data-endpoint="POSTapi-v1-admin-user"
-               value="1794.9"
+               value="17277.7886934"
                data-component="body">
     <br>
-<p>Example: <code>1794.9</code></p>
+<p>Example: <code>17277.7886934</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -4042,10 +4713,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="veniam"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>district_id</code></b>&nbsp;&nbsp;
@@ -4053,10 +4724,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="district_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="fuga"
+               value="a"
                data-component="body">
     <br>
-<p>Example: <code>fuga</code></p>
+<p>Example: <code>a</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ward_id</code></b>&nbsp;&nbsp;
@@ -4064,10 +4735,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="ward_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="natus"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>natus</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -4075,16 +4746,17 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="address"                data-endpoint="POSTapi-v1-admin-user"
-               value="perferendis"
+               value="placeat"
                data-component="body">
     <br>
-<p>Example: <code>perferendis</code></p>
+<p>Example: <code>placeat</code></p>
         </div>
         </form>
 
                     <h2 id="admin-user-PUTapi-v1-admin-user--id-">Update Brand</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you update user</p>
@@ -4096,13 +4768,14 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/admin/user/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"pcenx\",
-    \"email\": \"greta37@example.net\",
-    \"role\": \"et\"
+    \"name\": \"qczp\",
+    \"email\": \"umiller@example.org\",
+    \"role\": \"consequatur\"
 }"
 </code></pre></div>
 
@@ -4113,15 +4786,16 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
 };
 
 let body = {
-    "name": "pcenx",
-    "email": "greta37@example.net",
-    "role": "et"
+    "name": "qczp",
+    "email": "umiller@example.org",
+    "role": "consequatur"
 };
 
 fetch(url, {
@@ -4146,7 +4820,7 @@ fetch(url, {
 </span>
 <form id="form-PUTapi-v1-admin-user--id-" data-method="PUT"
       data-path="api/v1/admin/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4173,6 +4847,17 @@ fetch(url, {
             <b><code>api/v1/admin/user/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-admin-user--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -4225,10 +4910,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="pcenx"
+               value="qczp"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pcenx</code></p>
+<p>Must not be greater than 255 characters. Example: <code>qczp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -4236,10 +4921,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="greta37@example.net"
+               value="umiller@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>greta37@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>umiller@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -4247,16 +4932,17 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="et"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
         </form>
 
                     <h2 id="admin-user-DELETEapi-v1-admin-user--id-">Delete User</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 <p>This endpoint lets you delete users</p>
@@ -4268,6 +4954,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://127.0.0.1:8000/api/v1/admin/user/1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -4279,6 +4966,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -4305,7 +4993,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-admin-user--id-" data-method="DELETE"
       data-path="api/v1/admin/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -4332,6 +5020,17 @@ fetch(url, {
             <b><code>api/v1/admin/user/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-admin-user--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -4401,8 +5100,8 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"email\": \"user@test.com\",
-    \"password\": \"password\"
+    \"email\": \"duykhangpdk0701@gmail.com\",
+    \"password\": \"Pdk@073101\"
 }"
 </code></pre></div>
 
@@ -4419,8 +5118,8 @@ const headers = {
 };
 
 let body = {
-    "email": "user@test.com",
-    "password": "password"
+    "email": "duykhangpdk0701@gmail.com",
+    "password": "Pdk@073101"
 };
 
 fetch(url, {
@@ -4437,7 +5136,22 @@ fetch(url, {
         </blockquote>
                 <pre>
 
-<code class="language-json" style="max-height: 300px;"></code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 25,
+        &quot;name&quot;: &quot;Amara Bruen&quot;,
+        &quot;email&quot;: &quot;nnikolaus@example.net&quot;,
+        &quot;token&quot;: null,
+        &quot;roles&quot;: [],
+        &quot;permissions&quot;: [],
+        &quot;role&quot;: &quot;&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Amara Bruen&quot;,
+        &quot;reset_password_at&quot;: null,
+        &quot;profile&quot;: null,
+        &quot;multiple_address&quot;: [],
+        &quot;address_default&quot;: null
+    }
+}</code>
  </pre>
     </span>
 <span id="execution-results-POSTapi-auth-login" hidden>
@@ -4519,10 +5233,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-auth-login"
-               value="user@test.com"
+               value="duykhangpdk0701@gmail.com"
                data-component="body">
     <br>
-<p>required. Example: <code>user@test.com</code></p>
+<p>required. Example: <code>duykhangpdk0701@gmail.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -4530,10 +5244,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-auth-login"
-               value="password"
+               value="Pdk@073101"
                data-component="body">
     <br>
-<p>required. Example: <code>password</code></p>
+<p>required. Example: <code>Pdk@073101</code></p>
         </div>
         </form>
 
@@ -4804,7 +5518,22 @@ fetch(url, {
         </blockquote>
                 <pre>
 
-<code class="language-json" style="max-height: 300px;"></code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 26,
+        &quot;name&quot;: &quot;Reva Champlin MD&quot;,
+        &quot;email&quot;: &quot;marks.geovanni@example.net&quot;,
+        &quot;token&quot;: null,
+        &quot;roles&quot;: [],
+        &quot;permissions&quot;: [],
+        &quot;role&quot;: &quot;&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Reva Champlin MD&quot;,
+        &quot;reset_password_at&quot;: null,
+        &quot;profile&quot;: null,
+        &quot;multiple_address&quot;: [],
+        &quot;address_default&quot;: null
+    }
+}</code>
  </pre>
     </span>
 <span id="execution-results-POSTapi-auth-oauth--driver--callback" hidden>
@@ -4964,6 +5693,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/auth/user" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -4975,6 +5705,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -4993,7 +5724,22 @@ fetch(url, {
         </blockquote>
                 <pre>
 
-<code class="language-json" style="max-height: 300px;"></code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 27,
+        &quot;name&quot;: &quot;Aurelio Pfeffer&quot;,
+        &quot;email&quot;: &quot;bednar.anabel@example.org&quot;,
+        &quot;token&quot;: null,
+        &quot;roles&quot;: [],
+        &quot;permissions&quot;: [],
+        &quot;role&quot;: &quot;&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Aurelio Pfeffer&quot;,
+        &quot;reset_password_at&quot;: null,
+        &quot;profile&quot;: null,
+        &quot;multiple_address&quot;: [],
+        &quot;address_default&quot;: null
+    }
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-auth-user" hidden>
@@ -5035,6 +5781,17 @@ fetch(url, {
             <b><code>api/auth/user</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-auth-user"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5085,6 +5842,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/auth/logout" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -5096,6 +5854,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -5160,6 +5919,17 @@ fetch(url, {
             <b><code>api/auth/logout</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-auth-logout"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5254,27 +6024,12 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 43
+x-ratelimit-remaining: 51
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;Gucci&quot;,
-            &quot;slug&quot;: &quot;gucci&quot;,
-            &quot;order&quot;: 2,
-            &quot;status&quot;: 1
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;yame&quot;,
-            &quot;slug&quot;: &quot;yame&quot;,
-            &quot;order&quot;: 1,
-            &quot;status&quot;: 1
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/brand?page=1&quot;,
         &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/brand?page=1&quot;,
@@ -5283,7 +6038,7 @@ access-control-allow-origin: *
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -5304,8 +6059,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/brand&quot;,
         &quot;per_page&quot;: 50,
-        &quot;to&quot;: 2,
-        &quot;total&quot;: 2
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
@@ -5436,6 +6191,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/cart/add-to-cart" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
@@ -5453,6 +6209,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -5513,6 +6270,17 @@ fetch(url, {
             <b><code>api/v1/cart/add-to-cart</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-cart-add-to-cart"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5597,6 +6365,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/cart/plus-cart" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
@@ -5613,6 +6382,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -5672,6 +6442,17 @@ fetch(url, {
             <b><code>api/v1/cart/plus-cart</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-cart-plus-cart"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5745,6 +6526,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/cart/minus-cart" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
@@ -5761,6 +6543,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -5820,6 +6603,17 @@ fetch(url, {
             <b><code>api/v1/cart/minus-cart</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-cart-minus-cart"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -5893,6 +6687,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/v1/cart/delete-item-cart" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
@@ -5909,6 +6704,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -5968,6 +6764,17 @@ fetch(url, {
             <b><code>api/v1/cart/delete-item-cart</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-cart-delete-item-cart"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6041,6 +6848,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/cart/get-quote-by-user" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -6052,6 +6860,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -6122,6 +6931,17 @@ access-control-allow-origin: *
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-cart-get-quote-by-user"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -6171,6 +6991,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/cart/payment-method" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -6182,6 +7003,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -6252,6 +7074,17 @@ access-control-allow-origin: *
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-cart-payment-method"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -6301,6 +7134,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/v1/cart/confirm-checkout" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
@@ -6324,6 +7158,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -6390,6 +7225,17 @@ fetch(url, {
             <b><code>api/v1/cart/confirm-checkout</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-cart-confirm-checkout"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -6577,7 +7423,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 42
+x-ratelimit-remaining: 50
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -7556,7 +8402,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/city/8" \
+    --get "http://127.0.0.1:8000/api/v1/destination/city/6" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -7564,7 +8410,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/city/8"
+    "http://127.0.0.1:8000/api/v1/destination/city/6"
 );
 
 const headers = {
@@ -7591,17 +8437,17 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 41
+x-ratelimit-remaining: 49
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 109,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;An Ph&uacute;&quot;,
-            &quot;slug&quot;: &quot;an-giang-an-phu&quot;,
+            &quot;id&quot;: 86,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Bến Lức&quot;,
+            &quot;slug&quot;: &quot;long-an-ben-luc&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7613,10 +8459,85 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 110,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Ch&acirc;u Đốc&quot;,
-            &quot;slug&quot;: &quot;an-giang-chau-doc&quot;,
+            &quot;id&quot;: 87,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Cần Đước&quot;,
+            &quot;slug&quot;: &quot;long-an-can-duoc&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 88,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Cần Giuộc&quot;,
+            &quot;slug&quot;: &quot;long-an-can-giuoc&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 89,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Ch&acirc;u Th&agrave;nh&quot;,
+            &quot;slug&quot;: &quot;long-an-chau-thanh&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 90,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Đức H&ograve;a&quot;,
+            &quot;slug&quot;: &quot;long-an-duc-hoa&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 91,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Đức Huệ&quot;,
+            &quot;slug&quot;: &quot;long-an-duc-hue&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 92,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Kiến Tường&quot;,
+            &quot;slug&quot;: &quot;long-an-kien-tuong&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7628,10 +8549,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 111,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Ch&acirc;u Ph&uacute;&quot;,
-            &quot;slug&quot;: &quot;an-giang-chau-phu&quot;,
+            &quot;id&quot;: 93,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Mộc H&oacute;a&quot;,
+            &quot;slug&quot;: &quot;long-an-moc-hoa&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7643,40 +8564,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 112,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Ch&acirc;u Th&agrave;nh&quot;,
-            &quot;slug&quot;: &quot;an-giang-chau-thanh&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 113,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Chợ Mới&quot;,
-            &quot;slug&quot;: &quot;an-giang-cho-moi&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Huyện&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 114,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Long Xuy&ecirc;n&quot;,
-            &quot;slug&quot;: &quot;an-giang-long-xuyen&quot;,
+            &quot;id&quot;: 94,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;T&acirc;n An&quot;,
+            &quot;slug&quot;: &quot;long-an-tan-an&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7688,10 +8579,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 115,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Ph&uacute; T&acirc;n&quot;,
-            &quot;slug&quot;: &quot;an-giang-phu-tan&quot;,
+            &quot;id&quot;: 95,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;T&acirc;n Hưng&quot;,
+            &quot;slug&quot;: &quot;long-an-tan-hung&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7703,25 +8594,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 116,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;T&acirc;n Ch&acirc;u&quot;,
-            &quot;slug&quot;: &quot;an-giang-tan-chau&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Thị x&atilde;&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 117,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Thoại Sơn&quot;,
-            &quot;slug&quot;: &quot;an-giang-thoai-son&quot;,
+            &quot;id&quot;: 96,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;T&acirc;n Thạnh&quot;,
+            &quot;slug&quot;: &quot;long-an-tan-thanh&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7733,10 +8609,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 118,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Tịnh Bi&ecirc;n&quot;,
-            &quot;slug&quot;: &quot;an-giang-tinh-bien&quot;,
+            &quot;id&quot;: 97,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;T&acirc;n Trụ&quot;,
+            &quot;slug&quot;: &quot;long-an-tan-tru&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7748,10 +8624,40 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 119,
-            &quot;city_id&quot;: 8,
-            &quot;name&quot;: &quot;Tri T&ocirc;n&quot;,
-            &quot;slug&quot;: &quot;an-giang-tri-ton&quot;,
+            &quot;id&quot;: 98,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Thạnh H&oacute;a&quot;,
+            &quot;slug&quot;: &quot;long-an-thanh-hoa&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 99,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Thủ Thừa&quot;,
+            &quot;slug&quot;: &quot;long-an-thu-thua&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 100,
+            &quot;city_id&quot;: 6,
+            &quot;name&quot;: &quot;Vĩnh Hưng&quot;,
+            &quot;slug&quot;: &quot;long-an-vinh-hung&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -7845,10 +8751,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="city_id"                data-endpoint="GETapi-v1-destination-city--city_id-"
-               value="8"
+               value="6"
                data-component="url">
     <br>
-<p>Get district after choose city. Example: <code>8</code></p>
+<p>Get district after choose city. Example: <code>6</code></p>
             </div>
                     </form>
 
@@ -7865,7 +8771,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/district/3" \
+    --get "http://127.0.0.1:8000/api/v1/destination/district/9" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -7873,7 +8779,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/district/3"
+    "http://127.0.0.1:8000/api/v1/destination/district/9"
 );
 
 const headers = {
@@ -7900,22 +8806,22 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 40
+x-ratelimit-remaining: 48
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 27,
+            &quot;id&quot;: 112,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;1&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-1&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-1&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.798687,106.697149]&quot;,
+            &quot;center&quot;: &quot;[10.798863,106.682239]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793636,106.695747],\\\&quot;br\\\&quot;:[10.80284,106.69915]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.795889,106.679832],\\\&quot;br\\\&quot;:[10.801921,106.684097]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -7923,15 +8829,31 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 28,
+            &quot;id&quot;: 113,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
+            &quot;name&quot;: &quot;10&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-10&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.795509,106.670674]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.79165,106.668159],\\\&quot;br\\\&quot;:[10.798976,106.673996]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 114,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;11&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-11&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-11&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.815742,106.693707]&quot;,
+            &quot;center&quot;: &quot;[10.793092,106.674281]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808447,106.689049],\\\&quot;br\\\&quot;:[10.822668,106.698456]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.790311,106.671516],\\\&quot;br\\\&quot;:[10.796443,106.676758]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -7939,15 +8861,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 29,
+            &quot;id&quot;: 115,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;12&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-12&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-12&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.812367,106.700107]&quot;,
+            &quot;center&quot;: &quot;[10.792391,106.678145]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.806612,106.694809],\\\&quot;br\\\&quot;:[10.818374,106.70726]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.790544,106.675674],\\\&quot;br\\\&quot;:[10.794925,106.681519]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -7955,15 +8877,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 30,
+            &quot;id&quot;: 116,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;13&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-13&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-13&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.826655,106.703755]&quot;,
+            &quot;center&quot;: &quot;[10.789998,106.669699]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.816566,106.694565],\\\&quot;br\\\&quot;:[10.839021,106.712784]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.787835,106.666321],\\\&quot;br\\\&quot;:[10.791914,106.673447]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -7971,15 +8893,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 31,
+            &quot;id&quot;: 117,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;14&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-14&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-14&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.805567,106.696771]&quot;,
+            &quot;center&quot;: &quot;[10.79202,106.668076]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802719,106.694435],\\\&quot;br\\\&quot;:[10.81138,106.701332]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.789682,106.665657],\\\&quot;br\\\&quot;:[10.793974,106.671135]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -7987,15 +8909,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 32,
+            &quot;id&quot;: 118,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;15&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-15&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-15&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.79924,106.70373]&quot;,
+            &quot;center&quot;: &quot;[10.796626,106.679115]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793369,106.69754],\\\&quot;br\\\&quot;:[10.803786,106.711121]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793218,106.67717],\\\&quot;br\\\&quot;:[10.799552,106.681648]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8003,15 +8925,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 33,
+            &quot;id&quot;: 119,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;17&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-17&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-17&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.796474,106.706349]&quot;,
+            &quot;center&quot;: &quot;[10.79364,106.682246]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.791817,106.699936],\\\&quot;br\\\&quot;:[10.801545,106.711121]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.791775,106.679672],\\\&quot;br\\\&quot;:[10.796168,106.685799]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8019,31 +8941,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 34,
+            &quot;id&quot;: 120,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;19&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-19&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.790673,106.70973]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.787415,106.705956],\\\&quot;br\\\&quot;:[10.795218,106.713142]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 35,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;2&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-2&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-2&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.800303,106.700776]&quot;,
+            &quot;center&quot;: &quot;[10.79737,106.686133]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793675,106.697029],\\\&quot;br\\\&quot;:[10.803861,106.703957]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.792497,106.681747],\\\&quot;br\\\&quot;:[10.803273,106.69239]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8051,63 +8957,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 36,
+            &quot;id&quot;: 121,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;21&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-21&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.797143,106.712088]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.792197,106.708885],\\\&quot;br\\\&quot;:[10.801545,106.715942]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 37,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;22&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-22&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.79286,106.718995]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.784935,106.712128],\\\&quot;br\\\&quot;:[10.800401,106.727013]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 38,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;24&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-24&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.805542,106.704941]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802744,106.698257],\\\&quot;br\\\&quot;:[10.808313,106.711166]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 39,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;25&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-25&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-25&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.805056,106.718101]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.797979,106.711105],\\\&quot;br\\\&quot;:[10.814244,106.726768]}&quot;,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8115,63 +8973,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 40,
+            &quot;id&quot;: 122,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;26&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-26&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.813467,106.709885]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.805563,106.703461],\\\&quot;br\\\&quot;:[10.821371,106.71714]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 41,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;27&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-27&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.816352,106.719833]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.80968,106.714073],\\\&quot;br\\\&quot;:[10.8209,106.725151]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 42,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
-            &quot;name&quot;: &quot;28&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-28&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.821861,106.740923]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808211,106.722687],\\\&quot;br\\\&quot;:[10.835501,106.751221]}&quot;,
-            &quot;pre&quot;: &quot;Phường&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 43,
-            &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;3&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-3&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-3&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.798988,106.693699]&quot;,
+            &quot;center&quot;: &quot;[10.802449,106.681058]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.793472,106.690025],\\\&quot;br\\\&quot;:[10.803514,106.696098]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.799441,106.678558],\\\&quot;br\\\&quot;:[10.804532,106.684074]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8179,15 +8989,31 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 44,
+            &quot;id&quot;: 123,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
+            &quot;name&quot;: &quot;4&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-4&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.807456,106.679784]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.803532,106.678101],\\\&quot;br\\\&quot;:[10.811794,106.683167]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 124,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;5&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-5&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-5&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.811837,106.687119]&quot;,
+            &quot;center&quot;: &quot;[10.807125,106.683153]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.808375,106.683586],\\\&quot;br\\\&quot;:[10.815954,106.690697]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.803273,106.679749],\\\&quot;br\\\&quot;:[10.811253,106.687271]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8195,15 +9021,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 45,
+            &quot;id&quot;: 125,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;6&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-6&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-6&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.806033,106.687654]&quot;,
-            &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.80278,106.683662],\\\&quot;br\\\&quot;:[10.809569,106.691971]}&quot;,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8211,15 +9037,47 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 46,
+            &quot;id&quot;: 126,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 3,
+            &quot;district_id&quot;: 9,
             &quot;name&quot;: &quot;7&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-binh-thanh-phuong-7&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-7&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.807155,106.691832]&quot;,
+            &quot;center&quot;: &quot;[10.800789,106.688257]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.802993,106.687851],\\\&quot;br\\\&quot;:[10.81114,106.694679]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.796754,106.684074],\\\&quot;br\\\&quot;:[10.804085,106.691833]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 127,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 9,
+            &quot;name&quot;: &quot;8&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-8&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.798167,106.673622]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.794499,106.666992],\\\&quot;br\\\&quot;:[10.800298,106.677559]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 128,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 9,
+            &quot;name&quot;: &quot;9&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-phu-nhuan-phuong-9&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.805253,106.673903]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.799441,106.667023],\\\&quot;br\\\&quot;:[10.81356,106.679832]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -8309,10 +9167,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="district_id"                data-endpoint="GETapi-v1-destination-district--district_id-"
-               value="3"
+               value="9"
                data-component="url">
     <br>
-<p>Get ward after choose district. Example: <code>3</code></p>
+<p>Get ward after choose district. Example: <code>9</code></p>
             </div>
                     </form>
 
@@ -8374,31 +9232,12 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 37
+x-ratelimit-remaining: 45
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Black&quot;,
-            &quot;value&quot;: &quot;#000000&quot;,
-            &quot;status&quot;: 1,
-            &quot;order&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-02-20T07:49:30.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-20T07:49:30.000000Z&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;White&quot;,
-            &quot;value&quot;: &quot;#ffffff&quot;,
-            &quot;status&quot;: 1,
-            &quot;order&quot;: 0,
-            &quot;created_at&quot;: &quot;2023-02-20T07:49:49.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-20T07:49:49.000000Z&quot;
-        }
-    ],
+    &quot;data&quot;: [],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color?page=1&quot;,
         &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color?page=1&quot;,
@@ -8407,7 +9246,7 @@ access-control-allow-origin: *
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
+        &quot;from&quot;: null,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -8428,8 +9267,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/item-color&quot;,
         &quot;per_page&quot;: 50,
-        &quot;to&quot;: 2,
-        &quot;total&quot;: 2
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
     }
 }</code>
  </pre>
@@ -8653,7 +9492,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=9" \
+    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -8667,7 +9506,7 @@ fetch(url, {
 const params = {
     "limit": "50",
     "page": "1",
-    "min_price": "9",
+    "min_price": "19",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -8696,7 +9535,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 36
+x-ratelimit-remaining: 44
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -8908,10 +9747,10 @@ access-control-allow-origin: *
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="min_price"                data-endpoint="GETapi-v1-item"
-               value="9"
+               value="19"
                data-component="query">
     <br>
-<p>The minimum price of the product to filter. 1000000 Example: <code>9</code></p>
+<p>The minimum price of the product to filter. 1000000 Example: <code>19</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
@@ -8979,7 +9818,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item/est" \
+    --get "http://127.0.0.1:8000/api/v1/item/et" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -8987,7 +9826,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/item/est"
+    "http://127.0.0.1:8000/api/v1/item/et"
 );
 
 const headers = {
@@ -9105,10 +9944,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="slug"                data-endpoint="GETapi-v1-item--slug-"
-               value="est"
+               value="et"
                data-component="url">
     <br>
-<p>The slug of the item. Example: <code>est</code></p>
+<p>The slug of the item. Example: <code>et</code></p>
             </div>
                     </form>
 
@@ -9171,7 +10010,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 38
+x-ratelimit-remaining: 46
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -9181,27 +10020,27 @@ access-control-allow-origin: *
             &quot;id&quot;: 1,
             &quot;parent_id&quot;: null,
             &quot;name&quot;: {
-                &quot;en&quot;: &quot;Mr. Hillard Mante IV&quot;
+                &quot;en&quot;: &quot;Vesta Hills&quot;
             },
-            &quot;slug&quot;: &quot;mr-hillard-mante-iv&quot;,
-            &quot;description&quot;: &quot;Voluptas ab omnis a et rerum.&quot;,
+            &quot;slug&quot;: &quot;vesta-hills&quot;,
+            &quot;description&quot;: &quot;Nihil non quidem officiis necessitatibus rerum blanditiis reiciendis eius.&quot;,
             &quot;status&quot;: 1,
             &quot;order&quot;: &quot;0&quot;,
-            &quot;created_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;parent_id&quot;: null,
             &quot;name&quot;: {
-                &quot;en&quot;: &quot;Josh Schneider&quot;
+                &quot;en&quot;: &quot;Prof. Camille Schmidt&quot;
             },
-            &quot;slug&quot;: &quot;josh-schneider&quot;,
-            &quot;description&quot;: &quot;Fuga cupiditate sed aspernatur qui quam ea.&quot;,
+            &quot;slug&quot;: &quot;prof-camille-schmidt&quot;,
+            &quot;description&quot;: &quot;Nemo cum repellendus voluptatibus et.&quot;,
             &quot;status&quot;: 1,
             &quot;order&quot;: &quot;0&quot;,
-            &quot;created_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -9386,6 +10225,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/order?is_show=1&amp;limit=50&amp;order_status=1" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -9405,6 +10245,7 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -9474,6 +10315,17 @@ access-control-allow-origin: *
             <b><code>api/v1/order</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-order"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -9589,6 +10441,7 @@ access-control-allow-origin: *
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://127.0.0.1:8000/api/v1/order/HKPM-20221125-0009" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -9600,6 +10453,7 @@ access-control-allow-origin: *
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -9686,6 +10540,17 @@ fetch(url, {
             <b><code>api/v1/order/{order_code}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-order--order_code-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -9785,7 +10650,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 39
+x-ratelimit-remaining: 47
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -9796,24 +10661,24 @@ access-control-allow-origin: *
             &quot;code&quot;: &quot;men&quot;,
             &quot;name&quot;: &quot;Men&quot;,
             &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;code&quot;: &quot;women&quot;,
             &quot;name&quot;: &quot;Women&quot;,
             &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;
         },
         {
             &quot;id&quot;: 3,
             &quot;code&quot;: &quot;kid&quot;,
             &quot;name&quot;: &quot;Kid&quot;,
             &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-08T16:24:34.000000Z&quot;
+            &quot;created_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-21T11:40:54.000000Z&quot;
         }
     ]
 }</code>
@@ -9892,6 +10757,328 @@ access-control-allow-origin: *
 <p>Example: <code>RANDOM_STUFF</code></p>
             </div>
                         </form>
+
+                <h1 id="user-endpoints">User Endpoints</h1>
+
+    
+
+                                <h2 id="user-endpoints-PUTapi-v1-my-profile-change-password">Update the password of the current customer</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-my-profile-change-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/v1/my-profile/change-password" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --data "{
+    \"current_password\": null,
+    \"password\": null,
+    \"password_confirmation\": null
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/my-profile/change-password"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+let body = {
+    "current_password": null,
+    "password": null,
+    "password_confirmation": null
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-my-profile-change-password">
+</span>
+<span id="execution-results-PUTapi-v1-my-profile-change-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-my-profile-change-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-my-profile-change-password" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-my-profile-change-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-my-profile-change-password"></code></pre>
+</span>
+<form id="form-PUTapi-v1-my-profile-change-password" data-method="PUT"
+      data-path="api/v1/my-profile/change-password"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-my-profile-change-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-my-profile-change-password"
+                    onclick="tryItOut('PUTapi-v1-my-profile-change-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-my-profile-change-password"
+                    onclick="cancelTryOut('PUTapi-v1-my-profile-change-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-my-profile-change-password" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/my-profile/change-password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-my-profile-change-password"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>current_password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="current_password"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value=""
+               data-component="body">
+    <br>
+<p>The current password of the user.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="password"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value=""
+               data-component="body">
+    <br>
+<p>The email of the user.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="password_confirmation"                data-endpoint="PUTapi-v1-my-profile-change-password"
+               value=""
+               data-component="body">
+    <br>
+<p>The password confirmation of the user.</p>
+        </div>
+        </form>
+
+                    <h2 id="user-endpoints-POSTapi-v1-my-profile-upload-avatar">Upload avatar of the current customer</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-my-profile-upload-avatar">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/my-profile/upload-avatar" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF" \
+    --form "avatar=@C:\Users\duykh\AppData\Local\Temp\phpE62E.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/my-profile/upload-avatar"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+const body = new FormData();
+body.append('avatar', document.querySelector('input[name="avatar"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-my-profile-upload-avatar">
+</span>
+<span id="execution-results-POSTapi-v1-my-profile-upload-avatar" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-my-profile-upload-avatar"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-my-profile-upload-avatar" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-my-profile-upload-avatar" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-my-profile-upload-avatar"></code></pre>
+</span>
+<form id="form-POSTapi-v1-my-profile-upload-avatar" data-method="POST"
+      data-path="api/v1/my-profile/upload-avatar"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-my-profile-upload-avatar', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-my-profile-upload-avatar"
+                    onclick="tryItOut('POSTapi-v1-my-profile-upload-avatar');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-my-profile-upload-avatar"
+                    onclick="cancelTryOut('POSTapi-v1-my-profile-upload-avatar');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-my-profile-upload-avatar" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/my-profile/upload-avatar</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-my-profile-upload-avatar"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-my-profile-upload-avatar"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-my-profile-upload-avatar"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="POSTapi-v1-my-profile-upload-avatar"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>avatar</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+               name="avatar"                data-endpoint="POSTapi-v1-my-profile-upload-avatar"
+               value=""
+               data-component="body">
+    <br>
+<p>The image avatar of the current customer. Example: <code>C:\Users\duykh\AppData\Local\Temp\phpE62E.tmp</code></p>
+        </div>
+        </form>
 
             
 

@@ -14,7 +14,7 @@ class StoreItemCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return checkPermission(Acl::PERMISSION_ITEM_CATEGORY_ADD);
+        return true;
     }
 
     /**

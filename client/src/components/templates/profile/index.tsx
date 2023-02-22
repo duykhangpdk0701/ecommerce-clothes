@@ -1,21 +1,31 @@
-import { TEXT_COLOR_GRAY } from "@/styles/color";
-import { Person } from "@mui/icons-material";
-import { Button, Grid, Paper, Typography, Avatar } from "@mui/material";
-import Link from "next/link";
-import React from "react";
+import PersonIcon from "@mui/icons-material/Person";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
 
-const ProfileTemplate = () => {
+import Link from "next/link";
+import React, { FC } from "react";
+import IUser from "interfaces/User";
+
+interface IProfileTemplate {
+  data?: IUser;
+}
+
+const ProfileTemplate: FC<IProfileTemplate> = (props) => {
+  const { data } = props;
   return (
     <div>
       <div className="mt-4 mb-6">
         <div className="flex gap-3 items-center justify-between">
           <div className="flex items-center">
-            <Person className="text-2xl" />
+            <PersonIcon className="text-2xl" />
             <h2 className="text-2xl">My Profile</h2>
           </div>
 
           <div>
-            <Button LinkComponent={Link} href={`/profile/${"id"}/edit`}>
+            <Button LinkComponent={Link} href={`/profile/edit`}>
               Edit Profile
             </Button>
           </div>
@@ -26,18 +36,14 @@ const ProfileTemplate = () => {
         <Grid container spacing={3}>
           <Grid item md={6} xs={12}>
             <Paper className="py-3 px-8 h-full flex items-center">
-              <Avatar className="h-16 w-16">K</Avatar>
+              <Avatar className="h-16 w-16" src={data?.avatar} />
               <div className="ml-3 flex-1">
                 <div className="flex justify-start flex-col">
-                  <h5 className="text-base">Reed Richart</h5>
+                  <h5 className="text-base">{data?.name}</h5>
                   <div className="flex">
-                    <Typography
-                      variant="body1"
-                      style={{ color: TEXT_COLOR_GRAY }}
-                    >
-                      Balance:
+                    <Typography className="text-color-gray" variant="body1">
+                      {data?.role}
                     </Typography>
-                    <Typography variant="body1">100,000$</Typography>
                   </div>
                 </div>
               </div>
@@ -84,33 +90,23 @@ const ProfileTemplate = () => {
       <div>
         <Paper className="py-3 px-7 flex">
           <div className="flex flex-col p-2 flex-1">
-            <small className="text-sm mb-1" style={{ color: TEXT_COLOR_GRAY }}>
-              First Name
-            </small>
-            <span>Nick</span>
+            <small className="text-sm mb-1 text-color-gray">First Name</small>
+            <span>{data?.profile.first_name}</span>
           </div>
           <div className="flex flex-col p-2 flex-1">
-            <small className="text-sm mb-1" style={{ color: TEXT_COLOR_GRAY }}>
-              Last Name
-            </small>
-            <span>Richard</span>
+            <small className="text-sm mb-1 text-color-gray">Last Name</small>
+            <span>{data?.profile.last_name}</span>
           </div>
           <div className="flex flex-col p-2 flex-1">
-            <small className="text-sm mb-1" style={{ color: TEXT_COLOR_GRAY }}>
-              Email
-            </small>
-            <span>duykhangpdk0701@gmail.com</span>
+            <small className="text-sm mb-1 text-color-gray">Email</small>
+            <span>{data?.email}</span>
           </div>
           <div className="flex flex-col p-2 flex-1">
-            <small className="text-sm mb-1" style={{ color: TEXT_COLOR_GRAY }}>
-              Phone
-            </small>
-            <span>0793607376</span>
+            <small className="text-sm mb-1 text-color-gray">Phone</small>
+            <span>{data?.profile.phone}</span>
           </div>
           <div className="flex flex-col p-2 flex-1">
-            <small className="text-sm mb-1" style={{ color: TEXT_COLOR_GRAY }}>
-              Birth date
-            </small>
+            <small className="text-sm mb-1 text-color-gray">Birth date</small>
             <span>31 july ,2001</span>
           </div>
         </Paper>

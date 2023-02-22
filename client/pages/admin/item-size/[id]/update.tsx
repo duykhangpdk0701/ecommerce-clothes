@@ -76,7 +76,7 @@ const UpdateItemSize: NextPageWithLayout = () => {
     },
   });
 
-  const createItemSizeMutation = useMutation({
+  const updateItemSizeMutation = useMutation({
     mutationKey: "item-size",
     mutationFn: ({
       value,
@@ -107,7 +107,7 @@ const UpdateItemSize: NextPageWithLayout = () => {
   const onSubmit: SubmitHandler<IUpdateItemSizeParams> = (data) => {
     const { value, itemCategoryId, itemPersonTypeId, order, status } = data;
     console.log(data);
-    createItemSizeMutation.mutate({
+    updateItemSizeMutation.mutate({
       value,
       order,
       itemPersonTypeId,

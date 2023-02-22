@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Acl\Acl;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,9 +25,13 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $this->registerPolicies();
         Gate::before(function ($user, $ability) {
             return $user->hasRole(Acl::ROLE_SUPER_ADMIN) ? true : null;
         });
+        if (App::runningInConsole() && !App::environment('testing')) {
+            return;
+        }
     }
 }

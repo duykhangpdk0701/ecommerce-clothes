@@ -97,4 +97,8 @@ interface IProduct {
   updated_at: string;
 }
 
+export interface IAdminProduct extends IProduct {
+  status: boolean;
+}
+
 export default IProduct;
