@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g1Z5a4hEckfV86De6b3dvaP'
+      - 'Bearer 6aEghZ316c84kbD5avPdVfe'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gZc8ebEVk51634hdPDvfaa6'
+      - 'Bearer afcVh8DEab664Pe5g3vZkd1'
     controller: null
     method: null
     route: null
@@ -158,90 +158,90 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: zomgzzkqmmasaizmyz
+        example: qwfburatfvlvkrkosq
         type: string
         custom: []
       last_name:
         name: last_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: bqcxlkwyixhvpsce
+        example: xennxpgzulypyswpswz
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: giles.parisian@example.net
+        example: hnolan@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: qui
+        example: sapiente
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: non
+        example: temporibus
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: 17277.7886934
+        example: 2232612.2837885
         type: number
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: rerum
+        example: veniam
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: a
+        example: sint
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: sunt
+        example: id
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: placeat
+        example: sit
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: zomgzzkqmmasaizmyz
-      last_name: bqcxlkwyixhvpsce
-      email: giles.parisian@example.net
-      password: qui
-      role: non
-      phone: 17277.7886934
-      city_id: rerum
-      district_id: a
-      ward_id: sunt
-      address: placeat
+      first_name: qwfburatfvlvkrkosq
+      last_name: xennxpgzulypyswpswz
+      email: hnolan@example.org
+      password: sapiente
+      role: temporibus
+      phone: 2232612.2837885
+      city_id: veniam
+      district_id: sint
+      ward_id: id
+      address: sit
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D5aeaP8cZ6fdbkEVg3vh146'
+      - 'Bearer fPvcD45Vka8dEb31ae6g6Zh'
     controller: null
     method: null
     route: null
@@ -281,14 +281,14 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: qczp
+        example: krcdyqhtbzooepu
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: umiller@example.org
+        example: chauncey.streich@example.net
         type: string
         custom: []
       role:
@@ -299,8 +299,8 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: qczp
-      email: umiller@example.org
+      name: krcdyqhtbzooepu
+      email: chauncey.streich@example.net
       role: consequatur
     fileParameters: []
     responses: []
@@ -308,7 +308,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E6d6vakh3a5fb14ceZg8VDP'
+      - 'Bearer bEc68PavfgVh1eZk3D5ad46'
     controller: null
     method: null
     route: null
@@ -351,7 +351,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DP4vaV6a85bde6f13EZhcgk'
+      - 'Bearer 54D613e6EZavcbdagPkVfh8'
     controller: null
     method: null
     route: null

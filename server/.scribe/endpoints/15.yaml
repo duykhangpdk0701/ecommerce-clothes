@@ -40,7 +40,132 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1gk5Edcf84663PhbaeVZvDa'
+      - 'Bearer VkZhE3v8bD6aaPfgd54c1e6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/item
+    metadata:
+      groupName: 'Admin Item'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new Item'
+      description: 'This endpoint lets you create a item'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: multipart/form-data
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: ullam
+        type: string
+        custom: []
+      sku:
+        name: sku
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: doloremque
+        type: string
+        custom: []
+      brand_id:
+        name: brand_id
+        description: ''
+        required: true
+        example: vero
+        type: string
+        custom: []
+      item_categories:
+        name: item_categories
+        description: ''
+        required: true
+        example: sapiente
+        type: string
+        custom: []
+      thumbnail_image:
+        name: thumbnail_image
+        description: 'Must be an image. Must not be greater than 10000 kilobytes.'
+        required: true
+        example: null
+        type: file
+        custom: []
+      detail_images:
+        name: detail_images
+        description: 'Must be an image. Must not be greater than 10000 kilobytes.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      item_person_type_id:
+        name: item_person_type_id
+        description: ''
+        required: true
+        example: voluptate
+        type: string
+        custom: []
+      item_stock_status_id:
+        name: item_stock_status_id
+        description: ''
+        required: true
+        example: dolorum
+        type: string
+        custom: []
+      item_sizes:
+        name: item_sizes
+        description: ''
+        required: true
+        example: ea
+        type: string
+        custom: []
+      item_colors:
+        name: item_colors
+        description: ''
+        required: true
+        example: error
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: ullam
+      sku: est
+      description: doloremque
+      brand_id: vero
+      item_categories: sapiente
+      item_person_type_id: voluptate
+      item_stock_status_id: dolorum
+      item_sizes: ea
+      item_colors: error
+    fileParameters:
+      thumbnail_image: null
+      detail_images:
+        - null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer v1a5D6Z6Ec4hVfdekPg3b8a'
     controller: null
     method: null
     route: null

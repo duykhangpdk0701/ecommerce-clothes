@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1a6P4DVv6c5fba3ZkhgEde8'
+      - 'Bearer Ebch66d4Vfk1agZveaDP358'
     controller: null
     method: null
     route: null
@@ -108,7 +108,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g1fVadPka5c364hD8Zve6bE'
+      - 'Bearer 6c5dEa1b8Pvk34f6VgeDZha'
     controller: null
     method: null
     route: null
@@ -140,7 +140,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quod
+        example: velit
         type: string
         custom: []
       slug:
@@ -165,7 +165,7 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: quod
+      name: velit
       status: true
     fileParameters: []
     responses: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer afevh14abcE3Dg56kVZ8P6d'
+      - 'Bearer aV6kh845gfcd16DbP3EaveZ'
     controller: null
     method: null
     route: null
@@ -216,7 +216,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer abv6h35DE1gZea4fPcVd8k6'
+      - 'Bearer V13fZadD6EvhkeP8c6b5g4a'
     controller: null
     method: null
     route: null

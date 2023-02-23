@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Acl\Acl;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Item\StoreItemRequest;
 use App\Http\Resources\api\ItemResource;
 use App\Repositories\Item\ItemRepositoryInterface;
 use App\Repositories\ItemStock\ItemStockRepositoryInterface;
 use App\Repositories\ItemVariant\ItemVariantRepositoryInterface;
+use App\Repositories\User\UserRepositoryInterface;
 use App\Responses\JsonResponse;
+use App\Services\ItemService;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
@@ -23,20 +27,20 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
  */
 class ItemController extends Controller
 {
+    protected ItemService $itemService;
     protected ItemRepositoryInterface $itemRepository;
-    protected ItemStockRepositoryInterface $itemStockRepository;
-    protected ItemVariantRepositoryInterface $itemVariantRepository;
+    protected UserRepositoryInterface $userRepository;
 
-    public function __construct(ItemRepositoryInterface $itemRepository, ItemStockRepositoryInterface $itemStockRepository, ItemVariantRepositoryInterface $itemVariantRepository)
+    public function __construct(ItemService $itemService, ItemRepositoryInterface $itemRepository, UserRepositoryInterface $userRepository)
     {
         $this->middleware('permission:' . Acl::PERMISSION_ITEM_LIST)->only(['index', "show"]);
         $this->middleware('permission:' . Acl::PERMISSION_ITEM_ADD)->only(['create', "store"]);
         $this->middleware('permission:' . Acl::PERMISSION_ITEM_EDIT)->only(['edit', "update"]);
         $this->middleware('permission:' . Acl::PERMISSION_ITEM_DELETE)->only("destroy");
 
+        $this->itemService = $itemService;
         $this->itemRepository = $itemRepository;
-        $this->itemStockRepository = $itemStockRepository;
-        $this->itemVariantRepository = $itemVariantRepository;
+        $this->userRepository = $userRepository;
     }
 /**
      * Get a list of brands.
@@ -123,5 +127,26 @@ class ItemController extends Controller
             return new ItemResource($result);
         }
         return response()->json(new JsonResponse([], __('errors.item_not_found')), ResponseAlias::HTTP_NOT_FOUND);
+    }
+
+
+    /**
+     * Create a new Item
+     *
+     * This endpoint lets you create a item
+     *
+     * @param StoreItemRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws Exception
+     */
+    public function store (StoreItemRequest $request): \Illuminate\Http\JsonResponse
+    {
+        $result = $this->itemService->create($request->validated());
+
+
+        if ($result) {
+            return response()->json(new JsonResponse(new ItemResource($result)), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.item.item_store')), ResponseAlias::HTTP_NOT_FOUND);
     }
 }

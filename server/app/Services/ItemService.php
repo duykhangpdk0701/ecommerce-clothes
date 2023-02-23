@@ -12,6 +12,7 @@ use App\Repositories\ItemCategory\ItemCategoryRepositoryInterface;
 use App\Repositories\ItemPersonType\ItemPersonTypeRepositoryInterface;
 use App\Repositories\ItemStock\ItemStockRepositoryInterface;
 use App\Repositories\ItemVariant\ItemVariantRepositoryInterface;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -51,6 +52,9 @@ class ItemService
         $this->itemStockRepository = $itemStockRepository;
     }
 
+    /**
+     * @throws Exception
+     */
     public function create($data)
     {
         try {
@@ -93,7 +97,7 @@ class ItemService
             DB::commit();
 
             return $item;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             DB::rollBack();
             throw $e;
         }
@@ -136,7 +140,7 @@ class ItemService
             DB::commit();
 
             return $item;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             DB::rollBack();
             throw $e;
         }
@@ -235,7 +239,7 @@ class ItemService
 
             session()->flash(NOTIFICATION_SUCCESS, __('success.item.add_size', ['itemName' => $item->name]));
             return $item;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             DB::rollBack();
             throw $e;
         }
@@ -277,7 +281,7 @@ class ItemService
 
             session()->flash(NOTIFICATION_SUCCESS, 'Delete option is successfully');
             return $item;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             DB::rollBack();
             session()->flash(NOTIFICATION_ERROR, __('error.item.' . current($e->errorInfo)));
         }

@@ -119,11 +119,11 @@ class Item extends Model implements HasMedia
     /**
      * Relationship with ItemCategory
      *
-     * @return BelongsTo
+     * @return BelongsToMany
      */
-    public function categories(): BelongsTo
+    public function categories(): BelongsToMany
     {
-        return $this->belongsTo(ItemCategory::class);
+        return $this->belongsToMany(ItemCategory::class);
     }
 
     /**

@@ -19,16 +19,18 @@ import {
 import storage from "redux-persist/lib/storage";
 import CartDrawerReducer from "@/contexts/slices/cartDrawerSlice";
 import CustomizationReducer from "@/contexts/slices/customizationSlice";
+import SnackbarSliceReducer from "@/contexts/slices/snackbarSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["cartDrawer", "customizationSlice"],
+  blacklist: ["cartDrawer", "customizationSlice", "snackbar"],
 };
 
 const rootReducer = combineReducers({
   CartDrawer: CartDrawerReducer,
   Customization: CustomizationReducer,
+  SnackBarSlice: SnackbarSliceReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

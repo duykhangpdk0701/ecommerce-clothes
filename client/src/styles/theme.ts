@@ -34,6 +34,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginTop: "8px",
+          marginLeft: "14px",
+          marginRight: "14px",
+        },
+      },
+    },
 
     MuiOutlinedInput: {
       styleOverrides: {

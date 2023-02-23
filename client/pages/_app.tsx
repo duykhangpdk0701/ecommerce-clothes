@@ -22,6 +22,7 @@ import { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../src/utils/createEmotionCache";
 import ThemeProvider from "@/themes/index";
+import ActionSnackbar from "@/components/shared/actionSnackBar";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -64,6 +65,7 @@ function MyApp(props: MyAppProps) {
             <GlobalStyles />
             <LocalizationProvider dateAdapter={AdapterMoment}>
               {layout}
+              <ActionSnackbar />
             </LocalizationProvider>
           </ThemeProvider>
         </QueryClientProvider>

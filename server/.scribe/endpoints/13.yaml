@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5dekvb3VEg6Dh1c6Pf8aZa4'
+      - 'Bearer Zedkav5chgPf6Va1E4b863D'
     controller: null
     method: null
     route: null
@@ -84,11 +84,11 @@ endpoints:
         name: id
         description: 'The ID of the item color.'
         required: true
-        example: 8
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 1
     queryParameters:
       is_show:
         name: is_show
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8eg43cafDdhbP66k5EvVZa1'
+      - 'Bearer c4d18he6V3v6abD5ZgPafkE'
     controller: null
     method: null
     route: null
@@ -156,7 +156,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dignissimos
+        example: laboriosam
         type: string
         custom: []
       value:
@@ -177,19 +177,19 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         custom: []
     cleanBodyParameters:
-      name: dignissimos
-      status: true
+      name: laboriosam
+      status: false
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gfdh36Ea8cveZbkD41V5aP'
+      - 'Bearer 5VdhEZD6ab3va6e4c8kPgf1'
     controller: null
     method: null
     route: null
@@ -217,11 +217,11 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 8
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -229,7 +229,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: temporibus
+        example: corporis
         type: string
         custom: []
       value:
@@ -247,14 +247,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: temporibus
+      name: corporis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5Ve4Z8baEcP3a16gkhf6vdD'
+      - 'Bearer kg6vafPdV863aZcebDh4E15'
     controller: null
     method: null
     route: null
@@ -282,11 +282,11 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 4
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 4
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -297,7 +297,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Dhe6bdZ58kcVf4vEag1a3P'
+      - 'Bearer gV4Dv3a5b6EPck81f6ehZad'
     controller: null
     method: null
     route: null

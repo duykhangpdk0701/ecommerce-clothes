@@ -1,9 +1,8 @@
 import { IAdminCategory } from "./Category";
-import { IAdminColor } from "./Color";
 import IGender from "./Gender";
 
 interface IItemSize {
-  id: string;
+  id: number;
   value: string;
   order: string;
 }

@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a3vba45h8Pckfge66DVdE1Z'
+      - 'Bearer gbhf8vaV4P1e5DcEkZd36a6'
     controller: null
     method: null
     route: null
@@ -86,11 +86,11 @@ endpoints:
         name: id
         description: 'The ID of the item size.'
         required: true
-        example: 9
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 9
+      id: 1
     queryParameters:
       is_show:
         name: is_show
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cv48DeZ66hPkdbaf1gaVE53'
+      - 'Bearer 3gefadP6DhZ6a1VEcb4vk85'
     controller: null
     method: null
     route: null
@@ -158,21 +158,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: illum
+        example: autem
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: eligendi
+        example: rem
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: dolor
+        example: quisquam
         type: string
         custom: []
       order:
@@ -183,16 +183,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: illum
-      item_person_type_id: eligendi
-      value: dolor
+      item_category_id: autem
+      item_person_type_id: rem
+      value: quisquam
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer c5dPh6VEfabDe3Zvg18a6k4'
+      - 'Bearer kVed5DvZ6EPabfc36h4a18g'
     controller: null
     method: null
     route: null
@@ -220,11 +220,11 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 7
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -232,21 +232,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: quisquam
+        example: quam
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: doloribus
+        example: repellendus
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: amet
+        example: omnis
         type: string
         custom: []
       order:
@@ -257,16 +257,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: quisquam
-      item_person_type_id: doloribus
-      value: amet
+      item_category_id: quam
+      item_person_type_id: repellendus
+      value: omnis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer g6cDZ816Vhaafv5kEd4b3Pe'
+      - 'Bearer Z68h1aVa5dDkE4ef3cP6vgb'
     controller: null
     method: null
     route: null
@@ -294,11 +294,11 @@ endpoints:
         name: id
         description: 'The ID of the .'
         required: false
-        example: 7
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -309,7 +309,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dgv3fEbVcDP564Zke6aa1h8'
+      - 'Bearer P3E4ebhDd6Z5acV8agvkf16'
     controller: null
     method: null
     route: null

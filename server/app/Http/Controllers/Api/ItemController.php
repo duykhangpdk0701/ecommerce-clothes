@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Item\StoreItemRequest;
 use App\Http\Resources\api\ItemResource;
 use App\Repositories\Item\ItemRepositoryInterface;
 use App\Repositories\ItemStock\ItemStockRepositoryInterface;

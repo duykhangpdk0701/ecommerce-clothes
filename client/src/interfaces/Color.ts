@@ -1,5 +1,5 @@
 interface IColor {
-  id: string;
+  id: number;
   name: string;
 }
 

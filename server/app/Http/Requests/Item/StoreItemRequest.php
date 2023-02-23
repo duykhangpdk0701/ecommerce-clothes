@@ -12,9 +12,9 @@ class StoreItemRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize() : bool
     {
-        return checkPermission(Acl::PERMISSION_ITEM_ADD);
+       return true;
     }
 
 

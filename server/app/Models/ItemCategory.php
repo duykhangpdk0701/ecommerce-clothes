@@ -37,7 +37,7 @@ class ItemCategory extends Model
      *
      * @return BelongsTo
      */
-    public function parrent(): BelongsTo
+    public function parent(): BelongsTo
     {
         return $this->belongsTo(ItemCategory::class, 'parent_id', 'id');
     }

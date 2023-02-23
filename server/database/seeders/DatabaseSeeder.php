@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         //seeder for item
         $this->call(ItemPersonTypeSeeder::class);
         $this->call(ItemCategorySeeder::class);
+        $this->call(ItemStockStatusSeeder::class);
         //seeder for quotes
         $this->call(PaymentMethodSeeder::class);
     }
