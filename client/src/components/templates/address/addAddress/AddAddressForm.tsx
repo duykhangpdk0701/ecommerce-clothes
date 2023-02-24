@@ -1,7 +1,10 @@
-import { Button, Grid, Paper, TextField } from "@mui/material";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import TextField from "@mui/material/TextField";
 import React, { FC } from "react";
-import { ICity } from "../../../../interfaces/Address";
-import AutocompleteAsync from "../../../shared/AutocompleteAsync";
+import { ICity } from "@/interfaces/Address";
+import AutocompleteAsync from "@/components/shared/AutocompleteAsync";
 
 interface IAddAddressForm {
   cities?: ICity[];

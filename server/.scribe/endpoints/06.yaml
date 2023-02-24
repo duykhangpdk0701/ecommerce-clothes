@@ -176,7 +176,7 @@ endpoints:
         name: min_price
         description: 'The minimum price of the product to filter. 1000000'
         required: false
-        example: 20
+        example: 5
         type: integer
         custom: []
       max_price:
@@ -212,7 +212,7 @@ endpoints:
     cleanQueryParameters:
       limit: 50
       page: 1
-      min_price: 20
+      min_price: 5
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -258,11 +258,11 @@ endpoints:
         name: slug
         description: 'The slug of the item.'
         required: true
-        example: velit
+        example: laboriosam
         type: string
         custom: []
     cleanUrlParameters:
-      slug: velit
+      slug: laboriosam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -271,7 +271,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"slug":null,"sku":null,"name":null,"description":null,"thumbnail_url":false,"brand_id":null,"views_count":null,"media":[],"created_at":"01\/01\/1970 00:00","updated_at":"01\/01\/1970 00:00"}}'
+        content: '{"data":{"id":9,"slug":"rudolph-marquard","sku":"zxc","name":"Rudolph Marquard","description":"undefined","thumbnail_url":"http:\/\/127.0.0.1:8000\/storage\/1\/conversions\/ao-hoodie-den5_54-thumbnail_resize.jpg","brand_id":1,"views_count":null,"media":[{"id":2,"file_name":"ao-hoodie-daily-wear-3-1_(1)","url":"http:\/\/127.0.0.1:8000\/storage\/2\/ao-hoodie-daily-wear-3-1_(1).jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/2\/ao-hoodie-daily-wear-3-1_(1).jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\2\/ao-hoodie-daily-wear-3-1_(1).jpg","order_column":2},{"id":3,"file_name":"ao-hoodie-den5_54","url":"http:\/\/127.0.0.1:8000\/storage\/3\/ao-hoodie-den5_54.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/3\/ao-hoodie-den5_54.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\3\/ao-hoodie-den5_54.jpg","order_column":3},{"id":4,"file_name":"ao-hoodie-den8_84","url":"http:\/\/127.0.0.1:8000\/storage\/4\/ao-hoodie-den8_84.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/4\/ao-hoodie-den8_84.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\4\/ao-hoodie-den8_84.jpg","order_column":4}],"created_at":"23\/02\/2023 14:31","updated_at":"23\/02\/2023 14:31"}}'
         headers: []
         description: ''
         custom: []

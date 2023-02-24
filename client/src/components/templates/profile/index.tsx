@@ -7,7 +7,7 @@ import Avatar from "@mui/material/Avatar";
 
 import Link from "next/link";
 import React, { FC } from "react";
-import IUser from "interfaces/User";
+import IUser from "@/interfaces/User";
 
 interface IProfileTemplate {
   data?: IUser;

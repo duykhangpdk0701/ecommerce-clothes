@@ -27,7 +27,7 @@ import Scrollbar from "@/components/shared/scrollbar";
 import Label from "@/components/shared/label";
 import { UserListHead, UserListToolbar } from "./section/user";
 import USERLIST from "@/_mock/user";
-import IUser from "interfaces/User";
+import IUser from "@/interfaces/User";
 import Link from "next/link";
 
 const TABLE_HEAD = [

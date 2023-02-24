@@ -4,7 +4,7 @@ import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
 import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 
 const Category: NextPageWithLayout = () => {
   const categoryQuery = useQuery(

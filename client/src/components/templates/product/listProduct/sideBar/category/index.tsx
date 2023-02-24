@@ -1,5 +1,5 @@
 import List from "@mui/material/List";
-import ICategory from "interfaces/Category";
+import ICategory from "@/interfaces/Category";
 import React, { FC, Fragment } from "react";
 import ListProductSideBarItemCategoryItem from "./item";
 import ListProductSideBarItemCategoryItemChildren from "./itemChildren";

@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 
 const Brand: NextPageWithLayout = () => {
   const route = useRouter();

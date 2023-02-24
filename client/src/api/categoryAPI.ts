@@ -1,4 +1,4 @@
-import ICategory from "interfaces/Category";
+import ICategory from "@/interfaces/Category";
 import axiosClient from "./axiosClient";
 
 const categoryAPI = {

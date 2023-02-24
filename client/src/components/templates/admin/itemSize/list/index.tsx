@@ -27,7 +27,7 @@ import ListItemSizeHead from "./section/ListHead";
 import ListItemSizeToolbar from "./section/ListToolbar";
 import USERLIST from "@/_mock/user";
 import Link from "next/link";
-import { IAdminItemSize } from "interfaces/ItemSize";
+import { IAdminItemSize } from "@/interfaces/ItemSize";
 
 const TABLE_HEAD = [
   { id: "id", label: "ID", alignRight: false },
@@ -76,7 +76,8 @@ function applySortFilter(
   if (query) {
     return filter(
       array,
-      (_user) => _user.id.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      (_user) =>
+        _user.id.toString().toLowerCase().indexOf(query.toLowerCase()) !== -1
     );
   }
   return stabilizedThis.map((el) => el.el);
@@ -225,7 +226,8 @@ const ListItemSizeTemplate: FC<IListItemSizeTempalte> = (props) => {
                         item_category,
                         item_person_type,
                       } = row;
-                      const selectedUser = selected.indexOf(id) !== -1;
+                      const selectedUser =
+                        selected.indexOf(id.toString()) !== -1;
 
                       return (
                         <>
@@ -239,7 +241,9 @@ const ListItemSizeTemplate: FC<IListItemSizeTempalte> = (props) => {
                             <TableCell padding="checkbox">
                               <Checkbox
                                 checked={selectedUser}
-                                onChange={(event) => handleClick(event, id)}
+                                onChange={(event) =>
+                                  handleClick(event, id.toString())
+                                }
                               />
                             </TableCell>
 

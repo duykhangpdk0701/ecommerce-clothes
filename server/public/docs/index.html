@@ -155,6 +155,29 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-admin-item-stock" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="admin-item-stock">
+                    <a href="#admin-item-stock">Admin Item Stock</a>
+                </li>
+                                    <ul id="tocify-subheader-admin-item-stock" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="admin-item-stock-GETapi-v1-admin-item-stock">
+                                <a href="#admin-item-stock-GETapi-v1-admin-item-stock">Return list of Item Price</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-admin-item-variant" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="admin-item-variant">
+                    <a href="#admin-item-variant">Admin Item Variant</a>
+                </li>
+                                    <ul id="tocify-subheader-admin-item-variant" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="admin-item-variant-GETapi-v1-admin-item-variant">
+                                <a href="#admin-item-variant-GETapi-v1-admin-item-variant">Get a list of item variant.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="admin-item-variant-GETapi-v1-admin-item-variant--id-">
+                                <a href="#admin-item-variant-GETapi-v1-admin-item-variant--id-">Show Item Variant by id</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-admin-item-color" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="admin-item-color">
                     <a href="#admin-item-color">Admin Item color</a>
@@ -348,7 +371,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 23, 2023</li>
+        <li>Last updated: February 24, 2023</li>
     </ul>
 </div>
 
@@ -364,7 +387,7 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value **<code>"Bearer 1|n5QJU3KB*****************************"</code>**.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value **<code>"Bearer 1|n5QJU3KB*****************************"</code>**.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -498,7 +521,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/address/19" \
+    "http://127.0.0.1:8000/api/v1/address/11" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -506,7 +529,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/address/19"
+    "http://127.0.0.1:8000/api/v1/address/11"
 );
 
 const headers = {
@@ -603,10 +626,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="address_id"                data-endpoint="DELETEapi-v1-address--address_id-"
-               value="19"
+               value="11"
                data-component="url">
     <br>
-<p>The ID of the address. Example: <code>19</code></p>
+<p>The ID of the address. Example: <code>11</code></p>
             </div>
                     </form>
 
@@ -972,8 +995,8 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"velit\",
-    \"status\": true
+    \"name\": \"laudantium\",
+    \"status\": false
 }"
 </code></pre></div>
 
@@ -991,8 +1014,8 @@ const headers = {
 };
 
 let body = {
-    "name": "velit",
-    "status": true
+    "name": "laudantium",
+    "status": false
 };
 
 fetch(url, {
@@ -1095,10 +1118,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-brand"
-               value="velit"
+               value="laudantium"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>laudantium</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
@@ -1130,7 +1153,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -1450,17 +1473,17 @@ access-control-allow-origin: *
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
-    --form "name=ullam" \
-    --form "sku=est" \
-    --form "description=doloremque" \
-    --form "brand_id=vero" \
-    --form "item_categories=sapiente" \
-    --form "item_person_type_id=voluptate" \
-    --form "item_stock_status_id=dolorum" \
-    --form "item_sizes=ea" \
-    --form "item_colors=error" \
-    --form "thumbnail_image=@C:\Users\duykh\AppData\Local\Temp\php950B.tmp" \
-    --form "detail_images[]=@C:\Users\duykh\AppData\Local\Temp\php950C.tmp" </code></pre></div>
+    --form "name=quia" \
+    --form "sku=adipisci" \
+    --form "description=sapiente" \
+    --form "brand_id=sequi" \
+    --form "item_categories=laborum" \
+    --form "item_person_type_id=saepe" \
+    --form "item_stock_status_id=quia" \
+    --form "item_sizes=molestiae" \
+    --form "item_colors=magnam" \
+    --form "thumbnail_image=@C:\Users\duykh\AppData\Local\Temp\php2A16.tmp" \
+    --form "detail_images[]=@C:\Users\duykh\AppData\Local\Temp\php2A17.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1476,15 +1499,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'ullam');
-body.append('sku', 'est');
-body.append('description', 'doloremque');
-body.append('brand_id', 'vero');
-body.append('item_categories', 'sapiente');
-body.append('item_person_type_id', 'voluptate');
-body.append('item_stock_status_id', 'dolorum');
-body.append('item_sizes', 'ea');
-body.append('item_colors', 'error');
+body.append('name', 'quia');
+body.append('sku', 'adipisci');
+body.append('description', 'sapiente');
+body.append('brand_id', 'sequi');
+body.append('item_categories', 'laborum');
+body.append('item_person_type_id', 'saepe');
+body.append('item_stock_status_id', 'quia');
+body.append('item_sizes', 'molestiae');
+body.append('item_colors', 'magnam');
 body.append('thumbnail_image', document.querySelector('input[name="thumbnail_image"]').files[0]);
 body.append('detail_images[]', document.querySelector('input[name="detail_images[]"]').files[0]);
 
@@ -1588,10 +1611,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-item"
-               value="ullam"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>ullam</code></p>
+<p>Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sku</code></b>&nbsp;&nbsp;
@@ -1599,10 +1622,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="sku"                data-endpoint="POSTapi-v1-admin-item"
-               value="est"
+               value="adipisci"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1610,10 +1633,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-admin-item"
-               value="doloremque"
+               value="sapiente"
                data-component="body">
     <br>
-<p>Example: <code>doloremque</code></p>
+<p>Example: <code>sapiente</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>brand_id</code></b>&nbsp;&nbsp;
@@ -1621,10 +1644,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="brand_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="vero"
+               value="sequi"
                data-component="body">
     <br>
-<p>Example: <code>vero</code></p>
+<p>Example: <code>sequi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_categories</code></b>&nbsp;&nbsp;
@@ -1632,10 +1655,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_categories"                data-endpoint="POSTapi-v1-admin-item"
-               value="sapiente"
+               value="laborum"
                data-component="body">
     <br>
-<p>Example: <code>sapiente</code></p>
+<p>Example: <code>laborum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>thumbnail_image</code></b>&nbsp;&nbsp;
@@ -1646,7 +1669,7 @@ fetch(url, {
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 10000 kilobytes. Example: <code>C:\Users\duykh\AppData\Local\Temp\php950B.tmp</code></p>
+<p>Must be an image. Must not be greater than 10000 kilobytes. Example: <code>C:\Users\duykh\AppData\Local\Temp\php2A16.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>detail_images</code></b>&nbsp;&nbsp;
@@ -1667,10 +1690,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="voluptate"
+               value="saepe"
                data-component="body">
     <br>
-<p>Example: <code>voluptate</code></p>
+<p>Example: <code>saepe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_stock_status_id</code></b>&nbsp;&nbsp;
@@ -1678,10 +1701,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_stock_status_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="dolorum"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>dolorum</code></p>
+<p>Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_sizes</code></b>&nbsp;&nbsp;
@@ -1689,10 +1712,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_sizes"                data-endpoint="POSTapi-v1-admin-item"
-               value="ea"
+               value="molestiae"
                data-component="body">
     <br>
-<p>Example: <code>ea</code></p>
+<p>Example: <code>molestiae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_colors</code></b>&nbsp;&nbsp;
@@ -1700,10 +1723,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_colors"                data-endpoint="POSTapi-v1-admin-item"
-               value="error"
+               value="magnam"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>magnam</code></p>
         </div>
         </form>
 
@@ -2029,11 +2052,11 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"description\": \"Illum officia exercitationem natus delectus natus aliquam non.\",
-    \"order\": \"itaque\",
+    \"description\": \"Ducimus eaque culpa officia et cupiditate animi nisi.\",
+    \"order\": \"perferendis\",
     \"name\": {
-        \"vi\": \"oituiwhnrqsucatei\",
-        \"en\": \"syiliflvbpqjfdgtgcbkblbfn\"
+        \"vi\": \"tbgyxbmqeznziyahtvit\",
+        \"en\": \"azjre\"
     }
 }"
 </code></pre></div>
@@ -2052,11 +2075,11 @@ const headers = {
 };
 
 let body = {
-    "description": "Illum officia exercitationem natus delectus natus aliquam non.",
-    "order": "itaque",
+    "description": "Ducimus eaque culpa officia et cupiditate animi nisi.",
+    "order": "perferendis",
     "name": {
-        "vi": "oituiwhnrqsucatei",
-        "en": "syiliflvbpqjfdgtgcbkblbfn"
+        "vi": "tbgyxbmqeznziyahtvit",
+        "en": "azjre"
     }
 };
 
@@ -2160,10 +2183,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="Illum officia exercitationem natus delectus natus aliquam non."
+               value="Ducimus eaque culpa officia et cupiditate animi nisi."
                data-component="body">
     <br>
-<p>Example: <code>Illum officia exercitationem natus delectus natus aliquam non.</code></p>
+<p>Example: <code>Ducimus eaque culpa officia et cupiditate animi nisi.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -2182,10 +2205,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="order"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="itaque"
+               value="perferendis"
                data-component="body">
     <br>
-<p>Example: <code>itaque</code></p>
+<p>Example: <code>perferendis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -2202,10 +2225,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.vi"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="oituiwhnrqsucatei"
+               value="tbgyxbmqeznziyahtvit"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>oituiwhnrqsucatei</code></p>
+<p>Must not be greater than 255 characters. Example: <code>tbgyxbmqeznziyahtvit</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
@@ -2213,10 +2236,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.en"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="syiliflvbpqjfdgtgcbkblbfn"
+               value="azjre"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>syiliflvbpqjfdgtgcbkblbfn</code></p>
+<p>Must not be greater than 255 characters. Example: <code>azjre</code></p>
                     </div>
                                     </details>
         </div>
@@ -2242,11 +2265,11 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"description\": \"Aut et omnis ut est ad.\",
-    \"order\": \"blanditiis\",
+    \"description\": \"Modi ea rerum quia ullam natus.\",
+    \"order\": \"a\",
     \"name\": {
-        \"vi\": \"expedita\",
-        \"en\": \"quas\"
+        \"vi\": \"enim\",
+        \"en\": \"sunt\"
     }
 }"
 </code></pre></div>
@@ -2265,11 +2288,11 @@ const headers = {
 };
 
 let body = {
-    "description": "Aut et omnis ut est ad.",
-    "order": "blanditiis",
+    "description": "Modi ea rerum quia ullam natus.",
+    "order": "a",
     "name": {
-        "vi": "expedita",
-        "en": "quas"
+        "vi": "enim",
+        "en": "sunt"
     }
 };
 
@@ -2385,10 +2408,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="Aut et omnis ut est ad."
+               value="Modi ea rerum quia ullam natus."
                data-component="body">
     <br>
-<p>Example: <code>Aut et omnis ut est ad.</code></p>
+<p>Example: <code>Modi ea rerum quia ullam natus.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -2407,10 +2430,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="order"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="blanditiis"
+               value="a"
                data-component="body">
     <br>
-<p>Example: <code>blanditiis</code></p>
+<p>Example: <code>a</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -2427,10 +2450,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.vi"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="expedita"
+               value="enim"
                data-component="body">
     <br>
-<p>Example: <code>expedita</code></p>
+<p>Example: <code>enim</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
@@ -2438,10 +2461,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.en"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="quas"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>quas</code></p>
+<p>Example: <code>sunt</code></p>
                     </div>
                                     </details>
         </div>
@@ -2988,9 +3011,9 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"autem\",
-    \"item_person_type_id\": \"rem\",
-    \"value\": \"quisquam\"
+    \"item_category_id\": \"sed\",
+    \"item_person_type_id\": \"dolor\",
+    \"value\": \"ut\"
 }"
 </code></pre></div>
 
@@ -3008,9 +3031,9 @@ const headers = {
 };
 
 let body = {
-    "item_category_id": "autem",
-    "item_person_type_id": "rem",
-    "value": "quisquam"
+    "item_category_id": "sed",
+    "item_person_type_id": "dolor",
+    "value": "ut"
 };
 
 fetch(url, {
@@ -3113,10 +3136,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="autem"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -3124,10 +3147,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="rem"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>rem</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3135,10 +3158,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="quisquam"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>quisquam</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -3173,9 +3196,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"quam\",
-    \"item_person_type_id\": \"repellendus\",
-    \"value\": \"omnis\"
+    \"item_category_id\": \"voluptas\",
+    \"item_person_type_id\": \"sint\",
+    \"value\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -3193,9 +3216,9 @@ const headers = {
 };
 
 let body = {
-    "item_category_id": "quam",
-    "item_person_type_id": "repellendus",
-    "value": "omnis"
+    "item_category_id": "voluptas",
+    "item_person_type_id": "sint",
+    "value": "voluptatem"
 };
 
 fetch(url, {
@@ -3310,10 +3333,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="quam"
+               value="voluptas"
                data-component="body">
     <br>
-<p>Example: <code>quam</code></p>
+<p>Example: <code>voluptas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -3321,10 +3344,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="repellendus"
+               value="sint"
                data-component="body">
     <br>
-<p>Example: <code>repellendus</code></p>
+<p>Example: <code>sint</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3332,10 +3355,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="PUTapi-v1-admin-item-size--id--"
-               value="omnis"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -3486,6 +3509,455 @@ fetch(url, {
                data-component="url">
     <br>
 <p>The ID of the . Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                <h1 id="admin-item-stock">Admin Item Stock</h1>
+
+    
+
+                                <h2 id="admin-item-stock-GETapi-v1-admin-item-stock">Return list of Item Price</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-item-stock">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-stock" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-stock"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-stock">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-stock" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-stock"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-stock" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-stock" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-stock"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-stock" data-method="GET"
+      data-path="api/v1/admin/item-stock"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-stock', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-stock"
+                    onclick="tryItOut('GETapi-v1-admin-item-stock');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-stock"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-stock');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-stock" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-stock</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-stock"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-stock"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-stock"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-stock"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        </form>
+
+                <h1 id="admin-item-variant">Admin Item Variant</h1>
+
+    
+
+                                <h2 id="admin-item-variant-GETapi-v1-admin-item-variant">Get a list of item variant.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>This endpoint lets you get a list of brands</p>
+
+<span id="example-requests-GETapi-v1-admin-item-variant">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-variant" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-variant"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-variant">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-variant" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-variant"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-variant" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-variant" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-variant"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-variant" data-method="GET"
+      data-path="api/v1/admin/item-variant"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-variant', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-variant"
+                    onclick="tryItOut('GETapi-v1-admin-item-variant');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-variant"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-variant');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-variant" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-variant</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-variant"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-variant"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-variant"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-variant"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="admin-item-variant-GETapi-v1-admin-item-variant--id-">Show Item Variant by id</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-admin-item-variant--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/admin/item-variant/6" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/admin/item-variant/6"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-admin-item-variant--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-admin-item-variant--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-admin-item-variant--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-admin-item-variant--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-admin-item-variant--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-admin-item-variant--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-admin-item-variant--id-" data-method="GET"
+      data-path="api/v1/admin/item-variant/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-admin-item-variant--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-admin-item-variant--id-"
+                    onclick="tryItOut('GETapi-v1-admin-item-variant--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-admin-item-variant--id-"
+                    onclick="cancelTryOut('GETapi-v1-admin-item-variant--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-admin-item-variant--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/admin/item-variant/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-admin-item-variant--id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-admin-item-variant--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-admin-item-variant--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-admin-item-variant--id-"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="GETapi-v1-admin-item-variant--id-"
+               value="6"
+               data-component="url">
+    <br>
+<p>The ID of the item variant. Example: <code>6</code></p>
             </div>
                     </form>
 
@@ -3891,7 +4363,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"laboriosam\",
+    \"name\": \"veniam\",
     \"status\": false
 }"
 </code></pre></div>
@@ -3910,7 +4382,7 @@ const headers = {
 };
 
 let body = {
-    "name": "laboriosam",
+    "name": "veniam",
     "status": false
 };
 
@@ -4014,10 +4486,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="laboriosam"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>laboriosam</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -4084,7 +4556,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"corporis\"
+    \"name\": \"quia\"
 }"
 </code></pre></div>
 
@@ -4102,7 +4574,7 @@ const headers = {
 };
 
 let body = {
-    "name": "corporis"
+    "name": "quia"
 };
 
 fetch(url, {
@@ -4217,10 +4689,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-item-color--id--"
-               value="corporis"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -4787,16 +5259,16 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"first_name\": \"qwfburatfvlvkrkosq\",
-    \"last_name\": \"xennxpgzulypyswpswz\",
-    \"email\": \"hnolan@example.org\",
-    \"password\": \"sapiente\",
-    \"role\": \"temporibus\",
-    \"phone\": 2232612.28378849,
-    \"city_id\": \"veniam\",
-    \"district_id\": \"sint\",
-    \"ward_id\": \"id\",
-    \"address\": \"sit\"
+    \"first_name\": \"upfewtmaa\",
+    \"last_name\": \"swdccdhvywkj\",
+    \"email\": \"edd.reinger@example.org\",
+    \"password\": \"et\",
+    \"role\": \"ab\",
+    \"phone\": 134.08659449,
+    \"city_id\": \"saepe\",
+    \"district_id\": \"qui\",
+    \"ward_id\": \"fuga\",
+    \"address\": \"expedita\"
 }"
 </code></pre></div>
 
@@ -4814,16 +5286,16 @@ const headers = {
 };
 
 let body = {
-    "first_name": "qwfburatfvlvkrkosq",
-    "last_name": "xennxpgzulypyswpswz",
-    "email": "hnolan@example.org",
-    "password": "sapiente",
-    "role": "temporibus",
-    "phone": 2232612.28378849,
-    "city_id": "veniam",
-    "district_id": "sint",
-    "ward_id": "id",
-    "address": "sit"
+    "first_name": "upfewtmaa",
+    "last_name": "swdccdhvywkj",
+    "email": "edd.reinger@example.org",
+    "password": "et",
+    "role": "ab",
+    "phone": 134.08659449,
+    "city_id": "saepe",
+    "district_id": "qui",
+    "ward_id": "fuga",
+    "address": "expedita"
 };
 
 fetch(url, {
@@ -4926,10 +5398,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="first_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="qwfburatfvlvkrkosq"
+               value="upfewtmaa"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>qwfburatfvlvkrkosq</code></p>
+<p>Must not be greater than 20 characters. Example: <code>upfewtmaa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -4937,10 +5409,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="last_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="xennxpgzulypyswpswz"
+               value="swdccdhvywkj"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>xennxpgzulypyswpswz</code></p>
+<p>Must not be greater than 20 characters. Example: <code>swdccdhvywkj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -4948,10 +5420,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-v1-admin-user"
-               value="hnolan@example.org"
+               value="edd.reinger@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>hnolan@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>edd.reinger@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -4959,10 +5431,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-v1-admin-user"
-               value="sapiente"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>sapiente</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -4970,10 +5442,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="POSTapi-v1-admin-user"
-               value="temporibus"
+               value="ab"
                data-component="body">
     <br>
-<p>Example: <code>temporibus</code></p>
+<p>Example: <code>ab</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -4981,10 +5453,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="phone"                data-endpoint="POSTapi-v1-admin-user"
-               value="2232612.2837885"
+               value="134.08659449"
                data-component="body">
     <br>
-<p>Example: <code>2232612.2837885</code></p>
+<p>Example: <code>134.08659449</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -4992,10 +5464,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="veniam"
+               value="saepe"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>saepe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>district_id</code></b>&nbsp;&nbsp;
@@ -5003,10 +5475,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="district_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="sint"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>sint</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ward_id</code></b>&nbsp;&nbsp;
@@ -5014,10 +5486,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="ward_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="id"
+               value="fuga"
                data-component="body">
     <br>
-<p>Example: <code>id</code></p>
+<p>Example: <code>fuga</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -5025,10 +5497,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="address"                data-endpoint="POSTapi-v1-admin-user"
-               value="sit"
+               value="expedita"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>expedita</code></p>
         </div>
         </form>
 
@@ -5052,9 +5524,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"krcdyqhtbzooepu\",
-    \"email\": \"chauncey.streich@example.net\",
-    \"role\": \"consequatur\"
+    \"name\": \"rzbkuxzgt\",
+    \"email\": \"dangelo.mcclure@example.org\",
+    \"role\": \"perspiciatis\"
 }"
 </code></pre></div>
 
@@ -5072,9 +5544,9 @@ const headers = {
 };
 
 let body = {
-    "name": "krcdyqhtbzooepu",
-    "email": "chauncey.streich@example.net",
-    "role": "consequatur"
+    "name": "rzbkuxzgt",
+    "email": "dangelo.mcclure@example.org",
+    "role": "perspiciatis"
 };
 
 fetch(url, {
@@ -5189,10 +5661,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="krcdyqhtbzooepu"
+               value="rzbkuxzgt"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>krcdyqhtbzooepu</code></p>
+<p>Must not be greater than 255 characters. Example: <code>rzbkuxzgt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -5200,10 +5672,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="chauncey.streich@example.net"
+               value="dangelo.mcclure@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>chauncey.streich@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dangelo.mcclure@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -5211,10 +5683,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="consequatur"
+               value="perspiciatis"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>perspiciatis</code></p>
         </div>
         </form>
 
@@ -5417,14 +5889,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 28,
-        &quot;name&quot;: &quot;Reynold Stehr&quot;,
-        &quot;email&quot;: &quot;wiza.eleanore@example.org&quot;,
+        &quot;id&quot;: 43,
+        &quot;name&quot;: &quot;Jane Ernser&quot;,
+        &quot;email&quot;: &quot;jakubowski.magdalen@example.net&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Reynold Stehr&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Jane Ernser&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -5799,14 +6271,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 29,
-        &quot;name&quot;: &quot;Mrs. Adella Lemke&quot;,
-        &quot;email&quot;: &quot;zieme.valentina@example.com&quot;,
+        &quot;id&quot;: 44,
+        &quot;name&quot;: &quot;Laurie Daugherty&quot;,
+        &quot;email&quot;: &quot;domingo.considine@example.org&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Mrs. Adella Lemke&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Laurie Daugherty&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -6005,14 +6477,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 30,
-        &quot;name&quot;: &quot;Catherine Mann&quot;,
-        &quot;email&quot;: &quot;amya.altenwerth@example.org&quot;,
+        &quot;id&quot;: 45,
+        &quot;name&quot;: &quot;Mariah Balistreri&quot;,
+        &quot;email&quot;: &quot;pklocko@example.net&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Catherine Mann&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Mariah Balistreri&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -8681,7 +9153,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/city/7" \
+    --get "http://127.0.0.1:8000/api/v1/destination/city/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -8689,7 +9161,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/city/7"
+    "http://127.0.0.1:8000/api/v1/destination/city/10"
 );
 
 const headers = {
@@ -8723,10 +9195,25 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 101,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;B&agrave; Rịa&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-ba-ria&quot;,
+            &quot;id&quot;: 130,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Ba Bể&quot;,
+            &quot;slug&quot;: &quot;bac-kan-ba-be&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: null,
+            &quot;color&quot;: null,
+            &quot;bounding_box&quot;: null,
+            &quot;pre&quot;: &quot;Huyện&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 131,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Bắc Kạn&quot;,
+            &quot;slug&quot;: &quot;bac-kan-bac-kan&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8738,10 +9225,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 102,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;Ch&acirc;u Đức&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-chau-duc&quot;,
+            &quot;id&quot;: 132,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Bạch Th&ocirc;ng&quot;,
+            &quot;slug&quot;: &quot;bac-kan-bach-thong&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8753,10 +9240,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 103,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;C&ocirc;n Đảo&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-con-dao&quot;,
+            &quot;id&quot;: 133,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Chợ Đồn&quot;,
+            &quot;slug&quot;: &quot;bac-kan-cho-don&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8768,10 +9255,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 104,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;Đất Đỏ&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-dat-do&quot;,
+            &quot;id&quot;: 134,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Chợ Mới&quot;,
+            &quot;slug&quot;: &quot;bac-kan-cho-moi&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8783,10 +9270,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 105,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;Long Điền&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-long-dien&quot;,
+            &quot;id&quot;: 135,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Na R&igrave;&quot;,
+            &quot;slug&quot;: &quot;bac-kan-na-ri&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8798,10 +9285,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 106,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;T&acirc;n Th&agrave;nh&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-tan-thanh&quot;,
+            &quot;id&quot;: 136,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;Ng&acirc;n Sơn&quot;,
+            &quot;slug&quot;: &quot;bac-kan-ngan-son&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8813,25 +9300,10 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 107,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;Vũng T&agrave;u&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-vung-tau&quot;,
-            &quot;geometry&quot;: null,
-            &quot;center&quot;: null,
-            &quot;color&quot;: null,
-            &quot;bounding_box&quot;: null,
-            &quot;pre&quot;: &quot;Th&agrave;nh phố&quot;,
-            &quot;order&quot;: null,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: null,
-            &quot;updated_at&quot;: null
-        },
-        {
-            &quot;id&quot;: 108,
-            &quot;city_id&quot;: 7,
-            &quot;name&quot;: &quot;Xuy&ecirc;n Mộc&quot;,
-            &quot;slug&quot;: &quot;ba-ria-vung-tau-xuyen-moc&quot;,
+            &quot;id&quot;: 137,
+            &quot;city_id&quot;: 10,
+            &quot;name&quot;: &quot;P&aacute;c Nặm&quot;,
+            &quot;slug&quot;: &quot;bac-kan-pac-nam&quot;,
             &quot;geometry&quot;: null,
             &quot;center&quot;: null,
             &quot;color&quot;: null,
@@ -8925,10 +9397,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="city_id"                data-endpoint="GETapi-v1-destination-city--city_id-"
-               value="7"
+               value="10"
                data-component="url">
     <br>
-<p>Get district after choose city. Example: <code>7</code></p>
+<p>Get district after choose city. Example: <code>10</code></p>
             </div>
                     </form>
 
@@ -8945,7 +9417,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/district/10" \
+    --get "http://127.0.0.1:8000/api/v1/destination/district/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -8953,7 +9425,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/district/10"
+    "http://127.0.0.1:8000/api/v1/destination/district/2"
 );
 
 const headers = {
@@ -8987,15 +9459,15 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 129,
+            &quot;id&quot;: 17,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Bến Ngh&eacute;&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-ben-nghe&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;An Lạc&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-an-lac&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.780724,106.704199]&quot;,
+            &quot;center&quot;: &quot;[10.725189,106.611877]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.770643,106.694572],\\\&quot;br\\\&quot;:[10.791817,106.714035]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[21.271919,106.858543],\\\&quot;br\\\&quot;:[21.382446,107.033302]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9003,15 +9475,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 130,
+            &quot;id&quot;: 18,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Bến Th&agrave;nh&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-ben-thanh&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;An Lạc A&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-an-lac-a&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.773428,106.693914]&quot;,
+            &quot;center&quot;: &quot;[10.746428,106.618603]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.768536,106.686905],\\\&quot;br\\\&quot;:[10.779694,106.700752]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.730873,106.608978],\\\&quot;br\\\&quot;:[10.757444,106.623894]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9019,15 +9491,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 131,
+            &quot;id&quot;: 19,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Cầu Kho&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-cau-kho&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.75752,106.688322]&quot;,
+            &quot;center&quot;: &quot;[10.805627,106.604079]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.75323,106.684288],\\\&quot;br\\\&quot;:[10.761621,106.692207]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.78757,106.595116],\\\&quot;br\\\&quot;:[10.826193,106.61573]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9035,15 +9507,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 132,
+            &quot;id&quot;: 20,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Cầu &Ocirc;ng L&atilde;nh&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-cau-ong-lanh&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a A&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa-a&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.765387,106.696525]&quot;,
+            &quot;center&quot;: &quot;[10.783846,106.607692]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.76184,106.694016],\\\&quot;br\\\&quot;:[10.769154,106.700142]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.773629,106.592697],\\\&quot;br\\\&quot;:[10.796749,106.621246]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9051,15 +9523,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 133,
+            &quot;id&quot;: 21,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;C&ocirc; Giang&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-co-giang&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Hưng H&ograve;a B&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-hung-hoa-b&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.762181,106.693256]&quot;,
+            &quot;center&quot;: &quot;[10.805476,106.591707]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.758238,106.689499],\\\&quot;br\\\&quot;:[10.766837,106.696648]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.775042,106.582001],\\\&quot;br\\\&quot;:[10.829794,106.602936]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9067,15 +9539,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 134,
+            &quot;id&quot;: 22,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Đa Kao&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-da-kao&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.788983,106.698189]&quot;,
+            &quot;center&quot;: &quot;[10.765981,106.616146]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.783004,106.691132],\\\&quot;br\\\&quot;:[10.793699,106.705956]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.755939,106.608429],\\\&quot;br\\\&quot;:[10.776417,106.62574]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9083,15 +9555,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 135,
+            &quot;id&quot;: 23,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Nguyễn Cư Trinh&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-nguyen-cu-trinh&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng A&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong-a&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.763022,106.685734]&quot;,
+            &quot;center&quot;: &quot;[10.769627,106.596629]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.7564,106.680908],\\\&quot;br\\\&quot;:[10.768336,106.692619]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.757954,106.576408],\\\&quot;br\\\&quot;:[10.778677,106.609573]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9099,15 +9571,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 136,
+            &quot;id&quot;: 24,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Nguyễn Th&aacute;i B&igrave;nh&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-nguyen-thai-binh&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;B&igrave;nh Trị Đ&ocirc;ng B&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-binh-tri-dong-b&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.768763,106.700922]&quot;,
+            &quot;center&quot;: &quot;[10.745272,106.60885]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.764832,106.696022],\\\&quot;br\\\&quot;:[10.771129,106.708115]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.727364,106.597572],\\\&quot;br\\\&quot;:[10.758321,106.620094]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9115,15 +9587,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 137,
+            &quot;id&quot;: 25,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;Phạm Ngũ L&atilde;o&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-pham-ngu-lao&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;T&acirc;n Tạo&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-tan-tao&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.767999,106.6904]&quot;,
+            &quot;center&quot;: &quot;[10.759283,106.588809]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.764241,106.68409],\\\&quot;br\\\&quot;:[10.771373,106.69696]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.743312,106.566978],\\\&quot;br\\\&quot;:[10.771526,106.606071]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9131,15 +9603,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 138,
+            &quot;id&quot;: 26,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 10,
-            &quot;name&quot;: &quot;T&acirc;n Định&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-1-tan-dinh&quot;,
+            &quot;district_id&quot;: 2,
+            &quot;name&quot;: &quot;T&acirc;n Tạo A&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-binh-tan-tan-tao-a&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.792586,106.690166]&quot;,
+            &quot;center&quot;: &quot;[10.742232,106.580911]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.787568,106.684563],\\\&quot;br\\\&quot;:[10.797178,106.695747]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.722403,106.55822],\\\&quot;br\\\&quot;:[10.760674,106.602715]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9229,10 +9701,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="district_id"                data-endpoint="GETapi-v1-destination-district--district_id-"
-               value="10"
+               value="2"
                data-component="url">
     <br>
-<p>Get ward after choose district. Example: <code>10</code></p>
+<p>Get ward after choose district. Example: <code>2</code></p>
             </div>
                     </form>
 
@@ -9564,7 +10036,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=20" \
+    --get "http://127.0.0.1:8000/api/v1/item?limit=50&amp;page=1&amp;min_price=5" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -9578,7 +10050,7 @@ fetch(url, {
 const params = {
     "limit": "50",
     "page": "1",
-    "min_price": "20",
+    "min_price": "5",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -9819,10 +10291,10 @@ access-control-allow-origin: *
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="min_price"                data-endpoint="GETapi-v1-item"
-               value="20"
+               value="5"
                data-component="query">
     <br>
-<p>The minimum price of the product to filter. 1000000 Example: <code>20</code></p>
+<p>The minimum price of the product to filter. 1000000 Example: <code>5</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
@@ -9890,7 +10362,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item/velit" \
+    --get "http://127.0.0.1:8000/api/v1/item/laboriosam" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -9898,7 +10370,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/item/velit"
+    "http://127.0.0.1:8000/api/v1/item/laboriosam"
 );
 
 const headers = {
@@ -9922,17 +10394,42 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: null,
-        &quot;slug&quot;: null,
-        &quot;sku&quot;: null,
-        &quot;name&quot;: null,
-        &quot;description&quot;: null,
-        &quot;thumbnail_url&quot;: false,
-        &quot;brand_id&quot;: null,
+        &quot;id&quot;: 9,
+        &quot;slug&quot;: &quot;rudolph-marquard&quot;,
+        &quot;sku&quot;: &quot;zxc&quot;,
+        &quot;name&quot;: &quot;Rudolph Marquard&quot;,
+        &quot;description&quot;: &quot;undefined&quot;,
+        &quot;thumbnail_url&quot;: &quot;http://127.0.0.1:8000/storage/1/conversions/ao-hoodie-den5_54-thumbnail_resize.jpg&quot;,
+        &quot;brand_id&quot;: 1,
         &quot;views_count&quot;: null,
-        &quot;media&quot;: [],
-        &quot;created_at&quot;: &quot;01/01/1970 00:00&quot;,
-        &quot;updated_at&quot;: &quot;01/01/1970 00:00&quot;
+        &quot;media&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;file_name&quot;: &quot;ao-hoodie-daily-wear-3-1_(1)&quot;,
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                &quot;order_column&quot;: 2
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;file_name&quot;: &quot;ao-hoodie-den5_54&quot;,
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/3/ao-hoodie-den5_54.jpg&quot;,
+                &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/3/ao-hoodie-den5_54.jpg&quot;,
+                &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\3/ao-hoodie-den5_54.jpg&quot;,
+                &quot;order_column&quot;: 3
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;file_name&quot;: &quot;ao-hoodie-den8_84&quot;,
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/4/ao-hoodie-den8_84.jpg&quot;,
+                &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/4/ao-hoodie-den8_84.jpg&quot;,
+                &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\4/ao-hoodie-den8_84.jpg&quot;,
+                &quot;order_column&quot;: 4
+            }
+        ],
+        &quot;created_at&quot;: &quot;23/02/2023 14:31&quot;,
+        &quot;updated_at&quot;: &quot;23/02/2023 14:31&quot;
     }
 }</code>
  </pre>
@@ -10016,10 +10513,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="slug"                data-endpoint="GETapi-v1-item--slug-"
-               value="velit"
+               value="laboriosam"
                data-component="url">
     <br>
-<p>The slug of the item. Example: <code>velit</code></p>
+<p>The slug of the item. Example: <code>laboriosam</code></p>
             </div>
                     </form>
 
@@ -11027,7 +11524,7 @@ fetch(url, {
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
-    --form "avatar=@C:\Users\duykh\AppData\Local\Temp\php90A4.tmp" </code></pre></div>
+    --form "avatar=@C:\Users\duykh\AppData\Local\Temp\php28EB.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -11148,7 +11645,7 @@ fetch(url, {
                value=""
                data-component="body">
     <br>
-<p>The image avatar of the current customer. Example: <code>C:\Users\duykh\AppData\Local\Temp\php90A4.tmp</code></p>
+<p>The image avatar of the current customer. Example: <code>C:\Users\duykh\AppData\Local\Temp\php28EB.tmp</code></p>
         </div>
         </form>
 

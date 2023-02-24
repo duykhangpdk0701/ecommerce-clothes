@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";

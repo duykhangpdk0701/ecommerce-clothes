@@ -63,7 +63,7 @@ const CreateItemColorTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
             LinkComponent={Link}
             variant="contained"
             startIcon={<Iconify icon="eva:plus-fill" />}
-            href="/admin/category"
+            href="/admin/item-color"
           >
             Back to List Item Color
           </Button>

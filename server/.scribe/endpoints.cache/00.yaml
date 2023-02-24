@@ -50,7 +50,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":28,"name":"Reynold Stehr","email":"wiza.eleanore@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Reynold Stehr","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":43,"name":"Jane Ernser","email":"jakubowski.magdalen@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Jane Ernser","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -217,7 +217,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":29,"name":"Mrs. Adella Lemke","email":"zieme.valentina@example.com","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Mrs. Adella Lemke","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":44,"name":"Laurie Daugherty","email":"domingo.considine@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Laurie Daugherty","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -255,7 +255,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":30,"name":"Catherine Mann","email":"amya.altenwerth@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Catherine Mann","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":45,"name":"Mariah Balistreri","email":"pklocko@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Mariah Balistreri","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -263,7 +263,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4dbh6kfe1Z8D6V5EvcgPaa3'
+      - 'Bearer 6dk4c5DV3Ehb1eafaPg86vZ'
     controller: null
     method: null
     route: null
@@ -306,7 +306,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Ze6va58PD14khfc3aEbVgd'
+      - 'Bearer VhE35vDf61eaadgZcPkb468'
     controller: null
     method: null
     route: null

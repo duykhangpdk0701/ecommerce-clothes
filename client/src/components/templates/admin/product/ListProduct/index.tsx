@@ -1,4 +1,4 @@
-import { IAdminProduct } from "interfaces/Product";
+import { IAdminProduct } from "@/interfaces/Product";
 import React, { ChangeEvent, MouseEvent, useState, FC } from "react";
 import { filter } from "lodash";
 // @mui

@@ -103,7 +103,8 @@ class ItemColorController extends Controller
         $result = $this->itemColorRepository->update($itemColor, $request->validated());
 
         if ($result) {
-            return response()->json(new JsonResponse(new ItemColorResource($result)), ResponseAlias::HTTP_OK);
+            $temp = $this->itemColorRepository->find($itemColor->id);
+            return response()->json(new JsonResponse(new ItemColorResource($temp)), ResponseAlias::HTTP_OK);
         }
 
         return response()->json(new JsonResponse([], __('error.brand.store_brand')), ResponseAlias::HTTP_NOT_FOUND);

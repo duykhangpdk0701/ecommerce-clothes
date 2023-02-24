@@ -26,7 +26,7 @@ import Label from "@/components/shared/label";
 import ListCategoryHead from "./section/ListCategoryHead";
 import ListCategoryToolbar from "./section/ListCategoryToolbar";
 import USERLIST from "@/_mock/user";
-import ICategory, { IAdminCategory } from "interfaces/Category";
+import { IAdminCategory } from "@/interfaces/Category";
 import Link from "next/link";
 
 const TABLE_HEAD = [

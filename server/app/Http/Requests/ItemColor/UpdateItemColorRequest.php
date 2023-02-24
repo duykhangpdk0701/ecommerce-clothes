@@ -26,7 +26,8 @@ class UpdateItemColorRequest extends FormRequest
         return [
             'name' => 'required|string',
             'value' => 'present',
-            'order' => 'present'
+            'order' => 'present',
+            'status' => '',
         ];
     }
 }

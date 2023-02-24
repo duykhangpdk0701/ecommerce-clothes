@@ -1,14 +1,17 @@
 // component
 import SvgColor from "@/components/shared/svg-color";
+import { resolve } from "path";
 
 // ----------------------------------------------------------------------
 
-const icon = (name: string) => (
-  <SvgColor
-    src={`/assets/icons/navbar/${name}.svg`}
-    sx={{ width: 1, height: 1 }}
-  />
-);
+const icon = (name: string) => {
+  return (
+    <SvgColor
+      src={require(`src/assets/icons/navbar/${name}.svg`).default.src}
+      sx={{ width: 1, height: 1 }}
+    />
+  );
+};
 
 export interface INavConfig {
   title: string;

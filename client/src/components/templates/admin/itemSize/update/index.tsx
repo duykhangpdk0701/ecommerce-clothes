@@ -14,7 +14,6 @@ import Switch from "@mui/material/Switch";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormLabel from "@mui/material/FormLabel";
@@ -32,9 +31,8 @@ import {
   Controller,
 } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
-import { ICreateItemSizeParams } from "../../../../../../pages/admin/item-size/create";
-import ICategory from "interfaces/Category";
-import { IUpdateItemSizeParams } from "../../../../../../pages/admin/item-size/[id]/update";
+import ICategory from "@/interfaces/Category";
+import { IUpdateItemSizeParams } from "@/pages/admin/item-size/[id]/update";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface IUpdateItemSizeTemplate {

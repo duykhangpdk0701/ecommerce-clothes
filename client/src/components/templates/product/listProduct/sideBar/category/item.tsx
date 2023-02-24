@@ -10,7 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import React, { FC, Fragment, useState } from "react";
 import ListProductSideBarItemCategoryItemChildren from "./itemChildren";
-import ICategory from "interfaces/Category";
+import ICategory from "@/interfaces/Category";
 
 interface IListProductSideBarItemCategoryItem {
   data: ICategory;

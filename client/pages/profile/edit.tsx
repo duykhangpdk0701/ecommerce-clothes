@@ -3,7 +3,7 @@ import EditProfileTemplate from "@/components/templates/profile/edit";
 import AccountLayout from "@/layout/AccountLayout";
 import React, { ReactElement, useState } from "react";
 import { useMutation, useQuery } from "react-query";
-import { NextPageWithLayout } from "../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";

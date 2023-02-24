@@ -1,4 +1,4 @@
-import { IAdminCategory } from "interfaces/Category";
+import { IAdminCategory } from "@/interfaces/Category";
 import axiosClient from "../axiosClient";
 
 const adminItemCategoryAPI = {

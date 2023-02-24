@@ -20,7 +20,7 @@ import { wrapper } from "@/contexts/store";
 import GlobalStyles from "@/themes/globalStyles";
 import { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
-import createEmotionCache from "../src/utils/createEmotionCache";
+import createEmotionCache from "@/utils/createEmotionCache";
 import ThemeProvider from "@/themes/index";
 import ActionSnackbar from "@/components/shared/actionSnackBar";
 

@@ -1,4 +1,4 @@
-import IColor from "interfaces/Color";
+import IColor from "@/interfaces/Color";
 import axiosClient from "./axiosClient";
 
 const colorAPI = {

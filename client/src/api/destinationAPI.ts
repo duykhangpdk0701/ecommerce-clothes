@@ -1,5 +1,5 @@
 import axiosClient from "./axiosClient";
-import { ICity, IDistrict, IWard } from "../interfaces/Address";
+import { ICity, IDistrict, IWard } from "@/interfaces/Address";
 
 const destinationAPI = {
   getListOfCites: async (): Promise<ICity[]> => {

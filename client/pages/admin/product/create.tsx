@@ -3,7 +3,7 @@ import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { ReactElement, useState } from "react";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

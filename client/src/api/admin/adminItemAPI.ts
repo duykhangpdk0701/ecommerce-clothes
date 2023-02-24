@@ -1,4 +1,4 @@
-import { IAdminProduct } from "interfaces/Product";
+import { IAdminProduct } from "@/interfaces/Product";
 import axiosClient from "../axiosClient";
 
 const adminItemAPI = {

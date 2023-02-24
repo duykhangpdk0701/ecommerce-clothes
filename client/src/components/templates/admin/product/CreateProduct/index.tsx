@@ -32,12 +32,12 @@ import {
   Controller,
 } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
-import { IAdminProduct } from "interfaces/Product";
+import { IAdminProduct } from "@/interfaces/Product";
 import { ICreateProductParams } from "../../../../../../pages/admin/product/create";
-import { IAdminCategory } from "interfaces/Category";
-import { IAdminBrand } from "interfaces/Brand";
-import { IAdminColor } from "interfaces/Color";
-import { IAdminItemSize } from "interfaces/ItemSize";
+import { IAdminCategory } from "@/interfaces/Category";
+import { IAdminBrand } from "@/interfaces/Brand";
+import { IAdminColor } from "@/interfaces/Color";
+import { IAdminItemSize } from "@/interfaces/ItemSize";
 import Dropzone from "@/components/shared/dropzone";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });

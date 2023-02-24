@@ -1,4 +1,4 @@
-import IBrand from "../interfaces/Brand";
+import IBrand from "@/interfaces/Brand";
 import axiosClient from "./axiosClient";
 
 const brandAPI = {

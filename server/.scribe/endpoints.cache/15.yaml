@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VkZhE3v8bD6aaPfgd54c1e6'
+      - 'Bearer hDgEaZ1P6fvV5aedk68bc34'
     controller: null
     method: null
     route: null
@@ -74,35 +74,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ullam
+        example: quia
         type: string
         custom: []
       sku:
         name: sku
         description: ''
         required: true
-        example: est
+        example: adipisci
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: doloremque
+        example: sapiente
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: vero
+        example: sequi
         type: string
         custom: []
       item_categories:
         name: item_categories
         description: ''
         required: true
-        example: sapiente
+        example: laborum
         type: string
         custom: []
       thumbnail_image:
@@ -124,40 +124,40 @@ endpoints:
         name: item_person_type_id
         description: ''
         required: true
-        example: voluptate
+        example: saepe
         type: string
         custom: []
       item_stock_status_id:
         name: item_stock_status_id
         description: ''
         required: true
-        example: dolorum
+        example: quia
         type: string
         custom: []
       item_sizes:
         name: item_sizes
         description: ''
         required: true
-        example: ea
+        example: molestiae
         type: string
         custom: []
       item_colors:
         name: item_colors
         description: ''
         required: true
-        example: error
+        example: magnam
         type: string
         custom: []
     cleanBodyParameters:
-      name: ullam
-      sku: est
-      description: doloremque
-      brand_id: vero
-      item_categories: sapiente
-      item_person_type_id: voluptate
-      item_stock_status_id: dolorum
-      item_sizes: ea
-      item_colors: error
+      name: quia
+      sku: adipisci
+      description: sapiente
+      brand_id: sequi
+      item_categories: laborum
+      item_person_type_id: saepe
+      item_stock_status_id: quia
+      item_sizes: molestiae
+      item_colors: magnam
     fileParameters:
       thumbnail_image: null
       detail_images:
@@ -167,7 +167,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v1a5D6Z6Ec4hVfdekPg3b8a'
+      - 'Bearer Pf1e34V6EDakZ8bvcg6h5ad'
     controller: null
     method: null
     route: null

@@ -1,5 +1,5 @@
-import ILogin from "interfaces/Login";
-import IUser from "interfaces/User";
+import ILogin from "@/interfaces/Login";
+import IUser from "@/interfaces/User";
 import axiosClient from "./axiosClient";
 
 const authAPI = {

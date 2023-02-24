@@ -1,17 +1,17 @@
 import React, { FC } from "react";
-import {
-  Container,
-  Typography,
-  Stack,
-  Button,
-  Grid,
-  Paper,
-  TextField,
-  Box,
-  FormControlLabel,
-  Switch,
-  FormHelperText,
-} from "@mui/material";
+//mui component
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import FormHelperText from "@mui/material/FormHelperText";
+import Button from "@mui/material/Button";
+//icon
 import Iconify from "@/components/shared/iconify";
 import Link from "next/link";
 import dynamic from "next/dynamic";

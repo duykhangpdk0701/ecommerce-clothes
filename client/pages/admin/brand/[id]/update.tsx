@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useMutation, useQuery } from "react-query";
 import adminBrandAPI from "@/api/admin/adminBrandAPI";
 import { useRouter } from "next/router";
-import { NextPageWithLayout } from "../../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import AdminLayout from "@/layout/AdminLayout";
 
 export interface IUpdateBrandParams {

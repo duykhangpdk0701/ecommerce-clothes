@@ -2,7 +2,7 @@ import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { ChangeEvent, ReactElement, useState } from "react";
-import { NextPageWithLayout } from "../../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import UpdateUserAdminTemplate from "@/components/templates/admin/user/update";

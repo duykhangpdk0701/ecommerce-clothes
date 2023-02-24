@@ -20,7 +20,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemButton from "@mui/material/ListItemButton";
 
 // utils
-import { fToNow } from "../../../utils/formatTime";
+import { fToNow } from "@/utils/formatTime";
 // components
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
@@ -41,7 +41,7 @@ const NOTIFICATIONS = [
     id: faker.datatype.uuid(),
     title: faker.name.fullName(),
     description: "answered to your comment on the Minimal",
-    avatar: "/assets/images/avatars/avatar_2.jpg",
+    avatar: require("src/assets/images/avatars/avatar_2.jpg").default.src,
     type: "friend_interactive",
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
     isUnRead: true,
@@ -274,7 +274,9 @@ function renderContent(notification: any) {
       avatar: (
         <img
           alt={notification.title}
-          src="/assets/icons/ic_notification_package.svg"
+          src={
+            require("src/assets/icons/ic_notification_package.svg").default.src
+          }
         />
       ),
       title,
@@ -285,7 +287,9 @@ function renderContent(notification: any) {
       avatar: (
         <img
           alt={notification.title}
-          src="/assets/icons/ic_notification_shipping.svg"
+          src={
+            require("src/assets/icons/ic_notification_shipping.svg").default.src
+          }
         />
       ),
       title,
@@ -296,7 +300,7 @@ function renderContent(notification: any) {
       avatar: (
         <img
           alt={notification.title}
-          src="/assets/icons/ic_notification_mail.svg"
+          src={require("src/assets/icons/ic_notification_mail.svg").default.src}
         />
       ),
       title,
@@ -307,7 +311,7 @@ function renderContent(notification: any) {
       avatar: (
         <img
           alt={notification.title}
-          src="/assets/icons/ic_notification_chat.svg"
+          src={require("src/assets/icons/ic_notification_chat.svg").default.src}
         />
       ),
       title,

@@ -26,7 +26,8 @@ import ListBrandHead from "./section/ListBrandHead";
 import ListBrandToolbar from "./section/ListBrandToolbar";
 import USERLIST from "@/_mock/user";
 import Link from "next/link";
-import IBrand from "interfaces/Brand";
+import IBrand from "@/interfaces/Brand";
+
 const TABLE_HEAD = [
   { id: "name", label: "Name", alignRight: false },
   { id: "" },

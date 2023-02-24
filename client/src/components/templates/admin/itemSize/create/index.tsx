@@ -33,7 +33,7 @@ import {
 } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { ICreateItemSizeParams } from "../../../../../../pages/admin/item-size/create";
-import ICategory from "interfaces/Category";
+import ICategory from "@/interfaces/Category";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface ICreateItemSizeTemplate {

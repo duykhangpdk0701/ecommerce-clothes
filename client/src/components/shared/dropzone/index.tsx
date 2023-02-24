@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
-import React, { ChangeEventHandler, FC, useEffect } from "react";
+import React, { ChangeEventHandler, FC, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import fileImage from "@/assets/images/file.svg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -17,11 +17,13 @@ const Dropzone: FC<IDropzone> = ({ multiple, onChange, error, ...rest }) => {
     multiple,
     ...rest,
   });
+  const [file, setFile] = useState<File[]>([]);
 
   useEffect(() => {
     if (onChange) {
       if (multiple) {
-        onChange(acceptedFiles as any);
+        setFile([...file, ...acceptedFiles]);
+        onChange(file as any);
       } else {
         onChange(acceptedFiles?.[0] as any);
       }
@@ -56,9 +58,9 @@ const Dropzone: FC<IDropzone> = ({ multiple, onChange, error, ...rest }) => {
           </div>
         </div>
       </Box>
-      {acceptedFiles.length !== 0 && (
-        <Box className="my-6 flex">
-          {acceptedFiles.map((file) => (
+      {file.length !== 0 && (
+        <Box className="my-6 flex flex-wrap">
+          {file.map((file) => (
             <div className="m-1 relative w-20 h-20">
               <LazyLoadImage
                 src={URL.createObjectURL(file)}

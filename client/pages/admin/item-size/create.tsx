@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React, { ReactElement, useState } from "react";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import * as yup from "yup";
 import Head from "next/head";
 import { useForm, SubmitHandler } from "react-hook-form";

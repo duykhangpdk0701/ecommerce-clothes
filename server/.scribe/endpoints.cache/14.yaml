@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gbhf8vaV4P1e5DcEkZd36a6'
+      - 'Bearer 8eEZcV43ka1Pvbadgh66fD5'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3gefadP6DhZ6a1VEcb4vk85'
+      - 'Bearer Z5836acdk4gvP1fEDebhV6a'
     controller: null
     method: null
     route: null
@@ -158,21 +158,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: autem
+        example: sed
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: rem
+        example: dolor
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: quisquam
+        example: ut
         type: string
         custom: []
       order:
@@ -183,16 +183,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: autem
-      item_person_type_id: rem
-      value: quisquam
+      item_category_id: sed
+      item_person_type_id: dolor
+      value: ut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kVed5DvZ6EPabfc36h4a18g'
+      - 'Bearer V58d6P6g3bhfv1aEDacZke4'
     controller: null
     method: null
     route: null
@@ -232,21 +232,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: quam
+        example: voluptas
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: repellendus
+        example: sint
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: omnis
+        example: voluptatem
         type: string
         custom: []
       order:
@@ -257,16 +257,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: quam
-      item_person_type_id: repellendus
-      value: omnis
+      item_category_id: voluptas
+      item_person_type_id: sint
+      value: voluptatem
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Z68h1aVa5dDkE4ef3cP6vgb'
+      - 'Bearer aD84vEg16acf63Vbeh5ZdPk'
     controller: null
     method: null
     route: null
@@ -309,7 +309,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P3E4ebhDd6Z5acV8agvkf16'
+      - 'Bearer 5gv16PcDEeah4Vk638Zdafb'
     controller: null
     method: null
     route: null

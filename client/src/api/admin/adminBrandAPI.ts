@@ -1,4 +1,4 @@
-import { IAdminBrand } from "interfaces/Brand";
+import { IAdminBrand } from "@/interfaces/Brand";
 import axiosClient from "../axiosClient";
 
 const adminBrandAPI = {

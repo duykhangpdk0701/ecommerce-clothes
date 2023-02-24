@@ -12,5 +12,7 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         include('admin/itemColor.php');
         include('admin/itemSize.php');
         include('admin/item.php');
+        include('admin/itemStock.php');
+        include('admin/itemVariant.php');
     });
 });

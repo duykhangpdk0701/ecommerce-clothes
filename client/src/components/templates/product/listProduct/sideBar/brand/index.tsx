@@ -1,5 +1,5 @@
 import FormGroup from "@mui/material/FormGroup";
-import IBrand from "interfaces/Brand";
+import IBrand from "@/interfaces/Brand";
 import React, { FC, Fragment } from "react";
 import ListProductdSideBarBrandItem from "./item";
 import List from "@mui/material/List";

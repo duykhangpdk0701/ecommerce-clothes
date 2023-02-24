@@ -1,7 +1,7 @@
 import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
 import React, { ReactElement } from "react";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 import ListProductTemplate from "@/components/templates/admin/product/ListProduct";
 import { useQuery } from "react-query";
 import adminItemAPI from "@/api/admin/adminItemAPI";

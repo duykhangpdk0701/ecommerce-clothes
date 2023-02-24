@@ -95,15 +95,16 @@ class ItemSizeController extends Controller
      * This endpoint lets you update item size
      *
      * @param UpdateItemSizeRequest $request
-     * @param ItemSize $itemColor
+     * @param ItemSize $itemSize
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(UpdateItemSizeRequest $request, ItemSize $itemColor): \Illuminate\Http\JsonResponse
+    public function update(UpdateItemSizeRequest $request, ItemSize $itemSize): \Illuminate\Http\JsonResponse
     {
-        $result = $this->itemSizeRepository->update($itemColor, $request->validated());
+        $result = $this->itemSizeRepository->update($itemSize, $request->validated());
 
         if ($result) {
-            return response()->json(new JsonResponse(new ItemSizeResource($result)), ResponseAlias::HTTP_OK);
+            $temp = $this -> itemSizeRepository->find($itemSize->id);
+            return response()->json(new JsonResponse(new ItemSizeResource($temp)), ResponseAlias::HTTP_OK);
         }
 
         return response()->json(new JsonResponse([], __('error.brand.store_brand')), ResponseAlias::HTTP_NOT_FOUND);

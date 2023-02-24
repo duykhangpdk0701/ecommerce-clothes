@@ -4,7 +4,7 @@ import AdminLayout from "@/layout/AdminLayout";
 import Head from "next/head";
 import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
-import { NextPageWithLayout } from "../../_app";
+import { NextPageWithLayout } from "@/pages/_app";
 
 const ItemColor: NextPageWithLayout = () => {
   const itemColorQuery = useQuery({
@@ -19,7 +19,7 @@ const ItemColor: NextPageWithLayout = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ListItemColorTemplate />
+      <ListItemColorTemplate data={itemColorQuery.data} />
     </>
   );
 };

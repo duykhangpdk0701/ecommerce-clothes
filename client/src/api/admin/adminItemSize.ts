@@ -1,4 +1,4 @@
-import { IAdminItemSize } from "interfaces/ItemSize";
+import { IAdminItemSize } from "@/interfaces/ItemSize";
 import axiosClient from "../axiosClient";
 
 const adminItemSizeAPI = {

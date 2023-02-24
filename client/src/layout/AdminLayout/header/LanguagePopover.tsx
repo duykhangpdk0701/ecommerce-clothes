@@ -6,6 +6,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import Popover from "@mui/material/Popover";
+import path from "path";
+import IconEnglish from "@/assets/icons/ic_flag_en.svg";
+import IconGerman from "@/assets/icons/ic_flag_vn.svg";
+import IconFrance from "@/assets/icons/ic_flag_fr.svg";
 
 // ----------------------------------------------------------------------
 
@@ -13,17 +17,12 @@ const LANGS = [
   {
     value: "en",
     label: "English",
-    icon: "/assets/icons/ic_flag_en.svg",
+    icon: IconEnglish.src,
   },
   {
-    value: "de",
-    label: "German",
-    icon: "/assets/icons/ic_flag_de.svg",
-  },
-  {
-    value: "fr",
-    label: "French",
-    icon: "/assets/icons/ic_flag_fr.svg",
+    value: "vn",
+    label: "Viet Nam",
+    icon: IconGerman.src,
   },
 ];
 
