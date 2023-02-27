@@ -48,7 +48,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":43,"name":"Jane Ernser","email":"jakubowski.magdalen@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Jane Ernser","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":55,"name":"Hermina Prohaska","email":"lroob@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Hermina Prohaska","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -215,7 +215,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":44,"name":"Laurie Daugherty","email":"domingo.considine@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Laurie Daugherty","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":56,"name":"Kory O''Connell","email":"sbartell@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Kory O''Connell","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -253,7 +253,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":45,"name":"Mariah Balistreri","email":"pklocko@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Mariah Balistreri","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":57,"name":"Tatyana Smitham","email":"bergstrom.lloyd@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Tatyana Smitham","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -261,7 +261,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6dk4c5DV3Ehb1eafaPg86vZ'
+      - 'Bearer 8bkv163VPagacfDeE5dhZ64'
     controller: null
     method: null
     route: null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VhE35vDf61eaadgZcPkb468'
+      - 'Bearer eZd4D5gf3kav6cbP1Eh68Va'
     controller: null
     method: null
     route: null

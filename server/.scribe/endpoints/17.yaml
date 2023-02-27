@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kvdV5DaP438faZ1hbcgeE66'
+      - 'Bearer ZPdV1Daghc6e6Eb4k5v83af'
     controller: null
     method: null
     route: null
@@ -92,7 +92,59 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dD1866bae4PkfZcaEv5Vgh3'
+      - 'Bearer db64Pg5k63vcZafEDa8hV1e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/admin/item-variant/item/{id}'
+    metadata:
+      groupName: 'Admin Item Variant'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Item Variant by Item id'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6hDaf645P1kabZ8VdEv3ceg'
     controller: null
     method: null
     route: null

@@ -27,7 +27,14 @@ interface ItemStockRepositoryInterface extends RepositoryInterface
 
     /**
      * Get item stocks by conditions.
-     * @param $itemIds
+     * @param $item_id
+     * @param $size_id
+     * @param $color_id
+     * @param $price
+     * @param $quantity
+     * @param string $direction
+     * @param array $itemsIDExclude
+     * @param $itemVariantId
      * @return mixed
      */
     public function getItemsBySize($item_id, $size_id, $color_id, $price, $quantity, $direction = 'asc', $itemsIDExclude = [], $itemVariantId);

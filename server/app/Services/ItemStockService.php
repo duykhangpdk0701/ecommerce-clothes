@@ -41,16 +41,16 @@ class ItemStockService
         try {
             DB::beginTransaction();
 
-            $itemVariant = $this->itemVariantRepository->find($data['item_variant_id']);
-
             foreach ($data['inbound_item'] as $key => $inboundItem) {
-                $quantity = $inboundItem['quantity'] ?: 1;
+
+                $itemVariant = $this->itemVariantRepository->find($inboundItem['item_variant_id']);
+                $quantity = $inboundItem['quantity'] < 1 ? 1 : (int)$inboundItem["quantity"];
+
 
                 for ($i = 0; $i < $quantity; $i++) {
 
                     $inboundItem['item_id'] = $itemVariant->item_id;
-                    $inboundItem['item_variant_id'] = $data['item_variant_id'];
-                    $inboundItem['code'] = $data['item_variant_id'] . self::SPLIT_CODE . uniqid();
+                    $inboundItem['code'] = $inboundItem['item_variant_id'] . self::SPLIT_CODE . uniqid();
                     $inboundItem['sku'] = $this->generateStockSKU($itemVariant->sku);
                     $inboundItem['size_value'] = $itemVariant->size->value;
                     $inboundItem['size_id'] = $itemVariant->size->id;

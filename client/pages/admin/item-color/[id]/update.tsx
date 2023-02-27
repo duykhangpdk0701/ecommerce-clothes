@@ -9,6 +9,8 @@ import { useMutation, useQuery } from "react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
 import adminItemColorAPI from "@/api/admin/adminItemColor";
 import UpdateItemColorTemplate from "@/components/templates/admin/itemColor/update";
+import { useDispatch } from "react-redux";
+import { setSnackbar } from "@/contexts/slices/snackbarSlice";
 
 export interface IUpdateItemColorParams {
   name: string;
@@ -27,6 +29,7 @@ const updateItemColorSchema = yup.object({
 const UpdateItemColor: NextPageWithLayout = () => {
   const router = useRouter();
   const { id } = router.query;
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -76,11 +79,26 @@ const UpdateItemColor: NextPageWithLayout = () => {
         status
       );
     },
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
+      await router.push("/admin/item-color");
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "success",
+          snackbarMessage: "Update Item Color successfully",
+        })
+      );
     },
     onError: (error: any) => {
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "error",
+          snackbarMessage: error.message,
+        })
+      );
     },
   });
 

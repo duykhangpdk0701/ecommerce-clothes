@@ -18,7 +18,8 @@ body {
 
 #nprogress .bar {
   background: #1976d2;
-  height: 3px;
+  height: 4px;
+  z-index: 1200;
 }
 
 .ql-editor {

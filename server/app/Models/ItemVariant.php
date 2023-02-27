@@ -55,7 +55,7 @@ class ItemVariant extends Model
      */
     public function lowestPriceInStockItemStock(): mixed
     {
-        return $this->hasOne(ItemStock::class, 'item_variant_id', 'id')->inStock()->orderBy('price', 'ASC')->oldest();
+        return $this->hasOne(ItemStock::class, 'item_variant_id', 'id')->orderBy('price', 'ASC')->oldest();
     }
 
     /**

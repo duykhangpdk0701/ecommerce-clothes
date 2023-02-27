@@ -165,7 +165,7 @@ const ListItemColorTemplate: FC<IListItemColorTempalte> = (props) => {
   };
 
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - (data?.length ?? 0)) : 0;
 
   const filteredUsers = applySortFilter(
     data,
@@ -274,7 +274,7 @@ const ListItemColorTemplate: FC<IListItemColorTempalte> = (props) => {
                                 spacing={1}
                               >
                                 <Box
-                                  className="border h-7 w-7 border-solid rounded"
+                                  className="border h-7 w-7 border-solid rounded border-gray-300"
                                   sx={{ bgcolor: value }}
                                 ></Box>
                                 <Typography variant="subtitle2" noWrap>

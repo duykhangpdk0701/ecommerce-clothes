@@ -156,6 +156,7 @@ const UpdateItemColorTemplate: FC<IUpdateItemCategoryTemplate> = (props) => {
                 </Box>
               </Paper>
               <LoadingButton
+                loading={isLoading}
                 className="mt-6"
                 fullWidth
                 variant="contained"

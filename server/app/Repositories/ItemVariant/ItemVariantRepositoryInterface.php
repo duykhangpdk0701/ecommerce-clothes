@@ -23,7 +23,7 @@ interface ItemVariantRepositoryInterface extends RepositoryInterface
      * @param Int $id
      * @return Collection
      */
-    public function findByIdWithInStocks($id);
+    public function findByIdWithInStocks(int $id);
 
     /**
      * Find the item variant with eager loading stocks
@@ -31,7 +31,7 @@ interface ItemVariantRepositoryInterface extends RepositoryInterface
      * @param Int $id
      * @return Collection
      */
-    public function findByIdWithLowestInStock($id);
+    public function findByIdWithLowestInStock(int $id);
 
     /**
      * Toggle status of the current resource
@@ -39,4 +39,6 @@ interface ItemVariantRepositoryInterface extends RepositoryInterface
      * @param $model
      */
     public function toggleStatus($model);
+
+    public function findByItemId(int $id);
 }

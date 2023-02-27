@@ -7,17 +7,22 @@ import ListProductdSideBarBrand from "./brand";
 interface IListProductSideBar {
   listProductSideBarItemCategory: ReactNode;
   listProductSideBarBrand: ReactNode;
+  listProudctSideBarPersonType: ReactNode;
 }
 
 const ListProductSideBar: FC<IListProductSideBar> = (props) => {
-  const { listProductSideBarItemCategory, listProductSideBarBrand } = props;
+  const {
+    listProductSideBarItemCategory,
+    listProductSideBarBrand,
+    listProudctSideBarPersonType,
+  } = props;
   return (
     <Paper className="w-full py-4 px-7">
       {listProductSideBarItemCategory}
       <Divider className="border-[#F3F5F9] my-6" />
       {listProductSideBarBrand}
       <Divider className="border-[#F3F5F9] my-6" />
-      {listProductSideBarBrand}
+      {listProudctSideBarPersonType}
     </Paper>
   );
 };

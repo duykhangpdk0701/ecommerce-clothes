@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8eEZcV43ka1Pvbadgh66fD5'
+      - 'Bearer aa5D6Zd86fP134gchVvebkE'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z5836acdk4gvP1fEDebhV6a'
+      - 'Bearer E6bd85PfDZche6aV1k4va3g'
     controller: null
     method: null
     route: null
@@ -156,88 +156,14 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: sed
+        example: beatae
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: dolor
-        type: string
-        custom: []
-      value:
-        name: value
-        description: ''
-        required: true
-        example: ut
-        type: string
-        custom: []
-      order:
-        name: order
-        description: ''
-        required: false
-        example: null
-        type: string
-        custom: []
-    cleanBodyParameters:
-      item_category_id: sed
-      item_person_type_id: dolor
-      value: ut
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer V58d6P6g3bhfv1aEDacZke4'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/v1/admin/item-size/{id?}'
-    metadata:
-      groupName: 'Admin Item Size'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Update Item size'
-      description: 'This endpoint lets you update item size'
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer 1|n5QJU3KB*****************************'
-      Content-Type: application/json
-      Accept: application/json
-      API-KEY: RANDOM_STUFF
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the .'
-        required: false
-        example: 1
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      item_category_id:
-        name: item_category_id
-        description: ''
-        required: true
-        example: voluptas
-        type: string
-        custom: []
-      item_person_type_id:
-        name: item_person_type_id
-        description: ''
-        required: true
-        example: sint
+        example: earum
         type: string
         custom: []
       value:
@@ -255,8 +181,8 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: voluptas
-      item_person_type_id: sint
+      item_category_id: beatae
+      item_person_type_id: earum
       value: voluptatem
     fileParameters: []
     responses: []
@@ -264,7 +190,81 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aD84vEg16acf63Vbeh5ZdPk'
+      - 'Bearer b5Vf1gaa6P6e8vDdEcZ3k4h'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/admin/item-size/{itemSize_id}'
+    metadata:
+      groupName: 'Admin Item Size'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Item size'
+      description: 'This endpoint lets you update item size'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      itemSize_id:
+        name: itemSize_id
+        description: 'The ID of the itemSize.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      itemSize_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      item_category_id:
+        name: item_category_id
+        description: ''
+        required: true
+        example: repellat
+        type: string
+        custom: []
+      item_person_type_id:
+        name: item_person_type_id
+        description: ''
+        required: true
+        example: rerum
+        type: string
+        custom: []
+      value:
+        name: value
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        custom: []
+      order:
+        name: order
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      item_category_id: repellat
+      item_person_type_id: rerum
+      value: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer fE4dac6aZb31ekhV5PvD68g'
     controller: null
     method: null
     route: null
@@ -272,7 +272,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/v1/admin/item-size/{id?}'
+    uri: 'api/v1/admin/item-size/{itemSize}'
     metadata:
       groupName: 'Admin Item Size'
       groupDescription: ''
@@ -288,15 +288,15 @@ endpoints:
       Accept: application/json
       API-KEY: RANDOM_STUFF
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the .'
-        required: false
+      itemSize:
+        name: itemSize
+        description: ''
+        required: true
         example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      itemSize: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -307,7 +307,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5gv16PcDEeah4Vk638Zdafb'
+      - 'Bearer Vh4ab6DZk6ceP358fagdvE1'
     controller: null
     method: null
     route: null

@@ -98,7 +98,7 @@ class ItemVariantRepository extends BaseRepository implements ItemVariantReposit
     /**
      * @inheritDoc
      */
-    public function findByIdWithInStocks($id)
+    public function findByIdWithInStocks(int $id)
     {
         return $this->model->where('id', $id)->with(['itemStocks' => function ($query) {
             $query->where('stock_status_id', CONST_STOCK_IN_STOCK);
@@ -111,7 +111,7 @@ class ItemVariantRepository extends BaseRepository implements ItemVariantReposit
     /**
      * @inheritDoc
      */
-    public function findByIdWithLowestInStock($id)
+    public function findByIdWithLowestInStock(int $id)
     {
         return $this->model->where('id', $id)
             ->with(['lowestInStockItemStock', 'item', 'size'])
@@ -124,5 +124,9 @@ class ItemVariantRepository extends BaseRepository implements ItemVariantReposit
     public function toggleStatus($model)
     {
         return $this->update($model, ['status' => !$model->status]);
+    }
+
+    public function findByItemId(int $id){
+        return $this->model->where('item_id', $id)->get();
     }
 }

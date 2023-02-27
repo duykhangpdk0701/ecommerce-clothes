@@ -3,6 +3,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { setSnackbar } from "@/contexts/slices/snackbarSlice";
+import { Slide } from "@mui/material";
 
 const ActionSnackbar = () => {
   const dispatch = useAppDispatch();
@@ -35,9 +36,10 @@ const ActionSnackbar = () => {
         open={snackbarOpen}
         autoHideDuration={6000}
         onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        TransitionComponent={Slide}
       >
         <Alert
-          variant="filled"
           // onClose={handleClose}
           severity={snackbarType}
           sx={{ width: "100%" }}

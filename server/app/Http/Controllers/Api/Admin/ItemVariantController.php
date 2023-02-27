@@ -39,7 +39,7 @@ class ItemVariantController extends Controller
      *
      * @return AnonymousResourceCollection
      */
-    public function index (): AnonymousResourceCollection
+    public function index(): AnonymousResourceCollection
     {
         $result = $this->itemVariantRepository->all();
         return ItemVariantResource::collection(($result));
@@ -49,14 +49,29 @@ class ItemVariantController extends Controller
     /**
      * Show Item Variant by id
      *
-     * @param ItemVariant $itemVariant
+     * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(ItemVariant $itemVariant): \Illuminate\Http\JsonResponse
+    public function show(int $id): \Illuminate\Http\JsonResponse
     {
-        $result = $itemVariant->load('item', 'size');
+        $result = $this->itemVariantRepository->find($id);
         if ($result) {
             return response()->json(new JsonResponse(new ItemVariantResource($result)), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.brand.brand_detail')), ResponseAlias::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * Show Item Variant by Item id
+     *
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function showByItemId(int $id)
+    {
+        $result = $this->itemVariantRepository->findByItemId($id);
+        if ($result) {
+            return response()->json(new JsonResponse(ItemVariantResource::collection($result)), ResponseAlias::HTTP_OK);
         }
         return response()->json(new JsonResponse([], __('error.brand.brand_detail')), ResponseAlias::HTTP_NOT_FOUND);
     }

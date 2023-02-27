@@ -19,7 +19,7 @@ const Product: NextPageWithLayout = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ListProductTemplate />
+      <ListProductTemplate data={listProductQuery.data} />
     </>
   );
 };

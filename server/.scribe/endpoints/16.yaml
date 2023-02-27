@@ -10,7 +10,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Return list of Item Price'
+      title: 'List Item Stock'
       description: ''
       authenticated: true
       custom: []
@@ -40,7 +40,85 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bfekv84dPgaE6Vc13Z6Da5h'
+      - 'Bearer EkaP6vf8gbV1D3dca4e6Z5h'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/item-stock
+    metadata:
+      groupName: 'Admin Item Stock'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Item Stock.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      inbound_item:
+        name: inbound_item
+        description: ''
+        required: true
+        example: laboriosam
+        type: string
+        custom: []
+      'inbound_item[].item_variant_id':
+        name: 'inbound_item[].item_variant_id'
+        description: 'Must be at least 0.'
+        required: true
+        example: 80
+        type: number
+        custom: []
+      'inbound_item[].price_in':
+        name: 'inbound_item[].price_in'
+        description: 'Must be at least 1000. Must not be greater than  1000000000.'
+        required: true
+        example: 10
+        type: number
+        custom: []
+      'inbound_item[].price':
+        name: 'inbound_item[].price'
+        description: 'Must be at least 1000. Must not be greater than  1000000000.'
+        required: true
+        example: 4
+        type: number
+        custom: []
+      'inbound_item[].stock_status_id':
+        name: 'inbound_item[].stock_status_id'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      'inbound_item[].quantity':
+        name: 'inbound_item[].quantity'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      inbound_item: laboriosam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer P6b61Zk4gcaa5DdEh3vVe8f'
     controller: null
     method: null
     route: null

@@ -1,8 +1,8 @@
-import { Add, Close } from "@mui/icons-material";
+import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import { TEXT_COLOR_BLACK, TEXT_COLOR_PRICE } from "@/styles/color";
+import React, { FC, useState } from "react";
 import productWebp from "@/assets/8.webp";
 import Image from "next/image";
 // mui component
@@ -15,7 +15,18 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 
-const ProductItem = () => {
+import { sentenceCase } from "change-case";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+interface IProductItem {
+  slug: string;
+  name: string;
+  price: string;
+  thumbnail: string;
+}
+
+const ProductItem: FC<IProductItem> = (props) => {
+  const { slug, name, price, thumbnail } = props;
   const [open, setOpen] = useState(false);
 
   const handleOpenDialog = () => {
@@ -32,13 +43,10 @@ const ProductItem = () => {
         <Paper>
           <Link href={`/product/t-shirt`}>
             <div className="overflow-hidden relative">
-              <span className="block pt-[100%]"></span>
-              <Image
+              <LazyLoadImage
                 className="aspect-square"
-                src={productWebp.src}
-                alt="productItem"
-                fill
-                sizes="100vw"
+                src={thumbnail}
+                alt="thumbnail"
               />
             </div>
           </Link>
@@ -46,20 +54,14 @@ const ProductItem = () => {
             <div className="flex">
               <div className="flex-1 mr-2">
                 <Link href={`/product/t-shirt`} className="no-underline">
-                  <h3
-                    className="text-sm font-semibold mb-2"
-                    style={{ color: TEXT_COLOR_BLACK }}
-                  >
-                    Police Gray Eyeglasses
+                  <h3 className="text-sm font-semibold mb-2 text-color-black">
+                    {sentenceCase(name)}
                   </h3>
                 </Link>
                 <Rating className="text-xl" value={4} readOnly />
                 <div className="mt-1">
-                  <span
-                    className="font-semibold"
-                    style={{ color: TEXT_COLOR_PRICE }}
-                  >
-                    187,00 US$
+                  <span className="font-semibold text-color-price">
+                    From {price} US$
                   </span>
                 </div>
               </div>
@@ -69,7 +71,7 @@ const ProductItem = () => {
                   variant="outlined"
                   className="min-w-0 p-1"
                 >
-                  <Add fontSize="small" />
+                  <AddIcon fontSize="small" />
                 </Button>
               </div>
             </div>
@@ -88,7 +90,7 @@ const ProductItem = () => {
               color: (theme) => theme.palette.grey[500],
             }}
           >
-            <Close />
+            <CloseIcon />
           </IconButton>
         </DialogTitle>
         <DialogContent>

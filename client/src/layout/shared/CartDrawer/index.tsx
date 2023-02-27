@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { setCloseCartDrawer } from "../../../contexts/slices/cartDrawerSlice";
+import { setCloseCartDrawer } from "@/contexts/slices/cartDrawerSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import CartDrawerItem from "./CartDrawerItem";
 //mui component

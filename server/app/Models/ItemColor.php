@@ -19,7 +19,7 @@ class ItemColor extends Model
      * @return HasMany
      */
 
-    public function itemVariant(): HasMany
+    public function itemVariants(): HasMany
     {
         return $this->hasMany(ItemVariant::class, 'color_id', 'id');
     }

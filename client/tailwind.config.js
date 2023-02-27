@@ -12,6 +12,8 @@ module.exports = {
         "color-black": "#2B3445",
         "color-gray": "#7d879c",
         "color-price": "#d23f57",
+        "color-strong-blue": "#2B3445",
+        "color-blue": "#2065D1",
         "admin-side-bar": "#2B3445",
       },
       borderColor: {

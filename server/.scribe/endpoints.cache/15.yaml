@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hDgEaZ1P6fvV5aedk68bc34'
+      - 'Bearer hZ5v4k1ga68Eec3daVb6fDP'
     controller: null
     method: null
     route: null
@@ -74,35 +74,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quia
+        example: deleniti
         type: string
         custom: []
       sku:
         name: sku
         description: ''
         required: true
-        example: adipisci
+        example: officiis
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: sapiente
+        example: officia
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: sequi
+        example: est
         type: string
         custom: []
       item_categories:
         name: item_categories
         description: ''
         required: true
-        example: laborum
+        example: totam
         type: string
         custom: []
       thumbnail_image:
@@ -124,40 +124,40 @@ endpoints:
         name: item_person_type_id
         description: ''
         required: true
-        example: saepe
+        example: autem
         type: string
         custom: []
       item_stock_status_id:
         name: item_stock_status_id
         description: ''
         required: true
-        example: quia
+        example: veniam
         type: string
         custom: []
       item_sizes:
         name: item_sizes
         description: ''
         required: true
-        example: molestiae
+        example: autem
         type: string
         custom: []
       item_colors:
         name: item_colors
         description: ''
         required: true
-        example: magnam
+        example: alias
         type: string
         custom: []
     cleanBodyParameters:
-      name: quia
-      sku: adipisci
-      description: sapiente
-      brand_id: sequi
-      item_categories: laborum
-      item_person_type_id: saepe
-      item_stock_status_id: quia
-      item_sizes: molestiae
-      item_colors: magnam
+      name: deleniti
+      sku: officiis
+      description: officia
+      brand_id: est
+      item_categories: totam
+      item_person_type_id: autem
+      item_stock_status_id: veniam
+      item_sizes: autem
+      item_colors: alias
     fileParameters:
       thumbnail_image: null
       detail_images:
@@ -167,7 +167,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pf1e34V6EDakZ8bvcg6h5ad'
+      - 'Bearer E3Z6h5vk1fc4d8DPaagV6be'
     controller: null
     method: null
     route: null

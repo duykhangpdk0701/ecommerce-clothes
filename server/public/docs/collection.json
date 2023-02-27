@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f20620c7-da08-491a-a0db-d5e253944ac5",
+        "_postman_id": "f7be12e3-4865-40ea-8e8d-56ff23369b51",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -63,7 +63,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "11",
+                                    "value": "20",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -242,7 +242,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"laudantium\",\"status\":false}"
+                            "raw": "{\"name\":\"vitae\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create a brand"
                     },
@@ -369,55 +369,55 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "quia",
+                                    "value": "deleniti",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sku",
-                                    "value": "adipisci",
+                                    "value": "officiis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "sapiente",
+                                    "value": "officia",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "brand_id",
-                                    "value": "sequi",
+                                    "value": "est",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_categories",
-                                    "value": "laborum",
+                                    "value": "totam",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_person_type_id",
-                                    "value": "saepe",
+                                    "value": "autem",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_stock_status_id",
-                                    "value": "quia",
+                                    "value": "veniam",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_sizes",
-                                    "value": "molestiae",
+                                    "value": "autem",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_colors",
-                                    "value": "magnam",
+                                    "value": "alias",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -575,7 +575,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Ducimus eaque culpa officia et cupiditate animi nisi.\",\"order\":\"perferendis\",\"name\":{\"vi\":\"tbgyxbmqeznziyahtvit\",\"en\":\"azjre\"}}"
+                            "raw": "{\"description\":\"Numquam veniam doloribus consequatur ex velit.\",\"order\":\"autem\",\"name\":{\"vi\":\"wifqtvueww\",\"en\":\"x\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -615,7 +615,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Modi ea rerum quia ullam natus.\",\"order\":\"a\",\"name\":{\"vi\":\"enim\",\"en\":\"sunt\"}}"
+                            "raw": "{\"description\":\"Corrupti voluptatem sit velit maiores autem.\",\"order\":\"porro\",\"name\":{\"vi\":\"velit\",\"en\":\"sunt\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -822,7 +822,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"sed\",\"item_person_type_id\":\"dolor\",\"value\":\"ut\"}"
+                            "raw": "{\"item_category_id\":\"beatae\",\"item_person_type_id\":\"earum\",\"value\":\"voluptatem\"}"
                         },
                         "description": "This endpoint lets you create an item size"
                     },
@@ -833,15 +833,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-size\/:id",
+                            "path": "api\/v1\/admin\/item-size\/:itemSize_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:id",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:itemSize_id",
                             "variable": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
+                                    "id": "itemSize_id",
+                                    "key": "itemSize_id",
                                     "value": "1",
-                                    "description": "The ID of the ."
+                                    "description": "The ID of the itemSize."
                                 }
                             ]
                         },
@@ -862,7 +862,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"voluptas\",\"item_person_type_id\":\"sint\",\"value\":\"voluptatem\"}"
+                            "raw": "{\"item_category_id\":\"repellat\",\"item_person_type_id\":\"rerum\",\"value\":\"consequatur\"}"
                         },
                         "description": "This endpoint lets you update item size"
                     },
@@ -873,15 +873,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-size\/:id",
+                            "path": "api\/v1\/admin\/item-size\/:itemSize",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:id",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-size\/:itemSize",
                             "variable": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
+                                    "id": "itemSize",
+                                    "key": "itemSize",
                                     "value": "1",
-                                    "description": "The ID of the ."
+                                    "description": ""
                                 }
                             ]
                         },
@@ -912,7 +912,7 @@
             "description": "",
             "item": [
                 {
-                    "name": "Return list of Item Price",
+                    "name": "List Item Stock",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -959,6 +959,38 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Create Item Stock.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-stock",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-stock"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"inbound_item\":\"laboriosam\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
                 }
             ]
         },
@@ -1029,6 +1061,63 @@
                                     "key": "id",
                                     "value": "6",
                                     "description": "The ID of the item variant."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Show Item Variant by Item id",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item-variant\/item\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-variant\/item\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the item."
                                 }
                             ]
                         },
@@ -1236,7 +1325,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"veniam\",\"status\":false}"
+                            "raw": "{\"name\":\"est\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create an item color"
                     },
@@ -1247,15 +1336,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "path": "api\/v1\/admin\/item-color\/:itemColor_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:itemColor_id",
                             "variable": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
+                                    "id": "itemColor_id",
+                                    "key": "itemColor_id",
                                     "value": "1",
-                                    "description": "The ID of the ."
+                                    "description": "The ID of the itemColor."
                                 }
                             ]
                         },
@@ -1276,7 +1365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quia\"}"
+                            "raw": "{\"name\":\"veritatis\"}"
                         },
                         "description": "This endpoint lets you update item color"
                     },
@@ -1287,15 +1376,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/admin\/item-color\/:id",
+                            "path": "api\/v1\/admin\/item-color\/:itemColor",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:id",
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item-color\/:itemColor",
                             "variable": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
+                                    "id": "itemColor",
+                                    "key": "itemColor",
                                     "value": "1",
-                                    "description": "The ID of the ."
+                                    "description": ""
                                 }
                             ]
                         },
@@ -1483,7 +1572,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"upfewtmaa\",\"last_name\":\"swdccdhvywkj\",\"email\":\"edd.reinger@example.org\",\"password\":\"et\",\"role\":\"ab\",\"phone\":134.08659449,\"city_id\":\"saepe\",\"district_id\":\"qui\",\"ward_id\":\"fuga\",\"address\":\"expedita\"}"
+                            "raw": "{\"first_name\":\"lxwkt\",\"last_name\":\"sooggoggx\",\"email\":\"bveum@example.net\",\"password\":\"rerum\",\"role\":\"et\",\"phone\":5335184.44293063,\"city_id\":\"labore\",\"district_id\":\"occaecati\",\"ward_id\":\"minima\",\"address\":\"sequi\"}"
                         },
                         "description": "This endpoint lets you create a user"
                     },
@@ -1523,7 +1612,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rzbkuxzgt\",\"email\":\"dangelo.mcclure@example.org\",\"role\":\"perspiciatis\"}"
+                            "raw": "{\"name\":\"wplivgtcfpmoh\",\"email\":\"angeline51@example.org\",\"role\":\"repudiandae\"}"
                         },
                         "description": "This endpoint lets you update user"
                     },
@@ -1609,7 +1698,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":43,\"name\":\"Jane Ernser\",\"email\":\"jakubowski.magdalen@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Jane Ernser\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":55,\"name\":\"Hermina Prohaska\",\"email\":\"lroob@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Hermina Prohaska\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1694,7 +1783,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":44,\"name\":\"Laurie Daugherty\",\"email\":\"domingo.considine@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Laurie Daugherty\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":56,\"name\":\"Kory O'Connell\",\"email\":\"sbartell@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Kory O'Connell\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1730,7 +1819,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":45,\"name\":\"Mariah Balistreri\",\"email\":\"pklocko@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Mariah Balistreri\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":57,\"name\":\"Tatyana Smitham\",\"email\":\"bergstrom.lloyd@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Tatyana Smitham\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1845,7 +1934,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Rudolph Marquard\",\"slug\":\"rudolph-marquard\",\"order\":0,\"status\":1}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -2192,7 +2281,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "10",
+                                    "value": "19",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -2243,7 +2332,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":130,\"city_id\":10,\"name\":\"Ba B\\u1ec3\",\"slug\":\"bac-kan-ba-be\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":131,\"city_id\":10,\"name\":\"B\\u1eafc K\\u1ea1n\",\"slug\":\"bac-kan-bac-kan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":132,\"city_id\":10,\"name\":\"B\\u1ea1ch Th\\u00f4ng\",\"slug\":\"bac-kan-bach-thong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":133,\"city_id\":10,\"name\":\"Ch\\u1ee3 \\u0110\\u1ed3n\",\"slug\":\"bac-kan-cho-don\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":134,\"city_id\":10,\"name\":\"Ch\\u1ee3 M\\u1edbi\",\"slug\":\"bac-kan-cho-moi\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":135,\"city_id\":10,\"name\":\"Na R\\u00ec\",\"slug\":\"bac-kan-na-ri\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":136,\"city_id\":10,\"name\":\"Ng\\u00e2n S\\u01a1n\",\"slug\":\"bac-kan-ngan-son\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":137,\"city_id\":10,\"name\":\"P\\u00e1c N\\u1eb7m\",\"slug\":\"bac-kan-pac-nam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":212,\"city_id\":19,\"name\":\"B\\u1ea3o L\\u1ea1c\",\"slug\":\"cao-bang-bao-lac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":213,\"city_id\":19,\"name\":\"B\\u1ea3o L\\u00e2m\",\"slug\":\"cao-bang-bao-lam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":214,\"city_id\":19,\"name\":\"Cao B\\u1eb1ng\",\"slug\":\"cao-bang-cao-bang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":215,\"city_id\":19,\"name\":\"H\\u1ea1 Lang\",\"slug\":\"cao-bang-ha-lang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":216,\"city_id\":19,\"name\":\"H\\u00e0 Qu\\u1ea3ng\",\"slug\":\"cao-bang-ha-quang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":217,\"city_id\":19,\"name\":\"H\\u00f2a An\",\"slug\":\"cao-bang-hoa-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":218,\"city_id\":19,\"name\":\"Nguy\\u00ean B\\u00ecnh\",\"slug\":\"cao-bang-nguyen-binh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":219,\"city_id\":19,\"name\":\"Ph\\u1ee5c H\\u00f2a\",\"slug\":\"cao-bang-phuc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":220,\"city_id\":19,\"name\":\"Qu\\u1ea3ng Uy\\u00ean\",\"slug\":\"cao-bang-quang-uyen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":221,\"city_id\":19,\"name\":\"Th\\u1ea1ch An\",\"slug\":\"cao-bang-thach-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":222,\"city_id\":19,\"name\":\"Th\\u00f4ng N\\u00f4ng\",\"slug\":\"cao-bang-thong-nong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":223,\"city_id\":19,\"name\":\"Tr\\u00e0 L\\u0129nh\",\"slug\":\"cao-bang-tra-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":224,\"city_id\":19,\"name\":\"Tr\\u00f9ng Kh\\u00e1nh\",\"slug\":\"cao-bang-trung-khanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2260,7 +2349,7 @@
                                 {
                                     "id": "district_id",
                                     "key": "district_id",
-                                    "value": "2",
+                                    "value": "19",
                                     "description": "Get ward after choose district."
                                 }
                             ]
@@ -2311,7 +2400,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":17,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c\",\"slug\":\"ho-chi-minh-binh-tan-an-lac\",\"geometry\":null,\"center\":\"[10.725189,106.611877]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[21.271919,106.858543],\\\\\\\"br\\\\\\\":[21.382446,107.033302]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":18,\"city_id\":1,\"district_id\":2,\"name\":\"An L\\u1ea1c A\",\"slug\":\"ho-chi-minh-binh-tan-an-lac-a\",\"geometry\":null,\"center\":\"[10.746428,106.618603]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.730873,106.608978],\\\\\\\"br\\\\\\\":[10.757444,106.623894]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":19,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa\",\"geometry\":null,\"center\":\"[10.805627,106.604079]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.78757,106.595116],\\\\\\\"br\\\\\\\":[10.826193,106.61573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":20,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a A\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-a\",\"geometry\":null,\"center\":\"[10.783846,106.607692]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.773629,106.592697],\\\\\\\"br\\\\\\\":[10.796749,106.621246]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":21,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh H\\u01b0ng H\\u00f2a B\",\"slug\":\"ho-chi-minh-binh-tan-binh-hung-hoa-b\",\"geometry\":null,\"center\":\"[10.805476,106.591707]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.775042,106.582001],\\\\\\\"br\\\\\\\":[10.829794,106.602936]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":22,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong\",\"geometry\":null,\"center\":\"[10.765981,106.616146]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.755939,106.608429],\\\\\\\"br\\\\\\\":[10.776417,106.62574]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":23,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng A\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-a\",\"geometry\":null,\"center\":\"[10.769627,106.596629]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.757954,106.576408],\\\\\\\"br\\\\\\\":[10.778677,106.609573]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":24,\"city_id\":1,\"district_id\":2,\"name\":\"B\\u00ecnh Tr\\u1ecb \\u0110\\u00f4ng B\",\"slug\":\"ho-chi-minh-binh-tan-binh-tri-dong-b\",\"geometry\":null,\"center\":\"[10.745272,106.60885]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.727364,106.597572],\\\\\\\"br\\\\\\\":[10.758321,106.620094]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":25,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao\",\"geometry\":null,\"center\":\"[10.759283,106.588809]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.743312,106.566978],\\\\\\\"br\\\\\\\":[10.771526,106.606071]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":26,\"city_id\":1,\"district_id\":2,\"name\":\"T\\u00e2n T\\u1ea1o A\",\"slug\":\"ho-chi-minh-binh-tan-tan-tao-a\",\"geometry\":null,\"center\":\"[10.742232,106.580911]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.722403,106.55822],\\\\\\\"br\\\\\\\":[10.760674,106.602715]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":250,\"city_id\":1,\"district_id\":19,\"name\":\"B\\u00ecnh Thu\\u1eadn\",\"slug\":\"ho-chi-minh-quan-7-binh-thuan\",\"geometry\":null,\"center\":\"[10.742706,106.723159]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.737527,106.715584],\\\\\\\"br\\\\\\\":[10.750056,106.730316]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":251,\"city_id\":1,\"district_id\":19,\"name\":\"Ph\\u00fa M\\u1ef9\",\"slug\":\"ho-chi-minh-quan-7-phu-my\",\"geometry\":null,\"center\":\"[10.707926,106.736788]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.697793,106.724426],\\\\\\\"br\\\\\\\":[10.71841,106.751785]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":252,\"city_id\":1,\"district_id\":19,\"name\":\"Ph\\u00fa Thu\\u1eadn\",\"slug\":\"ho-chi-minh-quan-7-phu-thuan\",\"geometry\":null,\"center\":\"[10.730578,106.746394]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.712728,106.730316],\\\\\\\"br\\\\\\\":[10.744901,106.76635]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":253,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n H\\u01b0ng\",\"slug\":\"ho-chi-minh-quan-7-tan-hung\",\"geometry\":null,\"center\":\"[10.745433,106.697929]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.735972,106.689758],\\\\\\\"br\\\\\\\":[10.752583,106.704926]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":254,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Ki\\u1ec3ng\",\"slug\":\"ho-chi-minh-quan-7-tan-kieng\",\"geometry\":null,\"center\":\"[10.748668,106.71021]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.744284,106.704086],\\\\\\\"br\\\\\\\":[10.752704,106.716431]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":255,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Phong\",\"slug\":\"ho-chi-minh-quan-7-tan-phong\",\"geometry\":null,\"center\":\"[10.729565,106.705428]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.718964,106.68985],\\\\\\\"br\\\\\\\":[10.739738,106.720375]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":256,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Ph\\u00fa\",\"slug\":\"ho-chi-minh-quan-7-tan-phu\",\"geometry\":null,\"center\":\"[10.726954,106.725295]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.712423,106.712189],\\\\\\\"br\\\\\\\":[10.738284,106.736633]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":257,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Quy\",\"slug\":\"ho-chi-minh-quan-7-tan-quy\",\"geometry\":null,\"center\":\"[10.741832,106.709831]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.738194,106.703384],\\\\\\\"br\\\\\\\":[10.74526,106.715652]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":258,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Thu\\u1eadn \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-quan-7-tan-thuan-dong\",\"geometry\":null,\"center\":\"[10.758638,106.738792]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.737533,106.720802],\\\\\\\"br\\\\\\\":[10.777405,106.752556]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":259,\"city_id\":1,\"district_id\":19,\"name\":\"T\\u00e2n Thu\\u1eadn T\\u00e2y\",\"slug\":\"ho-chi-minh-quan-7-tan-thuan-tay\",\"geometry\":null,\"center\":\"[10.750968,106.721614]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.745457,106.715523],\\\\\\\"br\\\\\\\":[10.756325,106.728569]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2384,7 +2473,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-23T08:17:45.000000Z\",\"updated_at\":\"2023-02-23T08:17:45.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-23T08:17:45.000000Z\",\"updated_at\":\"2023-02-23T08:17:45.000000Z\"},{\"id\":2,\"name\":\"Green\",\"value\":\"#00c113\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-24T10:00:32.000000Z\",\"updated_at\":\"2023-02-25T04:29:56.000000Z\"},{\"id\":3,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-24T10:53:35.000000Z\",\"updated_at\":\"2023-02-24T10:53:35.000000Z\"},{\"id\":4,\"name\":\"Gray\",\"value\":\"#a7a7a7\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-25T04:18:08.000000Z\",\"updated_at\":\"2023-02-25T04:18:08.000000Z\"},{\"id\":5,\"name\":\"Blue\",\"value\":\"#4316f6\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-25T04:19:02.000000Z\",\"updated_at\":\"2023-02-25T04:19:02.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":5,\"total\":5}}",
                             "name": ""
                         }
                     ]
@@ -2473,7 +2562,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "5",
+                                    "value": "14",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -2496,7 +2585,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=5&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=14&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -2561,7 +2650,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "laboriosam",
+                                    "value": "ex",
                                     "description": "The slug of the item."
                                 }
                             ]

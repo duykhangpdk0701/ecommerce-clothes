@@ -36,7 +36,7 @@ class ItemStockController extends Controller
     }
 
     /**
-     * Return list of Item Price
+     *  List Item Stock
      *
      * @param UpdateItemStockPriceRequest $request
      * @return AnonymousResourceCollection
@@ -48,7 +48,7 @@ class ItemStockController extends Controller
     }
 
     /**
-     * Update the price of the specified resource in storage.
+     * Create Item Stock.
      *
      * @param StoreItemStockRequest $request
      * @return \Illuminate\Http\JsonResponse
@@ -56,6 +56,7 @@ class ItemStockController extends Controller
      */
     public function store(StoreItemStockRequest $request): \Illuminate\Http\JsonResponse
     {
+
         $result = $this->itemStockService->create($request->validated());
         if ($result) {
             return response()->json(new JsonResponse(new ItemStockResource($result)), ResponseAlias::HTTP_OK);

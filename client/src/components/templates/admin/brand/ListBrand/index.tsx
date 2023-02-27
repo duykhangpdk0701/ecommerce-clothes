@@ -22,20 +22,28 @@ import TablePagination from "@mui/material/TablePagination";
 //component
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
+import Label from "@/components/shared/label";
 import ListBrandHead from "./section/ListBrandHead";
 import ListBrandToolbar from "./section/ListBrandToolbar";
 import USERLIST from "@/_mock/user";
 import Link from "next/link";
-import IBrand from "@/interfaces/Brand";
+import { IAdminBrand } from "@/interfaces/Brand";
+import { sentenceCase } from "change-case";
 
 const TABLE_HEAD = [
+  { id: "id", label: "Id", alignRight: false },
   { id: "name", label: "Name", alignRight: false },
+  { id: "status", label: "Status", alignRight: false },
   { id: "" },
 ];
 
 type OrderByType = "name";
 
-function descendingComparator(a: IBrand, b: IBrand, orderBy: OrderByType) {
+function descendingComparator(
+  a: IAdminBrand,
+  b: IAdminBrand,
+  orderBy: OrderByType
+) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
   }
@@ -47,11 +55,15 @@ function descendingComparator(a: IBrand, b: IBrand, orderBy: OrderByType) {
 
 function getComparator(order: "asc" | "desc", orderBy: OrderByType) {
   return order === "desc"
-    ? (a: IBrand, b: IBrand) => descendingComparator(a, b, orderBy)
-    : (a: IBrand, b: IBrand) => -descendingComparator(a, b, orderBy);
+    ? (a: IAdminBrand, b: IAdminBrand) => descendingComparator(a, b, orderBy)
+    : (a: IAdminBrand, b: IAdminBrand) => -descendingComparator(a, b, orderBy);
 }
 
-function applySortFilter(array: IBrand[] = [], comparator: any, query: string) {
+function applySortFilter(
+  array: IAdminBrand[] = [],
+  comparator: any,
+  query: string
+) {
   const stabilizedThis = array.map((el, index) => ({ el, index }));
   stabilizedThis.sort((a, b) => {
     const order = comparator(a.el, b.el);
@@ -68,7 +80,7 @@ function applySortFilter(array: IBrand[] = [], comparator: any, query: string) {
 }
 
 interface IListBrandTemplate {
-  data?: IBrand[];
+  data?: IAdminBrand[];
 }
 
 const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
@@ -203,7 +215,7 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const { id, name, slug } = row;
+                      const { id, name, slug, status } = row;
                       const selectedUser = selected.indexOf(name) !== -1;
 
                       return (
@@ -221,12 +233,18 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                                 onChange={(event) => handleClick(event, name)}
                               />
                             </TableCell>
-
-                            <TableCell
-                              component="th"
-                              scope="row"
-                              padding="none"
-                            >
+                            <TableCell component="th" scope="row">
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Typography variant="subtitle2" noWrap>
+                                  {id}
+                                </Typography>
+                              </Stack>
+                            </TableCell>
+                            <TableCell component="th" scope="row">
                               <Stack
                                 direction="row"
                                 alignItems="center"
@@ -238,6 +256,15 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                               </Stack>
                             </TableCell>
 
+                            <TableCell align="left">
+                              <Label
+                                color={status == false ? "error" : "success"}
+                              >
+                                {sentenceCase(
+                                  status == true ? "active" : "unactive"
+                                )}
+                              </Label>
+                            </TableCell>
                             <TableCell align="right">
                               <IconButton
                                 size="large"
@@ -272,7 +299,11 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                               },
                             }}
                           >
-                            <Link href={`/admin/brand/${id}/update`} passHref>
+                            <Link
+                              href={`/admin/brand/${id}/update`}
+                              passHref
+                              className="no-underline text-black"
+                            >
                               <MenuItem>
                                 <Iconify
                                   icon={"eva:edit-fill"}

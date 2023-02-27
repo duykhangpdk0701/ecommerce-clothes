@@ -9,6 +9,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
 import adminItemColorAPI from "@/api/admin/adminItemColor";
+import { useAppDispatch } from "@/hooks/redux";
+import { setSnackbar } from "@/contexts/slices/snackbarSlice";
 
 export interface ICreateItemColorParams {
   name: string;
@@ -26,6 +28,7 @@ const createItemColorSchema = yup.object({
 
 const CreateItemColor: NextPageWithLayout = () => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -47,13 +50,26 @@ const CreateItemColor: NextPageWithLayout = () => {
       setLoading(true);
       return adminItemColorAPI.createItemColor(name, color, order);
     },
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: async (data) => {
+      await router.push("/admin/item-color");
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "success",
+          snackbarMessage: "Create Item Color successfully",
+        })
+      );
     },
     onError: (error: any) => {
-      console.log(error);
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "error",
+          snackbarMessage: error.message,
+        })
+      );
     },
   });
 

@@ -25,7 +25,7 @@ import {
   Controller,
 } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
-import { ICreateItemColorParams } from "../../../../../../pages/admin/item-color/create";
+import { ICreateItemColorParams } from "@/pages/admin/item-color/create";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface ICreateItemCategoryTemplate {
@@ -155,6 +155,7 @@ const CreateItemColorTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
                 </Box>
               </Paper>
               <LoadingButton
+                loading={isLoading}
                 className="mt-6"
                 fullWidth
                 variant="contained"

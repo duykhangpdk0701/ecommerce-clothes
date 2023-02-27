@@ -19,17 +19,22 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
+import Box from "@mui/material/Box";
 //component
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
 import ListBrandHead from "./section/ListHead";
+import Label from "@/components/shared/label";
 import ListBrandToolbar from "./section/ListToolbar";
 import USERLIST from "@/_mock/user";
 import Link from "next/link";
+import { sentenceCase } from "change-case";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const TABLE_HEAD = [
   { id: "id", label: "ID", alignRight: false },
   { id: "name", label: "Name", alighnRight: false },
+  { id: "created_at", label: "Create At", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
   { id: "" },
 ];
@@ -214,7 +219,14 @@ const ListProductTemplate: FC<IListProductTempalte> = (props) => {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const { id, name, slug } = row;
+                      const {
+                        id,
+                        name,
+                        slug,
+                        status,
+                        thumbnail_url,
+                        created_at,
+                      } = row;
                       const selectedUser = selected.indexOf(name) !== -1;
 
                       return (
@@ -233,6 +245,18 @@ const ListProductTemplate: FC<IListProductTempalte> = (props) => {
                               />
                             </TableCell>
 
+                            <TableCell component="th" scope="row">
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Typography variant="subtitle2" noWrap>
+                                  {id}
+                                </Typography>
+                              </Stack>
+                            </TableCell>
+
                             <TableCell
                               component="th"
                               scope="row"
@@ -243,10 +267,44 @@ const ListProductTemplate: FC<IListProductTempalte> = (props) => {
                                 alignItems="center"
                                 spacing={2}
                               >
+                                <Box className="h-12 w-12 rounded-xl overflow-hidden">
+                                  <LazyLoadImage
+                                    className="h-full object-cover"
+                                    src={thumbnail_url}
+                                    alt="thumbnail"
+                                  />
+                                </Box>
+                                <Link
+                                  href={`/admin/prduct/${slug}`}
+                                  passHref
+                                  className="text-inherit no-underline hover:underline"
+                                >
+                                  <Typography variant="subtitle2" noWrap>
+                                    {name}
+                                  </Typography>
+                                </Link>
+                              </Stack>
+                            </TableCell>
+
+                            <TableCell component="th" scope="row">
+                              <Stack
+                                direction="row"
+                                alignItems="center"
+                                spacing={2}
+                              >
                                 <Typography variant="subtitle2" noWrap>
-                                  {name}
+                                  {created_at}
                                 </Typography>
                               </Stack>
+                            </TableCell>
+                            <TableCell align="left">
+                              <Label
+                                color={status == false ? "error" : "success"}
+                              >
+                                {sentenceCase(
+                                  status == true ? "active" : "unactive"
+                                )}
+                              </Label>
                             </TableCell>
 
                             <TableCell align="right">
