@@ -45,7 +45,7 @@ class ItemVariant extends Model
      * Relationship with ItemStock
      * @return HasMany
      */
-    public function itemStock(): HasMany
+    public function itemStocks(): HasMany
     {
         return $this->hasMany(ItemStock::class, 'item_variant_id', 'id');
     }

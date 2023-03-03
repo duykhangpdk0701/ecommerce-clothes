@@ -39,7 +39,7 @@ class ItemColor extends Model
      * @return HasMany
      */
 
-    public function itemStock(): HasMany
+    public function itemStocks(): HasMany
     {
         return $this->hasMany(ItemStock::class, 'color_id', 'id');
     }

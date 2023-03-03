@@ -8,6 +8,8 @@ interface IListProductSideBar {
   listProductSideBarItemCategory: ReactNode;
   listProductSideBarBrand: ReactNode;
   listProudctSideBarPersonType: ReactNode;
+  listProductSideBarItemColor: ReactNode;
+  listProductSideBarItemSize: ReactNode;
 }
 
 const ListProductSideBar: FC<IListProductSideBar> = (props) => {
@@ -15,6 +17,8 @@ const ListProductSideBar: FC<IListProductSideBar> = (props) => {
     listProductSideBarItemCategory,
     listProductSideBarBrand,
     listProudctSideBarPersonType,
+    listProductSideBarItemColor,
+    listProductSideBarItemSize,
   } = props;
   return (
     <Paper className="w-full py-4 px-7">
@@ -23,6 +27,10 @@ const ListProductSideBar: FC<IListProductSideBar> = (props) => {
       {listProductSideBarBrand}
       <Divider className="border-[#F3F5F9] my-6" />
       {listProudctSideBarPersonType}
+      <Divider className="border-[#F3F5F9] my-6" />
+      {listProductSideBarItemSize}
+      <Divider className="border-[#F3F5F9] my-6" />
+      {listProductSideBarItemColor}
     </Paper>
   );
 };

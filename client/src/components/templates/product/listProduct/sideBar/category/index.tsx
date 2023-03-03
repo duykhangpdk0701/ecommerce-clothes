@@ -23,7 +23,10 @@ const ListProductSideBarItemCategory: FC<IListProductSideBarItemCategory> = (
             </Fragment>
           ) : (
             <Fragment key={item.id}>
-              <ListProductSideBarItemCategoryItemChildren name={item.name.en} />
+              <ListProductSideBarItemCategoryItemChildren
+                name={item.name.en}
+                id={item.id}
+              />
             </Fragment>
           )
         )}

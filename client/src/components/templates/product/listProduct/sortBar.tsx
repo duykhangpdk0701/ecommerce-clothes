@@ -10,8 +10,22 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 // mui icon
 import AppsIcon from "@mui/icons-material/Apps";
 import ViewListIcon from "@mui/icons-material/ViewList";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { setListAciton } from "@/contexts/slices/listProductSlice";
+import { useFormContext, Controller } from "react-hook-form";
 
 const ListProductSortBar = () => {
+  const listProductState = useAppSelector((state) => state.ListProduct);
+  const dispatch = useAppDispatch();
+  const { control } = useFormContext();
+
+  const handleAlignment = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: "grid" | "list"
+  ) => {
+    dispatch(setListAciton(newAlignment));
+  };
+
   return (
     <Paper className="flex justify-between py-2 px-5 mb-14 items-center">
       <div>
@@ -27,30 +41,42 @@ const ListProductSortBar = () => {
           <FormLabel className={`text-sm`} style={{ color: TEXT_COLOR_GRAY }}>
             Sort by:
           </FormLabel>
-          <Select
-            defaultValue="relevance"
-            size="small"
-            className="min-w-[150px]"
-          >
-            <MenuItem className="text-sm" value="relevance">
-              Relevance
-            </MenuItem>
-            <MenuItem className="text-sm" value="date">
-              Date
-            </MenuItem>
-            <MenuItem className="text-sm" value="low-to-high">
-              Price Low to High
-            </MenuItem>
-            <MenuItem className="text-sm" value="high-to-low">
-              Price High to Low
-            </MenuItem>
-          </Select>
+          <Controller
+            defaultValue=""
+            name="sortBy"
+            control={control}
+            render={({ field }) => (
+              <Select
+                value={field.value}
+                onChange={field.onChange}
+                size="small"
+                className="min-w-[150px]"
+              >
+                <MenuItem className="text-sm" value={1}>
+                  Relevance
+                </MenuItem>
+                <MenuItem className="text-sm" value={2}>
+                  Date
+                </MenuItem>
+                <MenuItem className="text-sm" value={8}>
+                  Price Low to High
+                </MenuItem>
+                <MenuItem className="text-sm" value={7}>
+                  Price High to Low
+                </MenuItem>
+              </Select>
+            )}
+          />
         </div>
         <div className="flex gap-2 items-center">
           <FormLabel className={`text-sm`} style={{ color: TEXT_COLOR_GRAY }}>
             View:
           </FormLabel>
-          <ToggleButtonGroup>
+          <ToggleButtonGroup
+            value={listProductState.listType}
+            onChange={handleAlignment}
+            exclusive
+          >
             <ToggleButton value="grid" aria-label="grid">
               <AppsIcon />
             </ToggleButton>

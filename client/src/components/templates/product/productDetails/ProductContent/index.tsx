@@ -1,9 +1,30 @@
-import { TEXT_COLOR_BLACK, TEXT_COLOR_GRAY } from "@/styles/color";
-import { Button, Container, Grid, Typography, Rating } from "@mui/material";
-import React, { useState, useRef, useEffect } from "react";
-import Slider from "react-slick";
+import IProduct from "@/interfaces/Product";
+import { IProductDetailParmas } from "@/pages/product/[slug]";
 
-const ProductContent = () => {
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Rating from "@mui/material/Rating";
+import RadioGroup from "@mui/material/RadioGroup";
+import Radio from "@mui/material/Radio";
+
+import CircleIcon from "@mui/icons-material/Circle";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
+import { sentenceCase } from "change-case";
+import React, { useState, useRef, useEffect, FC } from "react";
+import { Control } from "react-hook-form/dist/types";
+import Slider from "react-slick";
+import { Controller } from "react-hook-form";
+
+interface IProductContent {
+  control: Control<IProductDetailParmas, any>;
+  itemDetail?: IProduct;
+}
+
+const ProductContent: FC<IProductContent> = (props) => {
+  const { control, itemDetail } = props;
   const slider1Ref = useRef<Slider>();
   const slider2Ref = useRef<Slider>();
   useEffect(() => {
@@ -76,39 +97,99 @@ const ProductContent = () => {
         </Grid>
 
         <Grid item xs={6}>
-          <Typography variant="h1" className="text-3xl font-bold mb-2">
-            Say Ban Matt Black
-          </Typography>
-          <div className="flex mb-2 items-baseline">
-            <div className="text-sm" style={{ color: TEXT_COLOR_GRAY }}>
-              Brand:
-            </div>
-            <h6 className="text-sm font-medium">Xiaomi</h6>
-          </div>
-          <div className="flex mb-2 items-center">
-            <div className="text-sm" style={{ color: TEXT_COLOR_GRAY }}>
-              Rate:
-            </div>
-            <Rating
-              size="small"
-              name="read-only"
-              className="mx-1"
-              value={5}
-              readOnly
-            />
-          </div>
-          <div className="pt-2 mb-6">
-            <Typography variant="h2" className="text-2xl font-bold mb-1">
-              258,000US
+          <form>
+            <Typography variant="h1" className="text-3xl font-bold mb-2">
+              {itemDetail && sentenceCase(itemDetail.name)}
             </Typography>
-            <div>Stock Avalable</div>
-            <div className="mb-6">
-              <h6>Option</h6>
+            <div className="flex mb-2 items-baseline">
+              <div className="text-sm text-color-gray">Brand: </div>{" "}
+              <h6 className="text-sm font-medium">
+                {itemDetail && sentenceCase(itemDetail.brand.name)}
+              </h6>
             </div>
-          </div>
-          <Button variant="contained" className="mb-9 px-7" size="medium">
-            Add to cart
-          </Button>
+            <div className="flex mb-2 items-center">
+              <div className="text-sm text-color-gray">Rate:</div>
+              <Rating
+                size="small"
+                name="read-only"
+                className="mx-1"
+                value={5}
+                readOnly
+              />
+            </div>
+            <div className="pt-2 mb-6">
+              <div className="mb-4">
+                <Typography variant="h6" className="mb-2 text-sm font-semibold">
+                  Option
+                </Typography>
+                <Controller
+                  name="itemColor"
+                  control={control}
+                  render={({ field }) => (
+                    <RadioGroup {...field} row>
+                      {itemDetail?.sizes.map((item) => (
+                        <Radio
+                          key={item.id}
+                          value={item.id}
+                          icon={
+                            <CircleIcon
+                              sx={{ color: item.value }}
+                              className="w-10 h-10 rounded-full border border-solid border-gray-300"
+                            />
+                          }
+                          checkedIcon={
+                            <CheckCircleIcon
+                              sx={{ color: item.value }}
+                              className="w-10 h-10 rounded-full border border-solid border-gray-300"
+                            />
+                          }
+                        />
+                      ))}
+                    </RadioGroup>
+                  )}
+                />
+              </div>
+
+              <div className="mb-4">
+                <Typography variant="h6" className="mb-2 text-sm font-semibold">
+                  Option
+                </Typography>
+                <Controller
+                  name="itemSize"
+                  control={control}
+                  render={({ field }) => (
+                    <RadioGroup {...field} row>
+                      {itemDetail?.sizes.map((item) => (
+                        <Radio
+                          key={item.id}
+                          value={item.id}
+                          icon={<Button size="small">{item.value}</Button>}
+                          checkedIcon={
+                            <Button variant="contained" size="small">
+                              {item.value}
+                            </Button>
+                          }
+                        />
+                      ))}
+                    </RadioGroup>
+                  )}
+                />
+              </div>
+
+              <Typography variant="h2" className="text-2xl font-bold mb-1">
+                258,000US
+              </Typography>
+              <div>Stock Avalable</div>
+            </div>
+            <Button
+              type="submit"
+              variant="contained"
+              className="mb-9 px-7"
+              size="medium"
+            >
+              Add to cart
+            </Button>
+          </form>
         </Grid>
       </Grid>
     </Container>

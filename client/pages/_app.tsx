@@ -14,7 +14,7 @@ import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 //component
-import NProgress from "nprogress";
+import NextNProgress from "nextjs-progressbar";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { wrapper } from "@/contexts/store";
 import GlobalStyles from "@/themes/globalStyles";
@@ -23,6 +23,7 @@ import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "@/utils/createEmotionCache";
 import ThemeProvider from "@/themes/index";
 import ActionSnackbar from "@/components/shared/actionSnackBar";
+import { Route } from "@mui/icons-material";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -45,17 +46,6 @@ function MyApp(props: MyAppProps) {
 
   const queryClient = new QueryClient();
 
-  useEffect(() => {
-    NProgress.configure({});
-    Router.events.on("routeChangeStart", (url) => {
-      NProgress.start();
-    });
-
-    Router.events.on("routeChangeComplete", (url) => {
-      NProgress.done(false);
-    });
-  }, [Router]);
-
   return (
     <StyledEngineProvider injectFirst>
       <CacheProvider value={emotionCache}>
@@ -66,6 +56,13 @@ function MyApp(props: MyAppProps) {
             <LocalizationProvider dateAdapter={AdapterMoment}>
               {layout}
               <ActionSnackbar />
+              <NextNProgress
+                color="#29D"
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={3}
+                showOnShallow={false}
+              />
             </LocalizationProvider>
           </ThemeProvider>
         </QueryClientProvider>

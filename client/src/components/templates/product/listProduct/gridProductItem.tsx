@@ -18,14 +18,14 @@ import IconButton from "@mui/material/IconButton";
 import { sentenceCase } from "change-case";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-interface IProductItem {
+interface IGridProductItem {
   slug: string;
   name: string;
   price: string;
   thumbnail: string;
 }
 
-const ProductItem: FC<IProductItem> = (props) => {
+const GridProductItem: FC<IGridProductItem> = (props) => {
   const { slug, name, price, thumbnail } = props;
   const [open, setOpen] = useState(false);
 
@@ -39,45 +39,43 @@ const ProductItem: FC<IProductItem> = (props) => {
 
   return (
     <>
-      <Grid item xs={4}>
-        <Paper>
-          <Link href={`/product/t-shirt`}>
-            <div className="overflow-hidden relative">
-              <LazyLoadImage
-                className="aspect-square"
-                src={thumbnail}
-                alt="thumbnail"
-              />
+      <Paper>
+        <Link href={`/product/${slug}`}>
+          <div className="overflow-hidden relative">
+            <LazyLoadImage
+              className="aspect-square"
+              src={thumbnail}
+              alt="thumbnail"
+            />
+          </div>
+        </Link>
+        <div className="p-4">
+          <div className="flex">
+            <div className="flex-1 mr-2">
+              <Link href={`/product/${slug}`} className="no-underline">
+                <h3 className="text-sm font-semibold mb-2 text-color-black">
+                  {sentenceCase(name)}
+                </h3>
+              </Link>
+              <Rating className="text-xl" value={4} readOnly />
+              <div className="mt-1">
+                <span className="font-semibold text-color-price">
+                  From {price} US$
+                </span>
+              </div>
             </div>
-          </Link>
-          <div className="p-4">
-            <div className="flex">
-              <div className="flex-1 mr-2">
-                <Link href={`/product/t-shirt`} className="no-underline">
-                  <h3 className="text-sm font-semibold mb-2 text-color-black">
-                    {sentenceCase(name)}
-                  </h3>
-                </Link>
-                <Rating className="text-xl" value={4} readOnly />
-                <div className="mt-1">
-                  <span className="font-semibold text-color-price">
-                    From {price} US$
-                  </span>
-                </div>
-              </div>
-              <div className="flex flex-col justify-end">
-                <Button
-                  onClick={handleOpenDialog}
-                  variant="outlined"
-                  className="min-w-0 p-1"
-                >
-                  <AddIcon fontSize="small" />
-                </Button>
-              </div>
+            <div className="flex flex-col justify-end">
+              <Button
+                onClick={handleOpenDialog}
+                variant="outlined"
+                className="min-w-0 p-1"
+              >
+                <AddIcon fontSize="small" />
+              </Button>
             </div>
           </div>
-        </Paper>
-      </Grid>
+        </div>
+      </Paper>
       <Dialog open={open} onClose={handleCloseDialog}>
         <DialogTitle>
           <IconButton
@@ -106,4 +104,4 @@ const ProductItem: FC<IProductItem> = (props) => {
   );
 };
 
-export default ProductItem;
+export default GridProductItem;

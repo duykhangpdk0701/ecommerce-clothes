@@ -1,12 +1,12 @@
-import React, { FC, ReactElement } from "react";
-import ProductContent from "./ProductContent";
+import React, { FC, ReactNode } from "react";
 
-const ProductDetailTemplate = () => {
-  return (
-    <div>
-      <ProductContent />
-    </div>
-  );
+interface IProductDetailTemplate {
+  productContent: ReactNode;
+}
+
+const ProductDetailTemplate: FC<IProductDetailTemplate> = (props) => {
+  const { productContent } = props;
+  return <div>{productContent}</div>;
 };
 
 export default ProductDetailTemplate;

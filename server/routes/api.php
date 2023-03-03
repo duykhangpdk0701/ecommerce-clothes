@@ -35,6 +35,7 @@ Route::namespace(env("BASE_API"))->name('api.')->middleware(['api'])->group(func
             include('v1/api/itemPersonType.php');
             include('v1/api/itemCategory.php');
             include('v1/api/itemColor.php');
+            include('v1/api/itemSize.php');
             include('v1/api/itemPrice.php');
             include('v1/api/item.php');
         });

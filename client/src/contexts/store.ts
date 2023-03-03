@@ -20,6 +20,7 @@ import storage from "redux-persist/lib/storage";
 import CartDrawerReducer from "@/contexts/slices/cartDrawerSlice";
 import CustomizationReducer from "@/contexts/slices/customizationSlice";
 import SnackbarSliceReducer from "@/contexts/slices/snackbarSlice";
+import ListProductSliceRedurer from "@/contexts/slices/listProductSlice";
 
 const persistConfig = {
   key: "root",
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   CartDrawer: CartDrawerReducer,
   Customization: CustomizationReducer,
   SnackBarSlice: SnackbarSliceReducer,
+  ListProduct: ListProductSliceRedurer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

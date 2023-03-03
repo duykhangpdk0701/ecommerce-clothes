@@ -136,9 +136,9 @@ class ItemStock extends Model
     /**
      * Scope a query to only include in stock stocks.
      */
-    public function scopeActive()
+    public function scopeInStock($query)
     {
-        return $this->where('stock_status_id', self::STOCK_IN_STOCK);
+        return $query->where('stock_status_id', self::STOCK_IN_STOCK);
     }
 
     /**

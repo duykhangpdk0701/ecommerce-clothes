@@ -44,6 +44,7 @@ const ListProductSideBarItemCategoryItem: FC<
             {data.children?.map((item) => (
               <Fragment key={item.id}>
                 <ListProductSideBarItemCategoryItemChildren
+                  id={item.id}
                   name={item.name.en}
                 />
               </Fragment>
