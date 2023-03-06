@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, useRef, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/hooks/redux";
 import { setOpenCartDrawer } from "@/contexts/slices/cartDrawerSlice";
@@ -17,13 +17,17 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 import InputAdornment from "@mui/material/InputAdornment";
 import Divider from "@mui/material/Divider";
+import Menu from "@mui/material/Menu";
+import List from "@mui/material/List";
 //mui icon
+
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useRouter } from "next/router";
 
 const options = [
   "Create a merge commit",
@@ -31,11 +35,40 @@ const options = [
   "Rebase and merge",
 ];
 
-const Header = () => {
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
-  const [openSearchType, setOpenSearchType] = React.useState(false);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+interface IHeader {
+  quoteItemLength: number;
+}
+
+const Header: FC<IHeader> = (props) => {
+  const { quoteItemLength } = props;
+
+  const router = useRouter();
+
+  const anchorRef = useRef<HTMLButtonElement>(null);
+
+  const anchorAccountMenuRef = useRef<HTMLButtonElement>(null);
+
+  const [openSearchType, setOpenSearchType] = useState(false);
+
+  const [openAccountMenu, setOpenAccountMenu] = useState(false);
+
+  const [selectedIndex, setSelectedIndex] = useState(1);
   const dispatch = useAppDispatch();
+
+  const handleClickAccountmenu = () => {
+    setOpenAccountMenu((preOpen) => !preOpen);
+  };
+
+  const handleCloseAccountMenu = (event: Event) => {
+    if (
+      anchorAccountMenuRef.current &&
+      anchorAccountMenuRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
+
+    setOpenAccountMenu(false);
+  };
 
   const handleMenuItemClick = (
     event: React.MouseEvent<HTMLLIElement, MouseEvent>,
@@ -62,6 +95,10 @@ const Header = () => {
 
   const handleClickCartButton = () => {
     dispatch(setOpenCartDrawer());
+  };
+
+  const handleClickLogout = (e: any) => {
+    router.push("/auth/login");
   };
 
   return (
@@ -163,13 +200,76 @@ const Header = () => {
           </Popper>
         </div>
         <div className="flex items-center">
-          <Link href="/auth/login">
-            <IconButton className="bg-[#F3F5F9] w-11 h-11">
+          <div>
+            <IconButton
+              // LinkComponent={Link}
+              // href="/auth/login"
+              ref={anchorAccountMenuRef}
+              className="bg-[#F3F5F9] w-11 h-11"
+              onClick={handleClickAccountmenu}
+              aria-controls={
+                openAccountMenu ? "account-button-menu" : undefined
+              }
+              aria-expanded={openAccountMenu ? "true" : undefined}
+              aria-label="select merge strategy"
+              aria-haspopup="menu"
+            >
               <PersonOutlineIcon />
             </IconButton>
-          </Link>
+            <Popper
+              open={openAccountMenu}
+              anchorEl={anchorAccountMenuRef.current}
+              role={undefined}
+              transition
+              disablePortal
+              className="z-30"
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin:
+                      placement === "bottom" ? "center top" : "center bottom",
+                  }}
+                >
+                  <Paper elevation={1} className="min-w-[150px]">
+                    <ClickAwayListener onClickAway={handleCloseAccountMenu}>
+                      <MenuList
+                        id="account-button-menu"
+                        autoFocusItem
+                        onClick={() => setOpenAccountMenu(false)}
+                      >
+                        <Link
+                          href="/order"
+                          className="no-underline text-inherit"
+                        >
+                          <MenuItem>Order</MenuItem>
+                        </Link>
 
-          <Badge badgeContent={3} color="error">
+                        <Link
+                          href="/profile"
+                          className="no-underline text-inherit"
+                        >
+                          <MenuItem>Profile</MenuItem>
+                        </Link>
+
+                        <Link
+                          href="/address"
+                          className="no-underline text-inherit"
+                        >
+                          <MenuItem>Address</MenuItem>
+                        </Link>
+
+                        <MenuItem onClick={handleClickLogout}>Log In</MenuItem>
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
+          </div>
+
+          <Badge badgeContent={quoteItemLength} color="error">
             <IconButton
               onClick={handleClickCartButton}
               className="bg-[#F3F5F9] w-11 h-11 ml-5"

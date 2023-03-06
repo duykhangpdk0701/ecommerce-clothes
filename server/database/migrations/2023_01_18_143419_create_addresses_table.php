@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable();
+            $table->string ('phone', 12)->nullable();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('country_id')->nullable()->references('id')->on('sys_countries');
             $table->foreignId('city_id')->nullable()->references('id')->on('sys_cities');

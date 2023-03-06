@@ -12,6 +12,7 @@ use App\Repositories\QuoteDetail\QuoteDetailRepositoryInterface;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -246,9 +247,9 @@ class QuoteRepository extends BaseRepository implements QuoteRepositoryInterface
 
     /**
      * @param int $id
-     * @return mixed|void
+     * @return mixed
      */
-    public function find($id): Collection
+    public function find(int $id): mixed
     {
         return $this->model->with([
             'quoteDetails',
@@ -392,7 +393,7 @@ class QuoteRepository extends BaseRepository implements QuoteRepositoryInterface
 
     /**
      * @param $id
-     * @return Builder|Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     * @return Builder|Builder[]|\Illuminate\Database\Eloquent\Collection|Model|null
      */
     public function getQuoteWithRelation($id)
     {

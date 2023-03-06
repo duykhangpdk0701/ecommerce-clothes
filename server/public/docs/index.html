@@ -71,7 +71,10 @@
                     <a href="#address">Address</a>
                 </li>
                                     <ul id="tocify-subheader-address" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="address-POSTapi-v1-address">
+                                                    <li class="tocify-item level-2" data-unique="address-GETapi-v1-address">
+                                <a href="#address-GETapi-v1-address">get address by auth user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="address-POSTapi-v1-address">
                                 <a href="#address-POSTapi-v1-address">Store a newly created resource in storage.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="address-DELETEapi-v1-address--address_id-">
@@ -333,6 +336,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-item-size" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="item-size">
+                    <a href="#item-size">Item Size</a>
+                </li>
+                                    <ul id="tocify-subheader-item-size" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="item-size-GETapi-v1-item-size">
+                                <a href="#item-size-GETapi-v1-item-size">Get a list of Sizes</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-order-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="order-endpoints">
                     <a href="#order-endpoints">Order Endpoints</a>
@@ -377,7 +390,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 27, 2023</li>
+        <li>Last updated: March 5, 2023</li>
     </ul>
 </div>
 
@@ -393,28 +406,30 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value **<code>"Bearer 1|n5QJU3KB*****************************"</code>**.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value **<code>"Bearer 1|n5QJU3KB*****************************"</code>**.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="address">Address</h1>
 
-    <p>APIs for managing addresses</p>
+    
 
-                                <h2 id="address-POSTapi-v1-address">Store a newly created resource in storage.</h2>
+                                <h2 id="address-GETapi-v1-address">get address by auth user</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
 
-<span id="example-requests-POSTapi-v1-address">
+<span id="example-requests-GETapi-v1-address">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/v1/address" \
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/address" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -426,6 +441,687 @@ You can switch the language used with the tabs at the top right (or from the nav
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-address">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Target [Illuminate\\Database\\Eloquent\\Model] is not instantiable while building [Knuckles\\Scribe\\Commands\\GenerateDocumentation, App\\Http\\Controllers\\Api\\AddressController, App\\Repositories\\Address\\AddressRepository].&quot;,
+    &quot;exception&quot;: &quot;Illuminate\\Contracts\\Container\\BindingResolutionException&quot;,
+    &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+    &quot;line&quot;: 1103,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 898,
+            &quot;function&quot;: &quot;notInstantiable&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 770,
+            &quot;function&quot;: &quot;build&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 856,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 706,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 841,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 1043,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 959,
+            &quot;function&quot;: &quot;resolveClass&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 920,
+            &quot;function&quot;: &quot;resolveDependencies&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 770,
+            &quot;function&quot;: &quot;build&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 856,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 296,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 885,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 770,
+            &quot;function&quot;: &quot;build&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 856,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 706,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 841,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 1043,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 959,
+            &quot;function&quot;: &quot;resolveClass&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 920,
+            &quot;function&quot;: &quot;resolveDependencies&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 770,
+            &quot;function&quot;: &quot;build&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 856,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 706,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 841,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 274,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 1099,
+            &quot;function&quot;: &quot;getController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 1030,
+            &quot;function&quot;: &quot;controllerMiddleware&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 810,
+            &quot;function&quot;: &quot;gatherMiddleware&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 792,
+            &quot;function&quot;: &quot;gatherRouteMiddleware&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 776,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 740,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 729,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 190,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 86,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 165,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 134,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 92,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 209,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 166,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 122,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 69,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 47,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 661,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 312,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 153,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1022,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 314,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 168,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php&quot;,
+            &quot;line&quot;: 102,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 155,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\artisan&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-address" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-address"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-address" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-address" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-address"></code></pre>
+</span>
+<form id="form-GETapi-v1-address" data-method="GET"
+      data-path="api/v1/address"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-address', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-address"
+                    onclick="tryItOut('GETapi-v1-address');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-address"
+                    onclick="cancelTryOut('GETapi-v1-address');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-address" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/address</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-address"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-address"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-address"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-address"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="address-POSTapi-v1-address">Store a newly created resource in storage.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-address">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/v1/address" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/address"
+);
+
+const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -452,7 +1148,7 @@ fetch(url, {
 </span>
 <form id="form-POSTapi-v1-address" data-method="POST"
       data-path="api/v1/address"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -479,6 +1175,17 @@ fetch(url, {
             <b><code>api/v1/address</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-address"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -517,6 +1224,7 @@ fetch(url, {
                     <h2 id="address-DELETEapi-v1-address--address_id-">Remove specific address from current customer.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -527,7 +1235,8 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/address/20" \
+    "http://127.0.0.1:8000/api/v1/address/7" \
+    --header "Authorization: Bearer 1|n5QJU3KB*****************************" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -535,10 +1244,11 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/address/20"
+    "http://127.0.0.1:8000/api/v1/address/7"
 );
 
 const headers = {
+    "Authorization": "Bearer 1|n5QJU3KB*****************************",
     "Content-Type": "application/json",
     "Accept": "application/json",
     "API-KEY": "RANDOM_STUFF",
@@ -565,7 +1275,7 @@ fetch(url, {
 </span>
 <form id="form-DELETEapi-v1-address--address_id-" data-method="DELETE"
       data-path="api/v1/address/{address_id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -592,6 +1302,17 @@ fetch(url, {
             <b><code>api/v1/address/{address_id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-address--address_id-"
+               value="Bearer 1|n5QJU3KB*****************************"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer 1|n5QJU3KB*****************************</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -632,10 +1353,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="address_id"                data-endpoint="DELETEapi-v1-address--address_id-"
-               value="20"
+               value="7"
                data-component="url">
     <br>
-<p>The ID of the address. Example: <code>20</code></p>
+<p>The ID of the address. Example: <code>7</code></p>
             </div>
                     </form>
 
@@ -1001,8 +1722,8 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"vitae\",
-    \"status\": true
+    \"name\": \"corrupti\",
+    \"status\": false
 }"
 </code></pre></div>
 
@@ -1020,8 +1741,8 @@ const headers = {
 };
 
 let body = {
-    "name": "vitae",
-    "status": true
+    "name": "corrupti",
+    "status": false
 };
 
 fetch(url, {
@@ -1124,10 +1845,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-brand"
-               value="vitae"
+               value="corrupti"
                data-component="body">
     <br>
-<p>Example: <code>vitae</code></p>
+<p>Example: <code>corrupti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>slug</code></b>&nbsp;&nbsp;
@@ -1159,7 +1880,7 @@ fetch(url, {
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -1479,17 +2200,17 @@ access-control-allow-origin: *
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
-    --form "name=deleniti" \
-    --form "sku=officiis" \
-    --form "description=officia" \
-    --form "brand_id=est" \
-    --form "item_categories=totam" \
-    --form "item_person_type_id=autem" \
-    --form "item_stock_status_id=veniam" \
-    --form "item_sizes=autem" \
-    --form "item_colors=alias" \
-    --form "thumbnail_image=@C:\Users\duykh\AppData\Local\Temp\phpDF28.tmp" \
-    --form "detail_images[]=@C:\Users\duykh\AppData\Local\Temp\phpDF29.tmp" </code></pre></div>
+    --form "name=est" \
+    --form "sku=suscipit" \
+    --form "description=est" \
+    --form "brand_id=qui" \
+    --form "item_categories=nemo" \
+    --form "item_person_type_id=omnis" \
+    --form "item_stock_status_id=officia" \
+    --form "item_sizes=beatae" \
+    --form "item_colors=veniam" \
+    --form "thumbnail_image=@C:\Users\duykh\AppData\Local\Temp\phpA782.tmp" \
+    --form "detail_images[]=@C:\Users\duykh\AppData\Local\Temp\phpA783.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1505,15 +2226,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'deleniti');
-body.append('sku', 'officiis');
-body.append('description', 'officia');
-body.append('brand_id', 'est');
-body.append('item_categories', 'totam');
-body.append('item_person_type_id', 'autem');
-body.append('item_stock_status_id', 'veniam');
-body.append('item_sizes', 'autem');
-body.append('item_colors', 'alias');
+body.append('name', 'est');
+body.append('sku', 'suscipit');
+body.append('description', 'est');
+body.append('brand_id', 'qui');
+body.append('item_categories', 'nemo');
+body.append('item_person_type_id', 'omnis');
+body.append('item_stock_status_id', 'officia');
+body.append('item_sizes', 'beatae');
+body.append('item_colors', 'veniam');
 body.append('thumbnail_image', document.querySelector('input[name="thumbnail_image"]').files[0]);
 body.append('detail_images[]', document.querySelector('input[name="detail_images[]"]').files[0]);
 
@@ -1617,10 +2338,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-item"
-               value="deleniti"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>deleniti</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sku</code></b>&nbsp;&nbsp;
@@ -1628,10 +2349,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="sku"                data-endpoint="POSTapi-v1-admin-item"
-               value="officiis"
+               value="suscipit"
                data-component="body">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>suscipit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1639,10 +2360,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-admin-item"
-               value="officia"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>officia</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>brand_id</code></b>&nbsp;&nbsp;
@@ -1650,10 +2371,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="brand_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="est"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_categories</code></b>&nbsp;&nbsp;
@@ -1661,10 +2382,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_categories"                data-endpoint="POSTapi-v1-admin-item"
-               value="totam"
+               value="nemo"
                data-component="body">
     <br>
-<p>Example: <code>totam</code></p>
+<p>Example: <code>nemo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>thumbnail_image</code></b>&nbsp;&nbsp;
@@ -1675,7 +2396,7 @@ fetch(url, {
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 10000 kilobytes. Example: <code>C:\Users\duykh\AppData\Local\Temp\phpDF28.tmp</code></p>
+<p>Must be an image. Must not be greater than 10000 kilobytes. Example: <code>C:\Users\duykh\AppData\Local\Temp\phpA782.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>detail_images</code></b>&nbsp;&nbsp;
@@ -1696,10 +2417,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="autem"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_stock_status_id</code></b>&nbsp;&nbsp;
@@ -1707,10 +2428,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_stock_status_id"                data-endpoint="POSTapi-v1-admin-item"
-               value="veniam"
+               value="officia"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>officia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_sizes</code></b>&nbsp;&nbsp;
@@ -1718,10 +2439,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_sizes"                data-endpoint="POSTapi-v1-admin-item"
-               value="autem"
+               value="beatae"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>beatae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_colors</code></b>&nbsp;&nbsp;
@@ -1729,10 +2450,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_colors"                data-endpoint="POSTapi-v1-admin-item"
-               value="alias"
+               value="veniam"
                data-component="body">
     <br>
-<p>Example: <code>alias</code></p>
+<p>Example: <code>veniam</code></p>
         </div>
         </form>
 
@@ -2058,11 +2779,11 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"description\": \"Numquam veniam doloribus consequatur ex velit.\",
-    \"order\": \"autem\",
+    \"description\": \"Sit reprehenderit sit quam nesciunt.\",
+    \"order\": \"sit\",
     \"name\": {
-        \"vi\": \"wifqtvueww\",
-        \"en\": \"x\"
+        \"vi\": \"elgkruzzgjvoauautnuwtmf\",
+        \"en\": \"lawsvrgdhzxbknwzoim\"
     }
 }"
 </code></pre></div>
@@ -2081,11 +2802,11 @@ const headers = {
 };
 
 let body = {
-    "description": "Numquam veniam doloribus consequatur ex velit.",
-    "order": "autem",
+    "description": "Sit reprehenderit sit quam nesciunt.",
+    "order": "sit",
     "name": {
-        "vi": "wifqtvueww",
-        "en": "x"
+        "vi": "elgkruzzgjvoauautnuwtmf",
+        "en": "lawsvrgdhzxbknwzoim"
     }
 };
 
@@ -2189,10 +2910,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="Numquam veniam doloribus consequatur ex velit."
+               value="Sit reprehenderit sit quam nesciunt."
                data-component="body">
     <br>
-<p>Example: <code>Numquam veniam doloribus consequatur ex velit.</code></p>
+<p>Example: <code>Sit reprehenderit sit quam nesciunt.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -2211,10 +2932,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="order"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="autem"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -2231,10 +2952,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.vi"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="wifqtvueww"
+               value="elgkruzzgjvoauautnuwtmf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>wifqtvueww</code></p>
+<p>Must not be greater than 255 characters. Example: <code>elgkruzzgjvoauautnuwtmf</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
@@ -2242,10 +2963,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.en"                data-endpoint="POSTapi-v1-admin-item-category"
-               value="x"
+               value="lawsvrgdhzxbknwzoim"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>x</code></p>
+<p>Must not be greater than 255 characters. Example: <code>lawsvrgdhzxbknwzoim</code></p>
                     </div>
                                     </details>
         </div>
@@ -2271,11 +2992,11 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"description\": \"Corrupti voluptatem sit velit maiores autem.\",
-    \"order\": \"porro\",
+    \"description\": \"Quia culpa minima voluptatum velit maxime.\",
+    \"order\": \"libero\",
     \"name\": {
-        \"vi\": \"velit\",
-        \"en\": \"sunt\"
+        \"vi\": \"officiis\",
+        \"en\": \"iure\"
     }
 }"
 </code></pre></div>
@@ -2294,11 +3015,11 @@ const headers = {
 };
 
 let body = {
-    "description": "Corrupti voluptatem sit velit maiores autem.",
-    "order": "porro",
+    "description": "Quia culpa minima voluptatum velit maxime.",
+    "order": "libero",
     "name": {
-        "vi": "velit",
-        "en": "sunt"
+        "vi": "officiis",
+        "en": "iure"
     }
 };
 
@@ -2414,10 +3135,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="Corrupti voluptatem sit velit maiores autem."
+               value="Quia culpa minima voluptatum velit maxime."
                data-component="body">
     <br>
-<p>Example: <code>Corrupti voluptatem sit velit maiores autem.</code></p>
+<p>Example: <code>Quia culpa minima voluptatum velit maxime.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>parent_id</code></b>&nbsp;&nbsp;
@@ -2436,10 +3157,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="order"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="porro"
+               value="libero"
                data-component="body">
     <br>
-<p>Example: <code>porro</code></p>
+<p>Example: <code>libero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -2456,10 +3177,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.vi"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="velit"
+               value="officiis"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>officiis</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
@@ -2467,10 +3188,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name.en"                data-endpoint="PUTapi-v1-admin-item-category--category_id-"
-               value="sunt"
+               value="iure"
                data-component="body">
     <br>
-<p>Example: <code>sunt</code></p>
+<p>Example: <code>iure</code></p>
                     </div>
                                     </details>
         </div>
@@ -3017,9 +3738,9 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"beatae\",
-    \"item_person_type_id\": \"earum\",
-    \"value\": \"voluptatem\"
+    \"item_category_id\": \"dolorum\",
+    \"item_person_type_id\": \"omnis\",
+    \"value\": \"reiciendis\"
 }"
 </code></pre></div>
 
@@ -3037,9 +3758,9 @@ const headers = {
 };
 
 let body = {
-    "item_category_id": "beatae",
-    "item_person_type_id": "earum",
-    "value": "voluptatem"
+    "item_category_id": "dolorum",
+    "item_person_type_id": "omnis",
+    "value": "reiciendis"
 };
 
 fetch(url, {
@@ -3142,10 +3863,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="beatae"
+               value="dolorum"
                data-component="body">
     <br>
-<p>Example: <code>beatae</code></p>
+<p>Example: <code>dolorum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -3153,10 +3874,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="earum"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>earum</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3164,10 +3885,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="POSTapi-v1-admin-item-size"
-               value="voluptatem"
+               value="reiciendis"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>reiciendis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -3202,9 +3923,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"item_category_id\": \"repellat\",
-    \"item_person_type_id\": \"rerum\",
-    \"value\": \"consequatur\"
+    \"item_category_id\": \"qui\",
+    \"item_person_type_id\": \"ut\",
+    \"value\": \"accusantium\"
 }"
 </code></pre></div>
 
@@ -3222,9 +3943,9 @@ const headers = {
 };
 
 let body = {
-    "item_category_id": "repellat",
-    "item_person_type_id": "rerum",
-    "value": "consequatur"
+    "item_category_id": "qui",
+    "item_person_type_id": "ut",
+    "value": "accusantium"
 };
 
 fetch(url, {
@@ -3339,10 +4060,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_category_id"                data-endpoint="PUTapi-v1-admin-item-size--itemSize_id-"
-               value="repellat"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>repellat</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
@@ -3350,10 +4071,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="item_person_type_id"                data-endpoint="PUTapi-v1-admin-item-size--itemSize_id-"
-               value="rerum"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -3361,10 +4082,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="value"                data-endpoint="PUTapi-v1-admin-item-size--itemSize_id-"
-               value="consequatur"
+               value="accusantium"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>accusantium</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
@@ -3685,7 +4406,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"inbound_item\": \"laboriosam\"
+    \"inbound_item\": \"cumque\"
 }"
 </code></pre></div>
 
@@ -3703,7 +4424,7 @@ const headers = {
 };
 
 let body = {
-    "inbound_item": "laboriosam"
+    "inbound_item": "cumque"
 };
 
 fetch(url, {
@@ -3807,7 +4528,7 @@ fetch(url, {
 <small>string</small>&nbsp;
  &nbsp;
 <br>
-<p>Example: <code>laboriosam</code></p>
+<p>Example: <code>cumque</code></p>
             </summary>
                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>item_variant_id</code></b>&nbsp;&nbsp;
@@ -3815,10 +4536,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="inbound_item.0.item_variant_id"                data-endpoint="POSTapi-v1-admin-item-stock"
-               value="80"
+               value="2"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>80</code></p>
+<p>Must be at least 0. Example: <code>2</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>price_in</code></b>&nbsp;&nbsp;
@@ -3826,10 +4547,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="inbound_item.0.price_in"                data-endpoint="POSTapi-v1-admin-item-stock"
-               value="10"
+               value="13"
                data-component="body">
     <br>
-<p>Must be at least 1000. Must not be greater than  1000000000. Example: <code>10</code></p>
+<p>Must be at least 1000. Must not be greater than  1000000000. Example: <code>13</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -3837,10 +4558,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="inbound_item.0.price"                data-endpoint="POSTapi-v1-admin-item-stock"
-               value="4"
+               value="5"
                data-component="body">
     <br>
-<p>Must be at least 1000. Must not be greater than  1000000000. Example: <code>4</code></p>
+<p>Must be at least 1000. Must not be greater than  1000000000. Example: <code>5</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>stock_status_id</code></b>&nbsp;&nbsp;
@@ -4727,7 +5448,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"est\",
+    \"name\": \"officiis\",
     \"status\": true
 }"
 </code></pre></div>
@@ -4746,7 +5467,7 @@ const headers = {
 };
 
 let body = {
-    "name": "est",
+    "name": "officiis",
     "status": true
 };
 
@@ -4850,10 +5571,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-admin-item-color"
-               value="est"
+               value="officiis"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>officiis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -4920,7 +5641,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"veritatis\"
+    \"name\": \"aliquid\"
 }"
 </code></pre></div>
 
@@ -4938,7 +5659,7 @@ const headers = {
 };
 
 let body = {
-    "name": "veritatis"
+    "name": "aliquid"
 };
 
 fetch(url, {
@@ -5053,10 +5774,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-item-color--itemColor_id-"
-               value="veritatis"
+               value="aliquid"
                data-component="body">
     <br>
-<p>Example: <code>veritatis</code></p>
+<p>Example: <code>aliquid</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -5634,16 +6355,16 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"first_name\": \"lxwkt\",
-    \"last_name\": \"sooggoggx\",
-    \"email\": \"bveum@example.net\",
-    \"password\": \"rerum\",
-    \"role\": \"et\",
-    \"phone\": 5335184.44293063,
-    \"city_id\": \"labore\",
-    \"district_id\": \"occaecati\",
-    \"ward_id\": \"minima\",
-    \"address\": \"sequi\"
+    \"first_name\": \"lb\",
+    \"last_name\": \"za\",
+    \"email\": \"mercedes.cummings@example.com\",
+    \"password\": \"incidunt\",
+    \"role\": \"suscipit\",
+    \"phone\": 598498,
+    \"city_id\": \"velit\",
+    \"district_id\": \"autem\",
+    \"ward_id\": \"voluptatem\",
+    \"address\": \"magni\"
 }"
 </code></pre></div>
 
@@ -5661,16 +6382,16 @@ const headers = {
 };
 
 let body = {
-    "first_name": "lxwkt",
-    "last_name": "sooggoggx",
-    "email": "bveum@example.net",
-    "password": "rerum",
-    "role": "et",
-    "phone": 5335184.44293063,
-    "city_id": "labore",
-    "district_id": "occaecati",
-    "ward_id": "minima",
-    "address": "sequi"
+    "first_name": "lb",
+    "last_name": "za",
+    "email": "mercedes.cummings@example.com",
+    "password": "incidunt",
+    "role": "suscipit",
+    "phone": 598498,
+    "city_id": "velit",
+    "district_id": "autem",
+    "ward_id": "voluptatem",
+    "address": "magni"
 };
 
 fetch(url, {
@@ -5773,10 +6494,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="first_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="lxwkt"
+               value="lb"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>lxwkt</code></p>
+<p>Must not be greater than 20 characters. Example: <code>lb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -5784,10 +6505,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="last_name"                data-endpoint="POSTapi-v1-admin-user"
-               value="sooggoggx"
+               value="za"
                data-component="body">
     <br>
-<p>Must not be greater than 20 characters. Example: <code>sooggoggx</code></p>
+<p>Must not be greater than 20 characters. Example: <code>za</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -5795,10 +6516,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-v1-admin-user"
-               value="bveum@example.net"
+               value="mercedes.cummings@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>bveum@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mercedes.cummings@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -5806,10 +6527,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-v1-admin-user"
-               value="rerum"
+               value="incidunt"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -5817,10 +6538,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="POSTapi-v1-admin-user"
-               value="et"
+               value="suscipit"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>suscipit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -5828,10 +6549,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="phone"                data-endpoint="POSTapi-v1-admin-user"
-               value="5335184.4429306"
+               value="598498"
                data-component="body">
     <br>
-<p>Example: <code>5335184.4429306</code></p>
+<p>Example: <code>598498</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -5839,10 +6560,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="labore"
+               value="velit"
                data-component="body">
     <br>
-<p>Example: <code>labore</code></p>
+<p>Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>district_id</code></b>&nbsp;&nbsp;
@@ -5850,10 +6571,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="district_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="occaecati"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>occaecati</code></p>
+<p>Example: <code>autem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ward_id</code></b>&nbsp;&nbsp;
@@ -5861,10 +6582,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="ward_id"                data-endpoint="POSTapi-v1-admin-user"
-               value="minima"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>minima</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -5872,10 +6593,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="address"                data-endpoint="POSTapi-v1-admin-user"
-               value="sequi"
+               value="magni"
                data-component="body">
     <br>
-<p>Example: <code>sequi</code></p>
+<p>Example: <code>magni</code></p>
         </div>
         </form>
 
@@ -5899,9 +6620,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
     --data "{
-    \"name\": \"wplivgtcfpmoh\",
-    \"email\": \"angeline51@example.org\",
-    \"role\": \"repudiandae\"
+    \"name\": \"rzyntspxixge\",
+    \"email\": \"ykshlerin@example.com\",
+    \"role\": \"quis\"
 }"
 </code></pre></div>
 
@@ -5919,9 +6640,9 @@ const headers = {
 };
 
 let body = {
-    "name": "wplivgtcfpmoh",
-    "email": "angeline51@example.org",
-    "role": "repudiandae"
+    "name": "rzyntspxixge",
+    "email": "ykshlerin@example.com",
+    "role": "quis"
 };
 
 fetch(url, {
@@ -6036,10 +6757,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="wplivgtcfpmoh"
+               value="rzyntspxixge"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>wplivgtcfpmoh</code></p>
+<p>Must not be greater than 255 characters. Example: <code>rzyntspxixge</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -6047,10 +6768,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="angeline51@example.org"
+               value="ykshlerin@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>angeline51@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ykshlerin@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role</code></b>&nbsp;&nbsp;
@@ -6058,10 +6779,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="role"                data-endpoint="PUTapi-v1-admin-user--id-"
-               value="repudiandae"
+               value="quis"
                data-component="body">
     <br>
-<p>Example: <code>repudiandae</code></p>
+<p>Example: <code>quis</code></p>
         </div>
         </form>
 
@@ -6264,14 +6985,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 55,
-        &quot;name&quot;: &quot;Hermina Prohaska&quot;,
-        &quot;email&quot;: &quot;lroob@example.org&quot;,
+        &quot;id&quot;: 64,
+        &quot;name&quot;: &quot;Ryan Marvin&quot;,
+        &quot;email&quot;: &quot;rshanahan@example.com&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Hermina Prohaska&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Ryan Marvin&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -6646,14 +7367,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 56,
-        &quot;name&quot;: &quot;Kory O&#039;Connell&quot;,
-        &quot;email&quot;: &quot;sbartell@example.org&quot;,
+        &quot;id&quot;: 65,
+        &quot;name&quot;: &quot;Solon Jacobson&quot;,
+        &quot;email&quot;: &quot;malcolm60@example.org&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Kory O&#039;Connell&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Solon Jacobson&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -6852,14 +7573,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 57,
-        &quot;name&quot;: &quot;Tatyana Smitham&quot;,
-        &quot;email&quot;: &quot;bergstrom.lloyd@example.org&quot;,
+        &quot;id&quot;: 66,
+        &quot;name&quot;: &quot;Mr. Cyril Halvorson&quot;,
+        &quot;email&quot;: &quot;iherman@example.org&quot;,
         &quot;token&quot;: null,
         &quot;roles&quot;: [],
         &quot;permissions&quot;: [],
         &quot;role&quot;: &quot;&quot;,
-        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Tatyana Smitham&quot;,
+        &quot;avatar&quot;: &quot;https://ui-avatars.com/api/?background=random&amp;name=Mr. Cyril Halvorson&quot;,
         &quot;reset_password_at&quot;: null,
         &quot;profile&quot;: null,
         &quot;multiple_address&quot;: [],
@@ -9875,7 +10596,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/destination/district/19" \
+    --get "http://127.0.0.1:8000/api/v1/destination/district/18" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -9883,7 +10604,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/destination/district/19"
+    "http://127.0.0.1:8000/api/v1/destination/district/18"
 );
 
 const headers = {
@@ -9917,15 +10638,15 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 250,
+            &quot;id&quot;: 236,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;B&igrave;nh Thuận&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-binh-thuan&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;1&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-1&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.742706,106.723159]&quot;,
+            &quot;center&quot;: &quot;[10.746459,106.650904]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.737527,106.715584],\\\&quot;br\\\&quot;:[10.750056,106.730316]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.743004,106.647697],\\\&quot;br\\\&quot;:[10.749011,106.654579]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9933,15 +10654,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 251,
+            &quot;id&quot;: 237,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;Ph&uacute; Mỹ&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-phu-my&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;10&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-10&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.707926,106.736788]&quot;,
+            &quot;center&quot;: &quot;[10.73724,106.6278]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.697793,106.724426],\\\&quot;br\\\&quot;:[10.71841,106.751785]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.730059,106.620743],\\\&quot;br\\\&quot;:[10.74285,106.634445]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9949,15 +10670,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 252,
+            &quot;id&quot;: 238,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;Ph&uacute; Thuận&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-phu-thuan&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;11&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-11&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.730578,106.746394]&quot;,
+            &quot;center&quot;: &quot;[10.745016,106.632047]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.712728,106.730316],\\\&quot;br\\\&quot;:[10.744901,106.76635]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.741161,106.622078],\\\&quot;br\\\&quot;:[10.749264,106.639809]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9965,15 +10686,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 253,
+            &quot;id&quot;: 239,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Hưng&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-hung&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;12&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-12&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.745433,106.697929]&quot;,
+            &quot;center&quot;: &quot;[10.74994,106.632616]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.735972,106.689758],\\\&quot;br\\\&quot;:[10.752583,106.704926]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.745202,106.623245],\\\&quot;br\\\&quot;:[10.75503,106.63945]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9981,15 +10702,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 254,
+            &quot;id&quot;: 240,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Kiểng&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-kieng&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;13&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-13&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.748668,106.71021]&quot;,
+            &quot;center&quot;: &quot;[10.75279,106.627423]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.744284,106.704086],\\\&quot;br\\\&quot;:[10.752704,106.716431]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.745772,106.623489],\\\&quot;br\\\&quot;:[10.757941,106.634117]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -9997,15 +10718,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 255,
+            &quot;id&quot;: 241,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Phong&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-phong&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;14&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-14&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.729565,106.705428]&quot;,
+            &quot;center&quot;: &quot;[10.757735,106.630693]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.718964,106.68985],\\\&quot;br\\\&quot;:[10.739738,106.720375]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.754242,106.624718],\\\&quot;br\\\&quot;:[10.76053,106.637123]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -10013,15 +10734,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 256,
+            &quot;id&quot;: 242,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Ph&uacute;&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-phu&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;2&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-2&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.726954,106.725295]&quot;,
+            &quot;center&quot;: &quot;[10.750195,106.650241]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.712423,106.712189],\\\&quot;br\\\&quot;:[10.738284,106.736633]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.748121,106.647232],\\\&quot;br\\\&quot;:[10.753674,106.653564]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -10029,15 +10750,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 257,
+            &quot;id&quot;: 243,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Quy&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-quy&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;3&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-3&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.741832,106.709831]&quot;,
+            &quot;center&quot;: &quot;[10.7429,106.645869]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.738194,106.703384],\\\&quot;br\\\&quot;:[10.74526,106.715652]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.739756,106.64283],\\\&quot;br\\\&quot;:[10.745982,106.649101]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -10045,15 +10766,15 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 258,
+            &quot;id&quot;: 244,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Thuận Đ&ocirc;ng&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-thuan-dong&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;4&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-4&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.758638,106.738792]&quot;,
+            &quot;center&quot;: &quot;[10.745988,106.644996]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.737533,106.720802],\\\&quot;br\\\&quot;:[10.777405,106.752556]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.742957,106.64241],\\\&quot;br\\\&quot;:[10.748121,106.648125]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -10061,15 +10782,79 @@ access-control-allow-origin: *
             &quot;updated_at&quot;: null
         },
         {
-            &quot;id&quot;: 259,
+            &quot;id&quot;: 245,
             &quot;city_id&quot;: 1,
-            &quot;district_id&quot;: 19,
-            &quot;name&quot;: &quot;T&acirc;n Thuận T&acirc;y&quot;,
-            &quot;slug&quot;: &quot;ho-chi-minh-quan-7-tan-thuan-tay&quot;,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;5&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-5&quot;,
             &quot;geometry&quot;: null,
-            &quot;center&quot;: &quot;[10.750968,106.721614]&quot;,
+            &quot;center&quot;: &quot;[10.748519,106.64313]&quot;,
             &quot;color&quot;: &quot;#FF0000&quot;,
-            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.745457,106.715523],\\\&quot;br\\\&quot;:[10.756325,106.728569]}&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.74666,106.63945],\\\&quot;br\\\&quot;:[10.749896,106.647697]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 246,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;6&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-6&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.751983,106.645498]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.749616,106.642067],\\\&quot;br\\\&quot;:[10.754342,106.649292]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 247,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;7&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-7&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.738623,106.638144]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.73365,106.633514],\\\&quot;br\\\&quot;:[10.742957,106.643669]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 248,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;8&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-8&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.74295,106.638986]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.7389,106.634171],\\\&quot;br\\\&quot;:[10.747242,106.64283]}&quot;,
+            &quot;pre&quot;: &quot;Phường&quot;,
+            &quot;order&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;created_at&quot;: null,
+            &quot;updated_at&quot;: null
+        },
+        {
+            &quot;id&quot;: 249,
+            &quot;city_id&quot;: 1,
+            &quot;district_id&quot;: 18,
+            &quot;name&quot;: &quot;9&quot;,
+            &quot;slug&quot;: &quot;ho-chi-minh-quan-6-phuong-9&quot;,
+            &quot;geometry&quot;: null,
+            &quot;center&quot;: &quot;[10.752482,106.63994]&quot;,
+            &quot;color&quot;: &quot;#FF0000&quot;,
+            &quot;bounding_box&quot;: &quot;{\\\&quot;tl\\\&quot;:[10.749264,106.636398],\\\&quot;br\\\&quot;:[10.755029,106.642838]}&quot;,
             &quot;pre&quot;: &quot;Phường&quot;,
             &quot;order&quot;: null,
             &quot;status&quot;: 1,
@@ -10159,10 +10944,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="number" style="display: none"
                name="district_id"                data-endpoint="GETapi-v1-destination-district--district_id-"
-               value="19"
+               value="18"
                data-component="url">
     <br>
-<p>Get ward after choose district. Example: <code>19</code></p>
+<p>Get ward after choose district. Example: <code>18</code></p>
             </div>
                     </form>
 
@@ -10573,12 +11358,95 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 51
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 9,
+            &quot;slug&quot;: &quot;rudolph-marquard&quot;,
+            &quot;sku&quot;: &quot;zxc&quot;,
+            &quot;name&quot;: &quot;Rudolph Marquard&quot;,
+            &quot;description&quot;: &quot;undefined&quot;,
+            &quot;thumbnail_url&quot;: &quot;http://127.0.0.1:8000/storage/1/conversions/ao-hoodie-den5_54-thumbnail_resize.jpg&quot;,
+            &quot;brand_id&quot;: 1,
+            &quot;is_sale&quot;: null,
+            &quot;stock_old_price&quot;: &quot;0&quot;,
+            &quot;stock_lowest_price&quot;: &quot;200,000&quot;,
+            &quot;views_count&quot;: null,
+            &quot;media&quot;: [
+                {
+                    &quot;id&quot;: 2,
+                    &quot;file_name&quot;: &quot;ao-hoodie-daily-wear-3-1_(1)&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\2/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;order_column&quot;: 2
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;file_name&quot;: &quot;ao-hoodie-den5_54&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/3/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/3/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\3/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;order_column&quot;: 3
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;file_name&quot;: &quot;ao-hoodie-den8_84&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/4/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/4/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\4/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;order_column&quot;: 4
+                }
+            ],
+            &quot;created_at&quot;: &quot;23/02/2023 14:31&quot;,
+            &quot;updated_at&quot;: &quot;23/02/2023 14:31&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;slug&quot;: &quot;hoodie&quot;,
+            &quot;sku&quot;: &quot;hoodie&quot;,
+            &quot;name&quot;: &quot;hoodie&quot;,
+            &quot;description&quot;: &quot;undefined&quot;,
+            &quot;thumbnail_url&quot;: &quot;http://127.0.0.1:8000/storage/5/conversions/ao-hoodie-xam-nhat-thumbnail_resize.jpg&quot;,
+            &quot;brand_id&quot;: 1,
+            &quot;is_sale&quot;: null,
+            &quot;stock_old_price&quot;: &quot;0&quot;,
+            &quot;stock_lowest_price&quot;: &quot;200,000&quot;,
+            &quot;views_count&quot;: null,
+            &quot;media&quot;: [
+                {
+                    &quot;id&quot;: 6,
+                    &quot;file_name&quot;: &quot;ao-hoodie-daily-wear-3-1_(1)&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/6/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/6/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\6/ao-hoodie-daily-wear-3-1_(1).jpg&quot;,
+                    &quot;order_column&quot;: 2
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;file_name&quot;: &quot;ao-hoodie-den5_54&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/7/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/7/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\7/ao-hoodie-den5_54.jpg&quot;,
+                    &quot;order_column&quot;: 3
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;file_name&quot;: &quot;ao-hoodie-den8_84&quot;,
+                    &quot;url&quot;: &quot;http://127.0.0.1:8000/storage/8/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;full_url&quot;: &quot;http://127.0.0.1:8000/storage/8/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;path&quot;: &quot;D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app/public\\8/ao-hoodie-den8_84.jpg&quot;,
+                    &quot;order_column&quot;: 4
+                }
+            ],
+            &quot;created_at&quot;: &quot;23/02/2023 14:33&quot;,
+            &quot;updated_at&quot;: &quot;23/02/2023 14:33&quot;
+        }
+    ],
     &quot;links&quot;: {
         &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/item?page=1&quot;,
         &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/item?page=1&quot;,
@@ -10587,7 +11455,7 @@ access-control-allow-origin: *
     },
     &quot;meta&quot;: {
         &quot;current_page&quot;: 1,
-        &quot;from&quot;: null,
+        &quot;from&quot;: 1,
         &quot;last_page&quot;: 1,
         &quot;links&quot;: [
             {
@@ -10608,8 +11476,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/item&quot;,
         &quot;per_page&quot;: 50,
-        &quot;to&quot;: null,
-        &quot;total&quot;: 0
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
     }
 }</code>
  </pre>
@@ -10856,7 +11724,7 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/item/ex" \
+    --get "http://127.0.0.1:8000/api/v1/item/est" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF"</code></pre></div>
@@ -10864,7 +11732,7 @@ access-control-allow-origin: *
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/item/ex"
+    "http://127.0.0.1:8000/api/v1/item/est"
 );
 
 const headers = {
@@ -11007,10 +11875,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="slug"                data-endpoint="GETapi-v1-item--slug-"
-               value="ex"
+               value="est"
                data-component="url">
     <br>
-<p>The slug of the item. Example: <code>ex</code></p>
+<p>The slug of the item. Example: <code>est</code></p>
             </div>
                     </form>
 
@@ -11266,6 +12134,234 @@ access-control-allow-origin: *
                data-component="query">
     <br>
 <p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                </form>
+
+                <h1 id="item-size">Item Size</h1>
+
+    <p>APIs for managing Item Size</p>
+
+                                <h2 id="item-size-GETapi-v1-item-size">Get a list of Sizes</h2>
+
+<p>
+</p>
+
+<p>This endpoint lets you get a list of Sizes for the items</p>
+
+<span id="example-requests-GETapi-v1-item-size">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/v1/item-size?limit=50" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "API-KEY: RANDOM_STUFF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/v1/item-size"
+);
+
+const params = {
+    "limit": "50",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "API-KEY": "RANDOM_STUFF",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-item-size">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 52
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;item_category_id&quot;: 2,
+            &quot;item_person_type_id&quot;: 1,
+            &quot;value&quot;: &quot;S&quot;,
+            &quot;status&quot;: 1,
+            &quot;order&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-02-23T08:16:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-23T08:16:11.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;item_category_id&quot;: 2,
+            &quot;item_person_type_id&quot;: 1,
+            &quot;value&quot;: &quot;S&quot;,
+            &quot;status&quot;: 1,
+            &quot;order&quot;: 0,
+            &quot;created_at&quot;: &quot;2023-02-23T08:16:21.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-23T08:16:21.000000Z&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://127.0.0.1:8000/api/v1/item-size?page=1&quot;,
+        &quot;last&quot;: &quot;http://127.0.0.1:8000/api/v1/item-size?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/v1/item-size?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/v1/item-size&quot;,
+        &quot;per_page&quot;: 50,
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-item-size" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-item-size"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-item-size" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-item-size" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-item-size"></code></pre>
+</span>
+<form id="form-GETapi-v1-item-size" data-method="GET"
+      data-path="api/v1/item-size"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-item-size', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-item-size"
+                    onclick="tryItOut('GETapi-v1-item-size');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-item-size"
+                    onclick="cancelTryOut('GETapi-v1-item-size');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-item-size" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/item-size</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-item-size"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>API-KEY</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="API-KEY"                data-endpoint="GETapi-v1-item-size"
+               value="RANDOM_STUFF"
+               data-component="header">
+    <br>
+<p>Example: <code>RANDOM_STUFF</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>limit</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="limit"                data-endpoint="GETapi-v1-item-size"
+               value="50"
+               data-component="query">
+    <br>
+<p>The number of resource that will show and then paginate. Example: <code>50</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>item_category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="item_category_id"                data-endpoint="GETapi-v1-item-size"
+               value=""
+               data-component="query">
+    <br>
+<p>the id of the category for filter the sizes.</p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>item_person_type_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="item_person_type_id"                data-endpoint="GETapi-v1-item-size"
+               value=""
+               data-component="query">
+    <br>
+<p>the id of the person type for filter the sizes by gender.</p>
             </div>
                 </form>
 
@@ -12018,7 +13114,7 @@ fetch(url, {
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --header "API-KEY: RANDOM_STUFF" \
-    --form "avatar=@C:\Users\duykh\AppData\Local\Temp\phpDA72.tmp" </code></pre></div>
+    --form "avatar=@C:\Users\duykh\AppData\Local\Temp\phpA609.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -12139,7 +13235,7 @@ fetch(url, {
                value=""
                data-component="body">
     <br>
-<p>The image avatar of the current customer. Example: <code>C:\Users\duykh\AppData\Local\Temp\phpDA72.tmp</code></p>
+<p>The image avatar of the current customer. Example: <code>C:\Users\duykh\AppData\Local\Temp\phpA609.tmp</code></p>
         </div>
         </form>
 

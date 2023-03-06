@@ -25,6 +25,7 @@ class StoreAddressRequest extends FormRequest
     {
         return [
             'name' => 'sometimes',
+            'phone'=> 'required',
             'city_id' => 'required',
             'district_id' => 'required',
             'ward_id' => 'sometimes|required',

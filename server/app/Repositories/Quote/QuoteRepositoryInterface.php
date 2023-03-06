@@ -36,9 +36,9 @@ interface QuoteRepositoryInterface extends RepositoryInterface
 
     /**
      * @param int $id
-     * @return Collection
+     * @return mixed
      */
-    public function find($id): Collection;
+    public function find(int $id):mixed;
 
     public function getQuoteWithRelation($id);
 

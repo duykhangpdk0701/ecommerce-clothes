@@ -264,9 +264,9 @@ class QuoteDetailRepository extends BaseRepository implements QuoteDetailReposit
 
     /**
      * @param int $id
-     * @return mixed|void
+     * @return mixed
      */
-    public function find($id): Collection
+    public function find($id): mixed
     {
         return $this->model->find($id);
     }

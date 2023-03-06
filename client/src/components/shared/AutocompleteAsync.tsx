@@ -1,60 +1,55 @@
-import {
-  Autocomplete,
-  CircularProgress,
-  TextField,
-  TextFieldProps,
-} from "@mui/material";
-import React, { FC } from "react";
+import Autocomplete from "@mui/material/Autocomplete";
+import CircularProgress from "@mui/material/CircularProgress";
+import TextField from "@mui/material/TextField";
+import { TextFieldProps } from "@mui/material/TextField";
+import React, { FC, useEffect, useState } from "react";
 
 interface IData {
   name: string;
   id: number;
 }
 
-type IAutocompleteAsync = TextFieldProps & { loading: boolean; data?: any[] };
+type IAutocompleteAsync = TextFieldProps & {
+  loading: boolean;
+  data?: any[];
+  formValue?: number;
+  onChange?: (e: any) => void;
+};
 
 const AutocompleteAsync: FC<IAutocompleteAsync> = (props) => {
-  const { data, loading } = props;
-  const [open, setOpen] = React.useState(false);
-  const [options, setOptions] = React.useState<readonly IData[]>([]);
+  const { formValue, data, loading, onChange } = props;
+  const [option, setOption] = useState<IData[]>([]);
 
-  React.useEffect(() => {
-    let active = true;
+  const [inputValue, setInputValue] = useState<IData | null>();
 
-    if (!loading) {
-      return undefined;
+  useEffect(() => {
+    if (formValue == undefined) {
+      setInputValue(null);
+    } else setInputValue(option.find((item) => item.id === formValue));
+  }, [formValue]);
+
+  useEffect(() => {
+    if (data) {
+      setOption(data.map((item) => ({ id: item.id, name: item.name })));
     }
-
-    (async () => {
-      if (active && data) {
-        setOptions([...data]);
-      }
-    })();
-
-    return () => {
-      active = false;
-    };
-  }, [loading]);
-
-  React.useEffect(() => {
-    if (!open) {
-      setOptions([]);
-    }
-  }, [open]);
+  }, [data]);
 
   return (
     <Autocomplete
-      id="asynchronous-demo"
-      open={open}
-      onOpen={() => {
-        setOpen(true);
+      value={inputValue || null}
+      disabled={loading}
+      onChange={(event, value) => {
+        if (!value) {
+          setInputValue(null);
+          if (onChange) onChange(undefined);
+        } else {
+          setInputValue(value);
+          if (onChange) onChange(value?.id);
+        }
       }}
-      onClose={() => {
-        setOpen(false);
-      }}
-      isOptionEqualToValue={(option, value) => option.id === value.id}
-      getOptionLabel={(option) => option.name}
-      options={options}
+      isOptionEqualToValue={(option, value) => option.id == value.id || !value}
+      getOptionLabel={(option) => (option.name ? option.name : "")}
+      options={option}
       loading={loading}
       renderInput={(params) => (
         <TextField

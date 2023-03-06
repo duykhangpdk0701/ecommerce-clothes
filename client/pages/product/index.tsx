@@ -16,7 +16,6 @@ import ListProductdSideBarColor from "@/components/templates/product/listProduct
 import ListProductSideBarPersonType from "@/components/templates/product/listProduct/sideBar/personType";
 
 import ListProductSideBarSize from "@/components/templates/product/listProduct/sideBar/size";
-import Button from "@mui/material/Button";
 import ListProductSortBar from "@/components/templates/product/listProduct/sortBar";
 import { useAppSelector } from "@/hooks/redux";
 //layout
@@ -128,7 +127,6 @@ const Product: NextPageWithLayout = () => {
       </Head>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)} id="myForm">
-          <Button type="submit">submit</Button>
           <ListProductTemplate
             listProductSortBar={<ListProductSortBar />}
             listProductSideBar={

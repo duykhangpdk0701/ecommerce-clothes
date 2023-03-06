@@ -1,5 +1,6 @@
 interface IAddress {
   address: string;
+  phone: string;
   city_id: number;
   district_id: number;
   id: number;

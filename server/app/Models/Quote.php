@@ -61,7 +61,7 @@ class Quote extends Model
     /**
      * @return HasMany
      */
-    public function quoteDetail(): HasMany
+    public function quoteDetails(): HasMany
     {
         return $this->hasMany(QuoteDetail::class, 'quote_id', 'id');
     }

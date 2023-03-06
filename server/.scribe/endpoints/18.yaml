@@ -1,0 +1,151 @@
+name: 'Admin Item Variant'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/item-variant
+    metadata:
+      groupName: 'Admin Item Variant'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of item variant.'
+      description: 'This endpoint lets you get a list of brands'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1hd3k856fcbP6EVvegaZ4Da'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/admin/item-variant/{id}'
+    metadata:
+      groupName: 'Admin Item Variant'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Item Variant by id'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item variant.'
+        required: true
+        example: 6
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 6
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer g8kE1Pd3VvfZ6b4a6hcDa5e'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/admin/item-variant/item/{id}'
+    metadata:
+      groupName: 'Admin Item Variant'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Item Variant by Item id'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item.'
+        required: true
+        example: 9
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer kPh56a14dvgZDE3a6V8fceb'
+    controller: null
+    method: null
+    route: null
+    custom: []

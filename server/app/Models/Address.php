@@ -12,7 +12,19 @@ class Address extends Model
 
     const STATUS_ADDRESS_APPLIED = 1;
 
-    protected $fillable = ['user_id', 'name', 'country_id', 'city_id', 'district_id', 'ward_id', 'address', 'status'];
+    protected $table = "addresses";
+
+    protected $fillable = [
+        'user_id',
+        'name',
+        'phone',
+        'country_id',
+        'city_id',
+        'district_id',
+        'ward_id',
+        'address',
+        'status'
+    ];
 
     /**
      * Address default profile

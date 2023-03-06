@@ -51,7 +51,7 @@ export interface IQuoteDetail {
   total_price: string;
   quantity: number;
   items: string | null;
-  thumbnail_url: string | null;
+  thumbnail_url: string;
   condition: string;
   created_at: string;
   coupon_code: any;

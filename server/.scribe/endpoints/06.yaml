@@ -219,12 +219,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item","per_page":50,"to":null,"total":0}}'
+        content: '{"data":[{"id":9,"slug":"rudolph-marquard","sku":"zxc","name":"Rudolph Marquard","description":"undefined","thumbnail_url":"http:\/\/127.0.0.1:8000\/storage\/1\/conversions\/ao-hoodie-den5_54-thumbnail_resize.jpg","brand_id":1,"is_sale":null,"stock_old_price":"0","stock_lowest_price":"200,000","views_count":null,"media":[{"id":2,"file_name":"ao-hoodie-daily-wear-3-1_(1)","url":"http:\/\/127.0.0.1:8000\/storage\/2\/ao-hoodie-daily-wear-3-1_(1).jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/2\/ao-hoodie-daily-wear-3-1_(1).jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\2\/ao-hoodie-daily-wear-3-1_(1).jpg","order_column":2},{"id":3,"file_name":"ao-hoodie-den5_54","url":"http:\/\/127.0.0.1:8000\/storage\/3\/ao-hoodie-den5_54.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/3\/ao-hoodie-den5_54.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\3\/ao-hoodie-den5_54.jpg","order_column":3},{"id":4,"file_name":"ao-hoodie-den8_84","url":"http:\/\/127.0.0.1:8000\/storage\/4\/ao-hoodie-den8_84.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/4\/ao-hoodie-den8_84.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\4\/ao-hoodie-den8_84.jpg","order_column":4}],"created_at":"23\/02\/2023 14:31","updated_at":"23\/02\/2023 14:31"},{"id":10,"slug":"hoodie","sku":"hoodie","name":"hoodie","description":"undefined","thumbnail_url":"http:\/\/127.0.0.1:8000\/storage\/5\/conversions\/ao-hoodie-xam-nhat-thumbnail_resize.jpg","brand_id":1,"is_sale":null,"stock_old_price":"0","stock_lowest_price":"200,000","views_count":null,"media":[{"id":6,"file_name":"ao-hoodie-daily-wear-3-1_(1)","url":"http:\/\/127.0.0.1:8000\/storage\/6\/ao-hoodie-daily-wear-3-1_(1).jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/6\/ao-hoodie-daily-wear-3-1_(1).jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\6\/ao-hoodie-daily-wear-3-1_(1).jpg","order_column":2},{"id":7,"file_name":"ao-hoodie-den5_54","url":"http:\/\/127.0.0.1:8000\/storage\/7\/ao-hoodie-den5_54.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/7\/ao-hoodie-den5_54.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\7\/ao-hoodie-den5_54.jpg","order_column":3},{"id":8,"file_name":"ao-hoodie-den8_84","url":"http:\/\/127.0.0.1:8000\/storage\/8\/ao-hoodie-den8_84.jpg","full_url":"http:\/\/127.0.0.1:8000\/storage\/8\/ao-hoodie-den8_84.jpg","path":"D:\\programming\\full-stack\\e-commerce-clothes\\server\\storage\\app\/public\\8\/ao-hoodie-den8_84.jpg","order_column":4}],"created_at":"23\/02\/2023 14:33","updated_at":"23\/02\/2023 14:33"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item","per_page":50,"to":2,"total":2}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '51'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -258,11 +258,11 @@ endpoints:
         name: slug
         description: 'The slug of the item.'
         required: true
-        example: ex
+        example: est
         type: string
         custom: []
     cleanUrlParameters:
-      slug: ex
+      slug: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

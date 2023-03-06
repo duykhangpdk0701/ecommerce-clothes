@@ -25,6 +25,7 @@ class UpdateAddressRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|required',
+            'phone'=> 'required',
             'city_id' => 'required',
             'district_id' => 'required',
             'ward_id' => 'sometimes|required',

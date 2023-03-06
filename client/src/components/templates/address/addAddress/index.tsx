@@ -1,7 +1,7 @@
-import { LocationOn } from "@mui/icons-material";
-import React, { FC, ReactElement, ReactNode } from "react";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import React, { FC, ReactNode } from "react";
 import Link from "next/link";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
 interface IAddAddressTemplate {
   addAddressForm: ReactNode;
@@ -14,7 +14,7 @@ const AddAddressTemplate: FC<IAddAddressTemplate> = (props) => {
     <div>
       <div className="mt-4 mb-6 flex justify-between">
         <div className="flex gap-3 items-center">
-          <LocationOn className="text-2xl" />
+          <LocationOnIcon className="text-2xl" />
           <h2 className="text-2xl">Add a new Address</h2>
         </div>
 

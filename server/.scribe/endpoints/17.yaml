@@ -1,17 +1,17 @@
-name: 'Admin Item Variant'
+name: 'Admin Item Stock'
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/admin/item-variant
+    uri: api/v1/admin/item-stock
     metadata:
-      groupName: 'Admin Item Variant'
+      groupName: 'Admin Item Stock'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get a list of item variant.'
-      description: 'This endpoint lets you get a list of brands'
+      title: 'List Item Stock'
+      description: ''
       authenticated: true
       custom: []
     headers:
@@ -40,21 +40,21 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZPdV1Daghc6e6Eb4k5v83af'
+      - 'Bearer cV86eb1h356DE4aPdakfvgZ'
     controller: null
     method: null
     route: null
     custom: []
   -
     httpMethods:
-      - GET
-    uri: 'api/v1/admin/item-variant/{id}'
+      - POST
+    uri: api/v1/admin/item-stock
     metadata:
-      groupName: 'Admin Item Variant'
+      groupName: 'Admin Item Stock'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Show Item Variant by id'
+      title: 'Create Item Stock.'
       description: ''
       authenticated: true
       custom: []
@@ -63,88 +63,62 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the item variant.'
-        required: true
-        example: 6
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 6
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+    bodyParameters:
+      inbound_item:
+        name: inbound_item
+        description: ''
+        required: true
+        example: cumque
+        type: string
         custom: []
+      'inbound_item[].item_variant_id':
+        name: 'inbound_item[].item_variant_id'
+        description: 'Must be at least 0.'
+        required: true
+        example: 2
+        type: number
+        custom: []
+      'inbound_item[].price_in':
+        name: 'inbound_item[].price_in'
+        description: 'Must be at least 1000. Must not be greater than  1000000000.'
+        required: true
+        example: 13
+        type: number
+        custom: []
+      'inbound_item[].price':
+        name: 'inbound_item[].price'
+        description: 'Must be at least 1000. Must not be greater than  1000000000.'
+        required: true
+        example: 5
+        type: number
+        custom: []
+      'inbound_item[].stock_status_id':
+        name: 'inbound_item[].stock_status_id'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      'inbound_item[].quantity':
+        name: 'inbound_item[].quantity'
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    cleanBodyParameters:
+      inbound_item: cumque
+    fileParameters: []
+    responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer db64Pg5k63vcZafEDa8hV1e'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/admin/item-variant/item/{id}'
-    metadata:
-      groupName: 'Admin Item Variant'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Show Item Variant by Item id'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer 1|n5QJU3KB*****************************'
-      Content-Type: application/json
-      Accept: application/json
-      API-KEY: RANDOM_STUFF
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the item.'
-        required: true
-        example: 9
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 9
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6hDaf645P1kabZ8VdEv3ceg'
+      - 'Bearer kbZd8vaVfgce653PE14D6ha'
     controller: null
     method: null
     route: null

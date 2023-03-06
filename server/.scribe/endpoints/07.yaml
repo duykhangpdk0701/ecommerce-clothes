@@ -1,104 +1,70 @@
-name: 'User Endpoints'
-description: ''
+name: 'Item Size'
+description: |-
+
+  APIs for managing Item Size
 endpoints:
   -
     httpMethods:
-      - PUT
-    uri: api/v1/my-profile/change-password
+      - GET
+    uri: api/v1/item-size
     metadata:
-      groupName: 'User Endpoints'
-      groupDescription: ''
+      groupName: 'Item Size'
+      groupDescription: |-
+
+        APIs for managing Item Size
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the password of the current customer'
-      description: ''
-      authenticated: true
+      title: 'Get a list of Sizes'
+      description: 'This endpoint lets you get a list of Sizes for the items'
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer 1|n5QJU3KB*****************************'
       Content-Type: application/json
       Accept: application/json
       API-KEY: RANDOM_STUFF
     urlParameters: []
     cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      current_password:
-        name: current_password
-        description: 'The current password of the user.'
-        required: true
-        example: null
-        type: string
+    queryParameters:
+      limit:
+        name: limit
+        description: 'The number of resource that will show and then paginate.'
+        required: false
+        example: 50
+        type: integer
         custom: []
-      password:
-        name: password
-        description: 'The email of the user.'
-        required: true
+      item_category_id:
+        name: item_category_id
+        description: 'the id of the category for filter the sizes.'
+        required: false
         example: null
-        type: string
+        type: integer
         custom: []
-      password_confirmation:
-        name: password_confirmation
-        description: 'The password confirmation of the user.'
-        required: true
+      item_person_type_id:
+        name: item_person_type_id
+        description: 'the id of the person type for filter the sizes by gender.'
+        required: false
         example: null
-        type: string
+        type: integer
         custom: []
-    cleanBodyParameters:
-      current_password: null
-      password: null
-      password_confirmation: null
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 5dk8b43f1hD6aceEaZ6gvPV'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/my-profile/upload-avatar
-    metadata:
-      groupName: 'User Endpoints'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Upload avatar of the current customer'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer 1|n5QJU3KB*****************************'
-      Content-Type: multipart/form-data
-      Accept: application/json
-      API-KEY: RANDOM_STUFF
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      avatar:
-        name: avatar
-        description: 'The image avatar of the current customer.'
-        required: true
-        example: null
-        type: file
-        custom: []
+    cleanQueryParameters:
+      limit: 50
+    bodyParameters: []
     cleanBodyParameters: []
-    fileParameters:
-      avatar: null
-    responses: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"item_category_id":2,"item_person_type_id":1,"value":"S","status":1,"order":0,"created_at":"2023-02-23T08:16:11.000000Z","updated_at":"2023-02-23T08:16:11.000000Z"},{"id":2,"item_category_id":2,"item_person_type_id":1,"value":"S","status":1,"order":0,"created_at":"2023-02-23T08:16:21.000000Z","updated_at":"2023-02-23T08:16:21.000000Z"}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v1\/item-size?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v1\/item-size?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v1\/item-size?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v1\/item-size","per_page":50,"to":2,"total":2}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '52'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer aZk1Eg6vfba5Pd8e4cVhD36'
+    auth: []
     controller: null
     method: null
     route: null

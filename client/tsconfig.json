@@ -37,7 +37,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/templates/address/listAddress",
-    "src/components/templates/Home"
+    "src/components/templates/Home",
+    "src/components/templates/checkout/form/address.tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -16,10 +16,20 @@ class AddressRepository extends BaseRepository implements AddressRepositoryInter
     /**
      * @inheritdoc
      */
-    public function __construct(Model $model)
+    public function __construct(Address $model)
     {
         $this->model = $model;
         parent::__construct($model);
+    }
+
+    /**
+     * Get Address model
+     *
+     * @return string
+     */
+    public function getModel(): string
+    {
+        return Address::class;
     }
 
     /**
@@ -29,10 +39,11 @@ class AddressRepository extends BaseRepository implements AddressRepositoryInter
     {
         $address = $this->model->create([
             'user_id' => auth()->id(),
+            'phone'=> $data['phone'],
             'name' => $data['name'],
             'city_id' => $data['city_id'],
             'district_id' => $data['district_id'],
-            'ward_id' => $data['ward'] ?? null,
+            'ward_id' => $data['ward_id'],
             'address' => $data['address']
         ]);
         return $this->setAsDefault($address);
@@ -92,14 +103,11 @@ class AddressRepository extends BaseRepository implements AddressRepositoryInter
         return false;
     }
 
-
-    /**
-     * Get Address model
-     *
-     * @return string
-     */
-    public function getModel(): string
+    public function findByUserId(int $user_id): mixed
     {
-        return Address::class;
+        return $this->model->where('user_id', $user_id)->get();
+
     }
+
+
 }

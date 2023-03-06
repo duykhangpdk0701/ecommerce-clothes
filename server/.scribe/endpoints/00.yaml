@@ -48,7 +48,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":55,"name":"Hermina Prohaska","email":"lroob@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Hermina Prohaska","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":64,"name":"Ryan Marvin","email":"rshanahan@example.com","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Ryan Marvin","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -215,7 +215,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":56,"name":"Kory O''Connell","email":"sbartell@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Kory O''Connell","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":65,"name":"Solon Jacobson","email":"malcolm60@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Solon Jacobson","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -253,7 +253,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":57,"name":"Tatyana Smitham","email":"bergstrom.lloyd@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Tatyana Smitham","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":66,"name":"Mr. Cyril Halvorson","email":"iherman@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Mr. Cyril Halvorson","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -261,7 +261,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8bkv163VPagacfDeE5dhZ64'
+      - 'Bearer d65gD1kZve3b6Pf4aVEhc8a'
     controller: null
     method: null
     route: null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eZd4D5gf3kav6cbP1Eh68Va'
+      - 'Bearer a164fk3VadhD8bvgE5ePZ6c'
     controller: null
     method: null
     route: null

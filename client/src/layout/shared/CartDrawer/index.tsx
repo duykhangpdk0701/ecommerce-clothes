@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
 import { setCloseCartDrawer } from "@/contexts/slices/cartDrawerSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import CartDrawerItem from "./CartDrawerItem";
@@ -11,8 +11,16 @@ import IconButton from "@mui/material/IconButton";
 //mui icon
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import { IQuoteDetail } from "@/interfaces/Quotes";
 
-const CartDrawer = () => {
+interface ICartDrawer {
+  data?: IQuoteDetail[];
+  quoteItemLength: number;
+}
+
+const CartDrawer: FC<ICartDrawer> = (props) => {
+  const { data, quoteItemLength } = props;
+
   const cartDrawerState = useAppSelector((state) => state.CartDrawer);
   const dispatch = useAppDispatch();
 
@@ -31,7 +39,9 @@ const CartDrawer = () => {
           <div className="h-20 flex justify-between items-center mx-5">
             <div className="flex items-center">
               <ShoppingBagOutlinedIcon />
-              <span className="ml-2 text-base font-semibold">3 item</span>
+              <span className="ml-2 text-base font-semibold">
+                {quoteItemLength} item
+              </span>
             </div>
             <IconButton onClick={handleOnCloseCartDrawer}>
               <CloseIcon />
@@ -39,9 +49,9 @@ const CartDrawer = () => {
           </div>
           <Divider />
           <div>
-            <CartDrawerItem />
-            <CartDrawerItem />
-            <CartDrawerItem />
+            {data?.map((item) => (
+              <CartDrawerItem key={item.id} data={item} />
+            ))}
           </div>
         </div>
         <div className="p-5">
@@ -50,6 +60,8 @@ const CartDrawer = () => {
             fullWidth
             className="mb-3"
             disableElevation
+            LinkComponent={Link}
+            href="/checkout"
           >
             Checkout now
           </Button>

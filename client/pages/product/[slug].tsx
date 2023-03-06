@@ -4,16 +4,23 @@ import ProductContent from "@/components/templates/product/productDetails/Produc
 import HomeLayout from "@/layout/HomeLayout";
 import { useRouter } from "next/router";
 import React, { ReactElement, useState } from "react";
-import { useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { NextPageWithLayout } from "@/pages/_app";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Head from "next/head";
+import { SubmitHandler } from "react-hook-form/dist/types";
+import cartAPI from "@/api/cartAPI";
 
-export interface IProductDetailParmas {
+export interface IProductDetailParams {
   itemColor: number;
   itemSize: number;
+  quantity: number;
+}
+
+interface IAddToCart {
+  itemVariantId: number;
   quantity: number;
 }
 
@@ -28,8 +35,12 @@ const ProductDetail: NextPageWithLayout = () => {
   const { slug } = router.query;
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const queryClient = useQueryClient();
 
-  const { control, handleSubmit } = useForm<IProductDetailParmas>({
+  const { control, handleSubmit } = useForm<IProductDetailParams>({
+    defaultValues: {
+      quantity: 1,
+    },
     resolver: yupResolver(addItemToCartSchema),
   });
 
@@ -50,6 +61,35 @@ const ProductDetail: NextPageWithLayout = () => {
     },
   });
 
+  const addItemToCartMutate = useMutation({
+    mutationKey: ["cart"],
+    mutationFn: ({ itemVariantId, quantity }: IAddToCart) => {
+      const quoteId = sessionStorage.getItem("quoteId");
+      if (quoteId) {
+        return cartAPI.addToCart(itemVariantId, parseInt(quoteId), quantity);
+      }
+      return cartAPI.createCart(itemVariantId, quantity);
+    },
+    onSuccess: async (data) => {
+      sessionStorage.setItem("quouteId", data.id.toString());
+      await queryClient.refetchQueries(["cart"]);
+    },
+  });
+
+  const onSubmit: SubmitHandler<IProductDetailParams> = async (data) => {
+    const { itemColor, itemSize, quantity } = data;
+    if (itemDetail.data) {
+      const { variants } = itemDetail.data;
+      const vairant = variants.find((value) => {
+        return value.color_id === itemColor && value.size_id === itemSize;
+      });
+      console.log(vairant?.id);
+      if (vairant) {
+        addItemToCartMutate.mutate({ itemVariantId: vairant.id, quantity });
+      }
+    }
+  };
+
   return (
     <>
       <Head>
@@ -59,7 +99,13 @@ const ProductDetail: NextPageWithLayout = () => {
       </Head>
       <ProductDetailTemplate
         productContent={
-          <ProductContent control={control} itemDetail={itemDetail.data} />
+          <ProductContent
+            isLoading={loading}
+            control={control}
+            onSubmit={onSubmit}
+            handleSubmit={handleSubmit}
+            itemDetail={itemDetail.data}
+          />
         }
       />
     </>

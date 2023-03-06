@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Address\StoreAddressRequest;
+use App\Http\Resources\api\AddressResource;
 use App\Http\Resources\api\UserResource;
 use App\Models\Address;
 use App\Repositories\Address\AddressRepositoryInterface;
@@ -11,8 +13,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
+
 /**
  * @group Address
+ *
+ * @authenticated
  *
  * APIs for managing addresses
  */
@@ -30,13 +35,28 @@ class AddressController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param StoreAddressRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request): \Illuminate\Http\JsonResponse
+    public function store(StoreAddressRequest $request): \Illuminate\Http\JsonResponse
     {
         if ($this->addressRepository->create($request->validated())) {
             return response()->json(new JsonResponse(new UserResource(auth()->user())), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.user_change_profile.store_address')), ResponseAlias::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * get address by auth user
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getByAuthUser(): \Illuminate\Http\JsonResponse
+    {
+//        dd(auth()->user()->id);
+        $result = $this->addressRepository->findByUserId(auth()->user()->id);
+        if ($result) {
+            return response()->json(new JsonResponse(AddressResource::collection($result)), ResponseAlias::HTTP_OK);
         }
         return response()->json(new JsonResponse([], __('error.user_change_profile.store_address')), ResponseAlias::HTTP_NOT_FOUND);
     }

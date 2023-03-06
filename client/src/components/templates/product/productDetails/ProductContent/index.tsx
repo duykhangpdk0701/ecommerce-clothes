@@ -1,5 +1,5 @@
 import IProduct from "@/interfaces/Product";
-import { IProductDetailParmas } from "@/pages/product/[slug]";
+import { IProductDetailParams } from "@/pages/product/[slug]";
 
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -11,20 +11,29 @@ import Radio from "@mui/material/Radio";
 
 import CircleIcon from "@mui/icons-material/Circle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 
 import { sentenceCase } from "change-case";
 import React, { useState, useRef, useEffect, FC } from "react";
-import { Control } from "react-hook-form/dist/types";
+import {
+  Control,
+  SubmitHandler,
+  UseFormHandleSubmit,
+} from "react-hook-form/dist/types";
 import Slider from "react-slick";
 import { Controller } from "react-hook-form";
 
 interface IProductContent {
-  control: Control<IProductDetailParmas, any>;
+  control: Control<IProductDetailParams, any>;
+  handleSubmit: UseFormHandleSubmit<IProductDetailParams>;
+  onSubmit: SubmitHandler<IProductDetailParams>;
   itemDetail?: IProduct;
+  isLoading: boolean;
 }
 
 const ProductContent: FC<IProductContent> = (props) => {
-  const { control, itemDetail } = props;
+  const { control, itemDetail, handleSubmit, onSubmit, isLoading } = props;
   const slider1Ref = useRef<Slider>();
   const slider2Ref = useRef<Slider>();
   useEffect(() => {
@@ -97,7 +106,7 @@ const ProductContent: FC<IProductContent> = (props) => {
         </Grid>
 
         <Grid item xs={6}>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="h1" className="text-3xl font-bold mb-2">
               {itemDetail && sentenceCase(itemDetail.name)}
             </Typography>
@@ -120,7 +129,7 @@ const ProductContent: FC<IProductContent> = (props) => {
             <div className="pt-2 mb-6">
               <div className="mb-4">
                 <Typography variant="h6" className="mb-2 text-sm font-semibold">
-                  Option
+                  Color
                 </Typography>
                 <Controller
                   name="itemColor"
@@ -152,7 +161,7 @@ const ProductContent: FC<IProductContent> = (props) => {
 
               <div className="mb-4">
                 <Typography variant="h6" className="mb-2 text-sm font-semibold">
-                  Option
+                  Size
                 </Typography>
                 <Controller
                   name="itemSize"
@@ -172,6 +181,37 @@ const ProductContent: FC<IProductContent> = (props) => {
                         />
                       ))}
                     </RadioGroup>
+                  )}
+                />
+              </div>
+              <div>
+                <Typography variant="h6" className="mb-2 text-sm font-semibold">
+                  Quantity
+                </Typography>
+                <Controller
+                  name="quantity"
+                  control={control}
+                  render={({ field: { value, onChange } }) => (
+                    <div className="flex items-center">
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        className="min-w-0 p-1"
+                        onClick={() => onChange(value - 1)}
+                        disabled={value < 2 ? true : false}
+                      >
+                        <RemoveIcon />
+                      </Button>
+                      <h3 className="mx-5 text-xl">{value}</h3>
+                      <Button
+                        size="small"
+                        variant="outlined"
+                        className="min-w-0 p-1"
+                        onClick={() => onChange(value + 1)}
+                      >
+                        <AddIcon />
+                      </Button>
+                    </div>
                   )}
                 />
               </div>
