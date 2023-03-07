@@ -15,7 +15,7 @@ const SideBar = () => {
         DashBoard
       </p>
       <Link
-        href={"/orders"}
+        href={"/order"}
         className="flex justify-between px-6 mb-5 no-underline border-0 border-l-4 border-[#d23f57] border-solid text-color-gray"
       >
         <div className="flex gap-2 items-center">

@@ -1,7 +1,8 @@
 import axiosClient from "./axiosClient";
+import IPayment from "@/interfaces/Payment";
 
 const checkoutAPI = {
-  getListPaymentMethod: async () => {
+  getListPaymentMethod: async (): Promise<IPayment[]> => {
     const url = "api/v1/cart/payment-method";
     const res = await axiosClient.get(url);
     return res.data;

@@ -17,7 +17,7 @@ interface IQuotes {
   total_discount: string;
   total_shipping: string;
   total: string;
-  total_tax: null;
+  total_tax: string ;
 }
 
 export interface IQuoteDetail {

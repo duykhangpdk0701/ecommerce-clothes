@@ -1,6 +1,9 @@
 interface IPayment {
   id: number;
-  name: string;
+  name: {
+    vi : string,
+    en : string,
+  };
   key: string;
   fee: string;
   fee_type: number;

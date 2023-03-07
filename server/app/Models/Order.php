@@ -127,7 +127,7 @@ class Order extends Model
     /**
      * @return HasMany
      */
-    public function orderDetail(): HasMany
+    public function orderDetails(): HasMany
     {
         return $this->hasMany(OrderDetail::class);
     }
