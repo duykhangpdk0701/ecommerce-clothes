@@ -14,7 +14,7 @@ import {
 } from "react-hook-form/dist/types";
 import { IAddressParams } from "@/pages/address/add";
 
-interface IAddAddressForm {
+interface IUpdateAddressForm {
   control: Control<IAddressParams, any>;
   handleSubmit: UseFormHandleSubmit<IAddressParams>;
   onSubmit: SubmitHandler<IAddressParams>;
@@ -29,7 +29,7 @@ interface IAddAddressForm {
   isLoadingSubmit: boolean;
 }
 
-const AddAddressForm: FC<IAddAddressForm> = (props) => {
+const UpdateAddressForm: FC<IUpdateAddressForm> = (props) => {
   const {
     control,
     handleSubmit,
@@ -142,4 +142,4 @@ const AddAddressForm: FC<IAddAddressForm> = (props) => {
   );
 };
 
-export default AddAddressForm;
+export default UpdateAddressForm;

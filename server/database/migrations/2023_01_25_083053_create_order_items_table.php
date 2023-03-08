@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders');
             $table->unsignedBigInteger('order_status_id');
-            $table->foreign('order_status_id')->references('id')->on('order_statuses');
+//            $table->foreign('order_status_id')->references('id')->on('order_statuses');
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id')->on('items');
             $table->unsignedBigInteger('item_variant_id');

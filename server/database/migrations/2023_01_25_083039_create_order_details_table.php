@@ -24,7 +24,7 @@ return new class extends Migration {
             $table->double('price', '15', '4')->default('0.0000');
             $table->integer('quantity')->nullable();
             $table->text('items')->nullable();
-            $table->string('coupon_code', 45)->nullable()->change();
+            $table->string('coupon_code', 45)->nullable();
             $table->foreignId('color_id')->nullable();
             $table->string('color_value', 30)->nullable();
             $table->string('color_name', 30)->nullable();

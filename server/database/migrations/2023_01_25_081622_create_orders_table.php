@@ -37,6 +37,34 @@ return new class extends Migration {
             $table->string('shipping_phone', 32)->nullable();
             $table->string('shipping_taxcode', 32)->nullable();
             $table->foreignId('shipper_id')->nullable()->constrained('users');
+            $table->unsignedBigInteger('payment_method_id');
+            $table->foreign('payment_method_id')->references('id')->on('payment_methods');
+            $table->string('payment_method', 128)->nullable();
+            $table->double('payment_fee', '15', '4')->default('0.0000');
+            $table->tinyInteger('payment_fee_type')->default('0');
+
+            $table->text('comment')->nullable();
+            $table->double('total_price', '15', '4')->default('0.0000');
+            $table->double('total_discount', '15', '4')->default('0.0000');
+            $table->double('total_tax', '15', '4')->default('0.0000');
+            $table->double('total_shipping', '15', '4')->default('0.0000');
+            $table->double('total_payment_fee', '15', '4')->default('0.0000');
+            $table->double('total', '15', '4')->default('0.0000');
+            $table->double('original_total', '16', '4')->default('0.0000');
+
+            $table->unsignedBigInteger('order_status_id');
+            $table->unsignedBigInteger('coupon_id')->nullable();
+            $table->string('tracking', 64)->nullable();
+            $table->ipAddress('ip')->nullable();
+            $table->ipAddress('forwarded_ip')->nullable();
+            $table->string('user_agent', 255)->nullable();
+            $table->string('accept_language', 255)->nullable();
+
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by');
+            $table->foreign('updated_by')->references('id')->on('users');
+
             $table->uuid('uuid');
             $table->timestamps();
         });

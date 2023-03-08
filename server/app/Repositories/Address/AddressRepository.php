@@ -55,7 +55,7 @@ class AddressRepository extends BaseRepository implements AddressRepositoryInter
     public function update($model, $data): mixed
     {
         if (auth()->id() === $model->user_id) {
-            return $model->update($model);
+            return $model->update($data);
         }
         return false;
     }

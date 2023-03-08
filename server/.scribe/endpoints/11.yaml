@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 56k8bZVvP36eah14EdgfDca'
+      - 'Bearer f1P3b4EDhcevZ65kg6aV8da'
     controller: null
     method: null
     route: null
@@ -108,7 +108,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6vZdVDgh45ae6P31akfc8bE'
+      - 'Bearer 453f1cbhZDEP6vk6eVadga8'
     controller: null
     method: null
     route: null
@@ -140,7 +140,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: corrupti
+        example: cupiditate
         type: string
         custom: []
       slug:
@@ -165,7 +165,7 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: corrupti
+      name: cupiditate
       status: false
     fileParameters: []
     responses: []
@@ -173,7 +173,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZdbgavEc5h3DeP1Va64f86k'
+      - 'Bearer 5k8hdaDbVc4EZfaP1v366eg'
     controller: null
     method: null
     route: null
@@ -216,7 +216,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c6g4kfheadD3a1bV8vZ6PE5'
+      - 'Bearer Db4k61f56ZEacadgh3P8evV'
     controller: null
     method: null
     route: null

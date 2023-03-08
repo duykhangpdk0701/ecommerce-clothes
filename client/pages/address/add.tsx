@@ -10,6 +10,9 @@ import * as yup from "yup";
 import Head from "next/head";
 import { SubmitHandler } from "react-hook-form/dist/types";
 import addressAPI from "@/api/address";
+import { useAppDispatch } from "@/hooks/redux";
+import { useRouter } from "next/router";
+import { setSnackbar } from "@/contexts/slices/snackbarSlice";
 
 export interface IAddressParams {
   name: string;
@@ -39,6 +42,8 @@ const addAddressSchema = yup.object({
 });
 
 const AddAddress = () => {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
   const { control, handleSubmit, getValues, watch, setValue } =
     useForm<IAddressParams>({
       resolver: yupResolver(addAddressSchema),
@@ -95,6 +100,26 @@ const AddAddress = () => {
         wardId
       );
     },
+    onSuccess: async () => {
+      await router.push("/order");
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "success",
+          snackbarMessage: "Create Address successfully",
+        })
+      );
+      router.push("/address");
+    },
+    onError: (error: any) => {
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "error",
+          snackbarMessage: error.message,
+        })
+      );
+    },
   });
 
   const onSubmit: SubmitHandler<IAddressParams> = (data) => {
@@ -131,6 +156,7 @@ const AddAddress = () => {
             isLoadingDistrict={districtQuery.isLoading}
             ward={wardQuery.data}
             isLoadingWard={wardQuery.isLoading}
+            isLoadingSubmit={addAddressMutation.isLoading}
           />
         }
       />

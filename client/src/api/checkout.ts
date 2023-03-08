@@ -11,10 +11,10 @@ const checkoutAPI = {
   confirmCheckout: async (
     quoteId: number,
     shippingName: string,
-    shippingCityId: string,
-    shippingDistrictId: string,
-    shippingWardId: string,
-    shippingAddressId: string,
+    shippingCityId: number,
+    shippingDistrictId: number,
+    shippingWardId: number,
+    shippingAddress: string,
     shippingPhone: string,
     comment: string,
     paymentMethodId: number
@@ -27,7 +27,7 @@ const checkoutAPI = {
       shipping_district_id: shippingDistrictId,
 
       shipping_ward_id: shippingWardId,
-      shipping_address: shippingAddressId,
+      shipping_address: shippingAddress,
 
       shipping_phone: shippingPhone,
       comment,

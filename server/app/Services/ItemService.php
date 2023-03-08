@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Item;
 use App\Models\ItemColor;
+use App\Models\ItemStock;
 use App\Models\ItemPersonType;
 use App\Models\ItemStockStatus;
 use App\Repositories\Brand\BrandRepositoryInterface;
@@ -12,8 +13,7 @@ use App\Repositories\ItemCategory\ItemCategoryRepositoryInterface;
 use App\Repositories\ItemPersonType\ItemPersonTypeRepositoryInterface;
 use App\Repositories\ItemStock\ItemStockRepositoryInterface;
 use App\Repositories\ItemVariant\ItemVariantRepositoryInterface;
-use Exception;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\DB;
  */
 class ItemService
 {
-  private $itemRepository,
+    private $itemRepository,
         $brandRepository,
         $itemCategoryRepository,
         $itemVariantRepository,
@@ -43,7 +43,8 @@ class ItemService
         ItemVariantRepositoryInterface    $itemVariantRepository,
         ItemPersonTypeRepositoryInterface $itemPersonTypeRepository,
         ItemStockRepositoryInterface      $itemStockRepository,
-    ) {
+    )
+    {
         $this->itemRepository = $itemRepository;
         $this->brandRepository = $brandRepository;
         $this->itemCategoryRepository = $itemCategoryRepository;
@@ -148,6 +149,7 @@ class ItemService
 
     /**
      * Add size to item and create variants
+     * @throws Exception
      */
     public function addSize($data, $item)
     {

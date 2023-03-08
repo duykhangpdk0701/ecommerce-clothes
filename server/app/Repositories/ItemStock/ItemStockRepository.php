@@ -246,7 +246,7 @@ class ItemStockRepository extends BaseRepository implements ItemStockRepositoryI
      * @param int $id
      * @return mixed
      */
-    public function find($id): Collection
+    public function find($id): mixed
     {
         return $this->model->find($id);
     }

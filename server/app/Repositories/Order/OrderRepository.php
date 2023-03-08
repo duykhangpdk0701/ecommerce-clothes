@@ -5,6 +5,7 @@ namespace App\Repositories\Order;
 use App\Acl\Acl;
 use App\Models\Order;
 use App\Repositories\BaseRepository;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -15,6 +16,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * The repository for Role Model
+ *
+ * @mixin  Builder
  */
 class OrderRepository extends BaseRepository implements OrderRepositoryInterface
 {
@@ -190,7 +193,7 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     /**
      * @inheritdoc
      */
-    function getLatest(): Collection
+    function getLatest(): mixed
     {
         return $this->model->latest()->first();
     }

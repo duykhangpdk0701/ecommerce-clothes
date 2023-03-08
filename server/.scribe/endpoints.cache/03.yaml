@@ -30,548 +30,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: |-
-          {
-              "message": "Target [Illuminate\\Database\\Eloquent\\Model] is not instantiable while building [Knuckles\\Scribe\\Commands\\GenerateDocumentation, App\\Http\\Controllers\\Api\\AddressController, App\\Repositories\\Address\\AddressRepository].",
-              "exception": "Illuminate\\Contracts\\Container\\BindingResolutionException",
-              "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-              "line": 1103,
-              "trace": [
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 898,
-                      "function": "notInstantiable",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 770,
-                      "function": "build",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 856,
-                      "function": "resolve",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 706,
-                      "function": "resolve",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 841,
-                      "function": "make",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 1043,
-                      "function": "make",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 959,
-                      "function": "resolveClass",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 920,
-                      "function": "resolveDependencies",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 770,
-                      "function": "build",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 856,
-                      "function": "resolve",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 296,
-                      "function": "resolve",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 885,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 770,
-                      "function": "build",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 856,
-                      "function": "resolve",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 706,
-                      "function": "resolve",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 841,
-                      "function": "make",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 1043,
-                      "function": "make",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 959,
-                      "function": "resolveClass",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 920,
-                      "function": "resolveDependencies",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 770,
-                      "function": "build",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 856,
-                      "function": "resolve",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 706,
-                      "function": "resolve",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php",
-                      "line": 841,
-                      "function": "make",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-                      "line": 274,
-                      "function": "make",
-                      "class": "Illuminate\\Foundation\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-                      "line": 1099,
-                      "function": "getController",
-                      "class": "Illuminate\\Routing\\Route",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
-                      "line": 1030,
-                      "function": "controllerMiddleware",
-                      "class": "Illuminate\\Routing\\Route",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 810,
-                      "function": "gatherMiddleware",
-                      "class": "Illuminate\\Routing\\Route",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 792,
-                      "function": "gatherRouteMiddleware",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 776,
-                      "function": "runRouteWithinStack",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 740,
-                      "function": "runRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 729,
-                      "function": "dispatchToRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 190,
-                      "function": "dispatch",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 141,
-                      "function": "Illuminate\\Foundation\\Http\\{closure}",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php",
-                      "line": 31,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php",
-                      "line": 40,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-                      "line": 27,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-                      "line": 86,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php",
-                      "line": 62,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php",
-                      "line": 39,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 180,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 116,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 165,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 134,
-                      "function": "sendRequestThroughRouter",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 299,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 287,
-                      "function": "callLaravelOrLumenRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 92,
-                      "function": "makeApiCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 45,
-                      "function": "makeResponseCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 35,
-                      "function": "makeResponseCallIfConditionsPass",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 209,
-                      "function": "__invoke",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 166,
-                      "function": "iterateThroughStrategies",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 95,
-                      "function": "fetchResponses",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 122,
-                      "function": "processRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 69,
-                      "function": "extractEndpointsInfoFromLaravelApp",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 47,
-                      "function": "extractEndpointsInfoAndWriteToDisk",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-                      "line": 51,
-                      "function": "get",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-                      "line": 41,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 93,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 37,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 661,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-                      "line": 183,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Command\\Command.php",
-                      "line": 312,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-                      "line": 153,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php",
-                      "line": 1022,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php",
-                      "line": 314,
-                      "function": "doRunCommand",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\symfony\\console\\Application.php",
-                      "line": 168,
-                      "function": "doRun",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
-                      "line": 102,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-                      "line": 155,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "D:\\programming\\full-stack\\e-commerce-clothes\\server\\artisan",
-                      "line": 37,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Console\\Kernel",
-                      "type": "->"
-                  }
-              ]
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -582,7 +42,59 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1b58Va664Pefk3ZgacvDhdE'
+      - 'Bearer Eavegf3Za4156hk8DdbVcP6'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/address/${id}'
+    metadata:
+      groupName: Address
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified Address.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the .'
+        required: true
+        example: nesciunt
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: nesciunt
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D64Pcvag1f6bdhaV3kEZ8e5'
     controller: null
     method: null
     route: null
@@ -609,15 +121,153 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: ''
+        required: true
+        example: consectetur
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+      district_id:
+        name: district_id
+        description: ''
+        required: true
+        example: a
+        type: string
+        custom: []
+      ward_id:
+        name: ward_id
+        description: ''
+        required: true
+        example: exercitationem
+        type: string
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: true
+        example: rem
+        type: string
+        custom: []
+    cleanBodyParameters:
+      phone: consectetur
+      city_id: est
+      district_id: a
+      ward_id: exercitationem
+      address: rem
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer PaE3h1Vabe8fD5dkv6g64Zc'
+      - 'Bearer cbk6a4da1D5ZgvehfVPE638'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/address/{address_id}'
+    metadata:
+      groupName: Address
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 1|n5QJU3KB*****************************'
+      Content-Type: application/json
+      Accept: application/json
+      API-KEY: RANDOM_STUFF
+    urlParameters:
+      address_id:
+        name: address_id
+        description: 'The ID of the address.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      address_id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: fuga
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: ''
+        required: true
+        example: illum
+        type: string
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: true
+        example: quia
+        type: string
+        custom: []
+      district_id:
+        name: district_id
+        description: ''
+        required: true
+        example: minima
+        type: string
+        custom: []
+      ward_id:
+        name: ward_id
+        description: ''
+        required: true
+        example: eaque
+        type: string
+        custom: []
+      address:
+        name: address
+        description: ''
+        required: true
+        example: quas
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: fuga
+      phone: illum
+      city_id: quia
+      district_id: minima
+      ward_id: eaque
+      address: quas
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Pea8gc6av3Vb6dD4h5fZEk1'
     controller: null
     method: null
     route: null
@@ -645,11 +295,11 @@ endpoints:
         name: address_id
         description: 'The ID of the address.'
         required: true
-        example: 7
+        example: 10
         type: integer
         custom: []
     cleanUrlParameters:
-      address_id: 7
+      address_id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -660,7 +310,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ddk6ha48V1gaP5c3ZbeEf6v'
+      - 'Bearer ka5EVgafvbh6D146decPZ38'
     controller: null
     method: null
     route: null

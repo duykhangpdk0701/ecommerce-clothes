@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pk86Eb4v6fa1VgDhcZ5e3da'
+      - 'Bearer b4da66ZfDhEa8k3cPge15vV'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v6EP438ahe16fcbDdgVk5Za'
+      - 'Bearer fd6aakbPhDcZ85e6143EgVv'
     controller: null
     method: null
     route: null
@@ -156,90 +156,90 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: lb
+        example: qzswawabgwjjlk
         type: string
         custom: []
       last_name:
         name: last_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: za
+        example: s
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: mercedes.cummings@example.com
+        example: micah.williamson@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: incidunt
+        example: beatae
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: suscipit
+        example: molestias
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: 598498.0
+        example: 3743791.3751227
         type: number
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: velit
+        example: possimus
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: autem
+        example: consectetur
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: voluptatem
+        example: et
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: magni
+        example: sint
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: lb
-      last_name: za
-      email: mercedes.cummings@example.com
-      password: incidunt
-      role: suscipit
-      phone: 598498.0
-      city_id: velit
-      district_id: autem
-      ward_id: voluptatem
-      address: magni
+      first_name: qzswawabgwjjlk
+      last_name: s
+      email: micah.williamson@example.org
+      password: beatae
+      role: molestias
+      phone: 3743791.3751227
+      city_id: possimus
+      district_id: consectetur
+      ward_id: et
+      address: sint
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kb6Veac4g1vDhfa36dPE58Z'
+      - 'Bearer gv5Z8fDEdack1463b6hVPea'
     controller: null
     method: null
     route: null
@@ -279,34 +279,34 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rzyntspxixge
+        example: wtw
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: ykshlerin@example.com
+        example: kendra.bahringer@example.org
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: quis
+        example: delectus
         type: string
         custom: []
     cleanBodyParameters:
-      name: rzyntspxixge
-      email: ykshlerin@example.com
-      role: quis
+      name: wtw
+      email: kendra.bahringer@example.org
+      role: delectus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer P3cfhd1ag5VaEb46Z8ve6Dk'
+      - 'Bearer 4aE3bghDc15f6eZavVP68kd'
     controller: null
     method: null
     route: null
@@ -349,7 +349,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 38b1g5fd4eVa6vhDck6ZEaP'
+      - 'Bearer aVZEhkv8g5ad634ecfP1D6b'
     controller: null
     method: null
     route: null

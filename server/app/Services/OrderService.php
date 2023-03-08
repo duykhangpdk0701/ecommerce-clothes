@@ -2,10 +2,19 @@
 
 namespace App\Services;
 
+use App\Acl\Acl;
+use App\Jobs\AddOrder;
+use App\Jobs\AutoAllocateItemStock;
+use App\Jobs\SendOrderEmail;
+use App\Models\ItemBidConfirmation;
+use App\Models\ItemStock;
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\OrderItem;
 use App\Models\OrderStatus;
 use App\Models\PaymentMethod;
 use App\Models\Quote;
+use App\Models\QuoteDetail;
 use App\Repositories\Item\ItemRepositoryInterface;
 use App\Repositories\ItemStock\ItemStockRepositoryInterface;
 use App\Repositories\ItemVariant\ItemVariantRepositoryInterface;
@@ -16,9 +25,14 @@ use App\Repositories\OrderStatus\OrderStatusRepositoryInterface;
 use App\Repositories\PaymentMethod\PaymentMethodRepositoryInterface;
 use App\Repositories\Quote\QuoteRepositoryInterface;
 use App\Repositories\QuoteDetail\QuoteDetailRepositoryInterface;
+use App\Repositories\ShippingFee\ShippingFeeRepositoryInterface;
 use App\Repositories\User\UserRepositoryInterface;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
+use Throwable;
 
 /**
  * Class OrderService
@@ -174,7 +188,7 @@ class OrderService
         $order->fill($quote->toArray());
         $quoteDetails = $quote->quoteDetails->toArray();
 
-        $user = $this->userRepository->find($order['created_by']);
+//        $user = $this->userRepository->find($order['created_by']);
 
         $order->order_status_id = ORDER_STT_DRAFT;
 

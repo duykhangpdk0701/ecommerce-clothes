@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g5d4aDEhZc6f3kv1VeP6a8b'
+      - 'Bearer 48fZaD5ePdkc1EVbv3ag66h'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a1vEe4b3f6d6kc58ahDVZgP'
+      - 'Bearer g61P6d8cVakEhf35e4avbDZ'
     controller: null
     method: null
     route: null
@@ -156,21 +156,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: dolorum
+        example: esse
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: omnis
+        example: voluptatem
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: reiciendis
+        example: soluta
         type: string
         custom: []
       order:
@@ -181,16 +181,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: dolorum
-      item_person_type_id: omnis
-      value: reiciendis
+      item_category_id: esse
+      item_person_type_id: voluptatem
+      value: soluta
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer fhEk65Pdv4168aDecgVab3Z'
+      - 'Bearer Z8ea5bgkda6EPcf34DVv1h6'
     controller: null
     method: null
     route: null
@@ -230,21 +230,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: qui
+        example: dolores
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: ut
+        example: enim
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: accusantium
+        example: exercitationem
         type: string
         custom: []
       order:
@@ -255,16 +255,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: qui
-      item_person_type_id: ut
-      value: accusantium
+      item_category_id: dolores
+      item_person_type_id: enim
+      value: exercitationem
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ZE85a3dfD6he1k6c4vbgaVP'
+      - 'Bearer aDkEf6va58VdZ1hegPc436b'
     controller: null
     method: null
     route: null
@@ -307,7 +307,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ad4vP1VD5fkae6ZE38g6hbc'
+      - 'Bearer 6135Pcb6Z4vkDhfEgaaV8ed'
     controller: null
     method: null
     route: null

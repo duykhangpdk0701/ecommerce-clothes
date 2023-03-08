@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "499e5f71-808d-4a2f-839d-8a6530edc2f1",
+        "_postman_id": "90f97fea-15cf-4606-a9a6-f77890ca2645",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -62,8 +62,65 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 500,
-                            "body": "{\n    \"message\": \"Target [Illuminate\\\\Database\\\\Eloquent\\\\Model] is not instantiable while building [Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation, App\\\\Http\\\\Controllers\\\\Api\\\\AddressController, App\\\\Repositories\\\\Address\\\\AddressRepository].\",\n    \"exception\": \"Illuminate\\\\Contracts\\\\Container\\\\BindingResolutionException\",\n    \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n    \"line\": 1103,\n    \"trace\": [\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 898,\n            \"function\": \"notInstantiable\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 770,\n            \"function\": \"build\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 856,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 706,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 841,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 1043,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 959,\n            \"function\": \"resolveClass\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 920,\n            \"function\": \"resolveDependencies\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 770,\n            \"function\": \"build\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 856,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 296,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 885,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 770,\n            \"function\": \"build\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 856,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 706,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 841,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 1043,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 959,\n            \"function\": \"resolveClass\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 920,\n            \"function\": \"resolveDependencies\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 770,\n            \"function\": \"build\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 856,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 706,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 841,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 274,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 1099,\n            \"function\": \"getController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 1030,\n            \"function\": \"controllerMiddleware\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 810,\n            \"function\": \"gatherMiddleware\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 792,\n            \"function\": \"gatherRouteMiddleware\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 166,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 122,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 69,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 47,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 312,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 153,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1022,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 314,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 168,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified Address.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/address\/$:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/address\/$:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "nesciunt",
+                                    "description": "The ID of the ."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -92,7 +149,50 @@
                                 "value": "RANDOM_STUFF"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phone\":\"consectetur\",\"city_id\":\"est\",\"district_id\":\"a\",\"ward_id\":\"exercitationem\",\"address\":\"rem\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/address\/:address_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/address\/:address_id",
+                            "variable": [
+                                {
+                                    "id": "address_id",
+                                    "key": "address_id",
+                                    "value": "2",
+                                    "description": "The ID of the address."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"fuga\",\"phone\":\"illum\",\"city_id\":\"quia\",\"district_id\":\"minima\",\"ward_id\":\"eaque\",\"address\":\"quas\"}"
+                        },
                         "description": ""
                     },
                     "response": []
@@ -109,7 +209,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "7",
+                                    "value": "10",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -285,7 +385,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"corrupti\",\"status\":false}"
+                            "raw": "{\"name\":\"cupiditate\",\"status\":false}"
                         },
                         "description": "This endpoint lets you create a brand"
                     },
@@ -412,55 +512,55 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "est",
+                                    "value": "rerum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sku",
-                                    "value": "suscipit",
+                                    "value": "rerum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "est",
+                                    "value": "doloremque",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "brand_id",
-                                    "value": "qui",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_categories",
-                                    "value": "nemo",
+                                    "value": "fugiat",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_person_type_id",
-                                    "value": "omnis",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_stock_status_id",
-                                    "value": "officia",
+                                    "value": "sint",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_sizes",
-                                    "value": "beatae",
+                                    "value": "sunt",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_colors",
-                                    "value": "veniam",
+                                    "value": "maiores",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -618,7 +718,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Sit reprehenderit sit quam nesciunt.\",\"order\":\"sit\",\"name\":{\"vi\":\"elgkruzzgjvoauautnuwtmf\",\"en\":\"lawsvrgdhzxbknwzoim\"}}"
+                            "raw": "{\"description\":\"Quasi nemo tempore deleniti pariatur consequuntur nam voluptatem libero.\",\"order\":\"in\",\"name\":{\"vi\":\"lqhjoqsywtfryytavuc\",\"en\":\"mvaio\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -658,7 +758,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Quia culpa minima voluptatum velit maxime.\",\"order\":\"libero\",\"name\":{\"vi\":\"officiis\",\"en\":\"iure\"}}"
+                            "raw": "{\"description\":\"Exercitationem sint adipisci eum quo officia.\",\"order\":\"eos\",\"name\":{\"vi\":\"velit\",\"en\":\"culpa\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -865,7 +965,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"dolorum\",\"item_person_type_id\":\"omnis\",\"value\":\"reiciendis\"}"
+                            "raw": "{\"item_category_id\":\"esse\",\"item_person_type_id\":\"voluptatem\",\"value\":\"soluta\"}"
                         },
                         "description": "This endpoint lets you create an item size"
                     },
@@ -905,7 +1005,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"qui\",\"item_person_type_id\":\"ut\",\"value\":\"accusantium\"}"
+                            "raw": "{\"item_category_id\":\"dolores\",\"item_person_type_id\":\"enim\",\"value\":\"exercitationem\"}"
                         },
                         "description": "This endpoint lets you update item size"
                     },
@@ -1029,7 +1129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"inbound_item\":\"cumque\"}"
+                            "raw": "{\"inbound_item\":\"est\"}"
                         },
                         "description": ""
                     },
@@ -1102,7 +1202,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "1",
                                     "description": "The ID of the item variant."
                                 }
                             ]
@@ -1159,7 +1259,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "1",
                                     "description": "The ID of the item."
                                 }
                             ]
@@ -1368,7 +1468,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"officiis\",\"status\":true}"
+                            "raw": "{\"name\":\"officia\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create an item color"
                     },
@@ -1408,7 +1508,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aliquid\"}"
+                            "raw": "{\"name\":\"quia\"}"
                         },
                         "description": "This endpoint lets you update item color"
                     },
@@ -1615,7 +1715,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"lb\",\"last_name\":\"za\",\"email\":\"mercedes.cummings@example.com\",\"password\":\"incidunt\",\"role\":\"suscipit\",\"phone\":598498,\"city_id\":\"velit\",\"district_id\":\"autem\",\"ward_id\":\"voluptatem\",\"address\":\"magni\"}"
+                            "raw": "{\"first_name\":\"qzswawabgwjjlk\",\"last_name\":\"s\",\"email\":\"micah.williamson@example.org\",\"password\":\"beatae\",\"role\":\"molestias\",\"phone\":3743791.375122746,\"city_id\":\"possimus\",\"district_id\":\"consectetur\",\"ward_id\":\"et\",\"address\":\"sint\"}"
                         },
                         "description": "This endpoint lets you create a user"
                     },
@@ -1655,7 +1755,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rzyntspxixge\",\"email\":\"ykshlerin@example.com\",\"role\":\"quis\"}"
+                            "raw": "{\"name\":\"wtw\",\"email\":\"kendra.bahringer@example.org\",\"role\":\"delectus\"}"
                         },
                         "description": "This endpoint lets you update user"
                     },
@@ -1741,7 +1841,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":64,\"name\":\"Ryan Marvin\",\"email\":\"rshanahan@example.com\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Ryan Marvin\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":13,\"name\":\"Colton Mueller\",\"email\":\"seth.satterfield@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Colton Mueller\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1772,7 +1872,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":true,\"password_confirmation\":null}"
+                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":false,\"password_confirmation\":null}"
                         },
                         "description": "This endpoint let the user register to the account.",
                         "auth": {
@@ -1826,7 +1926,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":65,\"name\":\"Solon Jacobson\",\"email\":\"malcolm60@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Solon Jacobson\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":14,\"name\":\"Miss Herta King\",\"email\":\"prolfson@example.com\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Miss Herta King\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1862,7 +1962,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":66,\"name\":\"Mr. Cyril Halvorson\",\"email\":\"iherman@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Mr. Cyril Halvorson\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":15,\"name\":\"Kristin Schneider\",\"email\":\"rusty.zemlak@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Kristin Schneider\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1977,7 +2077,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Rudolph Marquard\",\"slug\":\"rudolph-marquard\",\"order\":0,\"status\":1}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":null,\"total\":0}}",
                             "name": ""
                         }
                     ]
@@ -2324,7 +2424,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "19",
+                                    "value": "6",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -2375,7 +2475,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":212,\"city_id\":19,\"name\":\"B\\u1ea3o L\\u1ea1c\",\"slug\":\"cao-bang-bao-lac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":213,\"city_id\":19,\"name\":\"B\\u1ea3o L\\u00e2m\",\"slug\":\"cao-bang-bao-lam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":214,\"city_id\":19,\"name\":\"Cao B\\u1eb1ng\",\"slug\":\"cao-bang-cao-bang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":215,\"city_id\":19,\"name\":\"H\\u1ea1 Lang\",\"slug\":\"cao-bang-ha-lang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":216,\"city_id\":19,\"name\":\"H\\u00e0 Qu\\u1ea3ng\",\"slug\":\"cao-bang-ha-quang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":217,\"city_id\":19,\"name\":\"H\\u00f2a An\",\"slug\":\"cao-bang-hoa-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":218,\"city_id\":19,\"name\":\"Nguy\\u00ean B\\u00ecnh\",\"slug\":\"cao-bang-nguyen-binh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":219,\"city_id\":19,\"name\":\"Ph\\u1ee5c H\\u00f2a\",\"slug\":\"cao-bang-phuc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":220,\"city_id\":19,\"name\":\"Qu\\u1ea3ng Uy\\u00ean\",\"slug\":\"cao-bang-quang-uyen\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":221,\"city_id\":19,\"name\":\"Th\\u1ea1ch An\",\"slug\":\"cao-bang-thach-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":222,\"city_id\":19,\"name\":\"Th\\u00f4ng N\\u00f4ng\",\"slug\":\"cao-bang-thong-nong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":223,\"city_id\":19,\"name\":\"Tr\\u00e0 L\\u0129nh\",\"slug\":\"cao-bang-tra-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":224,\"city_id\":19,\"name\":\"Tr\\u00f9ng Kh\\u00e1nh\",\"slug\":\"cao-bang-trung-khanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":86,\"city_id\":6,\"name\":\"B\\u1ebfn L\\u1ee9c\",\"slug\":\"long-an-ben-luc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":87,\"city_id\":6,\"name\":\"C\\u1ea7n \\u0110\\u01b0\\u1edbc\",\"slug\":\"long-an-can-duoc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":88,\"city_id\":6,\"name\":\"C\\u1ea7n Giu\\u1ed9c\",\"slug\":\"long-an-can-giuoc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":89,\"city_id\":6,\"name\":\"Ch\\u00e2u Th\\u00e0nh\",\"slug\":\"long-an-chau-thanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":90,\"city_id\":6,\"name\":\"\\u0110\\u1ee9c H\\u00f2a\",\"slug\":\"long-an-duc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":91,\"city_id\":6,\"name\":\"\\u0110\\u1ee9c Hu\\u1ec7\",\"slug\":\"long-an-duc-hue\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":92,\"city_id\":6,\"name\":\"Ki\\u1ebfn T\\u01b0\\u1eddng\",\"slug\":\"long-an-kien-tuong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":93,\"city_id\":6,\"name\":\"M\\u1ed9c H\\u00f3a\",\"slug\":\"long-an-moc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":94,\"city_id\":6,\"name\":\"T\\u00e2n An\",\"slug\":\"long-an-tan-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":95,\"city_id\":6,\"name\":\"T\\u00e2n H\\u01b0ng\",\"slug\":\"long-an-tan-hung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":96,\"city_id\":6,\"name\":\"T\\u00e2n Th\\u1ea1nh\",\"slug\":\"long-an-tan-thanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":97,\"city_id\":6,\"name\":\"T\\u00e2n Tr\\u1ee5\",\"slug\":\"long-an-tan-tru\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":98,\"city_id\":6,\"name\":\"Th\\u1ea1nh H\\u00f3a\",\"slug\":\"long-an-thanh-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":99,\"city_id\":6,\"name\":\"Th\\u1ee7 Th\\u1eeba\",\"slug\":\"long-an-thu-thua\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":100,\"city_id\":6,\"name\":\"V\\u0129nh H\\u01b0ng\",\"slug\":\"long-an-vinh-hung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2516,7 +2616,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-23T08:17:45.000000Z\",\"updated_at\":\"2023-02-23T08:17:45.000000Z\"},{\"id\":2,\"name\":\"Green\",\"value\":\"#00c113\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-24T10:00:32.000000Z\",\"updated_at\":\"2023-02-25T04:29:56.000000Z\"},{\"id\":3,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-24T10:53:35.000000Z\",\"updated_at\":\"2023-02-24T10:53:35.000000Z\"},{\"id\":4,\"name\":\"Gray\",\"value\":\"#a7a7a7\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-25T04:18:08.000000Z\",\"updated_at\":\"2023-02-25T04:18:08.000000Z\"},{\"id\":5,\"name\":\"Blue\",\"value\":\"#4316f6\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-25T04:19:02.000000Z\",\"updated_at\":\"2023-02-25T04:19:02.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":5,\"total\":5}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Black\",\"value\":\"#000000\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-08T08:47:01.000000Z\",\"updated_at\":\"2023-03-08T08:47:01.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -2605,7 +2705,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "14",
+                                    "value": "2",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -2628,7 +2728,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=14&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=2&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -2676,7 +2776,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":9,\"slug\":\"rudolph-marquard\",\"sku\":\"zxc\",\"name\":\"Rudolph Marquard\",\"description\":\"undefined\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-hoodie-den5_54-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"200,000\",\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-hoodie-daily-wear-3-1_(1)\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-hoodie-den5_54\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-hoodie-den5_54.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-hoodie-den5_54.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-hoodie-den5_54.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-hoodie-den8_84\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-hoodie-den8_84.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-hoodie-den8_84.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-hoodie-den8_84.jpg\",\"order_column\":4}],\"created_at\":\"23\\\/02\\\/2023 14:31\",\"updated_at\":\"23\\\/02\\\/2023 14:31\"},{\"id\":10,\"slug\":\"hoodie\",\"sku\":\"hoodie\",\"name\":\"hoodie\",\"description\":\"undefined\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/conversions\\\/ao-hoodie-xam-nhat-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"200,000\",\"views_count\":null,\"media\":[{\"id\":6,\"file_name\":\"ao-hoodie-daily-wear-3-1_(1)\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"order_column\":2},{\"id\":7,\"file_name\":\"ao-hoodie-den5_54\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-den5_54.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-den5_54.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-den5_54.jpg\",\"order_column\":3},{\"id\":8,\"file_name\":\"ao-hoodie-den8_84\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/8\\\/ao-hoodie-den8_84.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/8\\\/ao-hoodie-den8_84.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\8\\\/ao-hoodie-den8_84.jpg\",\"order_column\":4}],\"created_at\":\"23\\\/02\\\/2023 14:33\",\"updated_at\":\"23\\\/02\\\/2023 14:33\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"hoddie\",\"description\":\"<p>lorem<\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"2,000,000\",\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-navy-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"order_column\":4}],\"created_at\":\"08\\\/03\\\/2023 08:47\",\"updated_at\":\"08\\\/03\\\/2023 08:55\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -2693,7 +2793,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "est",
+                                    "value": "odio",
                                     "description": "The slug of the item."
                                 }
                             ]
@@ -2723,7 +2823,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":9,\"slug\":\"rudolph-marquard\",\"sku\":\"zxc\",\"name\":\"Rudolph Marquard\",\"description\":\"undefined\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-hoodie-den5_54-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-hoodie-daily-wear-3-1_(1)\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-hoodie-daily-wear-3-1_(1).jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-hoodie-den5_54\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-hoodie-den5_54.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-hoodie-den5_54.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-hoodie-den5_54.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-hoodie-den8_84\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-hoodie-den8_84.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-hoodie-den8_84.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-hoodie-den8_84.jpg\",\"order_column\":4}],\"created_at\":\"23\\\/02\\\/2023 14:31\",\"updated_at\":\"23\\\/02\\\/2023 14:31\"}}",
+                            "body": "{\"data\":{\"id\":1,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"hoddie\",\"description\":\"<p>lorem<\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-navy-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"order_column\":4}],\"created_at\":\"08\\\/03\\\/2023 08:47\",\"updated_at\":\"08\\\/03\\\/2023 08:55\"}}",
                             "name": ""
                         }
                     ]
@@ -2808,7 +2908,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"parent_id\":null,\"name\":{\"en\":\"Vesta Hills\"},\"slug\":\"vesta-hills\",\"description\":\"Nihil non quidem officiis necessitatibus rerum blanditiis reiciendis eius.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-02-21T11:40:54.000000Z\",\"updated_at\":\"2023-02-21T11:40:54.000000Z\"},{\"id\":2,\"parent_id\":null,\"name\":{\"en\":\"Prof. Camille Schmidt\"},\"slug\":\"prof-camille-schmidt\",\"description\":\"Nemo cum repellendus voluptatibus et.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-02-21T11:40:54.000000Z\",\"updated_at\":\"2023-02-21T11:40:54.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category\",\"per_page\":50,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"parent_id\":null,\"name\":{\"en\":\"Dr. Krista Beahan\"},\"slug\":\"dr-krista-beahan\",\"description\":\"Iste dolor porro provident ut repellendus assumenda itaque.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":2,\"parent_id\":null,\"name\":{\"en\":\"Dr. Reinhold West\"},\"slug\":\"dr-reinhold-west\",\"description\":\"Repellendus est et quibusdam in molestiae voluptas.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -2893,7 +2993,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"item_category_id\":2,\"item_person_type_id\":1,\"value\":\"S\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-23T08:16:11.000000Z\",\"updated_at\":\"2023-02-23T08:16:11.000000Z\"},{\"id\":2,\"item_category_id\":2,\"item_person_type_id\":1,\"value\":\"S\",\"status\":1,\"order\":0,\"created_at\":\"2023-02-23T08:16:21.000000Z\",\"updated_at\":\"2023-02-23T08:16:21.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size\",\"per_page\":50,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"item_category_id\":1,\"item_person_type_id\":1,\"value\":\"S\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-08T08:47:21.000000Z\",\"updated_at\":\"2023-03-08T08:47:21.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size\",\"per_page\":50,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -3017,7 +3117,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"order_code\":\"\",\"shipping_name\":null,\"shipping_address\":null,\"shipping_country_id\":null,\"shipping_city_id\":null,\"shipping_district_id\":null,\"shipping_ward_id\":null,\"shipping_phone\":null,\"payment_method\":\"\",\"payment_code\":null,\"total_price\":\"0\",\"total_discount\":\"0\",\"total_tax\":\"0\",\"total_shipping\":\"0\",\"total_payment_fee\":\"0\",\"total\":\"0\",\"order_status_id\":null,\"order_status_value\":\"Draft\",\"number_order_items\":null,\"coupon\":null,\"created_at\":\"01\\\/01\\\/1970\",\"updated_at\":\"01\\\/01\\\/1970\"}}",
+                            "body": "{\"data\":{\"id\":1,\"order_code\":\"ECOMMERCE-20230308-0001\",\"shipping_name\":\"Ph\\u00f9ng Khang\",\"shipping_address\":\"8c V\\u0103n cao\",\"shipping_country_id\":null,\"shipping_city_id\":1,\"shipping_district_id\":23,\"shipping_ward_id\":310,\"shipping_phone\":\"0793607376\",\"payment_method\":\"Cash\",\"payment_code\":null,\"total_price\":\"2,000,000\",\"total_discount\":\"0\",\"total_tax\":\"0\",\"total_shipping\":\"0\",\"total_payment_fee\":\"0\",\"total\":\"2,000,000\",\"order_status_id\":1,\"order_status_value\":\"Pending\",\"number_order_items\":null,\"coupon\":null,\"created_at\":\"08\\\/03\\\/2023\",\"updated_at\":\"08\\\/03\\\/2023\"}}",
                             "name": ""
                         }
                     ]
@@ -3083,7 +3183,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"code\":\"men\",\"name\":\"Men\",\"status\":1,\"created_at\":\"2023-02-21T11:40:54.000000Z\",\"updated_at\":\"2023-02-21T11:40:54.000000Z\"},{\"id\":2,\"code\":\"women\",\"name\":\"Women\",\"status\":1,\"created_at\":\"2023-02-21T11:40:54.000000Z\",\"updated_at\":\"2023-02-21T11:40:54.000000Z\"},{\"id\":3,\"code\":\"kid\",\"name\":\"Kid\",\"status\":1,\"created_at\":\"2023-02-21T11:40:54.000000Z\",\"updated_at\":\"2023-02-21T11:40:54.000000Z\"}]}",
+                            "body": "{\"data\":[{\"id\":1,\"code\":\"men\",\"name\":\"Men\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":2,\"code\":\"women\",\"name\":\"Women\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":3,\"code\":\"kid\",\"name\":\"Kid\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"}]}",
                             "name": ""
                         }
                     ]

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Address\StoreAddressRequest;
+use App\Http\Requests\Address\UpdateAddressRequest;
 use App\Http\Resources\api\AddressResource;
 use App\Http\Resources\api\UserResource;
 use App\Models\Address;
@@ -62,26 +63,36 @@ class AddressController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Address.
      *
-     * @param Address $address
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(Address $address)
+    public function show(int $id): \Illuminate\Http\JsonResponse
     {
-        //
+        $result= $this->addressRepository->find($id);
+        if ($result) {
+            return response()->json(new JsonResponse(new AddressResource($result)), ResponseAlias::HTTP_OK);
+        }
+        return response()->json(new JsonResponse([], __('error.address.address_detail')), ResponseAlias::HTTP_NOT_FOUND);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param UpdateAddressRequest $request
      * @param Address $address
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Address $address)
+    public function update(UpdateAddressRequest $request, Address $address): \Illuminate\Http\JsonResponse
     {
-        //
+        $result = $this->addressRepository->update($address, $request->validated());
+        if ($result) {
+            $temp = $this->addressRepository->find($address->id);
+            return response()->json(new JsonResponse(new AddressResource($temp)), ResponseAlias::HTTP_OK);
+        }
+
+        return response()->json(new JsonResponse([], __('error.brand.store_brand')), ResponseAlias::HTTP_NOT_FOUND);
     }
 
     /**

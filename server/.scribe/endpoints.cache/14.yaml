@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3f6Pdbk1Dcv84V65haagZeE'
+      - 'Bearer h36P4k1adZcvg5EVef8ab6D'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V6DEbPead45g3fk61Zh8vca'
+      - 'Bearer V18DvahZa5edEk4P6c3gbf6'
     controller: null
     method: null
     route: null
@@ -158,7 +158,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: officiis
+        example: officia
         type: string
         custom: []
       value:
@@ -183,7 +183,7 @@ endpoints:
         type: boolean
         custom: []
     cleanBodyParameters:
-      name: officiis
+      name: officia
       status: true
     fileParameters: []
     responses: []
@@ -191,7 +191,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 14c6dEahk6baZeVgP38Df5v'
+      - 'Bearer Zvak3g4fVhad61c56PD8eEb'
     controller: null
     method: null
     route: null
@@ -231,7 +231,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: aliquid
+        example: quia
         type: string
         custom: []
       value:
@@ -256,14 +256,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: aliquid
+      name: quia
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cVaPa3b1dE6ZD58v64hekgf'
+      - 'Bearer hg6vfPd1ceab486a5EDZ3Vk'
     controller: null
     method: null
     route: null
@@ -306,7 +306,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adDh43gc1k8af6vP5EbVZe6'
+      - 'Bearer EVPk6Za6a184be3vg5dfDhc'
     controller: null
     method: null
     route: null

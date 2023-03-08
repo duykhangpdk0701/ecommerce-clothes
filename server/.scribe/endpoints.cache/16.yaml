@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dag3cdZ6VaEk18feP6vb4h5'
+      - 'Bearer cek4vadPh835gVD1Z6b6afE'
     controller: null
     method: null
     route: null
@@ -74,35 +74,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: est
+        example: rerum
         type: string
         custom: []
       sku:
         name: sku
         description: ''
         required: true
-        example: suscipit
+        example: rerum
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: est
+        example: doloremque
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: qui
+        example: aut
         type: string
         custom: []
       item_categories:
         name: item_categories
         description: ''
         required: true
-        example: nemo
+        example: fugiat
         type: string
         custom: []
       thumbnail_image:
@@ -124,40 +124,40 @@ endpoints:
         name: item_person_type_id
         description: ''
         required: true
-        example: omnis
+        example: consequatur
         type: string
         custom: []
       item_stock_status_id:
         name: item_stock_status_id
         description: ''
         required: true
-        example: officia
+        example: sint
         type: string
         custom: []
       item_sizes:
         name: item_sizes
         description: ''
         required: true
-        example: beatae
+        example: sunt
         type: string
         custom: []
       item_colors:
         name: item_colors
         description: ''
         required: true
-        example: veniam
+        example: maiores
         type: string
         custom: []
     cleanBodyParameters:
-      name: est
-      sku: suscipit
-      description: est
-      brand_id: qui
-      item_categories: nemo
-      item_person_type_id: omnis
-      item_stock_status_id: officia
-      item_sizes: beatae
-      item_colors: veniam
+      name: rerum
+      sku: rerum
+      description: doloremque
+      brand_id: aut
+      item_categories: fugiat
+      item_person_type_id: consequatur
+      item_stock_status_id: sint
+      item_sizes: sunt
+      item_colors: maiores
     fileParameters:
       thumbnail_image: null
       detail_images:
@@ -167,7 +167,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eckb6fE156DahPgZV4d83va'
+      - 'Bearer dPEVekfD364h8b1a5av6Zcg'
     controller: null
     method: null
     route: null

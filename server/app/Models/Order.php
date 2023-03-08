@@ -76,10 +76,15 @@ class Order extends Model
         return $this->hasOne(OrderStatus::class, 'id', 'order_status_id');
     }
 
+    public function couponCode(): HasOne
+    {
+        return $this->hasOne(CouponCode::class, 'id', 'coupon_id');
+    }
+
     /**
      * @return HasMany
      */
-    public function getOrderItem(): HasMany
+    public function getOrderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class, 'order_id', 'id');
     }
@@ -119,7 +124,7 @@ class Order extends Model
     /**
      * @return HasMany
      */
-    public function orderItem(): HasMany
+    public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class, 'order_id', 'id');
     }

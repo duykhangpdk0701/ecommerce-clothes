@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cV86eb1h356DE4aPdakfvgZ'
+      - 'Bearer eDfd18kaEbc6ahZPV34vg56'
     controller: null
     method: null
     route: null
@@ -72,28 +72,28 @@ endpoints:
         name: inbound_item
         description: ''
         required: true
-        example: cumque
+        example: est
         type: string
         custom: []
       'inbound_item[].item_variant_id':
         name: 'inbound_item[].item_variant_id'
         description: 'Must be at least 0.'
         required: true
-        example: 2
+        example: 41
         type: number
         custom: []
       'inbound_item[].price_in':
         name: 'inbound_item[].price_in'
         description: 'Must be at least 1000. Must not be greater than  1000000000.'
         required: true
-        example: 13
+        example: 12
         type: number
         custom: []
       'inbound_item[].price':
         name: 'inbound_item[].price'
         description: 'Must be at least 1000. Must not be greater than  1000000000.'
         required: true
-        example: 5
+        example: 21
         type: number
         custom: []
       'inbound_item[].stock_status_id':
@@ -111,14 +111,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      inbound_item: cumque
+      inbound_item: est
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kbZd8vaVfgce653PE14D6ha'
+      - 'Bearer Ekf6a1ZP6eVbv845adgchD3'
     controller: null
     method: null
     route: null
