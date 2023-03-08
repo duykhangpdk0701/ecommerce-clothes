@@ -1,10 +1,17 @@
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Pagination from "@mui/material/Pagination";
-import React from "react";
+import React, { FC } from "react";
 import { TEXT_COLOR_GRAY } from "@/styles/color";
 import ListOrderItems from "./ListOrderItems";
+import IOrder from "@/interfaces/Order";
 
-const ListOrdersTemplate = () => {
+interface IListOrdersTemplate {
+  data?: IOrder[];
+}
+
+const ListOrdersTemplate: FC<IListOrdersTemplate> = (props) => {
+  const { data } = props;
+
   return (
     <div>
       <div className="mt-4 mb-6">
@@ -29,14 +36,23 @@ const ListOrdersTemplate = () => {
         <h5 className="mx-[22px]"></h5>
       </div>
 
-      <ListOrderItems />
-      <ListOrderItems />
-      <ListOrderItems />
-      <ListOrderItems />
-      <ListOrderItems />
+      {data?.map((item) => (
+        <ListOrderItems
+          id={item.id}
+          orderCode={item.order_code}
+          key={item.id}
+          total={item.total}
+          dateCreate={item.created_at}
+          status={item.order_status_id}
+        />
+      ))}
 
       <div className="mt-10 flex justify-center">
-        <Pagination count={5} variant="outlined" color="primary" />
+        {data
+          ? data?.length > 5 && (
+              <Pagination count={5} variant="outlined" color="primary" />
+            )
+          : null}
       </div>
     </div>
   );

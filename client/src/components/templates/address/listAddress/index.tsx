@@ -1,6 +1,6 @@
 import IAddress from "@/interfaces/Address";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import Link from "next/link";
 import React, { FC } from "react";
 import ListAddressItems from "./ListAddressItems";
