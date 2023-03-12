@@ -4,13 +4,23 @@ import React, { FC } from "react";
 import { TEXT_COLOR_GRAY } from "@/styles/color";
 import ListOrderItems from "./ListOrderItems";
 import IOrder from "@/interfaces/Order";
+import ListOrderItemLoading from "./ListOrderItemLoading";
 
 interface IListOrdersTemplate {
   data?: IOrder[];
+  loading: boolean;
 }
 
+const loadingItem = [
+  <ListOrderItemLoading />,
+  <ListOrderItemLoading />,
+  <ListOrderItemLoading />,
+  <ListOrderItemLoading />,
+  <ListOrderItemLoading />,
+];
+
 const ListOrdersTemplate: FC<IListOrdersTemplate> = (props) => {
-  const { data } = props;
+  const { data, loading } = props;
 
   return (
     <div>
@@ -36,16 +46,18 @@ const ListOrdersTemplate: FC<IListOrdersTemplate> = (props) => {
         <h5 className="mx-[22px]"></h5>
       </div>
 
-      {data?.map((item) => (
-        <ListOrderItems
-          id={item.id}
-          orderCode={item.order_code}
-          key={item.id}
-          total={item.total}
-          dateCreate={item.created_at}
-          status={item.order_status_id}
-        />
-      ))}
+      {loading
+        ? loadingItem
+        : data?.map((item) => (
+            <ListOrderItems
+              id={item.id}
+              orderCode={item.order_code}
+              key={item.id}
+              total={item.total}
+              dateCreate={item.created_at}
+              status={item.order_status_id}
+            />
+          ))}
 
       <div className="mt-10 flex justify-center">
         {data

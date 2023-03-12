@@ -27,6 +27,7 @@ const HomeLayout: FC<IHomeLayout> = ({ children }) => {
       />
       <main className={`bg-[${BACKGROUND_COLOR}]`}>{children}</main>
       <CartDrawer
+        loading={cartQuery.isLoading}
         data={cartQuery?.data?.quote_detail}
         quoteItemLength={
           cartQuery.data ? cartQuery.data.quote_detail.length : 0

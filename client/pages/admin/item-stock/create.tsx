@@ -1,12 +1,16 @@
-import adminItemAPI from "@/api/admin/adminItemAPI";
 import adminItemStockAPI from "@/api/admin/adminItemStockAPI";
 import CreateItemStockTemplate from "@/components/templates/admin/itemStock/create";
+import { setSnackbar } from "@/contexts/slices/snackbarSlice";
+import { useAppDispatch } from "@/hooks/redux";
 import AdminLayout from "@/layout/AdminLayout";
 import { NextPageWithLayout } from "@/pages/_app";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { ReactElement, useState } from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
+import * as yup from "yup";
 
 export interface ICreateItemStockParams {
   itemInBound: [
@@ -31,14 +35,31 @@ interface IAddItemStock {
   }[];
 }
 
+const createItemStockSchema = yup.object({
+  inboundItem: yup.array().of(
+    yup.object({
+      itemVariantId: yup.number().required(),
+      priceIn: yup.number().required(),
+      price: yup.number().required(),
+      stockStatusId: yup.number().required(),
+      quantity: yup.number().required(),
+    })
+  ),
+});
+
 const CreateItemStock: NextPageWithLayout = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
+
+  const dispatch = useAppDispatch();
 
   const {
     control,
     handleSubmit,
     getValues,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<ICreateItemStockParams>({
     defaultValues: {
@@ -46,13 +67,15 @@ const CreateItemStock: NextPageWithLayout = () => {
         {
           itemId: undefined,
           itemVariantId: undefined,
-          priceIn: 100000,
-          price: 200000,
-          stockStatusId: 1,
-          quantity: 1,
+          priceIn: undefined,
+          price: undefined,
+          stockStatusId: undefined,
+          quantity: undefined,
         },
       ],
     },
+
+    resolver: yupResolver(createItemStockSchema),
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -64,11 +87,25 @@ const CreateItemStock: NextPageWithLayout = () => {
     mutationKey: ["item-stock"],
     mutationFn: ({ inboundItem }: IAddItemStock) =>
       adminItemStockAPI.addItemStock(inboundItem),
-    onSuccess: () => {
-      setLoading(false);
+    onSuccess: async () => {
+      await router.push("/item-stock");
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "success",
+          snackbarMessage: "Create Address successfully",
+        })
+      );
+      router.push("/address");
     },
-    onError: () => {
-      setLoading(false);
+    onError: (error: any) => {
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "error",
+          snackbarMessage: error.message,
+        })
+      );
     },
   });
 
@@ -76,7 +113,7 @@ const CreateItemStock: NextPageWithLayout = () => {
     const { itemInBound } = data;
     console.log(itemInBound);
     setLoading(true);
-    addItemStock.mutate({
+    addItemStock.mutateAsync({
       inboundItem: itemInBound.map(
         ({ itemVariantId, priceIn, price, quantity }) => ({
           itemVariantId,
@@ -87,6 +124,7 @@ const CreateItemStock: NextPageWithLayout = () => {
         })
       ),
     });
+    setLoading(false);
   };
 
   return (
@@ -107,6 +145,8 @@ const CreateItemStock: NextPageWithLayout = () => {
         isLoading={loading}
         onSubmit={onSubmit}
         getValues={getValues}
+        watch={watch}
+        setValue={setValue}
       />
     </>
   );

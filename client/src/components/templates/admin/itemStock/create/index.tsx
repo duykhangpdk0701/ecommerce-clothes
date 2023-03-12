@@ -1,18 +1,11 @@
 import React, { FC, Fragment } from "react";
 //mui component
-import { MuiColorInput } from "mui-color-input";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import FormHelperText from "@mui/material/FormHelperText";
-import Divider from "@mui/material/Divider";
+
 //icon
 import Iconify from "@/components/shared/iconify";
 import Link from "next/link";
@@ -21,15 +14,15 @@ import {
   FieldErrors,
   SubmitHandler,
   UseFormHandleSubmit,
-  Controller,
   FieldArrayWithId,
   UseFieldArrayAppend,
   UseFieldArrayRemove,
+  UseFormSetValue,
 } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import { ICreateItemStockParams } from "@/pages/admin/item-stock/create";
 import CreateItemStockItem from "./item";
-import { UseFormGetValues } from "react-hook-form/dist/types";
+import { UseFormGetValues, UseFormWatch } from "react-hook-form/dist/types";
 
 interface ICreateItemCategoryTemplate {
   fields: FieldArrayWithId<ICreateItemStockParams, "itemInBound", "id">[];
@@ -42,6 +35,8 @@ interface ICreateItemCategoryTemplate {
   isLoading: boolean;
   errorResMessage: string;
   getValues: UseFormGetValues<ICreateItemStockParams>;
+  watch: UseFormWatch<ICreateItemStockParams>;
+  setValue: UseFormSetValue<ICreateItemStockParams>;
 }
 
 const CreateItemStockTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
@@ -56,6 +51,8 @@ const CreateItemStockTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
     isLoading,
     errorResMessage,
     getValues,
+    watch,
+    setValue,
   } = props;
 
   return (
@@ -88,6 +85,8 @@ const CreateItemStockTemplate: FC<ICreateItemCategoryTemplate> = (props) => {
                 index={index}
                 key={id}
                 remove={remove}
+                watch={watch}
+                setValue={setValue}
               />
             ))}
             <Grid item xs={12} md={8}>

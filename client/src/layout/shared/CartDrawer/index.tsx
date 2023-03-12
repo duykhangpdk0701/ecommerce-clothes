@@ -12,14 +12,17 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { IQuoteDetail } from "@/interfaces/Quotes";
+import CartDrawerItemLoading from "./CartDrawerItemLoading";
+import CartItemLoading from "@/components/templates/cart/cartItemLoading";
 
 interface ICartDrawer {
   data?: IQuoteDetail[];
   quoteItemLength: number;
+  loading: boolean;
 }
 
 const CartDrawer: FC<ICartDrawer> = (props) => {
-  const { data, quoteItemLength } = props;
+  const { data, quoteItemLength, loading } = props;
 
   const cartDrawerState = useAppSelector((state) => state.CartDrawer);
   const dispatch = useAppDispatch();
@@ -27,6 +30,13 @@ const CartDrawer: FC<ICartDrawer> = (props) => {
   const handleOnCloseCartDrawer = () => {
     dispatch(setCloseCartDrawer());
   };
+
+  const loadingItem = [
+    <CartItemLoading />,
+    <CartItemLoading />,
+    <CartItemLoading />,
+    <CartItemLoading />,
+  ];
 
   return (
     <Drawer
@@ -49,9 +59,11 @@ const CartDrawer: FC<ICartDrawer> = (props) => {
           </div>
           <Divider />
           <div>
-            {data?.map((item) => (
-              <CartDrawerItem key={item.id} data={item} />
-            ))}
+            {loading
+              ? loadingItem.map((item) => <>{item}</>)
+              : data?.map((item) => (
+                  <CartDrawerItem key={item.id} data={item} />
+                ))}
           </div>
         </div>
         <div className="p-5">

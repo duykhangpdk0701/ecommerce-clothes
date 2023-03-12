@@ -4,6 +4,7 @@ import AccountLayout from "@/layout/AccountLayout";
 import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
 import { NextPageWithLayout } from "@/pages/_app";
+import ProfileInfo from "@/components/templates/profile/info";
 
 const Profile: NextPageWithLayout = () => {
   const userQuery = useQuery({
@@ -11,7 +12,12 @@ const Profile: NextPageWithLayout = () => {
     queryFn: () => userAPI.getUserDetail(),
   });
 
-  return <ProfileTemplate data={userQuery.data} />;
+  return (
+    <ProfileTemplate
+      loading={userQuery.isLoading}
+      profileInfor={<ProfileInfo data={userQuery.data} />}
+    />
+  );
 };
 
 Profile.getLayout = function getLayout(page: ReactElement) {

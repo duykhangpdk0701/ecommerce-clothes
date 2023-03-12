@@ -5,16 +5,21 @@ import Stack from "@mui/material/Stack";
 import AppBar, { AppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+// icon
+import LanguageIcon from "@mui/icons-material/Language";
 // utils
 import { bgBlur } from "@/utils/cssStyles";
 // components
 import Iconify from "@/components/shared/iconify";
+
 //
 import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
 import LanguagePopover from "./LanguagePopover";
 import NotificationsPopover from "./NotificationsPopover";
 import { FC } from "react";
+import Link from "next/link";
 
 // ----------------------------------------------------------------------
 
@@ -68,7 +73,17 @@ const Header: FC<IHeader> = ({ onOpenNav }) => {
           <Iconify icon="eva:menu-2-fill" />
         </IconButton>
 
-        <Searchbar />
+        {/* <Searchbar /> */}
+
+        <Button
+          variant="outlined"
+          startIcon={<LanguageIcon />}
+          LinkComponent={Link}
+          href="/"
+        >
+          Browse Website
+        </Button>
+
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack

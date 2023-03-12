@@ -52,6 +52,11 @@ const navConfig: INavConfig[] = [
     icon: icon("ic_cart"),
   },
   {
+    title: "Item stock",
+    path: "/admin/item-stock",
+    icon: icon("ic_cart"),
+  },
+  {
     title: "blog",
     path: "/admin/blog",
     icon: icon("ic_blog"),

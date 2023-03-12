@@ -1,7 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import product1PNG from "../../../assets/product1.png";
 //mui component
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -15,6 +13,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { sentenceCase } from "change-case";
 import { useMutation, useQueryClient } from "react-query";
 import cartAPI from "@/api/cartAPI";
+import Loading from "@/components/shared/loading";
 
 interface ICartDrawerItem {
   data: IQuoteDetail;
@@ -68,8 +67,10 @@ const CartDrawerItem: FC<ICartDrawerItem> = (props) => {
   };
 
   const { data } = props;
+
   return (
-    <div className="px-5 py-4 flex items-center border-0 border-b border-solid border-color-gray">
+    <div className="px-5 py-4 flex items-center border-0 border-b border-solid border-color-gray relative">
+      {loading && <Loading />}
       <div className="flex flex-col items-center">
         <Button
           size="small"

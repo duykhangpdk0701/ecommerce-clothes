@@ -47,7 +47,11 @@ const Login: NextPageWithLayout = () => {
     },
     onSuccess: async (data) => {
       sessionStorage.setItem("token", data.token);
-      await router.push("/");
+      if (data.role === "super admin") {
+        await router.push("/admin");
+      } else {
+        await router.push("/");
+      }
       setLoading(false);
     },
     onError: (error: any) => {

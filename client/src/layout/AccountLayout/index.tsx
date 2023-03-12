@@ -41,6 +41,7 @@ const AccountLayout: FC<IAccountLayout> = ({ children }) => {
         </Container>
       </main>
       <CartDrawer
+        loading={cartQuery.isLoading}
         data={cartQuery?.data?.quote_detail}
         quoteItemLength={
           cartQuery.data ? cartQuery.data.quote_detail.length : 0

@@ -7,7 +7,12 @@ import { useQuery } from "react-query";
 
 const Address = () => {
   const addressquery = useQuery("addrress", addressAPI.getList);
-  return <ListAddressTemplate data={addressquery.data} />;
+  return (
+    <ListAddressTemplate
+      loading={addressquery.isLoading}
+      data={addressquery.data}
+    />
+  );
 };
 
 Address.getLayout = function getLayout(page: ReactElement) {
