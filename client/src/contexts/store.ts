@@ -21,11 +21,17 @@ import CartDrawerReducer from "@/contexts/slices/cartDrawerSlice";
 import CustomizationReducer from "@/contexts/slices/customizationSlice";
 import SnackbarSliceReducer from "@/contexts/slices/snackbarSlice";
 import ListProductSliceRedurer from "@/contexts/slices/listProductSlice";
+import DialogItemSliceReducer from "@/contexts/slices/dialogItem";
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["cartDrawer", "customizationSlice", "snackbar"],
+  blacklist: [
+    "cartDrawer",
+    "customizationSlice",
+    "snackbar",
+    "dialog-item-slice",
+  ],
 };
 
 const rootReducer = combineReducers({
@@ -33,6 +39,7 @@ const rootReducer = combineReducers({
   Customization: CustomizationReducer,
   SnackBarSlice: SnackbarSliceReducer,
   ListProduct: ListProductSliceRedurer,
+  DialogItem: DialogItemSliceReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

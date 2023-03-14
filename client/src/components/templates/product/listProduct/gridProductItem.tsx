@@ -1,22 +1,17 @@
 import AddIcon from "@mui/icons-material/Add";
-import CloseIcon from "@mui/icons-material/Close";
 
 import Link from "next/link";
-import React, { FC, useState } from "react";
-import productWebp from "@/assets/8.webp";
-import Image from "next/image";
+import React, { FC } from "react";
 // mui component
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import Grid from "@mui/material/Grid";
+
 import Paper from "@mui/material/Paper";
 import Rating from "@mui/material/Rating";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import IconButton from "@mui/material/IconButton";
 
 import { sentenceCase } from "change-case";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { setOpenDialogAction } from "@/contexts/slices/dialogItem";
 
 interface IGridProductItem {
   slug: string;
@@ -27,14 +22,10 @@ interface IGridProductItem {
 
 const GridProductItem: FC<IGridProductItem> = (props) => {
   const { slug, name, price, thumbnail } = props;
-  const [open, setOpen] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleOpenDialog = () => {
-    setOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setOpen(false);
+    dispatch(setOpenDialogAction({ itemSlug: slug }));
   };
 
   return (
@@ -76,30 +67,6 @@ const GridProductItem: FC<IGridProductItem> = (props) => {
           </div>
         </div>
       </Paper>
-      <Dialog open={open} onClose={handleCloseDialog}>
-        <DialogTitle>
-          <IconButton
-            aria-label="close"
-            onClick={handleCloseDialog}
-            sx={{
-              position: "absolute",
-              right: 3,
-              top: 3,
-              color: (theme) => theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </DialogTitle>
-        <DialogContent>
-          <Grid container>
-            <Grid item xs={6}></Grid>
-            <Grid item xs={6}></Grid>
-          </Grid>
-
-          <div>hello my name is khang</div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 };

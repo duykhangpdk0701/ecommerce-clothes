@@ -17,7 +17,7 @@ import ListProductSideBarPersonType from "@/components/templates/product/listPro
 
 import ListProductSideBarSize from "@/components/templates/product/listProduct/sideBar/size";
 import ListProductSortBar from "@/components/templates/product/listProduct/sortBar";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 //layout
 import HomeLayout from "@/layout/HomeLayout";
 //nextjs
@@ -30,7 +30,7 @@ import * as yup from "yup";
 import { NextPageWithLayout } from "../_app";
 import queryString from "query-string";
 import { useRouter } from "next/router";
-// import { useSearchParams } from "next/navigation";
+import ViewProductDialog from "@/components/templates/product/listProduct/viewProductDialog";
 
 interface IProductParams {
   sortBy: number;
@@ -48,6 +48,9 @@ const createItemSizeSchema = yup.object({
 const Product: NextPageWithLayout = () => {
   const listProductState = useAppSelector((state) => state.ListProduct);
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useAppDispatch();
+
   const router = useRouter();
   const methods = useForm<IProductParams>({
     defaultValues: {
@@ -158,6 +161,7 @@ const Product: NextPageWithLayout = () => {
               )
             }
           />
+          <ViewProductDialog />
         </form>
       </FormProvider>
     </>

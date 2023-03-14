@@ -1,6 +1,6 @@
 import IProduct from "@/interfaces/Product";
 
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 
 import ListProductItem from "./listProductItem";
 
