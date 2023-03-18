@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cP8a46Efvg6adDh13be5ZVk'
+      - 'Bearer 84hZa6gE1dekf5VvDPacb63'
     controller: null
     method: null
     route: null
@@ -94,7 +94,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3Db51P6daZfv6kgEe8a4chV'
+      - 'Bearer EV38fkec64a6hPD5Zdgbva1'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Non repellendus vitae voluptates vitae laudantium.'
+        example: 'Officia neque repellat autem et et perspiciatis non.'
         type: string
         custom: []
       parent_id:
@@ -140,7 +140,7 @@ endpoints:
         name: order
         description: ''
         required: true
-        example: adipisci
+        example: at
         type: string
         custom: []
       name:
@@ -154,29 +154,29 @@ endpoints:
         name: name.vi
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: obtgwmnwkauulyfzdlkej
+        example: nsazltiokb
         type: string
         custom: []
       name.en:
         name: name.en
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: sxabpzxdbxxykrrqmeejxqnvb
+        example: czikdggcvczjq
         type: string
         custom: []
     cleanBodyParameters:
-      description: 'Non repellendus vitae voluptates vitae laudantium.'
-      order: adipisci
+      description: 'Officia neque repellat autem et et perspiciatis non.'
+      order: at
       name:
-        vi: obtgwmnwkauulyfzdlkej
-        en: sxabpzxdbxxykrrqmeejxqnvb
+        vi: nsazltiokb
+        en: czikdggcvczjq
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pv1E43Vaahekb6D8fg5d6Zc'
+      - 'Bearer bfV3e6Pg14E56vhZDka8acd'
     controller: null
     method: null
     route: null
@@ -216,7 +216,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Itaque architecto ut quibusdam voluptas accusantium.'
+        example: 'Enim vitae tempore neque qui.'
         type: string
         custom: []
       parent_id:
@@ -230,7 +230,7 @@ endpoints:
         name: order
         description: ''
         required: true
-        example: adipisci
+        example: eaque
         type: string
         custom: []
       name:
@@ -244,29 +244,29 @@ endpoints:
         name: name.vi
         description: ''
         required: true
-        example: est
+        example: doloribus
         type: string
         custom: []
       name.en:
         name: name.en
         description: ''
         required: true
-        example: dolore
+        example: sint
         type: string
         custom: []
     cleanBodyParameters:
-      description: 'Itaque architecto ut quibusdam voluptas accusantium.'
-      order: adipisci
+      description: 'Enim vitae tempore neque qui.'
+      order: eaque
       name:
-        vi: est
-        en: dolore
+        vi: doloribus
+        en: sint
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer ab1cg3eaVk65dfE48vDZP6h'
+      - 'Bearer gVvfhEc863ak4b5aD6PZ1de'
     controller: null
     method: null
     route: null
@@ -309,7 +309,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h6cak36aD4VgZPb8f1dvEe5'
+      - 'Bearer 8P636d1fgDV4kEeZ5cabahv'
     controller: null
     method: null
     route: null

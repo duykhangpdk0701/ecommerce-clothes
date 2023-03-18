@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1hg8DVEkf65aevd3Za6cP4b'
+      - 'Bearer efhdVac64vakbP53g8D1EZ6'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 438cvEabf6gP61d5VhDZkae'
+      - 'Bearer ZgcPeh3Dfkd5v6b6Ea14a8V'
     controller: null
     method: null
     route: null
@@ -156,7 +156,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: est
+        example: sunt
         type: string
         custom: []
       value:
@@ -181,7 +181,7 @@ endpoints:
         type: boolean
         custom: []
     cleanBodyParameters:
-      name: est
+      name: sunt
       status: true
     fileParameters: []
     responses: []
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8cd65aeVf6hg1Pk4ZE3Dbav'
+      - 'Bearer hk53P4vfaabdg6E8ZeD6cV1'
     controller: null
     method: null
     route: null
@@ -229,7 +229,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: illum
+        example: est
         type: string
         custom: []
       value:
@@ -254,14 +254,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: illum
+      name: est
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer gvfhcbVEa58ZeP1ak6436Dd'
+      - 'Bearer 6Vd1Dg5f48Ehaab6vcePk3Z'
     controller: null
     method: null
     route: null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer f8aV1Eh56gkc6ZeD4dabv3P'
+      - 'Bearer 1ZdcPDgkb3hEVva46568efa'
     controller: null
     method: null
     route: null

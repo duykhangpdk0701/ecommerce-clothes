@@ -50,7 +50,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":19,"name":"Dr. Jaylon Hahn","email":"vchristiansen@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Dr. Jaylon Hahn","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":22,"name":"Dr. Alexandrine Mertz","email":"mwindler@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Dr. Alexandrine Mertz","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -217,7 +217,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":20,"name":"Fabian Stark","email":"august.lesch@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Fabian Stark","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":23,"name":"Prof. Amos Homenick III","email":"zemmerich@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Prof. Amos Homenick III","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -255,7 +255,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":21,"name":"Scottie Collier","email":"abechtelar@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Scottie Collier","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":24,"name":"Amparo Kohler","email":"rosie.gaylord@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Amparo Kohler","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -263,7 +263,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hd8fZa65g1EVePc46akvDb3'
+      - 'Bearer adP68E5fehv1c4VagZkD63b'
     controller: null
     method: null
     route: null
@@ -306,7 +306,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer dga6abf158he6vkZVP34cDE'
+      - 'Bearer Dv581hbac6VE4fgkP6ea3Zd'
     controller: null
     method: null
     route: null

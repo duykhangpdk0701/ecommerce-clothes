@@ -39,9 +39,9 @@ class ItemVariantController extends Controller
      *
      * @return AnonymousResourceCollection
      */
-    public function index(): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection
     {
-        $result = $this->itemVariantRepository->all();
+        $result = $this->itemVariantRepository->serverFilteringFor($request);
         return ItemVariantResource::collection(($result));
     }
 

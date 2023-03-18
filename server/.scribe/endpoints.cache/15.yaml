@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v3aPgDahcEVdZf6b85e461k'
+      - 'Bearer ekD4a5E6hv1d3Vacb6PgfZ8'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b64D83keEhvPaVfcZ1d56ag'
+      - 'Bearer a5Zd1Pgc6hbaE6V38Devfk4'
     controller: null
     method: null
     route: null
@@ -158,21 +158,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: omnis
+        example: quisquam
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: facilis
+        example: aut
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: beatae
+        example: modi
         type: string
         custom: []
       order:
@@ -183,16 +183,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: omnis
-      item_person_type_id: facilis
-      value: beatae
+      item_category_id: quisquam
+      item_person_type_id: aut
+      value: modi
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 51Dhf3kd6ZgPca48VEabe6v'
+      - 'Bearer ZD5cVvkPgbeahE3d6a8461f'
     controller: null
     method: null
     route: null
@@ -232,21 +232,21 @@ endpoints:
         name: item_category_id
         description: ''
         required: true
-        example: ut
+        example: unde
         type: string
         custom: []
       item_person_type_id:
         name: item_person_type_id
         description: ''
         required: true
-        example: placeat
+        example: rerum
         type: string
         custom: []
       value:
         name: value
         description: ''
         required: true
-        example: ut
+        example: quae
         type: string
         custom: []
       order:
@@ -257,16 +257,16 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      item_category_id: ut
-      item_person_type_id: placeat
-      value: ut
+      item_category_id: unde
+      item_person_type_id: rerum
+      value: quae
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b6gD4Ze6fdE83kachP1a5vV'
+      - 'Bearer ZE3beV18cd6k6gaaP4Dfh5v'
     controller: null
     method: null
     route: null
@@ -309,7 +309,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3aka1hgVE85cd4DeZ6vbfP6'
+      - 'Bearer dgD5Va66c8e13bfkaZEhvP4'
     controller: null
     method: null
     route: null

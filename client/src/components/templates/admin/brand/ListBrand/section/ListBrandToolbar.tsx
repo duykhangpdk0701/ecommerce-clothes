@@ -1,7 +1,6 @@
 // @mui
 import { styled, alpha } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 // component
@@ -40,47 +39,32 @@ const StyledSearch = styled(OutlinedInput)(({ theme }) => {
 // ----------------------------------------------------------------------
 
 interface IListBrandToolbar {
-  numSelected: number;
-
   control: Control<any, any>;
 }
 
 const ListBrandToolbar: FC<IListBrandToolbar> = (props) => {
-  const { numSelected, control } = props;
+  const { control } = props;
 
   return (
-    <StyledRoot
-      sx={{
-        ...(numSelected > 0 && {
-          color: "primary.main",
-          bgcolor: "primary.lighter",
-        }),
-      }}
-    >
-      {numSelected > 0 ? (
-        <Typography component="div" variant="subtitle1">
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <Controller
-          name="search"
-          control={control}
-          render={({ field }) => (
-            <StyledSearch
-              {...field}
-              placeholder="Search user..."
-              startAdornment={
-                <InputAdornment position="start">
-                  <Iconify
-                    icon="eva:search-fill"
-                    sx={{ color: "text.disabled", width: 20, height: 20 }}
-                  />
-                </InputAdornment>
-              }
-            />
-          )}
-        />
-      )}
+    <StyledRoot>
+      <Controller
+        name="search"
+        control={control}
+        render={({ field }) => (
+          <StyledSearch
+            {...field}
+            placeholder="Search user..."
+            startAdornment={
+              <InputAdornment position="start">
+                <Iconify
+                  icon="eva:search-fill"
+                  sx={{ color: "text.disabled", width: 20, height: 20 }}
+                />
+              </InputAdornment>
+            }
+          />
+        )}
+      />
     </StyledRoot>
   );
 };

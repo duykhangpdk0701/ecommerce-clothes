@@ -1,10 +1,19 @@
 import { IAdminColor } from "@/interfaces/Color";
+import queryString from "query-string";
 import axiosClient from "../axiosClient";
 
 const adminItemColorAPI = {
-  getListOfItemColor: async (): Promise<IAdminColor[]> => {
+  getListOfItemColor: async (
+    search?: string,
+    limit: number = 5,
+    page: number = 0
+  ): Promise<IAdminColor[]> => {
     const url = "/api/v1/admin/item-color";
-    const res = await axiosClient.get(url);
+    const searchUrl = queryString.stringifyUrl(
+      { url, query: { search, limit, page: page + 1 } },
+      { arrayFormat: "index" }
+    );
+    const res = await axiosClient.get(searchUrl);
     return res.data;
   },
 

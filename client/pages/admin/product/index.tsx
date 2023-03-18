@@ -77,6 +77,7 @@ const Product: NextPageWithLayout = () => {
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
         watch={watch}
+        isLoading={listProductQuery.isLoading}
       />
     </>
   );

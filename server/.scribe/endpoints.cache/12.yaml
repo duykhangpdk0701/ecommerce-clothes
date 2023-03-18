@@ -58,7 +58,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h184bvf6eaPZkED5g6d3aVc'
+      - 'Bearer V4bE6aeg5kaD6ZdfchP8v31'
     controller: null
     method: null
     route: null
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pdkaah38v1e6b54VZf6gcED'
+      - 'Bearer 86a1c564eVE3ZPkfgDdbahv'
     controller: null
     method: null
     route: null
@@ -158,90 +158,90 @@ endpoints:
         name: first_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: vmfmjjwaogzjczewfo
+        example: mtaxb
         type: string
         custom: []
       last_name:
         name: last_name
         description: 'Must not be greater than 20 characters.'
         required: true
-        example: h
+        example: lzhgwmgfzcsnnwsk
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: stark.eldon@example.org
+        example: florencio41@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: unde
+        example: iure
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: veritatis
+        example: est
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: 868.19365
+        example: 0.13
         type: number
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: voluptate
+        example: animi
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: officiis
+        example: et
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: architecto
+        example: qui
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: dolorem
+        example: ut
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: vmfmjjwaogzjczewfo
-      last_name: h
-      email: stark.eldon@example.org
-      password: unde
-      role: veritatis
-      phone: 868.19365
-      city_id: voluptate
-      district_id: officiis
-      ward_id: architecto
-      address: dolorem
+      first_name: mtaxb
+      last_name: lzhgwmgfzcsnnwsk
+      email: florencio41@example.org
+      password: iure
+      role: est
+      phone: 0.13
+      city_id: animi
+      district_id: et
+      ward_id: qui
+      address: ut
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1eVhZ865adkEDcPavbg4f63'
+      - 'Bearer 6ZPd35eh1gaEc8V6kbDv4fa'
     controller: null
     method: null
     route: null
@@ -281,34 +281,34 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: daurgpticltxvpznq
+        example: zahe
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: wolf.kyle@example.org
+        example: trantow.nicole@example.org
         type: string
         custom: []
       role:
         name: role
         description: ''
         required: true
-        example: labore
+        example: blanditiis
         type: string
         custom: []
     cleanBodyParameters:
-      name: daurgpticltxvpznq
-      email: wolf.kyle@example.org
-      role: labore
+      name: zahe
+      email: trantow.nicole@example.org
+      role: blanditiis
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Zabg5846fVk6Pe1EdvcD3ah'
+      - 'Bearer 6f4ha3eEV5cD8ag16ZkdvPb'
     controller: null
     method: null
     route: null
@@ -351,7 +351,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b6e16Pad8Z3gchfEVa54vDk'
+      - 'Bearer Zk8d6fhE64Vagceba53D1Pv'
     controller: null
     method: null
     route: null

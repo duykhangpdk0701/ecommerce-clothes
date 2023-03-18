@@ -17,6 +17,18 @@ class ItemSizeResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+//        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            "item_category_id" => $this->item_category_id,
+            "item_person_type_id" => $this->item_person_type_id,
+            "value" => $this->value,
+            "status" => $this->status,
+            "order" => $this->order,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+            "item_category" => ($this->whenLoaded('itemCategory')),
+            "item_person_type" => new ItemPersonTypeResource($this->whenLoaded('itemPersonType'))
+        ];
     }
 }

@@ -29,6 +29,7 @@ import {
   UseFormWatch,
 } from "react-hook-form";
 import ItemRowItemList from "./section/ItemRow";
+import LoadingCell from "./section/LoadingCell";
 
 const TABLE_HEAD = [
   { id: "id", label: "ID", alignRight: false },
@@ -90,10 +91,11 @@ interface IListProductTempalte {
   handleSubmit: UseFormHandleSubmit<IProductListParams>;
   onSubmit: SubmitHandler<IProductListParams>;
   watch: UseFormWatch<IProductListParams>;
+  isLoading: boolean;
 }
 
 const ListProductTemplate: FC<IListProductTempalte> = (props) => {
-  const { data, control, handleSubmit, onSubmit, watch } = props;
+  const { data, control, handleSubmit, onSubmit, watch, isLoading } = props;
 
   const [order, setOrder] = useState<"asc" | "desc">("asc");
 
@@ -162,28 +164,30 @@ const ListProductTemplate: FC<IListProductTempalte> = (props) => {
                   onRequestSort={handleRequestSort}
                 />
                 <TableBody>
-                  {filteredUsers.map((row) => {
-                    const {
-                      id,
-                      name,
-                      slug,
-                      status,
-                      thumbnail_url,
+                  {isLoading
+                    ? Array(5).fill(<LoadingCell />)
+                    : filteredUsers.map((row) => {
+                        const {
+                          id,
+                          name,
+                          slug,
+                          status,
+                          thumbnail_url,
 
-                      created_at,
-                    } = row;
+                          created_at,
+                        } = row;
 
-                    return (
-                      <ItemRowItemList
-                        id={id}
-                        name={name}
-                        slug={slug}
-                        status={status}
-                        thumbnail_url={thumbnail_url}
-                        created_at={created_at}
-                      />
-                    );
-                  })}
+                        return (
+                          <ItemRowItemList
+                            id={id}
+                            name={name}
+                            slug={slug}
+                            status={status}
+                            thumbnail_url={thumbnail_url}
+                            created_at={created_at}
+                          />
+                        );
+                      })}
                   {emptyRows > 0 && (
                     <TableRow
                       style={{

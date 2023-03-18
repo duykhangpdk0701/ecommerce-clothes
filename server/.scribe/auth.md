@@ -1,6 +1,6 @@
 # Authenticating requests
 
-To authenticate requests, include an **`Authorization`** header with the value **`"Bearer 1|n5QJU3KB*****************************"`**.
+Authenticate requests to this API's endpoints by sending an **`Authorization`** header with the value **`"Bearer 1|n5QJU3KB*****************************"`**.
 
 All authenticated endpoints are marked with a `requires authentication` badge in the documentation below.
 

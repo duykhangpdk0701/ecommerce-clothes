@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "4adeecb9-e088-4d8e-bcd1-29428d3e4def",
+        "_postman_id": "d3af8c7b-42cd-46cb-b440-15f51f0868a7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -151,7 +151,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"et\",\"city_id\":\"quis\",\"district_id\":\"sint\",\"ward_id\":\"reiciendis\",\"address\":\"consectetur\"}"
+                            "raw": "{\"phone\":\"officia\",\"city_id\":\"officiis\",\"district_id\":\"omnis\",\"ward_id\":\"provident\",\"address\":\"illo\"}"
                         },
                         "description": ""
                     },
@@ -191,7 +191,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qui\",\"phone\":\"quasi\",\"city_id\":\"qui\",\"district_id\":\"animi\",\"ward_id\":\"velit\",\"address\":\"hic\"}"
+                            "raw": "{\"name\":\"repellat\",\"phone\":\"minima\",\"city_id\":\"quia\",\"district_id\":\"totam\",\"ward_id\":\"maxime\",\"address\":\"sit\"}"
                         },
                         "description": ""
                     },
@@ -209,7 +209,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "16",
+                                    "value": "11",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -385,7 +385,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qui\",\"status\":true}"
+                            "raw": "{\"name\":\"pariatur\",\"status\":false}"
                         },
                         "description": "This endpoint lets you create a brand"
                     },
@@ -479,7 +479,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "20",
+                                    "value": "2",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -502,7 +502,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=20&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=2&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -573,55 +573,55 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "dicta",
+                                    "value": "qui",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sku",
-                                    "value": "aperiam",
+                                    "value": "dolorem",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "dignissimos",
+                                    "value": "doloribus",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "brand_id",
-                                    "value": "ipsa",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_categories",
-                                    "value": "eveniet",
+                                    "value": "provident",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_person_type_id",
-                                    "value": "eum",
+                                    "value": "doloribus",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_stock_status_id",
-                                    "value": "laborum",
+                                    "value": "nulla",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_sizes",
-                                    "value": "ratione",
+                                    "value": "dolores",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_colors",
-                                    "value": "necessitatibus",
+                                    "value": "doloremque",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -890,7 +890,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Non repellendus vitae voluptates vitae laudantium.\",\"order\":\"adipisci\",\"name\":{\"vi\":\"obtgwmnwkauulyfzdlkej\",\"en\":\"sxabpzxdbxxykrrqmeejxqnvb\"}}"
+                            "raw": "{\"description\":\"Officia neque repellat autem et et perspiciatis non.\",\"order\":\"at\",\"name\":{\"vi\":\"nsazltiokb\",\"en\":\"czikdggcvczjq\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -930,7 +930,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Itaque architecto ut quibusdam voluptas accusantium.\",\"order\":\"adipisci\",\"name\":{\"vi\":\"est\",\"en\":\"dolore\"}}"
+                            "raw": "{\"description\":\"Enim vitae tempore neque qui.\",\"order\":\"eaque\",\"name\":{\"vi\":\"doloribus\",\"en\":\"sint\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -1137,7 +1137,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"omnis\",\"item_person_type_id\":\"facilis\",\"value\":\"beatae\"}"
+                            "raw": "{\"item_category_id\":\"quisquam\",\"item_person_type_id\":\"aut\",\"value\":\"modi\"}"
                         },
                         "description": "This endpoint lets you create an item size"
                     },
@@ -1177,7 +1177,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"ut\",\"item_person_type_id\":\"placeat\",\"value\":\"ut\"}"
+                            "raw": "{\"item_category_id\":\"unde\",\"item_person_type_id\":\"rerum\",\"value\":\"quae\"}"
                         },
                         "description": "This endpoint lets you update item size"
                     },
@@ -1301,7 +1301,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"inbound_item\":\"necessitatibus\"}"
+                            "raw": "{\"inbound_item\":\"maxime\"}"
                         },
                         "description": ""
                     },
@@ -1640,7 +1640,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"est\",\"status\":true}"
+                            "raw": "{\"name\":\"sunt\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create an item color"
                     },
@@ -1680,7 +1680,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"illum\"}"
+                            "raw": "{\"name\":\"est\"}"
                         },
                         "description": "This endpoint lets you update item color"
                     },
@@ -1887,7 +1887,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"vmfmjjwaogzjczewfo\",\"last_name\":\"h\",\"email\":\"stark.eldon@example.org\",\"password\":\"unde\",\"role\":\"veritatis\",\"phone\":868.19365,\"city_id\":\"voluptate\",\"district_id\":\"officiis\",\"ward_id\":\"architecto\",\"address\":\"dolorem\"}"
+                            "raw": "{\"first_name\":\"mtaxb\",\"last_name\":\"lzhgwmgfzcsnnwsk\",\"email\":\"florencio41@example.org\",\"password\":\"iure\",\"role\":\"est\",\"phone\":0.13,\"city_id\":\"animi\",\"district_id\":\"et\",\"ward_id\":\"qui\",\"address\":\"ut\"}"
                         },
                         "description": "This endpoint lets you create a user"
                     },
@@ -1927,7 +1927,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"daurgpticltxvpznq\",\"email\":\"wolf.kyle@example.org\",\"role\":\"labore\"}"
+                            "raw": "{\"name\":\"zahe\",\"email\":\"trantow.nicole@example.org\",\"role\":\"blanditiis\"}"
                         },
                         "description": "This endpoint lets you update user"
                     },
@@ -2013,7 +2013,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":19,\"name\":\"Dr. Jaylon Hahn\",\"email\":\"vchristiansen@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Dr. Jaylon Hahn\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":22,\"name\":\"Dr. Alexandrine Mertz\",\"email\":\"mwindler@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Dr. Alexandrine Mertz\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -2098,7 +2098,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":20,\"name\":\"Fabian Stark\",\"email\":\"august.lesch@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Fabian Stark\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":23,\"name\":\"Prof. Amos Homenick III\",\"email\":\"zemmerich@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Prof. Amos Homenick III\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -2134,7 +2134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":21,\"name\":\"Scottie Collier\",\"email\":\"abechtelar@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Scottie Collier\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":24,\"name\":\"Amparo Kohler\",\"email\":\"rosie.gaylord@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Amparo Kohler\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -2596,7 +2596,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "16",
+                                    "value": "20",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -2647,7 +2647,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":184,\"city_id\":16,\"name\":\"B\\u1eafc B\\u00ecnh\",\"slug\":\"binh-thuan-bac-binh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":185,\"city_id\":16,\"name\":\"\\u0110\\u1ea3o Ph\\u00fa Qu\\u00fd\",\"slug\":\"binh-thuan-dao-phu-quy\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":186,\"city_id\":16,\"name\":\"\\u0110\\u1ee9c Linh\",\"slug\":\"binh-thuan-duc-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":187,\"city_id\":16,\"name\":\"H\\u00e0m T\\u00e2n\",\"slug\":\"binh-thuan-ham-tan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":188,\"city_id\":16,\"name\":\"H\\u00e0m Thu\\u1eadn B\\u1eafc\",\"slug\":\"binh-thuan-ham-thuan-bac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":189,\"city_id\":16,\"name\":\"H\\u00e0m Thu\\u1eadn Nam\",\"slug\":\"binh-thuan-ham-thuan-nam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":190,\"city_id\":16,\"name\":\"La Gi\",\"slug\":\"binh-thuan-la-gi\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":191,\"city_id\":16,\"name\":\"Phan Thi\\u1ebft\",\"slug\":\"binh-thuan-phan-thiet\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":192,\"city_id\":16,\"name\":\"T\\u00e1nh Linh\",\"slug\":\"binh-thuan-tanh-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":193,\"city_id\":16,\"name\":\"Tuy Phong\",\"slug\":\"binh-thuan-tuy-phong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":225,\"city_id\":20,\"name\":\"Bu\\u00f4n \\u0110\\u00f4n\",\"slug\":\"dak-lak-buon-don\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":226,\"city_id\":20,\"name\":\"Bu\\u00f4n H\\u1ed3\",\"slug\":\"dak-lak-buon-ho\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":227,\"city_id\":20,\"name\":\"Bu\\u00f4n Ma Thu\\u1ed9t\",\"slug\":\"dak-lak-buon-ma-thuot\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":228,\"city_id\":20,\"name\":\"C\\u01b0 Kuin\",\"slug\":\"dak-lak-cu-kuin\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":229,\"city_id\":20,\"name\":\"C\\u01b0 M'gar\",\"slug\":\"dak-lak-cu-m-gar\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":230,\"city_id\":20,\"name\":\"Ea H'Leo\",\"slug\":\"dak-lak-ea-h-leo\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":231,\"city_id\":20,\"name\":\"Ea Kar\",\"slug\":\"dak-lak-ea-kar\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":232,\"city_id\":20,\"name\":\"Ea S\\u00fap\",\"slug\":\"dak-lak-ea-sup\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":233,\"city_id\":20,\"name\":\"Kr\\u00f4ng Ana\",\"slug\":\"dak-lak-krong-ana\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":234,\"city_id\":20,\"name\":\"Kr\\u00f4ng B\\u00f4ng\",\"slug\":\"dak-lak-krong-bong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":235,\"city_id\":20,\"name\":\"Kr\\u00f4ng Buk\",\"slug\":\"dak-lak-krong-buk\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":236,\"city_id\":20,\"name\":\"Kr\\u00f4ng N\\u0103ng\",\"slug\":\"dak-lak-krong-nang\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":237,\"city_id\":20,\"name\":\"Kr\\u00f4ng P\\u1eafc\",\"slug\":\"dak-lak-krong-pac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":238,\"city_id\":20,\"name\":\"L\\u0103k\",\"slug\":\"dak-lak-lak\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":239,\"city_id\":20,\"name\":\"M'\\u0110r\\u0103k\",\"slug\":\"dak-lak-m-drak\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2664,7 +2664,7 @@
                                 {
                                     "id": "district_id",
                                     "key": "district_id",
-                                    "value": "4",
+                                    "value": "13",
                                     "description": "Get ward after choose district."
                                 }
                             ]
@@ -2715,7 +2715,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":47,\"city_id\":1,\"district_id\":4,\"name\":\"An Th\\u1edbi \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-can-gio-an-thoi-dong\",\"geometry\":null,\"center\":\"[10.550843,106.811157]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.491109,106.741592],\\\\\\\"br\\\\\\\":[10.61795,106.872223]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":48,\"city_id\":1,\"district_id\":4,\"name\":\"B\\u00ecnh Kh\\u00e1nh\",\"slug\":\"ho-chi-minh-can-gio-binh-khanh\",\"geometry\":null,\"center\":\"[10.637923,106.789133]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.601921,106.738014],\\\\\\\"br\\\\\\\":[10.67518,106.844498]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":49,\"city_id\":1,\"district_id\":4,\"name\":\"C\\u1ea7n Th\\u1ea1nh \",\"slug\":\"ho-chi-minh-can-gio-can-thanh\",\"geometry\":null,\"center\":\"[10.416863,106.944281]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.393888,106.918335],\\\\\\\"br\\\\\\\":[10.438062,106.974998]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":50,\"city_id\":1,\"district_id\":4,\"name\":\"Long H\\u00f2a\",\"slug\":\"ho-chi-minh-can-gio-long-hoa\",\"geometry\":null,\"center\":\"[10.454914,106.903126]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.376389,106.861946],\\\\\\\"br\\\\\\\":[10.52889,106.947777]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":51,\"city_id\":1,\"district_id\":4,\"name\":\"L\\u00fd Nh\\u01a1n\",\"slug\":\"ho-chi-minh-can-gio-ly-nhon\",\"geometry\":null,\"center\":\"[10.473726,106.799698]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.395,106.734718],\\\\\\\"br\\\\\\\":[10.562801,106.870277]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":52,\"city_id\":1,\"district_id\":4,\"name\":\"Tam Th\\u00f4n Hi\\u1ec7p\",\"slug\":\"ho-chi-minh-can-gio-tam-thon-hiep\",\"geometry\":null,\"center\":\"[10.580722,106.883035]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.517791,106.831909],\\\\\\\"br\\\\\\\":[10.647501,106.934723]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":53,\"city_id\":1,\"district_id\":4,\"name\":\"Th\\u1ea1nh An\",\"slug\":\"ho-chi-minh-can-gio-thanh-an\",\"geometry\":null,\"center\":\"[10.547331,106.973614]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.452612,106.919716],\\\\\\\"br\\\\\\\":[10.611046,107.025276]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":170,\"city_id\":1,\"district_id\":13,\"name\":\"An Ph\\u00fa \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-quan-12-an-phu-dong\",\"geometry\":null,\"center\":\"[10.854322,106.697793]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.830049,106.679916],\\\\\\\"br\\\\\\\":[10.8717,106.717613]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":171,\"city_id\":1,\"district_id\":13,\"name\":\"\\u0110\\u00f4ng H\\u01b0ng Thu\\u1eadn\",\"slug\":\"ho-chi-minh-quan-12-dong-hung-thuan\",\"geometry\":null,\"center\":\"[10.841645,106.627832]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.824485,106.615021],\\\\\\\"br\\\\\\\":[10.856717,106.642654]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":172,\"city_id\":1,\"district_id\":13,\"name\":\"Hi\\u1ec7p Th\\u00e0nh\",\"slug\":\"ho-chi-minh-quan-12-hiep-thanh\",\"geometry\":null,\"center\":\"[10.880996,106.638754]\",\"color\":\"#FF0000\",\"bounding_box\":null,\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":173,\"city_id\":1,\"district_id\":13,\"name\":\"T\\u00e2n Ch\\u00e1nh Hi\\u1ec7p\",\"slug\":\"ho-chi-minh-quan-12-tan-chanh-hiep\",\"geometry\":null,\"center\":\"[10.864233,106.625875]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.850842,106.614548],\\\\\\\"br\\\\\\\":[10.877306,106.637115]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":174,\"city_id\":1,\"district_id\":13,\"name\":\"T\\u00e2n H\\u01b0ng Thu\\u1eadn\",\"slug\":\"ho-chi-minh-quan-12-tan-hung-thuan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":175,\"city_id\":1,\"district_id\":13,\"name\":\"T\\u00e2n Th\\u1edbi Hi\\u1ec7p\",\"slug\":\"ho-chi-minh-quan-12-tan-thoi-hiep\",\"geometry\":null,\"center\":\"[10.862147,106.640771]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.852511,106.63044],\\\\\\\"br\\\\\\\":[10.871973,106.650581]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":176,\"city_id\":1,\"district_id\":13,\"name\":\"T\\u00e2n Th\\u1edbi Nh\\u1ea5t\",\"slug\":\"ho-chi-minh-quan-12-tan-thoi-nhat\",\"geometry\":null,\"center\":\"[10.828829,106.614804]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.818353,106.602936],\\\\\\\"br\\\\\\\":[10.842481,106.627419]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":177,\"city_id\":1,\"district_id\":13,\"name\":\"Th\\u1ea1nh L\\u1ed9c\",\"slug\":\"ho-chi-minh-quan-12-thanh-loc\",\"geometry\":null,\"center\":\"[10.875456,106.684991]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.851144,106.675591],\\\\\\\"br\\\\\\\":[10.90395,106.696297]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":178,\"city_id\":1,\"district_id\":13,\"name\":\"Th\\u1ea1nh Xu\\u00e2n\",\"slug\":\"ho-chi-minh-quan-12-thanh-xuan\",\"geometry\":null,\"center\":\"[10.881473,106.671566]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.853566,106.653511],\\\\\\\"br\\\\\\\":[10.903542,106.688713]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":179,\"city_id\":1,\"district_id\":13,\"name\":\"Th\\u1edbi An\",\"slug\":\"ho-chi-minh-quan-12-thoi-an\",\"geometry\":null,\"center\":\"[10.875095,106.654939]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.855835,106.646553],\\\\\\\"br\\\\\\\":[10.895512,106.665405]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":180,\"city_id\":1,\"district_id\":13,\"name\":\"Trung M\\u1ef9 T\\u00e2y\",\"slug\":\"ho-chi-minh-quan-12-trung-my-tay\",\"geometry\":null,\"center\":\"[10.853661,106.615974]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.842481,106.606819],\\\\\\\"br\\\\\\\":[10.867266,106.628319]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2877,7 +2877,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "17",
+                                    "value": "16",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -2900,7 +2900,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=17&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=16&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -2948,7 +2948,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"200,000\",\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"17\\\/03\\\/2023 09:32\"},{\"id\":5,\"slug\":\"hoddie-2\",\"sku\":\"HKP-002\",\"name\":\"Hoddie 2\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/8\\\/conversions\\\/ao-hoodie-xam-14-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"10,000\",\"views_count\":null,\"media\":[{\"id\":9,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\9\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":10,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\10\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":11,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\11\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:17\",\"updated_at\":\"14\\\/03\\\/2023 15:17\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"200,000\",\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"18\\\/03\\\/2023 09:04\"},{\"id\":5,\"slug\":\"hoddie-2\",\"sku\":\"HKP-002\",\"name\":\"Hoddie 2\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/8\\\/conversions\\\/ao-hoodie-xam-14-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"10,000\",\"views_count\":null,\"media\":[{\"id\":9,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\9\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":10,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\10\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":11,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\11\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:17\",\"updated_at\":\"18\\\/03\\\/2023 09:07\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -2965,7 +2965,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "amet",
+                                    "value": "cum",
                                     "description": "The slug of the item."
                                 }
                             ]
@@ -2995,7 +2995,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"17\\\/03\\\/2023 09:32\"}}",
+                            "body": "{\"data\":{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"18\\\/03\\\/2023 09:04\"}}",
                             "name": ""
                         }
                     ]

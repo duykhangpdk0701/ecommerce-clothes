@@ -79,6 +79,7 @@ const Brand: NextPageWithLayout = () => {
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
         watch={watch}
+        isLoading={brandQuery.isLoading}
       />
     </>
   );

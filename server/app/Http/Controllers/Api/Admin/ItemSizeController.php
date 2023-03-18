@@ -47,7 +47,8 @@ class ItemSizeController extends Controller
      */
     public function index(Request $request): AnonymousResourceCollection
     {
-        $result = $this->itemSizeRepository->all();
+        $result = $this->itemSizeRepository->serverFilteringFor($request->all());
+//        $result = $this->itemSizeRepository->all();
         return ItemSizeResource::collection($result);
     }
 

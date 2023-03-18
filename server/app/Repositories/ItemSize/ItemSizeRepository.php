@@ -87,11 +87,11 @@ class ItemSizeRepository extends BaseRepository implements ItemSizeRepositoryInt
             $query->where('item_person_type_id', $personTypeId);
         }
 
-        if ($isPaginated) {
-            return $query->paginate(Arr::get($searchParams, 'per_page', $limit));
-        }
+//        if ($isPaginated) {
+            $query->paginate(Arr::get($searchParams, 'per_page', $limit));
+//        }
 
-        return $query->get();
+        return $query->with(['itemCategory', 'itemPersonType'])->get();
     }
 
     /**

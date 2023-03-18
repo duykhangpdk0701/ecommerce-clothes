@@ -47,7 +47,7 @@ class ItemColorController extends Controller
      */
     public function index(Request $request): AnonymousResourceCollection
     {
-        $result = $this->itemColorRepository->all();
+        $result = $this->itemColorRepository->serverPaginationFilteringFor($request->all());
         return ItemColorResource::collection($result);
     }
 

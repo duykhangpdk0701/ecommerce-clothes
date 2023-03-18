@@ -84,7 +84,7 @@ endpoints:
         name: min_price
         description: 'The minimum price of the product to filter. 1000000'
         required: false
-        example: 20
+        example: 2
         type: integer
         custom: []
       max_price:
@@ -120,7 +120,7 @@ endpoints:
     cleanQueryParameters:
       limit: 50
       page: 1
-      min_price: 20
+      min_price: 2
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -138,7 +138,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hVEag4Z85cdfbDa6e1Pvk3'
+      - 'Bearer Eh64cZbak531davDg86VfPe'
     controller: null
     method: null
     route: null
@@ -170,35 +170,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dicta
+        example: qui
         type: string
         custom: []
       sku:
         name: sku
         description: ''
         required: true
-        example: aperiam
+        example: dolorem
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: dignissimos
+        example: doloribus
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: ipsa
+        example: consequatur
         type: string
         custom: []
       item_categories:
         name: item_categories
         description: ''
         required: true
-        example: eveniet
+        example: provident
         type: string
         custom: []
       thumbnail_image:
@@ -220,40 +220,40 @@ endpoints:
         name: item_person_type_id
         description: ''
         required: true
-        example: eum
+        example: doloribus
         type: string
         custom: []
       item_stock_status_id:
         name: item_stock_status_id
         description: ''
         required: true
-        example: laborum
+        example: nulla
         type: string
         custom: []
       item_sizes:
         name: item_sizes
         description: ''
         required: true
-        example: ratione
+        example: dolores
         type: string
         custom: []
       item_colors:
         name: item_colors
         description: ''
         required: true
-        example: necessitatibus
+        example: doloremque
         type: string
         custom: []
     cleanBodyParameters:
-      name: dicta
-      sku: aperiam
-      description: dignissimos
-      brand_id: ipsa
-      item_categories: eveniet
-      item_person_type_id: eum
-      item_stock_status_id: laborum
-      item_sizes: ratione
-      item_colors: necessitatibus
+      name: qui
+      sku: dolorem
+      description: doloribus
+      brand_id: consequatur
+      item_categories: provident
+      item_person_type_id: doloribus
+      item_stock_status_id: nulla
+      item_sizes: dolores
+      item_colors: doloremque
     fileParameters:
       thumbnail_image: null
       detail_images:
@@ -263,7 +263,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3f66v5a1Vadgc4hkeDEbZP8'
+      - 'Bearer Vab8kD61dvZEPe5h4g3acf6'
     controller: null
     method: null
     route: null
@@ -306,7 +306,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 634hZfvdg5acEeVk1aPD86b'
+      - 'Bearer PabZgv81cde6faDVE4h356k'
     controller: null
     method: null
     route: null
@@ -349,7 +349,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8aE4vhPedfDk1bVZg53a66c'
+      - 'Bearer va3Ve6fZDkchaE465b1gdP8'
     controller: null
     method: null
     route: null
@@ -392,7 +392,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pdh1Z3fE64D586acVaegbkv'
+      - 'Bearer fvdEaD1ce6VP84k35hg6bZa'
     controller: null
     method: null
     route: null

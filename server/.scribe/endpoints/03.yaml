@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ecDd61bVEa364khPZ5gafv8'
+      - 'Bearer 6kc61E84aVbdfPZagDe35hv'
     controller: null
     method: null
     route: null
@@ -92,7 +92,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VZkc6v4edPaDaf1bh853Eg6'
+      - 'Bearer fEvkPaa3g4bVdch1DZ5686e'
     controller: null
     method: null
     route: null
@@ -131,50 +131,50 @@ endpoints:
         name: phone
         description: ''
         required: true
-        example: et
+        example: officia
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: quis
+        example: officiis
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: sint
+        example: omnis
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: reiciendis
+        example: provident
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: consectetur
+        example: illo
         type: string
         custom: []
     cleanBodyParameters:
-      phone: et
-      city_id: quis
-      district_id: sint
-      ward_id: reiciendis
-      address: consectetur
+      phone: officia
+      city_id: officiis
+      district_id: omnis
+      ward_id: provident
+      address: illo
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bkDVZ53afPg4dc61v6eaE8h'
+      - 'Bearer VckhPgvabfa1656dEe83ZD4'
     controller: null
     method: null
     route: null
@@ -214,58 +214,58 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: qui
+        example: repellat
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: quasi
+        example: minima
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: qui
+        example: quia
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: animi
+        example: totam
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: velit
+        example: maxime
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: hic
+        example: sit
         type: string
         custom: []
     cleanBodyParameters:
-      name: qui
-      phone: quasi
-      city_id: qui
-      district_id: animi
-      ward_id: velit
-      address: hic
+      name: repellat
+      phone: minima
+      city_id: quia
+      district_id: totam
+      ward_id: maxime
+      address: sit
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 8fVZc6h4bvegkd6Da3Pa15E'
+      - 'Bearer D16ge3aZv84ckEPbVh56daf'
     controller: null
     method: null
     route: null
@@ -293,11 +293,11 @@ endpoints:
         name: address_id
         description: 'The ID of the address.'
         required: true
-        example: 16
+        example: 11
         type: integer
         custom: []
     cleanUrlParameters:
-      address_id: 16
+      address_id: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -308,7 +308,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer afbaPk4DVEecgZh8d1v3665'
+      - 'Bearer 6Eaf3vc61D8ak45ZhebdVgP'
     controller: null
     method: null
     route: null

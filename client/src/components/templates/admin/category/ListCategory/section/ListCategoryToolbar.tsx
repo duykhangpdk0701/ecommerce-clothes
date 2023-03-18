@@ -1,14 +1,12 @@
 // @mui
 import { styled, alpha } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
-import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 // component
 import Iconify from "@/components/shared/iconify";
 import { FC } from "react";
+import { Control, Controller } from "react-hook-form";
 
 // ----------------------------------------------------------------------
 
@@ -42,56 +40,31 @@ const StyledSearch = styled(OutlinedInput)(({ theme }) => {
 // ----------------------------------------------------------------------
 
 interface IListBrandToolbar {
-  numSelected: number;
-  filterName: string;
-  onFilterName: any;
+  control: Control<any, any>;
 }
-
 const ListCategoryToolbar: FC<IListBrandToolbar> = (props) => {
-  const { numSelected, filterName, onFilterName } = props;
+  const { control } = props;
 
   return (
-    <StyledRoot
-      sx={{
-        ...(numSelected > 0 && {
-          color: "primary.main",
-          bgcolor: "primary.lighter",
-        }),
-      }}
-    >
-      {numSelected > 0 ? (
-        <Typography component="div" variant="subtitle1">
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <StyledSearch
-          value={filterName}
-          onChange={onFilterName}
-          placeholder="Search user..."
-          startAdornment={
-            <InputAdornment position="start">
-              <Iconify
-                icon="eva:search-fill"
-                sx={{ color: "text.disabled", width: 20, height: 20 }}
-              />
-            </InputAdornment>
-          }
-        />
-      )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <Iconify icon="eva:trash-2-fill" />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <Iconify icon="ic:round-filter-list" />
-          </IconButton>
-        </Tooltip>
-      )}
+    <StyledRoot>
+      <Controller
+        name="search"
+        control={control}
+        render={({ field }) => (
+          <StyledSearch
+            {...field}
+            placeholder="Search user..."
+            startAdornment={
+              <InputAdornment position="start">
+                <Iconify
+                  icon="eva:search-fill"
+                  sx={{ color: "text.disabled", width: 20, height: 20 }}
+                />
+              </InputAdornment>
+            }
+          />
+        )}
+      />
     </StyledRoot>
   );
 };

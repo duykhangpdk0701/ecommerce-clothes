@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, useState, FC } from "react";
+import React, { ChangeEvent, useState, FC } from "react";
 import { filter } from "lodash";
 // @mui
 import Card from "@mui/material/Card";
@@ -31,6 +31,7 @@ import {
   UseFormWatch,
 } from "react-hook-form";
 import { IBrandListParams } from "@/pages/admin/brand";
+import ListBrandLoadingCell from "./section/LoadingCell";
 
 const TABLE_HEAD = [
   { id: "id", label: "Id", alignRight: false },
@@ -87,14 +88,13 @@ interface IListBrandTemplate {
   handleSubmit: UseFormHandleSubmit<IBrandListParams>;
   onSubmit: SubmitHandler<IBrandListParams>;
   watch: UseFormWatch<IBrandListParams>;
+  isLoading: boolean;
 }
 
 const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
-  const { data, control, handleSubmit, onSubmit, watch } = props;
+  const { data, control, handleSubmit, onSubmit, watch, isLoading } = props;
 
   const [order, setOrder] = useState<"asc" | "desc">("asc");
-
-  const [selected, setSelected] = useState<string[]>([]);
 
   const [orderBy, setOrderBy] = useState<OrderByType>("name");
 
@@ -148,7 +148,7 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
         </Stack>
 
         <Card>
-          <ListBrandToolbar numSelected={selected.length} control={control} />
+          <ListBrandToolbar control={control} />
 
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
@@ -160,13 +160,15 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                   onRequestSort={handleRequestSort}
                 />
                 <TableBody>
-                  {filteredUsers.map((row) => {
-                    const { id, name, status } = row;
+                  {isLoading
+                    ? Array(watch("rowPerPage")).fill(<ListBrandLoadingCell />)
+                    : filteredUsers.map((row) => {
+                        const { id, name, status } = row;
 
-                    return (
-                      <ItemListBrand id={id} name={name} status={status} />
-                    );
-                  })}
+                        return (
+                          <ItemListBrand id={id} name={name} status={status} />
+                        );
+                      })}
                   {emptyRows > 0 && (
                     <TableRow style={{ height: 53 * emptyRows }}>
                       <TableCell colSpan={6} />
