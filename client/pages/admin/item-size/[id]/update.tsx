@@ -47,10 +47,10 @@ const UpdateItemSize: NextPageWithLayout = () => {
     resolver: yupResolver(updateItemSizeSchema),
   });
 
-  const itemCatgoryQuery = useQuery(
-    "item-category",
-    adminItemCategoryAPI.getListOfItemCategory
-  );
+  const itemCatgoryQuery = useQuery({
+    queryKey: ["item-category"],
+    queryFn: () => adminItemCategoryAPI.getListOfItemCategory(),
+  });
 
   const itemSizeQuery = useQuery({
     queryKey: ["item-size", id],
