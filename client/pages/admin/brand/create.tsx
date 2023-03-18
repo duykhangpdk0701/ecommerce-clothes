@@ -9,6 +9,7 @@ import { NextPageWithLayout } from "@/pages/_app";
 import * as yup from "yup";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useAppDispatch } from "@/hooks/redux";
 export interface ICreateBrandParams {
   name: string;
   slug: string;
@@ -27,6 +28,7 @@ const CreateBrand: NextPageWithLayout = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const dispatch = useAppDispatch();
 
   const {
     control,

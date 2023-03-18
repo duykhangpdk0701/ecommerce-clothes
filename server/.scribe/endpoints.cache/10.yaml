@@ -77,7 +77,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e61kPa6vgadVhD58ZE43bfc'
+      - 'Bearer 1haED46gZ6Pebk8av5fc3dV'
     controller: null
     method: null
     route: null
@@ -120,7 +120,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"order_code":"ECOMMERCE-20230308-0001","shipping_name":"Ph\u00f9ng Khang","shipping_address":"8c V\u0103n cao","shipping_country_id":null,"shipping_city_id":1,"shipping_district_id":23,"shipping_ward_id":310,"shipping_phone":"0793607376","payment_method":"Cash","payment_code":null,"total_price":"2,000,000","total_discount":"0","total_tax":"0","total_shipping":"0","total_payment_fee":"0","total":"2,000,000","order_status_id":1,"order_status_value":"Pending","number_order_items":null,"coupon":null,"created_at":"08\/03\/2023","updated_at":"08\/03\/2023"}}'
+        content: '{"data":{"id":1,"order_code":"ECOMMERCE-20230317-0001","shipping_name":"Ph\u00f9ng Duy Khang","shipping_address":"8c Van Cao","shipping_country_id":null,"shipping_city_id":1,"shipping_district_id":23,"shipping_ward_id":306,"shipping_phone":"0793607376","payment_method":"Cash","payment_code":null,"total_price":"400,000","total_discount":"0","total_tax":"0","total_shipping":"0","total_payment_fee":"0","total":"400,000","order_status_id":1,"order_status_value":"Pending","number_order_items":null,"coupon":null,"created_at":"17\/03\/2023","updated_at":"17\/03\/2023"}}'
         headers: []
         description: ''
         custom: []
@@ -128,7 +128,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e6Dc8a6P34Efbh5Zka1gdVv'
+      - 'Bearer dbD8a4agVe3cf5P1kEZ6vh6'
     controller: null
     method: null
     route: null

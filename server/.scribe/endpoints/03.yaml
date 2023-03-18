@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Eavegf3Za4156hk8DdbVcP6'
+      - 'Bearer ecDd61bVEa364khPZ5gafv8'
     controller: null
     method: null
     route: null
@@ -48,7 +48,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/address/${id}'
+    uri: 'api/v1/address/{id}'
     metadata:
       groupName: Address
       groupDescription: ''
@@ -66,13 +66,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the .'
+        description: 'The ID of the address.'
         required: true
-        example: nesciunt
-        type: string
+        example: 1
+        type: integer
         custom: []
     cleanUrlParameters:
-      id: nesciunt
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -92,7 +92,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D64Pcvag1f6bdhaV3kEZ8e5'
+      - 'Bearer VZkc6v4edPaDaf1bh853Eg6'
     controller: null
     method: null
     route: null
@@ -131,50 +131,50 @@ endpoints:
         name: phone
         description: ''
         required: true
-        example: consectetur
+        example: et
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: est
+        example: quis
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: a
+        example: sint
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: exercitationem
+        example: reiciendis
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: rem
+        example: consectetur
         type: string
         custom: []
     cleanBodyParameters:
-      phone: consectetur
-      city_id: est
-      district_id: a
-      ward_id: exercitationem
-      address: rem
+      phone: et
+      city_id: quis
+      district_id: sint
+      ward_id: reiciendis
+      address: consectetur
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer cbk6a4da1D5ZgvehfVPE638'
+      - 'Bearer bkDVZ53afPg4dc61v6eaE8h'
     controller: null
     method: null
     route: null
@@ -202,11 +202,11 @@ endpoints:
         name: address_id
         description: 'The ID of the address.'
         required: true
-        example: 2
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      address_id: 2
+      address_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,58 +214,58 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: fuga
+        example: qui
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: illum
+        example: quasi
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: quia
+        example: qui
         type: string
         custom: []
       district_id:
         name: district_id
         description: ''
         required: true
-        example: minima
+        example: animi
         type: string
         custom: []
       ward_id:
         name: ward_id
         description: ''
         required: true
-        example: eaque
+        example: velit
         type: string
         custom: []
       address:
         name: address
         description: ''
         required: true
-        example: quas
+        example: hic
         type: string
         custom: []
     cleanBodyParameters:
-      name: fuga
-      phone: illum
-      city_id: quia
-      district_id: minima
-      ward_id: eaque
-      address: quas
+      name: qui
+      phone: quasi
+      city_id: qui
+      district_id: animi
+      ward_id: velit
+      address: hic
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Pea8gc6av3Vb6dD4h5fZEk1'
+      - 'Bearer 8fVZc6h4bvegkd6Da3Pa15E'
     controller: null
     method: null
     route: null
@@ -293,11 +293,11 @@ endpoints:
         name: address_id
         description: 'The ID of the address.'
         required: true
-        example: 10
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      address_id: 10
+      address_id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -308,7 +308,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ka5EVgafvbh6D146decPZ38'
+      - 'Bearer afbaPk4DVEecgZh8d1v3665'
     controller: null
     method: null
     route: null

@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
@@ -23,22 +22,12 @@ const visuallyHidden = {
 interface IBrandListHead {
   order: "asc" | "desc";
   orderBy: string;
-  rowCount: number;
   headLabel: any[];
-  numSelected: number;
   onRequestSort: any;
-  onSelectAllClick: any;
 }
+
 const ListBrandHead: FC<IBrandListHead> = (props) => {
-  const {
-    order,
-    orderBy,
-    rowCount,
-    headLabel,
-    numSelected,
-    onRequestSort,
-    onSelectAllClick,
-  } = props;
+  const { order, orderBy, headLabel, onRequestSort } = props;
   const createSortHandler =
     (property: object) => (event: MouseEvent<HTMLElement>) => {
       onRequestSort(event, property);
@@ -46,13 +35,6 @@ const ListBrandHead: FC<IBrandListHead> = (props) => {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-          />
-        </TableCell>
         {headLabel.map((headCell) => (
           <TableCell
             key={headCell.id}

@@ -56,7 +56,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer h36P4k1adZcvg5EVef8ab6D'
+      - 'Bearer 1hg8DVEkf65aevd3Za6cP4b'
     controller: null
     method: null
     route: null
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V18DvahZa5edEk4P6c3gbf6'
+      - 'Bearer 438cvEabf6gP61d5VhDZkae'
     controller: null
     method: null
     route: null
@@ -156,7 +156,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: officia
+        example: est
         type: string
         custom: []
       value:
@@ -181,7 +181,7 @@ endpoints:
         type: boolean
         custom: []
     cleanBodyParameters:
-      name: officia
+      name: est
       status: true
     fileParameters: []
     responses: []
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zvak3g4fVhad61c56PD8eEb'
+      - 'Bearer 8cd65aeVf6hg1Pk4ZE3Dbav'
     controller: null
     method: null
     route: null
@@ -229,7 +229,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: quia
+        example: illum
         type: string
         custom: []
       value:
@@ -254,14 +254,14 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      name: quia
+      name: illum
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer hg6vfPd1ceab486a5EDZ3Vk'
+      - 'Bearer gvfhcbVEa58ZeP1ak6436Dd'
     controller: null
     method: null
     route: null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EVPk6Za6a184be3vg5dfDhc'
+      - 'Bearer f8aV1Eh56gkc6ZeD4dabv3P'
     controller: null
     method: null
     route: null

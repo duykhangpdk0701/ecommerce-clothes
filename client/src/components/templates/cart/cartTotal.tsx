@@ -7,6 +7,7 @@ import {
   Paper,
   TextField,
 } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 
@@ -62,7 +63,13 @@ const CartTotal = () => {
         </Button>
 
         <Divider className={"border-[#F3F5F9] mb-4"} />
-        <Button fullWidth variant="contained" disableElevation>
+        <Button
+          LinkComponent={Link}
+          fullWidth
+          variant="contained"
+          disableElevation
+          href="/checkout"
+        >
           Checkout Now
         </Button>
       </Box>

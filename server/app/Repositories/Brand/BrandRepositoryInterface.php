@@ -28,6 +28,14 @@ interface BrandRepositoryInterface extends RepositoryInterface
     public function serverPaginationFilterForApi(array $searchParams): LengthAwarePaginator;
 
     /**
+     * Filter the request from the admin api
+     *
+     * @param array $searchParams
+     * @return LengthAwarePaginator
+     */
+    public function serverPaginationFilterFor(array $searchParams): LengthAwarePaginator;
+
+    /**
      * Toggle status of the current resource
      *
      * @param $model

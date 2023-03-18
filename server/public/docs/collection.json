@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "90f97fea-15cf-4606-a9a6-f77890ca2645",
+        "_postman_id": "4adeecb9-e088-4d8e-bcd1-29428d3e4def",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -73,15 +73,15 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/address\/$:id",
+                            "path": "api\/v1\/address\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/address\/$:id",
+                            "raw": "{{baseUrl}}\/api\/v1\/address\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nesciunt",
-                                    "description": "The ID of the ."
+                                    "value": "1",
+                                    "description": "The ID of the address."
                                 }
                             ]
                         },
@@ -151,7 +151,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"consectetur\",\"city_id\":\"est\",\"district_id\":\"a\",\"ward_id\":\"exercitationem\",\"address\":\"rem\"}"
+                            "raw": "{\"phone\":\"et\",\"city_id\":\"quis\",\"district_id\":\"sint\",\"ward_id\":\"reiciendis\",\"address\":\"consectetur\"}"
                         },
                         "description": ""
                     },
@@ -169,7 +169,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -191,7 +191,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"fuga\",\"phone\":\"illum\",\"city_id\":\"quia\",\"district_id\":\"minima\",\"ward_id\":\"eaque\",\"address\":\"quas\"}"
+                            "raw": "{\"name\":\"qui\",\"phone\":\"quasi\",\"city_id\":\"qui\",\"district_id\":\"animi\",\"ward_id\":\"velit\",\"address\":\"hic\"}"
                         },
                         "description": ""
                     },
@@ -209,7 +209,7 @@
                                 {
                                     "id": "address_id",
                                     "key": "address_id",
-                                    "value": "10",
+                                    "value": "16",
                                     "description": "The ID of the address."
                                 }
                             ]
@@ -385,7 +385,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"cupiditate\",\"status\":false}"
+                            "raw": "{\"name\":\"qui\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create a brand"
                     },
@@ -435,13 +435,74 @@
             "description": "",
             "item": [
                 {
-                    "name": "Get a list of brands.",
+                    "name": "Get a list item.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "api\/v1\/admin\/item",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item"
+                            "query": [
+                                {
+                                    "key": "limit",
+                                    "value": "50",
+                                    "description": "The number of resource that will show and then paginate.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "The number of page for pagination.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "search",
+                                    "value": "",
+                                    "description": "The keyword for the title of the items.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "brand_id",
+                                    "value": "",
+                                    "description": "The id of the brand to filter.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "item_category_id",
+                                    "value": "",
+                                    "description": "The id of the category to filter.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "item_person_type_id",
+                                    "value": "",
+                                    "description": "The id of the gender to filter.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "min_price",
+                                    "value": "20",
+                                    "description": "The minimum price of the product to filter. 1000000",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "max_price",
+                                    "value": "",
+                                    "description": "The maximum price of the product to filter.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "is_sale",
+                                    "value": "",
+                                    "description": "True or False to get the list of items with sales.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "order_by",
+                                    "value": "",
+                                    "description": "integer 1 to 5 for ordering\nFor 1: trending\nFor 2: new products\nFor 3: old products\nFor 4: most popular\nFor 5: latest listing\nFor 6: featured items\nFor 7: price high to low\nFor 8: price low to high.",
+                                    "disabled": true
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=20&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -512,55 +573,55 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "rerum",
+                                    "value": "dicta",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "sku",
-                                    "value": "rerum",
+                                    "value": "aperiam",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "doloremque",
+                                    "value": "dignissimos",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "brand_id",
-                                    "value": "aut",
+                                    "value": "ipsa",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_categories",
-                                    "value": "fugiat",
+                                    "value": "eveniet",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_person_type_id",
-                                    "value": "consequatur",
+                                    "value": "eum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_stock_status_id",
-                                    "value": "sint",
+                                    "value": "laborum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_sizes",
-                                    "value": "sunt",
+                                    "value": "ratione",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "item_colors",
-                                    "value": "maiores",
+                                    "value": "necessitatibus",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -577,6 +638,117 @@
                             ]
                         },
                         "description": "This endpoint lets you create a item"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource is featured in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item\/:item_id\/toggle-featured",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item\/:item_id\/toggle-featured",
+                            "variable": [
+                                {
+                                    "id": "item_id",
+                                    "key": "item_id",
+                                    "value": "4",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource status in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item\/:item_id\/toggle-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item\/:item_id\/toggle-status",
+                            "variable": [
+                                {
+                                    "id": "item_id",
+                                    "key": "item_id",
+                                    "value": "4",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specific resource media type in storage",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/item\/:item_id\/toggle-media-type",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/item\/:item_id\/toggle-media-type",
+                            "variable": [
+                                {
+                                    "id": "item_id",
+                                    "key": "item_id",
+                                    "value": "4",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "API-KEY",
+                                "value": "RANDOM_STUFF"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
                     },
                     "response": []
                 }
@@ -718,7 +890,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Quasi nemo tempore deleniti pariatur consequuntur nam voluptatem libero.\",\"order\":\"in\",\"name\":{\"vi\":\"lqhjoqsywtfryytavuc\",\"en\":\"mvaio\"}}"
+                            "raw": "{\"description\":\"Non repellendus vitae voluptates vitae laudantium.\",\"order\":\"adipisci\",\"name\":{\"vi\":\"obtgwmnwkauulyfzdlkej\",\"en\":\"sxabpzxdbxxykrrqmeejxqnvb\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -758,7 +930,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"description\":\"Exercitationem sint adipisci eum quo officia.\",\"order\":\"eos\",\"name\":{\"vi\":\"velit\",\"en\":\"culpa\"}}"
+                            "raw": "{\"description\":\"Itaque architecto ut quibusdam voluptas accusantium.\",\"order\":\"adipisci\",\"name\":{\"vi\":\"est\",\"en\":\"dolore\"}}"
                         },
                         "description": "This endpoint lets you update an Item Category"
                     },
@@ -965,7 +1137,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"esse\",\"item_person_type_id\":\"voluptatem\",\"value\":\"soluta\"}"
+                            "raw": "{\"item_category_id\":\"omnis\",\"item_person_type_id\":\"facilis\",\"value\":\"beatae\"}"
                         },
                         "description": "This endpoint lets you create an item size"
                     },
@@ -1005,7 +1177,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"item_category_id\":\"dolores\",\"item_person_type_id\":\"enim\",\"value\":\"exercitationem\"}"
+                            "raw": "{\"item_category_id\":\"ut\",\"item_person_type_id\":\"placeat\",\"value\":\"ut\"}"
                         },
                         "description": "This endpoint lets you update item size"
                     },
@@ -1129,7 +1301,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"inbound_item\":\"est\"}"
+                            "raw": "{\"inbound_item\":\"necessitatibus\"}"
                         },
                         "description": ""
                     },
@@ -1202,7 +1374,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "13",
                                     "description": "The ID of the item variant."
                                 }
                             ]
@@ -1259,7 +1431,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "4",
                                     "description": "The ID of the item."
                                 }
                             ]
@@ -1468,7 +1640,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"officia\",\"status\":true}"
+                            "raw": "{\"name\":\"est\",\"status\":true}"
                         },
                         "description": "This endpoint lets you create an item color"
                     },
@@ -1508,7 +1680,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quia\"}"
+                            "raw": "{\"name\":\"illum\"}"
                         },
                         "description": "This endpoint lets you update item color"
                     },
@@ -1715,7 +1887,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":\"qzswawabgwjjlk\",\"last_name\":\"s\",\"email\":\"micah.williamson@example.org\",\"password\":\"beatae\",\"role\":\"molestias\",\"phone\":3743791.375122746,\"city_id\":\"possimus\",\"district_id\":\"consectetur\",\"ward_id\":\"et\",\"address\":\"sint\"}"
+                            "raw": "{\"first_name\":\"vmfmjjwaogzjczewfo\",\"last_name\":\"h\",\"email\":\"stark.eldon@example.org\",\"password\":\"unde\",\"role\":\"veritatis\",\"phone\":868.19365,\"city_id\":\"voluptate\",\"district_id\":\"officiis\",\"ward_id\":\"architecto\",\"address\":\"dolorem\"}"
                         },
                         "description": "This endpoint lets you create a user"
                     },
@@ -1755,7 +1927,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"wtw\",\"email\":\"kendra.bahringer@example.org\",\"role\":\"delectus\"}"
+                            "raw": "{\"name\":\"daurgpticltxvpznq\",\"email\":\"wolf.kyle@example.org\",\"role\":\"labore\"}"
                         },
                         "description": "This endpoint lets you update user"
                     },
@@ -1841,7 +2013,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":13,\"name\":\"Colton Mueller\",\"email\":\"seth.satterfield@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Colton Mueller\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":19,\"name\":\"Dr. Jaylon Hahn\",\"email\":\"vchristiansen@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Dr. Jaylon Hahn\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1872,7 +2044,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":false,\"password_confirmation\":null}"
+                            "raw": "{\"first_name\":null,\"last_name\":null,\"email\":null,\"password\":null,\"agree_ckb\":true,\"password_confirmation\":null}"
                         },
                         "description": "This endpoint let the user register to the account.",
                         "auth": {
@@ -1926,7 +2098,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":14,\"name\":\"Miss Herta King\",\"email\":\"prolfson@example.com\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Miss Herta King\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":20,\"name\":\"Fabian Stark\",\"email\":\"august.lesch@example.net\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Fabian Stark\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -1962,7 +2134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":15,\"name\":\"Kristin Schneider\",\"email\":\"rusty.zemlak@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Kristin Schneider\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
+                            "body": "{\"data\":{\"id\":21,\"name\":\"Scottie Collier\",\"email\":\"abechtelar@example.org\",\"token\":null,\"roles\":[],\"permissions\":[],\"role\":\"\",\"avatar\":\"https:\\\/\\\/ui-avatars.com\\\/api\\\/?background=random&name=Scottie Collier\",\"reset_password_at\":null,\"profile\":null,\"multiple_address\":[],\"address_default\":null}}",
                             "name": ""
                         }
                     ]
@@ -2077,7 +2249,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":2,\"name\":\"Edwardo Bins\",\"slug\":\"edwardo-bins\",\"order\":0,\"status\":1}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/brand\",\"per_page\":50,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -2424,7 +2596,7 @@
                                 {
                                     "id": "city_id",
                                     "key": "city_id",
-                                    "value": "6",
+                                    "value": "16",
                                     "description": "Get district after choose city."
                                 }
                             ]
@@ -2475,7 +2647,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":86,\"city_id\":6,\"name\":\"B\\u1ebfn L\\u1ee9c\",\"slug\":\"long-an-ben-luc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":87,\"city_id\":6,\"name\":\"C\\u1ea7n \\u0110\\u01b0\\u1edbc\",\"slug\":\"long-an-can-duoc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":88,\"city_id\":6,\"name\":\"C\\u1ea7n Giu\\u1ed9c\",\"slug\":\"long-an-can-giuoc\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":89,\"city_id\":6,\"name\":\"Ch\\u00e2u Th\\u00e0nh\",\"slug\":\"long-an-chau-thanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":90,\"city_id\":6,\"name\":\"\\u0110\\u1ee9c H\\u00f2a\",\"slug\":\"long-an-duc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":91,\"city_id\":6,\"name\":\"\\u0110\\u1ee9c Hu\\u1ec7\",\"slug\":\"long-an-duc-hue\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":92,\"city_id\":6,\"name\":\"Ki\\u1ebfn T\\u01b0\\u1eddng\",\"slug\":\"long-an-kien-tuong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":93,\"city_id\":6,\"name\":\"M\\u1ed9c H\\u00f3a\",\"slug\":\"long-an-moc-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":94,\"city_id\":6,\"name\":\"T\\u00e2n An\",\"slug\":\"long-an-tan-an\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":95,\"city_id\":6,\"name\":\"T\\u00e2n H\\u01b0ng\",\"slug\":\"long-an-tan-hung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":96,\"city_id\":6,\"name\":\"T\\u00e2n Th\\u1ea1nh\",\"slug\":\"long-an-tan-thanh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":97,\"city_id\":6,\"name\":\"T\\u00e2n Tr\\u1ee5\",\"slug\":\"long-an-tan-tru\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":98,\"city_id\":6,\"name\":\"Th\\u1ea1nh H\\u00f3a\",\"slug\":\"long-an-thanh-hoa\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":99,\"city_id\":6,\"name\":\"Th\\u1ee7 Th\\u1eeba\",\"slug\":\"long-an-thu-thua\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":100,\"city_id\":6,\"name\":\"V\\u0129nh H\\u01b0ng\",\"slug\":\"long-an-vinh-hung\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":184,\"city_id\":16,\"name\":\"B\\u1eafc B\\u00ecnh\",\"slug\":\"binh-thuan-bac-binh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":185,\"city_id\":16,\"name\":\"\\u0110\\u1ea3o Ph\\u00fa Qu\\u00fd\",\"slug\":\"binh-thuan-dao-phu-quy\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":186,\"city_id\":16,\"name\":\"\\u0110\\u1ee9c Linh\",\"slug\":\"binh-thuan-duc-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":187,\"city_id\":16,\"name\":\"H\\u00e0m T\\u00e2n\",\"slug\":\"binh-thuan-ham-tan\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":188,\"city_id\":16,\"name\":\"H\\u00e0m Thu\\u1eadn B\\u1eafc\",\"slug\":\"binh-thuan-ham-thuan-bac\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":189,\"city_id\":16,\"name\":\"H\\u00e0m Thu\\u1eadn Nam\",\"slug\":\"binh-thuan-ham-thuan-nam\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":190,\"city_id\":16,\"name\":\"La Gi\",\"slug\":\"binh-thuan-la-gi\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u1ecb x\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":191,\"city_id\":16,\"name\":\"Phan Thi\\u1ebft\",\"slug\":\"binh-thuan-phan-thiet\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Th\\u00e0nh ph\\u1ed1\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":192,\"city_id\":16,\"name\":\"T\\u00e1nh Linh\",\"slug\":\"binh-thuan-tanh-linh\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":193,\"city_id\":16,\"name\":\"Tuy Phong\",\"slug\":\"binh-thuan-tuy-phong\",\"geometry\":null,\"center\":null,\"color\":null,\"bounding_box\":null,\"pre\":\"Huy\\u1ec7n\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2492,7 +2664,7 @@
                                 {
                                     "id": "district_id",
                                     "key": "district_id",
-                                    "value": "18",
+                                    "value": "4",
                                     "description": "Get ward after choose district."
                                 }
                             ]
@@ -2543,7 +2715,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":236,\"city_id\":1,\"district_id\":18,\"name\":\"1\",\"slug\":\"ho-chi-minh-quan-6-phuong-1\",\"geometry\":null,\"center\":\"[10.746459,106.650904]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.743004,106.647697],\\\\\\\"br\\\\\\\":[10.749011,106.654579]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":237,\"city_id\":1,\"district_id\":18,\"name\":\"10\",\"slug\":\"ho-chi-minh-quan-6-phuong-10\",\"geometry\":null,\"center\":\"[10.73724,106.6278]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.730059,106.620743],\\\\\\\"br\\\\\\\":[10.74285,106.634445]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":238,\"city_id\":1,\"district_id\":18,\"name\":\"11\",\"slug\":\"ho-chi-minh-quan-6-phuong-11\",\"geometry\":null,\"center\":\"[10.745016,106.632047]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.741161,106.622078],\\\\\\\"br\\\\\\\":[10.749264,106.639809]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":239,\"city_id\":1,\"district_id\":18,\"name\":\"12\",\"slug\":\"ho-chi-minh-quan-6-phuong-12\",\"geometry\":null,\"center\":\"[10.74994,106.632616]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.745202,106.623245],\\\\\\\"br\\\\\\\":[10.75503,106.63945]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":240,\"city_id\":1,\"district_id\":18,\"name\":\"13\",\"slug\":\"ho-chi-minh-quan-6-phuong-13\",\"geometry\":null,\"center\":\"[10.75279,106.627423]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.745772,106.623489],\\\\\\\"br\\\\\\\":[10.757941,106.634117]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":241,\"city_id\":1,\"district_id\":18,\"name\":\"14\",\"slug\":\"ho-chi-minh-quan-6-phuong-14\",\"geometry\":null,\"center\":\"[10.757735,106.630693]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.754242,106.624718],\\\\\\\"br\\\\\\\":[10.76053,106.637123]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":242,\"city_id\":1,\"district_id\":18,\"name\":\"2\",\"slug\":\"ho-chi-minh-quan-6-phuong-2\",\"geometry\":null,\"center\":\"[10.750195,106.650241]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.748121,106.647232],\\\\\\\"br\\\\\\\":[10.753674,106.653564]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":243,\"city_id\":1,\"district_id\":18,\"name\":\"3\",\"slug\":\"ho-chi-minh-quan-6-phuong-3\",\"geometry\":null,\"center\":\"[10.7429,106.645869]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.739756,106.64283],\\\\\\\"br\\\\\\\":[10.745982,106.649101]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":244,\"city_id\":1,\"district_id\":18,\"name\":\"4\",\"slug\":\"ho-chi-minh-quan-6-phuong-4\",\"geometry\":null,\"center\":\"[10.745988,106.644996]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.742957,106.64241],\\\\\\\"br\\\\\\\":[10.748121,106.648125]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":245,\"city_id\":1,\"district_id\":18,\"name\":\"5\",\"slug\":\"ho-chi-minh-quan-6-phuong-5\",\"geometry\":null,\"center\":\"[10.748519,106.64313]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.74666,106.63945],\\\\\\\"br\\\\\\\":[10.749896,106.647697]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":246,\"city_id\":1,\"district_id\":18,\"name\":\"6\",\"slug\":\"ho-chi-minh-quan-6-phuong-6\",\"geometry\":null,\"center\":\"[10.751983,106.645498]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.749616,106.642067],\\\\\\\"br\\\\\\\":[10.754342,106.649292]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":247,\"city_id\":1,\"district_id\":18,\"name\":\"7\",\"slug\":\"ho-chi-minh-quan-6-phuong-7\",\"geometry\":null,\"center\":\"[10.738623,106.638144]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.73365,106.633514],\\\\\\\"br\\\\\\\":[10.742957,106.643669]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":248,\"city_id\":1,\"district_id\":18,\"name\":\"8\",\"slug\":\"ho-chi-minh-quan-6-phuong-8\",\"geometry\":null,\"center\":\"[10.74295,106.638986]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.7389,106.634171],\\\\\\\"br\\\\\\\":[10.747242,106.64283]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":249,\"city_id\":1,\"district_id\":18,\"name\":\"9\",\"slug\":\"ho-chi-minh-quan-6-phuong-9\",\"geometry\":null,\"center\":\"[10.752482,106.63994]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.749264,106.636398],\\\\\\\"br\\\\\\\":[10.755029,106.642838]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
+                            "body": "{\"data\":[{\"id\":47,\"city_id\":1,\"district_id\":4,\"name\":\"An Th\\u1edbi \\u0110\\u00f4ng\",\"slug\":\"ho-chi-minh-can-gio-an-thoi-dong\",\"geometry\":null,\"center\":\"[10.550843,106.811157]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.491109,106.741592],\\\\\\\"br\\\\\\\":[10.61795,106.872223]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":48,\"city_id\":1,\"district_id\":4,\"name\":\"B\\u00ecnh Kh\\u00e1nh\",\"slug\":\"ho-chi-minh-can-gio-binh-khanh\",\"geometry\":null,\"center\":\"[10.637923,106.789133]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.601921,106.738014],\\\\\\\"br\\\\\\\":[10.67518,106.844498]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":49,\"city_id\":1,\"district_id\":4,\"name\":\"C\\u1ea7n Th\\u1ea1nh \",\"slug\":\"ho-chi-minh-can-gio-can-thanh\",\"geometry\":null,\"center\":\"[10.416863,106.944281]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.393888,106.918335],\\\\\\\"br\\\\\\\":[10.438062,106.974998]}\",\"pre\":\"Ph\\u01b0\\u1eddng\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":50,\"city_id\":1,\"district_id\":4,\"name\":\"Long H\\u00f2a\",\"slug\":\"ho-chi-minh-can-gio-long-hoa\",\"geometry\":null,\"center\":\"[10.454914,106.903126]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.376389,106.861946],\\\\\\\"br\\\\\\\":[10.52889,106.947777]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":51,\"city_id\":1,\"district_id\":4,\"name\":\"L\\u00fd Nh\\u01a1n\",\"slug\":\"ho-chi-minh-can-gio-ly-nhon\",\"geometry\":null,\"center\":\"[10.473726,106.799698]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.395,106.734718],\\\\\\\"br\\\\\\\":[10.562801,106.870277]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":52,\"city_id\":1,\"district_id\":4,\"name\":\"Tam Th\\u00f4n Hi\\u1ec7p\",\"slug\":\"ho-chi-minh-can-gio-tam-thon-hiep\",\"geometry\":null,\"center\":\"[10.580722,106.883035]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.517791,106.831909],\\\\\\\"br\\\\\\\":[10.647501,106.934723]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null},{\"id\":53,\"city_id\":1,\"district_id\":4,\"name\":\"Th\\u1ea1nh An\",\"slug\":\"ho-chi-minh-can-gio-thanh-an\",\"geometry\":null,\"center\":\"[10.547331,106.973614]\",\"color\":\"#FF0000\",\"bounding_box\":\"{\\\\\\\"tl\\\\\\\":[10.452612,106.919716],\\\\\\\"br\\\\\\\":[10.611046,107.025276]}\",\"pre\":\"X\\u00e3\",\"order\":null,\"status\":1,\"created_at\":null,\"updated_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -2616,7 +2788,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Black\",\"value\":\"#000000\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-08T08:47:01.000000Z\",\"updated_at\":\"2023-03-08T08:47:01.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Black\",\"value\":\"#000000\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-14T15:09:57.000000Z\",\"updated_at\":\"2023-03-14T15:09:57.000000Z\"},{\"id\":2,\"name\":\"White\",\"value\":\"#ffffff\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-14T15:10:08.000000Z\",\"updated_at\":\"2023-03-14T15:10:08.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-color\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -2705,7 +2877,7 @@
                                 },
                                 {
                                     "key": "min_price",
-                                    "value": "2",
+                                    "value": "17",
                                     "description": "The minimum price of the product to filter. 1000000",
                                     "disabled": false
                                 },
@@ -2728,7 +2900,7 @@
                                     "disabled": true
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=2&max_price=&is_sale=&order_by="
+                            "raw": "{{baseUrl}}\/api\/v1\/item?limit=50&page=1&search=&brand_id=&item_category_id=&item_person_type_id=&min_price=17&max_price=&is_sale=&order_by="
                         },
                         "method": "GET",
                         "header": [
@@ -2776,7 +2948,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"hoddie\",\"description\":\"<p>lorem<\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"2,000,000\",\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-navy-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"order_column\":4}],\"created_at\":\"08\\\/03\\\/2023 08:47\",\"updated_at\":\"08\\\/03\\\/2023 08:55\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"200,000\",\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"17\\\/03\\\/2023 09:32\"},{\"id\":5,\"slug\":\"hoddie-2\",\"sku\":\"HKP-002\",\"name\":\"Hoddie 2\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/8\\\/conversions\\\/ao-hoodie-xam-14-thumbnail_resize.jpg\",\"brand_id\":1,\"is_sale\":null,\"stock_old_price\":\"0\",\"stock_lowest_price\":\"10,000\",\"views_count\":null,\"media\":[{\"id\":9,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/9\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\9\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":10,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/10\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\10\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":11,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/11\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\11\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:17\",\"updated_at\":\"14\\\/03\\\/2023 15:17\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -2793,7 +2965,7 @@
                                 {
                                     "id": "slug",
                                     "key": "slug",
-                                    "value": "odio",
+                                    "value": "amet",
                                     "description": "The slug of the item."
                                 }
                             ]
@@ -2823,7 +2995,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"hoddie\",\"description\":\"<p>lorem<\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/1\\\/conversions\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":2,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-navy-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\2\\\/ao-thun-the-thao-dai-tay-recycle-active-navy-2.jpg\",\"order_column\":2},{\"id\":3,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\3\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-1.jpg\",\"order_column\":3},{\"id\":4,\"file_name\":\"ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\4\\\/ao-thun-the-thao-dai-tay-recycle-active-xam-dam-2.jpg\",\"order_column\":4}],\"created_at\":\"08\\\/03\\\/2023 08:47\",\"updated_at\":\"08\\\/03\\\/2023 08:55\"}}",
+                            "body": "{\"data\":{\"id\":4,\"slug\":\"hoddie\",\"sku\":\"HKP-001\",\"name\":\"Hoddie\",\"description\":\"<p><strong style=\\\"color: rgb(0, 0, 0);\\\">Lorem Ipsum<\\\/strong><span style=\\\"color: rgb(0, 0, 0);\\\">&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\\\/span><\\\/p>\",\"thumbnail_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/4\\\/conversions\\\/ao-hoodie-daily-wear-2-2-thumbnail_resize.jpg\",\"brand_id\":1,\"views_count\":null,\"media\":[{\"id\":5,\"file_name\":\"ao-hoodie-xam-11\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/5\\\/ao-hoodie-xam-11.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\5\\\/ao-hoodie-xam-11.jpg\",\"order_column\":2},{\"id\":6,\"file_name\":\"ao-hoodie-xam-14\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/6\\\/ao-hoodie-xam-14.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\6\\\/ao-hoodie-xam-14.jpg\",\"order_column\":3},{\"id\":7,\"file_name\":\"ao-hoodie-xam-nhat\",\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"full_url\":\"http:\\\/\\\/127.0.0.1:8000\\\/storage\\\/7\\\/ao-hoodie-xam-nhat.jpg\",\"path\":\"D:\\\\programming\\\\full-stack\\\\e-commerce-clothes\\\\server\\\\storage\\\\app\\\/public\\\\7\\\/ao-hoodie-xam-nhat.jpg\",\"order_column\":4}],\"created_at\":\"14\\\/03\\\/2023 15:15\",\"updated_at\":\"17\\\/03\\\/2023 09:32\"}}",
                             "name": ""
                         }
                     ]
@@ -2908,7 +3080,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"parent_id\":null,\"name\":{\"en\":\"Dr. Krista Beahan\"},\"slug\":\"dr-krista-beahan\",\"description\":\"Iste dolor porro provident ut repellendus assumenda itaque.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":2,\"parent_id\":null,\"name\":{\"en\":\"Dr. Reinhold West\"},\"slug\":\"dr-reinhold-west\",\"description\":\"Repellendus est et quibusdam in molestiae voluptas.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category\",\"per_page\":50,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"parent_id\":null,\"name\":{\"en\":\"Prof. Ashley Kozey\"},\"slug\":\"prof-ashley-kozey\",\"description\":\"Voluptate quibusdam nostrum consectetur est maiores eum rem.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-14T14:15:26.000000Z\",\"updated_at\":\"2023-03-14T14:15:26.000000Z\"},{\"id\":2,\"parent_id\":null,\"name\":{\"en\":\"Angelina Kiehn IV\"},\"slug\":\"angelina-kiehn-iv\",\"description\":\"Beatae et quis ipsa laudantium voluptatibus.\",\"status\":1,\"order\":\"0\",\"created_at\":\"2023-03-14T14:15:26.000000Z\",\"updated_at\":\"2023-03-14T14:15:26.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-category\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -2993,7 +3165,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"item_category_id\":1,\"item_person_type_id\":1,\"value\":\"S\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-08T08:47:21.000000Z\",\"updated_at\":\"2023-03-08T08:47:21.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size\",\"per_page\":50,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":1,\"item_category_id\":1,\"item_person_type_id\":1,\"value\":\"S\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-14T15:10:19.000000Z\",\"updated_at\":\"2023-03-14T15:10:19.000000Z\"},{\"id\":2,\"item_category_id\":1,\"item_person_type_id\":1,\"value\":\"L\",\"status\":1,\"order\":0,\"created_at\":\"2023-03-14T15:10:33.000000Z\",\"updated_at\":\"2023-03-14T15:10:33.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/item-size\",\"per_page\":50,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -3117,7 +3289,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"order_code\":\"ECOMMERCE-20230308-0001\",\"shipping_name\":\"Ph\\u00f9ng Khang\",\"shipping_address\":\"8c V\\u0103n cao\",\"shipping_country_id\":null,\"shipping_city_id\":1,\"shipping_district_id\":23,\"shipping_ward_id\":310,\"shipping_phone\":\"0793607376\",\"payment_method\":\"Cash\",\"payment_code\":null,\"total_price\":\"2,000,000\",\"total_discount\":\"0\",\"total_tax\":\"0\",\"total_shipping\":\"0\",\"total_payment_fee\":\"0\",\"total\":\"2,000,000\",\"order_status_id\":1,\"order_status_value\":\"Pending\",\"number_order_items\":null,\"coupon\":null,\"created_at\":\"08\\\/03\\\/2023\",\"updated_at\":\"08\\\/03\\\/2023\"}}",
+                            "body": "{\"data\":{\"id\":1,\"order_code\":\"ECOMMERCE-20230317-0001\",\"shipping_name\":\"Ph\\u00f9ng Duy Khang\",\"shipping_address\":\"8c Van Cao\",\"shipping_country_id\":null,\"shipping_city_id\":1,\"shipping_district_id\":23,\"shipping_ward_id\":306,\"shipping_phone\":\"0793607376\",\"payment_method\":\"Cash\",\"payment_code\":null,\"total_price\":\"400,000\",\"total_discount\":\"0\",\"total_tax\":\"0\",\"total_shipping\":\"0\",\"total_payment_fee\":\"0\",\"total\":\"400,000\",\"order_status_id\":1,\"order_status_value\":\"Pending\",\"number_order_items\":null,\"coupon\":null,\"created_at\":\"17\\\/03\\\/2023\",\"updated_at\":\"17\\\/03\\\/2023\"}}",
                             "name": ""
                         }
                     ]
@@ -3183,7 +3355,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"code\":\"men\",\"name\":\"Men\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":2,\"code\":\"women\",\"name\":\"Women\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"},{\"id\":3,\"code\":\"kid\",\"name\":\"Kid\",\"status\":1,\"created_at\":\"2023-03-08T08:45:52.000000Z\",\"updated_at\":\"2023-03-08T08:45:52.000000Z\"}]}",
+                            "body": "{\"data\":[{\"id\":1,\"code\":\"men\",\"name\":\"Men\",\"status\":1,\"created_at\":\"2023-03-14T14:15:26.000000Z\",\"updated_at\":\"2023-03-14T14:15:26.000000Z\"},{\"id\":2,\"code\":\"women\",\"name\":\"Women\",\"status\":1,\"created_at\":\"2023-03-14T14:15:26.000000Z\",\"updated_at\":\"2023-03-14T14:15:26.000000Z\"},{\"id\":3,\"code\":\"kid\",\"name\":\"Kid\",\"status\":1,\"created_at\":\"2023-03-14T14:15:26.000000Z\",\"updated_at\":\"2023-03-14T14:15:26.000000Z\"}]}",
                             "name": ""
                         }
                     ]

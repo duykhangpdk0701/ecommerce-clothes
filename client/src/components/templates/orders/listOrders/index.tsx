@@ -26,7 +26,7 @@ const ListOrdersTemplate: FC<IListOrdersTemplate> = (props) => {
     <div>
       <div className="mt-4 mb-6">
         <div className="flex gap-3 items-center">
-          <ShoppingBagIcon className="text-2xl" />
+          <ShoppingBagIcon className="text-2xl text-color-price" />
           <h2 className="text-2xl">My Orders</h2>
         </div>
       </div>

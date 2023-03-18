@@ -96,6 +96,29 @@ class ItemCategoryRepository extends BaseRepository implements ItemCategoryRepos
         return $query->get();
     }
 
+
+    /**
+     * @inheritDoc
+     */
+    public function serverPaginationFilterFor($searchParams): LengthAwarePaginator
+    {
+        $limit = Arr::get($searchParams, 'limit', static::PER_PAGE);
+        $keyword = Arr::get($searchParams, 'search', '');
+
+        $query = $this->model->query();
+        if ($keyword) {
+            if (is_array($keyword)) {
+                $keyword = $keyword['value'];
+            }
+            $query->where(function ($q) use ($keyword) {
+                $q->where('name', 'LIKE', '%' . $keyword . '%');
+            });
+        }
+
+        return $query->paginate(Arr::get($searchParams, 'per_page', $limit));
+    }
+
+
     /**
      * @inheritDoc
      */

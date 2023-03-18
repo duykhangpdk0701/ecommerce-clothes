@@ -48,7 +48,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":13,"name":"Colton Mueller","email":"seth.satterfield@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Colton Mueller","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":19,"name":"Dr. Jaylon Hahn","email":"vchristiansen@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Dr. Jaylon Hahn","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -114,7 +114,7 @@ endpoints:
         name: agree_ckb
         description: 'Agree to the terms.'
         required: true
-        example: false
+        example: true
         type: boolean
         custom: []
       password_confirmation:
@@ -129,7 +129,7 @@ endpoints:
       last_name: null
       email: null
       password: null
-      agree_ckb: false
+      agree_ckb: true
       password_confirmation: null
     fileParameters: []
     responses: []
@@ -215,7 +215,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":14,"name":"Miss Herta King","email":"prolfson@example.com","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Miss Herta King","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":20,"name":"Fabian Stark","email":"august.lesch@example.net","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Fabian Stark","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -253,7 +253,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":15,"name":"Kristin Schneider","email":"rusty.zemlak@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Kristin Schneider","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
+        content: '{"data":{"id":21,"name":"Scottie Collier","email":"abechtelar@example.org","token":null,"roles":[],"permissions":[],"role":"","avatar":"https:\/\/ui-avatars.com\/api\/?background=random&name=Scottie Collier","reset_password_at":null,"profile":null,"multiple_address":[],"address_default":null}}'
         headers: []
         description: ''
         custom: []
@@ -261,7 +261,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E84aZkPedvV6b1a3f6Dcgh5'
+      - 'Bearer hd8fZa65g1EVePc46akvDb3'
     controller: null
     method: null
     route: null
@@ -304,7 +304,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer b15daVa6Ph4cE3evgD6Z8kf'
+      - 'Bearer dga6abf158he6vkZVP34cDE'
     controller: null
     method: null
     route: null

@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E1ce6aafb58vDg4d3Zk6PVh'
+      - 'Bearer gabVZe3Pa1EckDf68654dvh'
     controller: null
     method: null
     route: null
@@ -68,11 +68,11 @@ endpoints:
         name: id
         description: 'The ID of the item variant.'
         required: true
-        example: 1
+        example: 13
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -92,7 +92,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5D1cbhga6k4feZv36E8aVdP'
+      - 'Bearer 8PveDdc1hZga6E43abfVk56'
     controller: null
     method: null
     route: null
@@ -120,11 +120,11 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: 1
+        example: 4
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -144,7 +144,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zke45hgV1b8DEdf63cPa6av'
+      - 'Bearer aa6kdv8D61cgPV4ef3hEZ5b'
     controller: null
     method: null
     route: null

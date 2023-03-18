@@ -25,7 +25,7 @@ const AccountLayout: FC<IAccountLayout> = ({ children }) => {
     <>
       <Header
         quoteItemLength={
-          cartQuery.data ? cartQuery.data.quote_detail.length : 0
+          cartQuery.data ? cartQuery.data.quote_detail?.length : 0
         }
       />
       <main className={`bg-[${BACKGROUND_COLOR}]`}>

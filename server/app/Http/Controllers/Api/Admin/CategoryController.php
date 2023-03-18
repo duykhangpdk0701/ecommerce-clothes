@@ -10,6 +10,7 @@ use App\Http\Resources\api\ItemCategoryResource;
 use App\Models\ItemCategory;
 use App\Repositories\ItemCategory\ItemCategoryRepositoryInterface;
 use App\Responses\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
@@ -39,12 +40,13 @@ class CategoryController extends Controller
      *
      * This endpoint lets you get a list of item-category
      *
+     * @param Request $request
      * @return AnonymousResourceCollection
      */
 
-    public function index(): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection
     {
-        $result = $this->itemCategoryRepository->all();
+        $result = $this->itemCategoryRepository->serverPaginationFilterFor($request->all());
         return ItemCategoryResource::collection($result);
     }
 

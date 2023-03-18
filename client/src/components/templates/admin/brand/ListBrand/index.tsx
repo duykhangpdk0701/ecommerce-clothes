@@ -5,30 +5,32 @@ import Card from "@mui/material/Card";
 import Table from "@mui/material/Table";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Popover from "@mui/material/Popover";
-import Checkbox from "@mui/material/Checkbox";
 import TableRow from "@mui/material/TableRow";
-import MenuItem from "@mui/material/MenuItem";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
 
 //component
 import Iconify from "@/components/shared/iconify";
 import Scrollbar from "@/components/shared/scrollbar";
-import Label from "@/components/shared/label";
 import ListBrandHead from "./section/ListBrandHead";
 import ListBrandToolbar from "./section/ListBrandToolbar";
-import USERLIST from "@/_mock/user";
 import Link from "next/link";
 import { IAdminBrand } from "@/interfaces/Brand";
-import { sentenceCase } from "change-case";
+import ItemListBrand from "./section/ItemRow";
+
+import {
+  Control,
+  SubmitHandler,
+  UseFormHandleSubmit,
+  Controller,
+  UseFormWatch,
+} from "react-hook-form";
+import { IBrandListParams } from "@/pages/admin/brand";
 
 const TABLE_HEAD = [
   { id: "id", label: "Id", alignRight: false },
@@ -81,13 +83,14 @@ function applySortFilter(
 
 interface IListBrandTemplate {
   data?: IAdminBrand[];
+  control: Control<IBrandListParams, any>;
+  handleSubmit: UseFormHandleSubmit<IBrandListParams>;
+  onSubmit: SubmitHandler<IBrandListParams>;
+  watch: UseFormWatch<IBrandListParams>;
 }
 
 const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
-  const { data } = props;
-  const [open, setOpen] = useState<any>(null);
-
-  const [page, setPage] = useState(0);
+  const { data, control, handleSubmit, onSubmit, watch } = props;
 
   const [order, setOrder] = useState<"asc" | "desc">("asc");
 
@@ -97,70 +100,22 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
 
   const [filterName, setFilterName] = useState("");
 
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-
-  const handleOpenMenu = (event: MouseEvent<HTMLElement>) => {
-    setOpen(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setOpen(null);
-  };
-
   const handleRequestSort = (event: any, property: OrderByType) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
 
-  const handleSelectAllClick = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n) => n.name);
-      setSelected(newSelecteds);
-      return;
-    }
-    setSelected([]);
-  };
-
-  const handleClick = (event: ChangeEvent<HTMLInputElement>, name: string) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected: string[] = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-    setSelected(newSelected);
-  };
-
-  const handleChangePage = (
-    event: MouseEvent<HTMLButtonElement> | null,
-    newPage: number
-  ) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setPage(0);
-    setRowsPerPage(parseInt(event.target.value, 10));
-  };
-
   const handleFilterByName = (event: ChangeEvent<HTMLInputElement>) => {
-    setPage(0);
     setFilterName(event.target.value);
   };
-
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    watch("page") > 0
+      ? Math.max(
+          0,
+          (1 + watch("page")) * watch("rowPerPage") - (data?.length || 0)
+        )
+      : 0;
 
   const filteredUsers = applySortFilter(
     data,
@@ -171,7 +126,7 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
   const isNotFound = !filteredUsers.length && !!filterName;
 
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Container>
         <Stack
           direction="row"
@@ -193,11 +148,7 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
         </Stack>
 
         <Card>
-          <ListBrandToolbar
-            numSelected={selected.length}
-            filterName={filterName}
-            onFilterName={handleFilterByName}
-          />
+          <ListBrandToolbar numSelected={selected.length} control={control} />
 
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
@@ -206,124 +157,16 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
                   order={order}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
-                  numSelected={selected.length}
                   onRequestSort={handleRequestSort}
-                  onSelectAllClick={handleSelectAllClick}
                 />
                 <TableBody>
-                  {filteredUsers
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row) => {
-                      const { id, name, slug, status } = row;
-                      const selectedUser = selected.indexOf(name) !== -1;
+                  {filteredUsers.map((row) => {
+                    const { id, name, status } = row;
 
-                      return (
-                        <>
-                          <TableRow
-                            hover
-                            key={id}
-                            tabIndex={-1}
-                            role="checkbox"
-                            selected={selectedUser}
-                          >
-                            <TableCell padding="checkbox">
-                              <Checkbox
-                                checked={selectedUser}
-                                onChange={(event) => handleClick(event, name)}
-                              />
-                            </TableCell>
-                            <TableCell component="th" scope="row">
-                              <Stack
-                                direction="row"
-                                alignItems="center"
-                                spacing={2}
-                              >
-                                <Typography variant="subtitle2" noWrap>
-                                  {id}
-                                </Typography>
-                              </Stack>
-                            </TableCell>
-                            <TableCell component="th" scope="row">
-                              <Stack
-                                direction="row"
-                                alignItems="center"
-                                spacing={2}
-                              >
-                                <Typography variant="subtitle2" noWrap>
-                                  {name}
-                                </Typography>
-                              </Stack>
-                            </TableCell>
-
-                            <TableCell align="left">
-                              <Label
-                                color={status == false ? "error" : "success"}
-                              >
-                                {sentenceCase(
-                                  status == true ? "active" : "unactive"
-                                )}
-                              </Label>
-                            </TableCell>
-                            <TableCell align="right">
-                              <IconButton
-                                size="large"
-                                color="inherit"
-                                onClick={handleOpenMenu}
-                              >
-                                <Iconify icon={"eva:more-vertical-fill"} />
-                              </IconButton>
-                            </TableCell>
-                          </TableRow>
-                          <Popover
-                            open={Boolean(open)}
-                            anchorEl={open}
-                            onClose={handleCloseMenu}
-                            anchorOrigin={{
-                              vertical: "top",
-                              horizontal: "left",
-                            }}
-                            transformOrigin={{
-                              vertical: "top",
-                              horizontal: "right",
-                            }}
-                            PaperProps={{
-                              sx: {
-                                p: 1,
-                                width: 140,
-                                "& .MuiMenuItem-root": {
-                                  px: 1,
-                                  typography: "body2",
-                                  borderRadius: 0.75,
-                                },
-                              },
-                            }}
-                          >
-                            <Link
-                              href={`/admin/brand/${id}/update`}
-                              passHref
-                              className="no-underline text-black"
-                            >
-                              <MenuItem>
-                                <Iconify
-                                  icon={"eva:edit-fill"}
-                                  sx={{ mr: 2 }}
-                                />
-                                Edit
-                              </MenuItem>
-                            </Link>
-
-                            <MenuItem sx={{ color: "error.main" }}>
-                              <Iconify
-                                icon={"eva:trash-2-outline"}
-                                sx={{ mr: 2 }}
-                              />
-                              Delete
-                            </MenuItem>
-                          </Popover>
-                        </>
-                      );
-                    })}
+                    return (
+                      <ItemListBrand id={id} name={name} status={status} />
+                    );
+                  })}
                   {emptyRows > 0 && (
                     <TableRow style={{ height: 53 * emptyRows }}>
                       <TableCell colSpan={6} />
@@ -359,18 +202,34 @@ const ListBrandTemplate: FC<IListBrandTemplate> = (props) => {
             </TableContainer>
           </Scrollbar>
 
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={USERLIST.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
+          <Controller
+            control={control}
+            name="rowPerPage"
+            render={({
+              field: { value: rowPerPageValue, onChange: rowPerPageOnChange },
+            }) => (
+              <Controller
+                control={control}
+                name="page"
+                render={({ field: { value, onChange } }) => (
+                  <TablePagination
+                    rowsPerPageOptions={[5, 10, 25]}
+                    component="div"
+                    count={20}
+                    rowsPerPage={rowPerPageValue}
+                    page={value}
+                    onPageChange={(e, page) => onChange(page)}
+                    onRowsPerPageChange={(e) =>
+                      rowPerPageOnChange(e.target.value)
+                    }
+                  />
+                )}
+              />
+            )}
           />
         </Card>
       </Container>
-    </>
+    </form>
   );
 };
 

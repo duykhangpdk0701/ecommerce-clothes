@@ -27,6 +27,14 @@ interface ItemCategoryRepositoryInterface extends RepositoryInterface
     public function serverPaginationFilterForApi(array $searchParams): LengthAwarePaginator;
 
     /**
+     * Filter the request from the admin api
+     *
+     * @param array $searchParams
+     * @return LengthAwarePaginator
+     */
+    public function serverPaginationFilterFor(array $searchParams): LengthAwarePaginator;
+
+    /**
      * Return a collection with parent categories with eager load children
      *
      * @return \Illuminate\Database\Eloquent\Collection

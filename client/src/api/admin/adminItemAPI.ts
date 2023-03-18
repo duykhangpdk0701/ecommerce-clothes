@@ -1,10 +1,19 @@
 import { IAdminProduct } from "@/interfaces/Product";
+import queryString from "query-string";
 import axiosClient from "../axiosClient";
 
 const adminItemAPI = {
-  getListOfItem: async (): Promise<IAdminProduct[]> => {
+  getListOfItem: async (
+    search?: string,
+    limit: number = 5,
+    page: number = 0
+  ): Promise<IAdminProduct[]> => {
     const url = "/api/v1/admin/item";
-    const res = await axiosClient.get(url);
+    const searchUrl = queryString.stringifyUrl(
+      { url, query: { search, limit, page: page + 1 } },
+      { arrayFormat: "index" }
+    );
+    const res = await axiosClient.get(searchUrl);
     return res.data;
   },
 
@@ -48,6 +57,24 @@ const adminItemAPI = {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const res = await axiosClient.post(url, data, config);
+    return res.data;
+  },
+
+  toggleFeature: async (itemId: number): Promise<IAdminProduct> => {
+    const url = `api/v1/admin/item/${itemId}/toggle-featured`;
+    const res = await axiosClient.put(url);
+    return res.data;
+  },
+
+  toggleStatus: async (itemId: number): Promise<IAdminProduct> => {
+    const url = `api/v1/admin/item/${itemId}/toggle-status`;
+    const res = await axiosClient.put(url);
+    return res.data;
+  },
+
+  toggleMediaSchool: async (itemId: number): Promise<IAdminProduct> => {
+    const url = `api/v1/admin/item/${itemId}/toggle-media-type`;
+    const res = await axiosClient.put(url);
     return res.data;
   },
 };

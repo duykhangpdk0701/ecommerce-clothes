@@ -23,6 +23,8 @@ import {
 } from "react-hook-form/dist/types";
 import Slider from "react-slick";
 import { Controller } from "react-hook-form";
+import { Box } from "@mui/material";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface IProductContent {
   control: Control<IProductDetailParams, any>;
@@ -36,6 +38,9 @@ const ProductContent: FC<IProductContent> = (props) => {
   const { control, itemDetail, handleSubmit, onSubmit, isLoading } = props;
   const slider1Ref = useRef<Slider>();
   const slider2Ref = useRef<Slider>();
+
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
   useEffect(() => {
     [slider1Ref.current, slider2Ref.current] = [
       slider2Ref.current,
@@ -47,62 +52,41 @@ const ProductContent: FC<IProductContent> = (props) => {
     <Container>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Slider
-            dots
-            slidesToShow={1}
-            asNavFor={slider2Ref.current}
-            ref={(slider) =>
-              (slider1Ref.current = slider !== null ? slider : undefined)
-            }
-          >
-            <div>
-              <h3>1</h3>
-            </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider>
-          <h4>Second Slider</h4>
-          <Slider
-            asNavFor={slider1Ref.current}
-            ref={(slider) =>
-              (slider2Ref.current = slider !== null ? slider : undefined)
-            }
-            slidesToShow={3}
-            swipeToSlide={true}
-            focusOnSelect={true}
-          >
-            <div>
-              <h3>1</h3>
-            </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider>
+          <div>
+            <Slider
+              dots
+              slidesToShow={1}
+              asNavFor={nav2}
+              ref={(slider) => setNav1(slider as any)}
+              adaptiveHeight
+              className="mb-7"
+            >
+              {itemDetail?.media.map((item) => (
+                <div
+                  key={item.id}
+                  className="h-[300px] w-full flex justify-center"
+                >
+                  <div className="w-[300px]">
+                    <LazyLoadImage src={item.url} />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+            <Slider
+              asNavFor={nav1}
+              ref={(slider) => setNav2(slider as any)}
+              slidesToShow={5}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              adaptiveHeight
+            >
+              {itemDetail?.media.map((item) => (
+                <div key={item.id} className="h-[100px]">
+                  <LazyLoadImage key={item.id} src={item.url} />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </Grid>
 
         <Grid item xs={6}>
@@ -134,27 +118,26 @@ const ProductContent: FC<IProductContent> = (props) => {
                 <Controller
                   name="itemColor"
                   control={control}
-                  render={({ field }) => (
-                    <RadioGroup {...field} row>
-                      {itemDetail?.sizes.map((item) => (
-                        <Radio
-                          key={item.id}
-                          value={item.id}
-                          icon={
-                            <CircleIcon
-                              sx={{ color: item.value }}
-                              className="w-10 h-10 rounded-full border border-solid border-gray-300"
-                            />
-                          }
-                          checkedIcon={
-                            <CheckCircleIcon
-                              sx={{ color: item.value }}
-                              className="w-10 h-10 rounded-full border border-solid border-gray-300"
-                            />
-                          }
-                        />
+                  render={({ field: { value, onChange } }) => (
+                    <div className="flex gap-3">
+                      {itemDetail?.colors?.map((item) => (
+                        <Box
+                          className={`h-9 w-9 rounded-full flex justify-center items-center border-2 ${
+                            value === item.id
+                              ? "border-color-price"
+                              : "border-gray-400"
+                          } border-solid cursor-pointer hover:border-color-price transition-all`}
+                          onClick={() => onChange(item.id)}
+                        >
+                          <Box
+                            sx={{
+                              bgcolor: item.value,
+                            }}
+                            className={`h-7 w-7 rounded-full`}
+                          ></Box>
+                        </Box>
                       ))}
-                    </RadioGroup>
+                    </div>
                   )}
                 />
               </div>
@@ -166,25 +149,21 @@ const ProductContent: FC<IProductContent> = (props) => {
                 <Controller
                   name="itemSize"
                   control={control}
-                  render={({ field }) => (
-                    <RadioGroup {...field} row>
+                  render={({ field: { value, onChange } }) => (
+                    <div className="flex gap-3">
                       {itemDetail?.sizes.map((item) => (
-                        <Radio
-                          key={item.id}
-                          value={item.id}
-                          icon={<Button size="small">{item.value}</Button>}
-                          checkedIcon={
-                            <Button variant="contained" size="small">
-                              {item.value}
-                            </Button>
-                          }
-                        />
+                        <Button
+                          onClick={() => onChange(item.id)}
+                          variant={value === item.id ? "contained" : "outlined"}
+                        >
+                          {item.value}
+                        </Button>
                       ))}
-                    </RadioGroup>
+                    </div>
                   )}
                 />
               </div>
-              <div>
+              <div className="mb-4">
                 <Typography variant="h6" className="mb-2 text-sm font-semibold">
                   Quantity
                 </Typography>
@@ -216,8 +195,11 @@ const ProductContent: FC<IProductContent> = (props) => {
                 />
               </div>
 
-              <Typography variant="h2" className="text-2xl font-bold mb-1">
-                258,000US
+              <Typography
+                variant="h2"
+                className="text-2xl font-bold mb-1 text-color-price"
+              >
+                258,000 US$
               </Typography>
               <div>Stock Avalable</div>
             </div>

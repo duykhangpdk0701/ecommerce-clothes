@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { setCloseCartDrawer } from "@/contexts/slices/cartDrawerSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import CartDrawerItem from "./CartDrawerItem";
@@ -60,7 +60,9 @@ const CartDrawer: FC<ICartDrawer> = (props) => {
           <Divider />
           <div>
             {loading
-              ? loadingItem.map((item) => <>{item}</>)
+              ? loadingItem.map((item, index) => (
+                  <Fragment key={index}>{item}</Fragment>
+                ))
               : data?.map((item) => (
                   <CartDrawerItem key={item.id} data={item} />
                 ))}

@@ -48,7 +48,7 @@ class BrandController extends Controller
      */
     public function index(Request $request): AnonymousResourceCollection
     {
-        $result = $this->brandRepository->all();
+        $result = $this->brandRepository->serverPaginationFilterFor($request->all());
         return BrandResource::collection($result);
     }
 

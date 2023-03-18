@@ -9,6 +9,8 @@ import adminBrandAPI from "@/api/admin/adminBrandAPI";
 import { useRouter } from "next/router";
 import { NextPageWithLayout } from "@/pages/_app";
 import AdminLayout from "@/layout/AdminLayout";
+import { useAppDispatch } from "@/hooks/redux";
+import { setSnackbar } from "@/contexts/slices/snackbarSlice";
 
 export interface IUpdateBrandParams {
   name: string;
@@ -28,6 +30,7 @@ const UpdateAdminBrand: NextPageWithLayout = () => {
   const { slug, id } = router.query;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const dispatch = useAppDispatch();
 
   const {
     control,
@@ -52,12 +55,25 @@ const UpdateAdminBrand: NextPageWithLayout = () => {
     },
     onSuccess: async (data) => {
       await getBrandBySlugQuery.refetch();
-      console.log(data);
+      await router.push("/admin/brand");
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "success",
+          snackbarMessage: "Create Item Color successfully",
+        })
+      );
     },
     onError: (error: any) => {
-      console.log(error);
       setLoading(false);
+      dispatch(
+        setSnackbar({
+          snackbarOpen: true,
+          snackbarType: "error",
+          snackbarMessage: error.message,
+        })
+      );
     },
   });
 
