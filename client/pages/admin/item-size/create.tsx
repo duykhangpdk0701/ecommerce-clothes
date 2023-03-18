@@ -45,10 +45,10 @@ const CreateItemSize: NextPageWithLayout = () => {
     resolver: yupResolver(createItemSizeSchema),
   });
 
-  const itemCatgoryQuery = useQuery(
-    "item-category",
-    adminItemCategoryAPI.getListOfItemCategory
-  );
+  const itemCatgoryQuery = useQuery({
+    queryKey: ["item-category"],
+    queryFn: () => adminItemCategoryAPI.getListOfItemCategory(),
+  });
 
   const createItemSizeMutation = useMutation({
     mutationKey: "brand",
