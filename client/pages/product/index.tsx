@@ -155,9 +155,15 @@ const Product: NextPageWithLayout = () => {
             }
             listProductProducts={
               listProductState.listType === "grid" ? (
-                <GridProducts data={itemQuery.data} />
+                <GridProducts
+                  data={itemQuery.data}
+                  loading={itemQuery.isLoading}
+                />
               ) : (
-                <ListProducts data={itemQuery.data} />
+                <ListProducts
+                  data={itemQuery.data}
+                  loading={itemQuery.isLoading}
+                />
               )
             }
           />
