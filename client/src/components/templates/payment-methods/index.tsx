@@ -1,4 +1,4 @@
-import { Payment } from "@mui/icons-material";
+import PaymentIcon from "@mui/icons-material/Payment";
 import React from "react";
 
 const PaymentMethodTemplate = () => {
@@ -6,7 +6,7 @@ const PaymentMethodTemplate = () => {
     <div>
       <div className="mt-4 mb-6">
         <div className="flex gap-3 items-center">
-          <Payment className="text-2xl" />
+          <PaymentIcon className="text-2xl text-color-price" />
           <h2 className="text-2xl">Payment Methods</h2>
         </div>
       </div>

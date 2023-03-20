@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 //mui Button
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
@@ -6,8 +6,24 @@ import Rating from "@mui/material/Rating";
 import Link from "next/link";
 import product_1 from "@/assets/images/products/product_1.jpg";
 import Image from "next/image";
+import { useAppDispatch } from "@/hooks/redux";
+import { setOpenDialogAction } from "@/contexts/slices/dialogItem";
 
-const WomenFashionItem = () => {
+interface IWomenFashionItem {
+  slug: string;
+  name: string;
+  price: string;
+  thumbnail: string;
+}
+
+const WomenFashionItem: FC<IWomenFashionItem> = (props) => {
+  const { slug, name, price, thumbnail } = props;
+  const dispatch = useAppDispatch();
+
+  const handleOpenDialog = () => {
+    dispatch(setOpenDialogAction({ itemSlug: slug }));
+  };
+
   return (
     <div className="px-4">
       <div className="bg-white">
@@ -28,7 +44,12 @@ const WomenFashionItem = () => {
             <Rating name="read-only" className="text-sm" value={4} readOnly />
             <small className="text-xs">({0})</small>
           </div>
-          <Button variant="outlined" color="inherit" fullWidth>
+          <Button
+            variant="outlined"
+            color="inherit"
+            fullWidth
+            onClick={handleOpenDialog}
+          >
             Add To Cart
           </Button>
         </div>

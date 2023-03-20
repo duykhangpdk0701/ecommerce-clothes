@@ -21,6 +21,18 @@ const itemAPI = {
     return res.data;
   },
 
+  getListOfItemMen: async (): Promise<IProduct[]> => {
+    const url = "/api/v1/item?item_person_type_id=1";
+    const res = await axiosClient.get(url);
+    return res.data;
+  },
+
+  getListOfItemWomen: async (): Promise<IProduct[]> => {
+    const url = "/api/v1/item?item_person_type_id=2";
+    const res = await axiosClient.get(url);
+    return res.data;
+  },
+
   getItemBySlug: async (slug: string): Promise<IProduct> => {
     const url = `/api/v1/item/${slug}`;
     const res = await axiosClient.get(url);

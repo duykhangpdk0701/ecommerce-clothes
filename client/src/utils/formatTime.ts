@@ -8,10 +8,11 @@ export function fDate(date: Date | string, newFormat: string) {
   return date ? format(new Date(date), fm) : "";
 }
 
-export function fDateTime(date: Date | string, newFormat: string) {
-  const fm = newFormat || "dd MMM yyyy p";
-
-  return date ? format(new Date(date), fm) : "";
+export function fDateTime(
+  date: Date | string,
+  newFormat: string = "dd MMM yyyy p"
+) {
+  return date ? format(new Date(date), newFormat) : "";
 }
 
 export function fTimestamp(date: Date | string) {

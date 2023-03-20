@@ -64,10 +64,13 @@ const ProductContent: FC<IProductContent> = (props) => {
               {itemDetail?.media.map((item) => (
                 <div
                   key={item.id}
-                  className="h-[300px] w-full flex justify-center"
+                  className="h-[400px] w-full flex justify-center"
                 >
-                  <div className="w-[300px]">
-                    <LazyLoadImage src={item.url} />
+                  <div className="w-full h-full bg-[#f1f1f1]">
+                    <LazyLoadImage
+                      src={item.url}
+                      className="object-contain h-full mx-auto"
+                    />
                   </div>
                 </div>
               ))}

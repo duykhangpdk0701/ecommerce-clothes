@@ -7,15 +7,16 @@ import Link from "next/link";
 import React, { Fragment } from "react";
 import Slider from "react-slick";
 import DealOfTheDayItem from "./item";
-
-const data = [
-  <DealOfTheDayItem />,
-  <DealOfTheDayItem />,
-  <DealOfTheDayItem />,
-  <DealOfTheDayItem />,
-];
+import { useQuery } from "react-query";
+import itemAPI from "@/api/itemAPI";
+import LoadingDealOfTheDayItem from "./loadingItem";
 
 const DealOfTheDay = () => {
+  const listItemQuery = useQuery({
+    queryKey: ["item-deal-of-the-day"],
+    queryFn: () => itemAPI.getListOfItem({}),
+  });
+
   return (
     <Container className="py-16">
       <div className="flex justify-between items-center mb-6">
@@ -27,10 +28,18 @@ const DealOfTheDay = () => {
         </Link>
       </div>
       <div>
-        <Slider slidesToShow={4} infinite>
-          {data.map((item, index) => (
-            <Fragment key={index}>{item}</Fragment>
-          ))}
+        <Slider slidesToShow={4} infinite adaptiveHeight>
+          {listItemQuery.isLoading
+            ? Array(4).fill(<LoadingDealOfTheDayItem />)
+            : listItemQuery.data?.map((item) => (
+                <DealOfTheDayItem
+                  slug={item.slug}
+                  key={item.id}
+                  name={item.name}
+                  price={item.stock_lowest_price}
+                  thumbnail={item.thumbnail_url}
+                />
+              ))}
         </Slider>
       </div>
     </Container>

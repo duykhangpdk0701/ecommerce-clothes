@@ -1,18 +1,12 @@
 import PersonIcon from "@mui/icons-material/Person";
 import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
 
 import Link from "next/link";
 import React, { FC, ReactElement } from "react";
-import IUser from "@/interfaces/User";
 import InforLoading from "./info/loading";
 
 interface IProfileTemplate {
   profileInfor: ReactElement;
-
   loading: boolean;
 }
 

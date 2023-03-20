@@ -1,8 +1,9 @@
 import AdminLayout from "@/layout/AdminLayout";
 import React, { ReactElement } from "react";
+import DashBoardTemplate from "@/components/templates/admin/dashboard";
 
 const Admin = () => {
-  return <div>Admin</div>;
+  return <DashBoardTemplate />;
 };
 
 Admin.getLayout = function (page: ReactElement) {

@@ -6,6 +6,7 @@ import { Box, List, ListItemText } from "@mui/material";
 import { StyledNavItem, StyledNavItemIcon } from "./styles";
 import { INavConfig } from "@/layout/AdminLayout/nav/config";
 import { FC } from "react";
+import { useRouter } from "next/router";
 
 // ----------------------------------------------------------------------
 
@@ -32,6 +33,7 @@ NavItem.propTypes = {
 };
 
 function NavItem({ item }: { item: any }) {
+  const router = useRouter();
   const { title, path, icon, info } = item;
 
   return (
@@ -39,13 +41,15 @@ function NavItem({ item }: { item: any }) {
     <StyledNavItem
       component={Link}
       href={path}
-      sx={{
-        "&.active": {
-          color: "text.primary",
-          bgcolor: "action.selected",
-          fontWeight: "fontWeightBold",
-        },
-      }}
+      sx={
+        router.pathname === path
+          ? {
+              color: "text.primary",
+              bgcolor: "action.selected",
+              fontWeight: "fontWeightBold",
+            }
+          : undefined
+      }
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
 

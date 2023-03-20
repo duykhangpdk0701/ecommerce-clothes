@@ -150,54 +150,13 @@ const Header: FC<IHeader> = (props) => {
               />
               <Divider orientation="vertical" flexItem />
               <Button
-                ref={anchorRef}
-                aria-controls={openSearchType ? "split-button-menu" : undefined}
-                aria-expanded={openSearchType ? "true" : undefined}
-                aria-label="select merge strategy"
-                aria-haspopup="menu"
-                onClick={handleToggle}
-                variant="text"
-                endIcon={<KeyboardArrowDownIcon className="mr-1" />}
-                className="rounded-br-full rounded-tr-full"
+                variant="contained"
+                className="rounded-br-full rounded-tr-full px-10"
               >
-                {options[selectedIndex]}
+                Search
               </Button>
             </Paper>
           </div>
-          <Popper
-            open={openSearchType}
-            anchorEl={anchorRef.current}
-            role={undefined}
-            transition
-            disablePortal
-          >
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                style={{
-                  transformOrigin:
-                    placement === "bottom" ? "center top" : "center bottom",
-                }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={handleClose}>
-                    <MenuList id="split-button-menu" autoFocusItem>
-                      {options.map((option, index) => (
-                        <MenuItem
-                          key={option}
-                          disabled={index === 2}
-                          selected={index === selectedIndex}
-                          onClick={(event) => handleMenuItemClick(event, index)}
-                        >
-                          {option}
-                        </MenuItem>
-                      ))}
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Popper>
         </div>
         <div className="flex items-center">
           <div>

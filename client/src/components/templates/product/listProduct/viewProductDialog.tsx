@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 
 import Dialog from "@mui/material/Dialog";
 import Grid from "@mui/material/Grid";
@@ -29,7 +29,11 @@ import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler } from "react-hook-form/dist/types";
-import { Skeleton } from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
+
+import Slider from "react-slick";
+import Link from "next/link";
 
 export interface IViewProductDialogParams {
   itemColor: number;
@@ -186,6 +190,19 @@ const LoadingContext = () => {
 const ViewProductDialog: FC = () => {
   const dispatch = useAppDispatch();
 
+  const slider1Ref = useRef<Slider>();
+  const slider2Ref = useRef<Slider>();
+
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+
+  useEffect(() => {
+    [slider1Ref.current, slider2Ref.current] = [
+      slider2Ref.current,
+      slider1Ref.current,
+    ];
+  }, [slider1Ref.current, slider2Ref.current]);
+
   const openDialog = useAppSelector((state) => state.DialogItem.toggle);
   const itemSlugState = useAppSelector((state) => state.DialogItem.itemSlug);
 
@@ -241,10 +258,46 @@ const ViewProductDialog: FC = () => {
         ) : (
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
-              <LazyLoadImage
-                src={productDetailQuery.data?.thumbnail_url}
-                alt={productDetailQuery.data?.name}
-              />
+              <div className="h-full flex items-center">
+                <div className="w-full">
+                  <Slider
+                    dots
+                    slidesToShow={1}
+                    asNavFor={nav2}
+                    ref={(slider) => setNav1(slider as any)}
+                    adaptiveHeight
+                    className="mb-7"
+                  >
+                    {productDetailQuery.data?.media.map((item) => (
+                      <div
+                        key={item.id}
+                        className="max-h-[400px] w-full flex justify-center"
+                      >
+                        <div className="w-full h-full bg-[#f1f1f1]">
+                          <LazyLoadImage
+                            src={item.url}
+                            className="object-contain h-full mx-auto"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                  <Slider
+                    asNavFor={nav1}
+                    ref={(slider) => setNav2(slider as any)}
+                    slidesToShow={5}
+                    swipeToSlide={true}
+                    focusOnSelect={true}
+                    adaptiveHeight
+                  >
+                    {productDetailQuery.data?.media.map((item) => (
+                      <div key={item.id} className="h-[100px]">
+                        <LazyLoadImage key={item.id} src={item.url} />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              </div>
             </Grid>
             <Grid item xs={12} md={6}>
               <form onSubmit={handleSubmit(onFinish)}>
@@ -262,13 +315,20 @@ const ViewProductDialog: FC = () => {
                   {productDetailQuery.data?.stock_lowest_price} US$
                 </Typography>
                 <Rating className="text-xl" value={4} readOnly />
-                <p className="my-4">
+                <p className="mt-4 mb-2 h-20 text-ellipsis overflow-hidden">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: productDetailQuery.data?.description || "",
                     }}
                   ></div>
                 </p>
+                <div className="mb-4">
+                  {productDetailQuery.data && (
+                    <Link href={`/product/${productDetailQuery.data.slug}`}>
+                      See More
+                    </Link>
+                  )}
+                </div>
                 <Divider />
 
                 <div className="mb-4">

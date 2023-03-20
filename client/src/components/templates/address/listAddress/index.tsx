@@ -30,11 +30,9 @@ const ListAddressTemplate: FC<IListAddressTemplate> = (props) => {
         </div>
 
         <div>
-          <Link href="address/add" className="no-underline">
-            <Button className="px-8 font-medium" variant="text">
-              Add New Address
-            </Button>
-          </Link>
+          <Button className="px-8" LinkComponent={Link} href={"/address/add"}>
+            Add New Address
+          </Button>
         </div>
       </div>
       {loading

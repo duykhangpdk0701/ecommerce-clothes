@@ -4,6 +4,7 @@ import DealOfTheDay from "./DealOfTheDay";
 import InfoBanner from "./infoBanner";
 import HomeMainBanner from "./mainBanner";
 import MenFashion from "./MenFashion";
+import ViewProductDialog from "./viewProductDialog";
 import WomenFashion from "./WomenFashion";
 
 const HomeTemplate = () => {
@@ -14,6 +15,7 @@ const HomeTemplate = () => {
       <DealOfTheDay />
       <MenFashion />
       <WomenFashion />
+      <ViewProductDialog />
     </Container>
   );
 };

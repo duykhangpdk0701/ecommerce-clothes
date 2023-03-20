@@ -1,6 +1,5 @@
 // component
 import SvgColor from "@/components/shared/svg-color";
-import { resolve } from "path";
 
 // ----------------------------------------------------------------------
 
@@ -55,17 +54,6 @@ const navConfig: INavConfig[] = [
     title: "Item stock",
     path: "/admin/item-stock",
     icon: icon("ic_cart"),
-  },
-  {
-    title: "blog",
-    path: "/admin/blog",
-    icon: icon("ic_blog"),
-  },
-
-  {
-    title: "Not found",
-    path: "/404",
-    icon: icon("ic_disabled"),
   },
 ];
 

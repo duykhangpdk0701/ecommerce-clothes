@@ -21,7 +21,7 @@ interface IItemColorRow {
   value: string;
 }
 
-const ItemListBrand: FC<IItemColorRow> = (props) => {
+const ItemColorRow: FC<IItemColorRow> = (props) => {
   const { id, name, status, value } = props;
 
   const [open, setOpen] = useState<any>(null);
@@ -121,4 +121,4 @@ const ItemListBrand: FC<IItemColorRow> = (props) => {
   );
 };
 
-export default ItemListBrand;
+export default ItemColorRow;
